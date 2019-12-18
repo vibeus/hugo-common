@@ -1,0 +1,19 @@
+<section class="hero is-vibe{{ if .Params.is_hero_fullheight }} is-fullheight-with-navbar{{ end }}{{ with .Params.hero_class }} {{ . }}{{ end }}"
+         {{ with .Params.hero_background }}style="background: {{ . }}"{{ end }}>
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-vcentered">
+        <div class="column is-half is-content">
+          <div class="content">{{ .Content }}</div>
+        </div>
+        {{ with .Resources.GetMatch "hero.jpg" }}
+        <div class="column">
+          <figure class="image is-hero">
+            <img src="{{ .RelPermalink }}" alt="{{ .Name }}" />
+          </figure>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
