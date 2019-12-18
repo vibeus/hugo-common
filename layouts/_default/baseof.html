@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" class="has-navbar-fixed-top">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    {{ $description := default .Site.Params.defaultDescription .Page.Description }}
+    <meta name="description" content="{{ $description }}">
+    {{ if not .Site.Params.allowIndex }}<meta name="robots" content="noindex">{{ end }}
+    {{ $style := resources.Get "css/common/styles.sass" | resources.ToCSS (dict "outputStyle" "compressed" "enableSourceMap" true "includePaths" (slice "node_modules")) }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}" />
+    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.5.95/css/materialdesignicons.min.css" />
+  </head>
+  <body>
+    {{ block "nav" . }}{{ partial "common/nav.html" . }}{{ end }}
+    {{ block "main" . }}{{ end }}
+    {{ block "foot" . }}{{ partial "common/foot.html" . }}{{ end }}
+  </body>
+</html>

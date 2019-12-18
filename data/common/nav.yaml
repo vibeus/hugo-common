@@ -1,0 +1,28 @@
+menu:
+  - title: Meet the Vibe
+    url: /product/
+  # - title: Use Cases
+  #   url: /use-cases/
+  - title: Blog + Resources
+    url: https://medium.com/vibe-team
+  - title: Support
+    url: https://knowledge.vibe.us
+  - title: Contact Sales
+    url: /contact/
+  # - title: More
+  #   submenu:
+  #     - title: Tech Specs
+  #       url: /doc/VibeSpecs.pdf
+  #       target: _blank
+extra:
+  - title: Request Demo
+    url: https://landing.vibe.us/request-demo
+    class: is-white has-text-weight-normal request-demo-trigger
+    target: _blank
+    icon:
+      class: has-margin-right-xxs
+      mdi: mdi-18px mdi-account
+  - title: Order Now
+    url: https://order.vibe.us
+    class: is-danger is-nav-cart
+

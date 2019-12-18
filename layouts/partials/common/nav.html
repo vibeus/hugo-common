@@ -1,0 +1,60 @@
+<nav
+  class="navbar is-fixed-top is-transparent"
+  role="navigation"
+  aria-label="main navigation"
+>
+  {{ $navJs := resources.Get "js/common/nav.mjs" | resources.Minify }}
+  <script src="{{ $navJs.Permalink }}" type="module"></script>
+  <div class="container is-fluid">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="{{ "/" | absURL }}">
+        <img src="{{ "/img/common/vibe-brand.png" | relURL }}" alt="vibe brand" />
+      </a>
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="nav-menu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div id="nav-menu" class="navbar-menu">
+      <div class="navbar-start">
+        {{ range .Site.Data.common.nav.menu }}
+          {{ if .submenu }}
+            <div class="navbar-item has-dropdown is-hoverable">
+              <span class="navbar-link">{{ .title }}</span>
+            {{ range .submenu }}
+            <a class="navbar-item"
+               href="{{ .url | absURL }}"
+               {{ with .target }}target="{{ . }}"{{ end }}>
+              {{ .title }}
+            </a>
+            {{ end }}
+            </div>
+          {{ else }}
+          <a class="navbar-item" href="{{ .url | absURL }}">{{ .title }}</a>
+          {{ end }}
+        {{ end }}
+      </div>
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            {{ range .Site.Data.common.nav.extra }}
+            <a class="button {{ .class }}"
+               href="{{ .url | absURL }}"
+               {{ with .target }}target="{{ . }}"{{ end }}>
+              {{ with .icon }}
+              <span class="icon {{ .class }}">
+                {{ with .mdi }}
+                <i class="mdi {{ . }}"></i>
+                {{ end }}
+              </span>
+              {{ end }}
+              </span>{{ .title }}</span>
+            </a>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

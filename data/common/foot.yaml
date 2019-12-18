@@ -1,0 +1,47 @@
+sections:
+  - heading: Company
+    links:
+      - title: About us
+        url: /about/
+      - title: Jobs
+        url: https://angel.co/inlight-interactive/jobs
+        target: _blank
+      - title: Blogs
+        url: https://medium.com/vibe-team
+      - title: Contact
+        url: /contact/
+      - title: Press kit
+        url: /doc/Vibe_Press_Kit_20190318.pdf
+  - heading: Product
+    links:
+      - title: Join a board
+        url: https://app.vibe.us
+      - title: Sign in
+        url: https://app.vibe.us
+      - title: Meet the Vibe
+        url: /product/
+      - title: Specifications
+        url: /doc/VibeSpecs.pdf
+      - title: Brochure
+        url: /doc/VibeBrochure.pdf
+      - title: Order
+        url: https://order.vibe.us
+  - heading: Resources
+    links:
+      - title: Help center
+        url: https://knowledge.vibe.us
+      - title: Security
+        url: /documents/security/
+      - title: Privacy
+        url: /documents/privacy/
+      - title: Warranty
+        url: /documents/warranty/
+      - title: Site map
+        url: /sitemap.xml
+  - heading: Sales
+    links:
+      - title: Request a demo
+        url: https://landing.vibe.us/request-demo
+        class: request-demo-trigger
+      - title: Contact us
+        url: /contact/
