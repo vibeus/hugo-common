@@ -3,7 +3,7 @@
   role="navigation"
   aria-label="main navigation"
 >
-  {{ $navJs := resources.Get "js/common/nav.mjs" | resources.Minify }}
+  {{ $navJs := resources.Get "js/common/nav.js" | resources.Minify }}
   <script src="{{ $navJs.Permalink }}" type="module"></script>
   <div class="container is-fluid">
     <div class="navbar-brand">
