@@ -8,8 +8,8 @@
     <title>{{ default "Vibe" .Page.Title }} | Vibe</title>
     {{ if not .Site.Params.allowIndex }}<meta name="robots" content="noindex">{{ end }}
     {{ $sass := resources.Get "css/common/styles.sass" }}
-    {{ $style := $sass | resources.ToCSS (dict "outputStyle" "compressed" "enableSourceMap" true "includePaths" (slice "node_modules")) }}
-    <link rel="stylesheet" href="{{ $style.Permalink }}" />
+    {{ $style := $sass | resources.ToCSS (dict "outputStyle" "compressed" "includePaths" (slice "node_modules")) | resources.Fingerprint }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}" />
     <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.5.95/css/materialdesignicons.min.css" />
     {{ block "stylesheets" . }}{{ end }}
     {{ block "scripts" . }}{{ end }}
