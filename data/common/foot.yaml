@@ -7,7 +7,7 @@ sections:
         url: https://angel.co/inlight-interactive/jobs
         target: _blank
       - title: Blogs
-        url: https://medium.com/vibe-team
+        url: /blog/
       - title: Contact
         url: /contact/
       - title: Press kit
