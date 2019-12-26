@@ -7,10 +7,12 @@
     <meta name="description" content="{{ $description }}">
     <title>{{ default "Vibe" .Page.Title }} | Vibe</title>
     {{ if not .Site.Params.allowIndex }}<meta name="robots" content="noindex">{{ end }}
-    {{ $sass := resources.Get "css/common/styles.sass" }}
-    {{ $style := $sass | resources.ToCSS (dict "outputStyle" "compressed" "includePaths" (slice "node_modules")) | resources.Fingerprint }}
-    <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}" />
-    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.5.95/css/materialdesignicons.min.css" />
+    {{ if .Site.Params.stylesPath }}
+      {{ $sass := resources.Get .Site.Params.stylesPath }}
+      {{ $style := $sass | resources.ToCSS (dict "outputStyle" "compressed" "includePaths" (slice "node_modules" "assets/css/common")) | resources.Fingerprint }}
+      <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}" />
+      <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.5.95/css/materialdesignicons.min.css" />
+    {{ end }}
     {{ block "stylesheets" . }}{{ end }}
     {{ block "scripts" . }}{{ end }}
   </head>
