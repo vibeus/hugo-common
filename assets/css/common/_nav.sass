@@ -1,10 +1,29 @@
-.navbar-start
-  +tablet
-    padding-left: 3rem
+.navbar
+  .navbar-start
+    +tablet
+      padding-left: 3rem
 
-    .navbar-item
-      padding-left: 1.5rem
-      padding-right: 1.5rem
+      .navbar-item
+        padding-left: 0.7rem
+        padding-right: 0.7rem
 
-      &.has-dropdown
-        padding: 0
+        +widescreen
+          padding-left: 1.5rem
+          padding-right: 1.5rem
+
+        &.has-dropdown
+          padding: 0
+
+  .container.is-fluid
+    +mobile
+      padding: 0
+
+  .navbar-end .buttons
+    +tablet
+      justify-content: flex-end
+    +mobile
+      justify-content: space-between
+      .button
+        flex: 1
+        &.is-white
+          border: 1px solid rgba(255, 118, 128, 0.3)
