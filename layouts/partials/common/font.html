@@ -1,0 +1,12 @@
+<style type="text/css">
+{{ range . }}
+{{ $url := resources.Get .ttf | resources.Fingerprint }}
+@font-face {
+  font-family: '{{ .fontFamily }}';
+  font-style: {{ default "normal" .fontStyle }};
+  font-weight: {{ default "400" .fontWeight }};
+  font-display: swap;
+  src: {{ range .localNames }}local('{{ . }}'),{{ end }} url({{ $url.Permalink }});
+}
+{{ end }}
+</style>

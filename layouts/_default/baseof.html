@@ -13,6 +13,10 @@
       <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}" />
       <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.5.95/css/materialdesignicons.min.css" />
     {{ end }}
+    {{ $firaSansRegular := dict "fontFamily" "Fira Sans" "localNames" (slice "Fira Sans Regular") "ttf" "fonts/common/FiraSans-Regular.ttf" }}
+    {{ $firaSansItalic := dict "fontFamily" "Fira Sans" "fontStyle" "italic" "localNames" (slice "Fira Sans Italic") "ttf" "fonts/common/FiraSans-Italic.ttf" }}
+    {{ $balooRegular := dict "fontFamily" "Baloo" "localNames" (slice "Baloo") "ttf" "fonts/common/Baloo-Regular.ttf" }}
+    {{ partial "common/font" (slice $firaSansRegular $firaSansItalic $balooRegular) }}
     {{ block "stylesheets" . }}{{ end }}
     {{ block "scripts" . }}{{ end }}
     {{ with .Site.Params.gtmId }}
