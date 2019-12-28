@@ -8,3 +8,33 @@
 
       &.has-dropdown
         padding: 0
+
+@media screen and (max-width: 1199px)
+  .navbar-item
+    padding-left: 0.7rem !important
+    padding-right: 0.7rem !important
+
+@media screen and (max-width: 1023px)
+  .navbar
+    >.container
+      padding: 0
+
+  .navbar-start
+    .navbar-item
+      height: 3rem
+      line-height: 3rem
+
+  .navbar-end
+    .buttons
+      flex-direction: row
+      justify-content: space-between
+      .button
+        width: 47%
+        &:first-child
+          border: 1px solid rgba(255, 118, 128, 0.3)
+          font-family: Poppins
+          font-style: normal
+          font-weight: bold
+          color: #FF7680
+
+
