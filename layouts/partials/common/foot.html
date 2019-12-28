@@ -3,7 +3,7 @@
     <div class="columns">
       <div class="column is-one-third">
         <figure class="image is-foot-logo">
-          {{ $footIcon := resources.Get "svg/common/foot-icon.svg" | resources.Minify | resources.Fingerprint }}
+          {{ $footIcon := resources.Get "img/common/foot-icon.svg" | resources.Minify | resources.Fingerprint }}
           <img src="{{ $footIcon.Permalink }}" alt="vibe icon" />
         </figure>
       </div>
