@@ -11,7 +11,7 @@
         <div class="columns is-links is-mobile is-multiline">
           {{ range .Site.Data.common.foot.sections }}
           <div class="column is-half-mobile is-foot-section">
-            <h2>{{ .heading }}</h2>
+            <h2 class="is-vibe-heading">{{ .heading }}</h2>
             {{ range .links }}
             <div>
               <a href="{{ .url | absURL }}"
