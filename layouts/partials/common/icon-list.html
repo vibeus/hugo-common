@@ -1,0 +1,10 @@
+<ul class="icon-list">
+  {{ range . }}
+  <li>
+    <span class="icon">
+      <i class="mdi {{ .icon }}"></i>
+    </span>
+    {{ .title | markdownify }}
+  </li>
+  {{ end }}
+</ul>

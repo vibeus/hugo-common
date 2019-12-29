@@ -1,0 +1,8 @@
+<div class="modal is-iframe-modal" id="{{ .iframeModalId }}">
+  <div class="modal-background" data-target="{{ .iframeModalId }}"></div>
+  <div class="modal-content" id="{{ .iframeModalId }}-iframe">
+  </div>
+  <button class="modal-close is-large" aria-label="close" data-target="{{ .iframeModalId }}"></button>
+</div>
+
+{{ partial "common/template-script" (merge (dict "asset" "js/common/iframe-modal.template.js") .) }}

@@ -1,0 +1,9 @@
+<div class="modal is-video-player" id="{{ .playerId }}">
+  <div class="modal-background" data-target="{{ .playerId }}"></div>
+  <div class="modal-content">
+    <div id="{{ .playerId }}-iframe"></div>
+  </div>
+  <button class="modal-close is-large" aria-label="close" data-target="{{ .playerId }}"></button>
+</div>
+
+{{ partial "common/template-script" (merge (dict "asset" "js/common/video-player.template.js") .) }}

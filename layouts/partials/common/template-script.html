@@ -1,0 +1,3 @@
+{{ $path := replace (path.Base .asset) ".template." "." }}
+{{ $js := resources.Get .asset | resources.ExecuteAsTemplate $path . | resources.Minify | resources.Fingerprint }}
+<script src="{{ $js.RelPermalink }}" type="module" integrity="{{ $js.Data.Integrity }}"></script>

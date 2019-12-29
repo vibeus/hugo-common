@@ -3,8 +3,7 @@
   role="navigation"
   aria-label="main navigation"
 >
-  {{ $navJs := resources.Get "js/common/nav.js" | resources.Minify | resources.Fingerprint }}
-  <script src="{{ $navJs.Permalink }}" type="module" integrity="{{ $navJs.Data.Integrity }}"></script>
+  {{ partial "common/template-script" (dict "asset" "js/common/nav.template.js") }}
   <div class="container is-fluid">
     <div class="navbar-brand">
       <a class="navbar-item" href="{{ "/" | absURL }}">
