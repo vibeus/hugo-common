@@ -1,0 +1,37 @@
+{{ $src := resources.Get "img/common/em-0.svg" | resources.Minify | resources.Fingerprint }}
+$em-0: url({{ $src.RelPermalink }})
+{{ $src := resources.Get "img/common/em-0-blue.svg" | resources.Minify | resources.Fingerprint }}
+$em-blue-0: url({{ $src.RelPermalink }})
+
+{{ $src := resources.Get "img/common/em-1.svg" | resources.Minify | resources.Fingerprint }}
+$em-1: url({{ $src.RelPermalink }})
+{{ $src := resources.Get "img/common/em-1-blue.svg" | resources.Minify | resources.Fingerprint }}
+$em-blue-1: url({{ $src.RelPermalink }})
+{{ $src := resources.Get "img/common/em-1-yellow.svg" | resources.Minify | resources.Fingerprint }}
+$em-yellow-1: url({{ $src.RelPermalink }})
+
+.has-vibe-em
+  em
+    font-style: normal
+    display: inline-block
+    padding-right: 0.4em
+    background-image: $em-0, $em-1
+    background-repeat: no-repeat
+    background-size: contain, 0.4em
+    background-position: bottom, right top
+
+.has-vibe-em.is-style-1
+  em
+    background-image: $em-0, $em-blue-1
+.has-vibe-em.is-style-2
+  em
+    background-image: $em-0, $em-yellow-1
+.has-vibe-em.is-style-3
+  em
+    background-image: $em-blue-0, $em-1
+.has-vibe-em.is-style-4
+  em
+    background-image: $em-blue-0, $em-blue-1
+.has-vibe-em.is-style-5
+  em
+    background-image: $em-blue-0, $em-yellow-1
