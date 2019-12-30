@@ -22,6 +22,9 @@ extra:
     icon:
       class: has-margin-right-xxs
       mdi: mdi-18px mdi-account
+    data:
+      - key: target
+        value: request-demo-modal
   - title: Order Now
     url: https://order.vibe.us
     class: is-danger is-nav-cart

@@ -41,7 +41,11 @@
             {{ range .Site.Data.common.nav.extra }}
             <a class="button {{ .class }}"
                href="{{ .url | absURL }}"
-               {{ with .target }}target="{{ . }}"{{ end }}>
+               {{ with .target }}target="{{ . }}"{{ end }}
+               {{ range .data }}
+               data-{{ .key }}="{{ .value }}"
+               {{ end }}
+              >
               {{ with .icon }}
               <span class="icon {{ .class }}">
                 {{ with .mdi }}
@@ -58,3 +62,5 @@
     </div>
   </div>
 </nav>
+
+{{ partial "common/iframe-modal" (dict "iframeModalId" "request-demo-modal" "triggerClass" ".request-demo-trigger") }}
