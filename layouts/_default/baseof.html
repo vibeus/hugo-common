@@ -7,6 +7,8 @@
     <meta name="description" content="{{ $description }}">
     <title>{{ default "Vibe" .Page.Title }} | Vibe</title>
     {{ if not .Site.Params.allowIndex }}<meta name="robots" content="noindex">{{ end }}
+    {{ $src := resources.Get "img/common/favicon.png" | resources.Fingerprint }}
+    <link rel="shortcut icon" href="{{ $src.Permalink }}" />
     {{ if .Site.Params.stylesPath }}
       {{ $sass := resources.Get .Site.Params.stylesPath }}
       {{ $style := $sass | resources.ToCSS (dict "outputStyle" "compressed" "includePaths" (slice "node_modules" "assets/css/common")) | resources.Fingerprint }}
