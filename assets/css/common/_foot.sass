@@ -1,71 +1,55 @@
-.is-vibe-foot
+$foot-mobile-container-max-width: 19rem
+
+.section.is-vibe-foot
   padding-top: 6.67rem
   padding-bottom: 0
   background: white
-  .about
-    padding-bottom: 7rem
-    .columns
-      margin: 0
-      padding: 0 1rem
 
-      +mobile
-        display: grid
-        grid-template-columns: 10% 90%
-
-      .column
-        padding: 0
-
-        +mobile
-          .columns
-            width: 100%
-            display: grid
-            grid-template-columns: repeat(4, 25%)
-            margin: 0
-  .contact
-    border-top: 1px solid #F2F2F2
-    .contact-content
-      display: grid
-      grid-template-columns: 20% 30% 50%
-      height: 5rem
-      p
-        align-self: center
-        color: #505F71
-        a
-          opacity: 0.8
-          color: #505F71
-      .social
-        display: flex
-        justify-content: flex-end
-        a
-          margin-left: 1rem
-          color: #aaaaab
+  +mobile
+    .container.about
+      max-width: $foot-mobile-container-max-width
 
   +mobile
     .columns.is-links
       padding-top: 1.5rem
 
-.image.is-foot-logo
-  width: 162px
-  height: 46px
-  margin-top: -14px
-
-  +mobile
-    width: 122px
-    margin-top: 1rem
-
-.column.is-foot-section
-  font-size: 0.9167rem
-
-  div
-    margin-bottom: 1.3rem
-  h2
-    font-size: 1.5rem
-    margin-bottom: 2rem
+  .image.is-foot-logo
+    width: 162px
+    height: 46px
+    margin-top: -14px
 
     +mobile
-      margin-bottom: 1.389rem
+      width: 122px
+      margin-top: 1rem
 
+  .column.is-foot-section
+    font-size: 0.9167rem
 
+    h2
+      font-size: 1.5rem
+      margin-bottom: 2rem
 
+      +mobile
+        margin-bottom: 1.389rem
 
+.section.is-vibe-foot-contact
+  border-top: 1px solid #F2F2F2
+  padding: 0 1rem
 
+  +mobile
+    .container
+      padding-top: 1rem
+      max-width: $foot-mobile-container-max-width
+
+  .column.is-left
+    align-items: center
+
+  .column.is-right
+    text-align: right
+    a
+      color: #B3B3B3
+      &:hover
+        color: #463FF4
+
+    +mobile
+      text-align: left

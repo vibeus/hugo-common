@@ -1,59 +1,67 @@
-<footer class="is-vibe-foot">
-  <div class="container about">
-    <div class="columns">
-      <div class="column is-one-third">
-        <figure class="image is-foot-logo">
-          {{ $footIcon := resources.Get "img/common/foot-icon.svg" | resources.Minify | resources.Fingerprint }}
-          <img src="{{ $footIcon.Permalink }}" alt="vibe icon" />
-        </figure>
-      </div>
-      <div class="column">
-        <div class="columns is-links is-mobile is-multiline">
-          {{ range .Site.Data.common.foot.sections }}
-          <div class="column is-half-mobile is-foot-section">
-            <h2 class="is-vibe-heading">{{ .heading }}</h2>
-            {{ range .links }}
-            <div>
-              <a href="{{ .url | absURL }}"
-                 {{ with .target }}target="{{ . }}"{{ end }}
-                 {{ with .class }}class="{{ . }}"{{ end }}>
-                {{ .title}}
-              </a>
+<footer>
+  <div class="section is-vibe-foot">
+    <div class="container about">
+      <div class="columns">
+        <div class="column is-one-third">
+          <figure class="image is-foot-logo">
+            {{ $footIcon := resources.Get "img/common/foot-icon.svg" | resources.Minify | resources.Fingerprint }}
+            <img src="{{ $footIcon.Permalink }}" alt="vibe icon" />
+          </figure>
+        </div>
+        <div class="column">
+          <div class="columns is-links is-mobile is-multiline">
+            {{ range .Site.Data.common.foot.sections }}
+            <div class="column is-half-mobile is-foot-section">
+              <h2 class="is-vibe-heading">{{ .heading }}</h2>
+              {{ range .links }}
+              <div class="has-margin-bottom-md">
+                <a href="{{ .url | absURL }}"
+                   {{ with .target }}target="{{ . }}"{{ end }}
+                   {{ with .class }}class="{{ . }}"{{ end }}>
+                  {{ .title}}
+                </a>
+              </div>
+              {{ end }}
             </div>
             {{ end }}
           </div>
-          {{ end }}
         </div>
       </div>
     </div>
   </div>
-  <div class="contact">
-    <div class="container contact-content">
-      <p>
-        <a href="tel:+1-864-335-2007" target="_blank">
-          <span class="icon"><i class="mdi mdi-phone"></i></span>
-          <span>+1 (864) 335-2007</span>
-        </a>
-      </p>
-      <p>&copy; Copyright 2019 Vibe, Inc.</p>
-      <p class="social">
-        <a href="https://twitter.com/thevibeboard" target="_blank">
-          <span class="icon is-medium"><i class="mdi mdi-24px mdi-twitter"></i></span>
-        </a>
-        <a href="https://fb.me/thevibeus" target="_blank">
-          <span class="icon is-medium"><i class="mdi mdi-24px mdi-facebook"></i></span>
-        </a>
-        <a href="https://medium.com/vibe-team" target="_blank">
-          <span class="icon is-medium"><i class="mdi mdi-24px mdi-medium"></i></span>
-        </a>
-        <a href="https://www.linkedin.com/company/vibe-inc" target="_blank">
-          <span class="icon is-medium"><i class="mdi mdi-24px mdi-linkedin"></i></span>
-        </a>
-        <a href="https://www.instagram.com/app.vibe.us/" target="_blank">
-          <span class="icon is-medium"><i class="mdi mdi-24px mdi-instagram"></i></span>
-        </a>
-      </p>
-    </div>
 
+  <div class="section is-vibe-foot-contact">
+    <div class="container">
+      <div class="columns is-vcentered">
+        <div class="column is-flex is-left">
+          <div class="is-size-7">
+            <a href="tel:+1-864-335-2007" target="_blank">
+              <span class="icon"><i class="mdi mdi-phone"></i></span>
+              <span>+1 (864) 335-2007</span>
+            </a>
+          </div>
+          <div class="is-size-7 has-margin-left-md">
+            <div>&copy; Copyright 2020 Vibe, Inc.</div>
+          </div>
+        </div>
+        <div class="column is-right">
+          <a href="https://twitter.com/thevibeboard" target="_blank">
+            <span class="icon is-medium"><i class="mdi mdi-24px mdi-twitter"></i></span>
+          </a>
+          <a href="https://fb.me/thevibeus" target="_blank">
+            <span class="icon is-medium"><i class="mdi mdi-24px mdi-facebook"></i></span>
+          </a>
+          <a href="https://medium.com/vibe-team" target="_blank">
+            <span class="icon is-medium"><i class="mdi mdi-24px mdi-medium"></i></span>
+          </a>
+          <a href="https://www.linkedin.com/company/vibe-inc" target="_blank">
+            <span class="icon is-medium"><i class="mdi mdi-24px mdi-linkedin"></i></span>
+          </a>
+          <a href="https://www.instagram.com/app.vibe.us/" target="_blank">
+            <span class="icon is-medium"><i class="mdi mdi-24px mdi-instagram"></i></span>
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
 </footer>
