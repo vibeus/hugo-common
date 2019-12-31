@@ -1,9 +1,12 @@
 {{ $src := resources.Get "js/common/common.js" | resources.Minify | resources.Fingerprint }}
 import { toggleActive } from '{{ $src.RelPermalink }}';
 
+let loadingPlayer = false;
 let videoPlayer = null;
+let modalVisible = false;
 
 function setupYoutubePlayer(playerId, videoId) {
+  loadingPlayer = true;
   const tag = document.createElement('script');
 
   tag.src = "https://www.youtube.com/iframe_api";
@@ -18,21 +21,27 @@ function setupYoutubePlayer(playerId, videoId) {
       events: {
         'onReady': () => {
           videoPlayer = player;
+          if (modalVisible) {
+            player.playVideo();
+          }
         },
       }
     });
   }
 }
 
-setupYoutubePlayer('{{ .playerId }}-iframe', '{{ .videoId }}');
 toggleActive('{{ .triggerClass }}, #{{ .playerId }} .modal-close, #{{ .playerId }} .modal-background', false, isActive => {
-  if (!videoPlayer) {
-    return;
-  }
+  modalVisible = isActive;
 
   if (isActive) {
-    videoPlayer.playVideo();
+    if (videoPlayer) {
+      videoPlayer.playVideo();
+    } else if (!loadingPlayer) {
+      setupYoutubePlayer('{{ .playerId }}-iframe', '{{ .videoId }}');
+    }
   } else {
-    videoPlayer.stopVideo();
+    if (videoPlayer) {
+      videoPlayer.stopVideo();
+    }
   }
 });
