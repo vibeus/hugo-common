@@ -1,8 +1,8 @@
-$foot-mobile-container-max-width: 19rem
+$foot-mobile-container-max-width: 90%
 
 .section.is-vibe-foot
-  padding-top: 6.67rem
-  padding-bottom: 0
+  padding-top: 7rem
+  padding-bottom: 7rem
   background: white
 
   +mobile
@@ -25,6 +25,9 @@ $foot-mobile-container-max-width: 19rem
   .column.is-foot-section
     font-size: 0.9167rem
 
+    div
+      margin-bottom: 1.2rem !important
+
     h2
       font-size: 1.5rem
       margin-bottom: 2rem
@@ -41,15 +44,36 @@ $foot-mobile-container-max-width: 19rem
       padding-top: 1rem
       max-width: $foot-mobile-container-max-width
 
+  .columns
+    margin-top: 0
+
   .column.is-left
     align-items: center
+    color: #505F71
+    a
+      color: #505F71
 
   .column.is-right
     text-align: right
     a
       color: #B3B3B3
+      margin-left: 0.5rem
       &:hover
-        color: #463FF4
+        color: $link-hover
 
     +mobile
       text-align: left
+
+@media screen and (max-width: 480px)
+  .is-vibe-foot-contact
+    .columns
+      .is-left
+        display: block !important
+        div
+          width: 100% !important
+        .has-margin-left-lg
+          margin-left: 0 !important
+
+
+
+
