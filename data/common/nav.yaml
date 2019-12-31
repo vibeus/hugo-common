@@ -20,7 +20,6 @@ extra:
     class: is-white has-text-weight-normal request-demo-trigger
     target: _blank
     icon:
-      class: has-margin-right-xxs
       mdi: mdi-18px mdi-account
     data:
       - key: target

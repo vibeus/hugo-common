@@ -14,7 +14,7 @@
             <div class="column is-half-mobile is-foot-section">
               <h2 class="is-vibe-heading">{{ .heading }}</h2>
               {{ range .links }}
-              <div class="has-margin-bottom-md">
+              <div class="foot-link">
                 <a href="{{ .url | absURL }}"
                    {{ with .target }}target="{{ . }}"{{ end }}
                    {{ with .class }}class="{{ . }}"{{ end }}>
