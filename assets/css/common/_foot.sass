@@ -25,8 +25,8 @@ $foot-mobile-container-max-width: 90%
   .column.is-foot-section
     font-size: 0.9167rem
 
-    div
-      margin-bottom: 1.2rem !important
+    .has-margin-bottom-md
+      margin-bottom: 1.2rem
 
     h2
       font-size: 1.5rem
@@ -48,31 +48,30 @@ $foot-mobile-container-max-width: 90%
     margin-top: 0
 
   .column.is-left
+    display: flex
     align-items: center
     color: #505F71
     a
       color: #505F71
+    > div:first-child
+      margin-right: 2rem
+
+    @media screen and (max-width: 480px)
+      display: block
 
   .column.is-right
     text-align: right
     a
       color: #B3B3B3
-      margin-left: 0.5rem
       &:hover
         color: $link-hover
+
+      &:not(:first-child)
+        margin-left: 0.5rem
 
     +mobile
       text-align: left
 
-@media screen and (max-width: 480px)
-  .is-vibe-foot-contact
-    .columns
-      .is-left
-        display: block !important
-        div
-          width: 100% !important
-        .has-margin-left-lg
-          margin-left: 0 !important
 
 
 
