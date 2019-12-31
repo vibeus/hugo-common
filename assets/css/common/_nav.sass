@@ -1,4 +1,7 @@
 .navbar
+  .navbar-item
+    img
+      width: 7.5rem
   .navbar-start
     +tablet
       padding-left: 3rem
@@ -15,10 +18,13 @@
           padding: 0
 
   .container.is-fluid
+    +fullhd
+      padding: 0 160px
     +mobile
       padding: 0
 
   .navbar-end .buttons
+
     +tablet
       justify-content: flex-end
     +mobile
