@@ -25,11 +25,20 @@
 
   .navbar-end .buttons
 
-    +tablet
-      justify-content: flex-end
     +mobile
       justify-content: space-between
       .button
         flex: 1
         &.is-white
           border: 1px solid rgba(255, 118, 128, 0.3)
+    +tablet
+      justify-content: space-between
+      .button
+        flex: 1
+        &.is-white
+          border: 1px solid rgba(255, 118, 128, 0.3)
+    +desktop
+      justify-content: flex-end
+      .button
+        &.is-white
+          border: none
