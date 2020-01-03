@@ -3,24 +3,45 @@
 {{ $default := .resource }}
 
 {{ if .mobile }}
-  {{ $mobile := .resource.Resize (print .mobile " " .options) | resources.Fingerprint }}
-  {{ $srcset = $srcset | append (print $mobile.RelPermalink " " $mobile.Width "w") }}
-  {{ $sizes = $sizes | append (print "(max-width: 768px)" " " $mobile.Width "px") }}
-  {{ $default = $mobile }}
+  {{ $img := .resource }}
+  {{ if gt (int .resource.Width) (int (strings.TrimRight "x" .mobile)) }}
+    {{ $img = .resource.Resize (print .mobile " " .options) | resources.Fingerprint }}
+  {{ else }}
+    {{ $img = .resource.Resize (print .resource.Width "x " .options) | resources.Fingerprint }}
+  {{ end }}
+
+  {{ $srcset = $srcset | append (print $img.RelPermalink " " $img.Width "w") }}
+  {{ $sizes = $sizes | append (print "(max-width: 680px)" " " $img.Width "px") }}
+  {{ $default = $img }}
 {{ end }}
+
 {{ if .tablet }}
-  {{ $tablet := .resource.Resize (print .tablet " " .options) | resources.Fingerprint }}
-  {{ $srcset = $srcset | append (print $tablet.RelPermalink " " $tablet.Width "w") }}
-  {{ $sizes = $sizes | append (print "(max-width: 768px)" " " $tablet.Width "px") }}
-  {{ $default = $tablet }}
+  {{ $img := .resource }}
+  {{ if gt (int .resource.Width) (int (strings.TrimRight "x" .tablet)) }}
+    {{ $img = .resource.Resize (print .tablet " " .options) | resources.Fingerprint }}
+  {{ else }}
+    {{ $img = .resource.Resize (print .resource.Width "x " .options) | resources.Fingerprint }}
+  {{ end }}
+
+  {{ $srcset = $srcset | append (print $img.RelPermalink " " $img.Width "w") }}
+  {{ $sizes = $sizes | append (print "(max-width: 1024px)" " " $img.Width "px") }}
+  {{ $default = $img }}
 {{ end }}
+
 {{ if .desktop }}
-  {{ $desktop := .resource.Resize (print .desktop " " .options) | resources.Fingerprint }}
-  {{ $srcset = $srcset | append (print $desktop.RelPermalink " " $desktop.Width "w") }}
-  {{ $sizes = $sizes | append (print "(max-width: 768px)" " " $desktop.Width "px") }}
-  {{ $default = $desktop }}
+  {{ $img := .resource }}
+  {{ if gt (int .resource.Width) (int (strings.TrimRight "x" .desktop)) }}
+    {{ $img = .resource.Resize (print .desktop " " .options) | resources.Fingerprint }}
+  {{ else }}
+    {{ $img = .resource.Resize (print .resource.Width "x " .options) | resources.Fingerprint }}
+  {{ end }}
+
+  {{ $srcset = $srcset | append (print $img.RelPermalink " " $img.Width "w") }}
+  {{ $sizes = $sizes | append (print $img.Width "px") }}
+  {{ $default = $img }}
 {{ end }}
+
 <img setset="{{ delimit $srcset "," }}"
      sizes="{{ delimit $sizes "," }}"
      src="{{ $default.RelPermalink }}"
-     alt="{{ .resource.Name }}" />
+     alt="{{ default .resource.Name .alt }}" />
