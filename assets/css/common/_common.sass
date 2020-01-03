@@ -19,12 +19,17 @@ $navbar-dropdown-item-hover-color: #0052f1
 $link: #24374e
 $link-hover: #0052f1
 
+$tablet: 680px
+
 @import 'bulma/bulma.sass'
 
 @import './_font.sass'
 @import './_foot.sass'
 @import './_mixins.sass'
 @import './_nav.sass'
+
+@function px-to-rem($px)
+  @return ($px/16) * 1rem
 
 ul.icon-list
   list-style: none
