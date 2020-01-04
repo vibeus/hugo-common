@@ -47,9 +47,9 @@
                {{ end }}
               >
               {{ with .icon }}
-              <span class="icon {{ .class }}">
+              <span class="icon{{ with .class }} {{ . }} {{ end }}">
                 {{ with .mdi }}
-                <i class="mdi {{ . }}"></i>
+                {{ partial "common/mdi" . }}
                 {{ end }}
               </span>
               {{ end }}

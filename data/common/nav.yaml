@@ -20,7 +20,7 @@ extra:
     class: is-white has-text-weight-normal request-demo-trigger
     target: _blank
     icon:
-      mdi: mdi-18px mdi-account
+      mdi: account
     data:
       - key: target
         value: request-demo-modal
