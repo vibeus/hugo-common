@@ -41,7 +41,7 @@
   {{ $default = $img }}
 {{ end }}
 
-<img setset="{{ delimit $srcset "," }}"
+<img srcset="{{ delimit $srcset "," }}"
      sizes="{{ delimit $sizes "," }}"
      src="{{ $default.RelPermalink }}"
      alt="{{ default .resource.Name .alt }}" />
