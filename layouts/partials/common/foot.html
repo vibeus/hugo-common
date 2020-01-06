@@ -4,8 +4,8 @@
       <div class="columns">
         <div class="column is-one-third">
           <figure class="image is-foot-logo">
-            {{ $footIcon := resources.Get "img/common/foot-icon.svg" | resources.Minify | resources.Fingerprint }}
-            <img src="{{ $footIcon.Permalink }}" alt="vibe icon" />
+            {{ $src := resources.Get "img/common/foot-icon.svg" }}
+            {{ $src.Content | safeHTML }}
           </figure>
         </div>
         <div class="column">
@@ -32,8 +32,8 @@
 
   <div class="section is-vibe-foot-contact">
     <div class="container">
-      <div class="columns is-vcentered">
-        <div class="column is-left">
+      <div class="foot-contact">
+        <div class="is-left">
           <div>
             <a href="tel:+1-864-335-2007" target="_blank">
               <span class="icon">
@@ -42,9 +42,9 @@
               <span>+1 (864) 335-2007</span>
             </a>
           </div>
-          <div>&copy; Copyright 2020 Vibe, Inc.</div>
+          <div>&copy; Copyright 2020 Vibe Inc.</div>
         </div>
-        <div class="column is-right">
+        <div class="is-right">
           <a href="https://twitter.com/thevibeboard" target="_blank">
             <span class="icon is-medium">
               {{ partial "common/mdi" "twitter:24" }}

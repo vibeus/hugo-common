@@ -7,8 +7,8 @@
   <div class="container is-fluid">
     <div class="navbar-brand">
       <a class="navbar-item" href="{{ "/" | absURL }}">
-        {{ $src := resources.Get "img/common/vibe-brand.png" | resources.Fingerprint }}
-        <img src="{{ $src.Permalink }}" alt="{{ $src.Name }}" />
+        {{ $src := resources.Get "img/common/vibe-brand.svg" }}
+        {{ $src.Content | safeHTML }}
       </a>
       <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="nav-menu">
         <span aria-hidden="true"></span>

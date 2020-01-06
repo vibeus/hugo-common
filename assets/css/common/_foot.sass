@@ -1,35 +1,29 @@
-$foot-mobile-container-max-width: 90%
-
 .section.is-vibe-foot
-  padding-top: 7rem
-  padding-bottom: 7rem
+  padding: 7rem 3rem
   background: white
 
-  +mobile
-    .container.about
-      max-width: $foot-mobile-container-max-width
+  > .container
+    max-width: 1200px
 
   +mobile
     .columns.is-links
       padding-top: 1.5rem
 
   .image.is-foot-logo
-    width: 162px
-    height: 46px
     margin-top: -14px
 
     +mobile
-      width: 122px
       margin-top: 1rem
 
   .column.is-foot-section
-    font-size: 0.9167rem
+    min-width: 140px
+    font-size: px-to-rem(18)
 
     .foot-link
       margin-bottom: 1.2rem
 
     h2
-      font-size: 1.5rem
+      font-size: px-to-rem(24)
       margin-bottom: 2rem
 
       +mobile
@@ -37,43 +31,48 @@ $foot-mobile-container-max-width: 90%
 
 .section.is-vibe-foot-contact
   border-top: 1px solid #F2F2F2
-  padding: 0 1rem
+  padding: 25px 3rem
 
-  +mobile
-    .container
-      padding-top: 1rem
-      max-width: $foot-mobile-container-max-width
+  > .container
+    max-width: 1200px
 
-  .columns
-    margin-top: 0
-
-  .column.is-left
+  .foot-contact
     display: flex
-    align-items: center
-    color: #505F71
-    fill: #505F71
-    a
-      color: #505F71
-      display: flex
-      align-items: center
-    > div:first-child
-      margin-right: 2rem
-
-    @media screen and (max-width: 480px)
-      display: block
-
-  .column.is-right
-    text-align: right
-    a
-      fill: #B3B3B3
-      &:hover
-        fill: $link-hover
-
-      &:not(:first-child)
-        margin-left: 0.5rem
+    justify-content: space-between
 
     +mobile
-      text-align: left
+      display: block
+
+    .is-left
+      display: flex
+      align-items: center
+      color: #505F71
+      fill: #505F71
+      a
+        color: #505F71
+        display: flex
+        align-items: center
+      > div:first-child
+        margin-right: 2rem
+
+      @media screen and (max-width: 480px)
+        display: block
+        div:first-child
+          margin-bottom: 1rem
+
+    .is-right
+      text-align: right
+      a
+        fill: #B3B3B3
+        &:hover
+          fill: $link-hover
+
+        &:not(:first-child)
+          margin-left: 0.5rem
+
+      +mobile
+        text-align: left
+        margin-top: 3rem
 
 
 
