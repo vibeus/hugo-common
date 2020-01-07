@@ -2,7 +2,7 @@
   {{ range . }}
   <li>
     <span class="icon">
-      <i class="mdi {{ .icon }}"></i>
+      {{ partial "common/mdi" .icon }}
     </span>
     {{ .title | markdownify }}
   </li>
