@@ -4,7 +4,7 @@
       width: 7.5rem
   .navbar-start
     +tablet
-      padding-left: 3rem
+      padding-left: 2.3rem
 
       .navbar-item
         padding-left: 0.7rem
@@ -24,9 +24,12 @@
       padding: 0
 
   .navbar-end .buttons
+    +tablet-only
+      padding: 0 2.25rem
     +touch
-      justify-content: space-between
+      display: block
       .button
-        flex: 1
+        display: block
+        margin-right: 0
         &.is-white
           border: 1px solid rgba(255, 118, 128, 0.3)
