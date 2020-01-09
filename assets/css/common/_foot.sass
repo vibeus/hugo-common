@@ -1,5 +1,10 @@
 .section.is-vibe-foot
-  padding: 8rem 3rem
+  padding: 7.25rem 3rem
+  +mobile
+    padding: 5rem 3rem
+  +widescreen
+    padding: 8.75rem 3rem
+
   background: white
 
   > .container
@@ -10,20 +15,37 @@
       padding-top: 1.5rem
 
   .image.is-foot-logo
-    margin-top: -28px
+    svg
+      width: 80px
+      height: auto
+      +mobile
+        width: 60px
+      +widescreen
+        width: 100px
+
+    margin-top: -16px
+    +widescreen
+      margin-top: -19px
 
     +mobile
       margin-top: 1rem
 
   .column.is-foot-section
     min-width: 140px
-    font-size: px-to-rem(18)
+    font-size: px-to-rem(14)
+    +widescreen
+      font-size: px-to-rem(18)
+    +mobile
+      font-size: px-to-rem(16)
 
     .foot-link
       margin-bottom: 1.2rem
 
     h2
-      font-size: px-to-rem(24)
+      font-size: px-to-rem(18)
+      +widescreen
+        font-size: px-to-rem(24)
+
       margin-bottom: 2rem
 
       +mobile
@@ -32,6 +54,8 @@
 .section.is-vibe-foot-contact
   border-top: 1px solid #F2F2F2
   padding: 25px 3rem
+  +mobile
+    padding: 25px 1.5rem
 
   > .container
     max-width: 1200px
@@ -39,6 +63,10 @@
   .foot-contact
     display: flex
     justify-content: space-between
+    font-size: px-to-rem(14)
+
+    +widescreen
+      font-size: px-to-rem(18)
 
     +mobile
       display: block
@@ -46,19 +74,25 @@
     .is-left
       display: flex
       align-items: center
+      justify-content: space-between
       color: #505F71
       fill: #505F71
       a
         color: #505F71
-        display: flex
+        display: inline-flex
         align-items: center
-      > div:first-child
-        margin-right: 2rem
 
-      @media screen and (max-width: 480px)
+      +mobile
+        max-width: 380px
+        margin: auto
+
+      +tablet
+        > div:first-child
+          margin-right: 2rem
+
+      +until(350px)
         display: block
-        div:first-child
-          margin-bottom: 1rem
+        text-align: center
 
     .is-right
       text-align: right
@@ -71,8 +105,8 @@
           margin-left: 0.5rem
 
       +mobile
-        text-align: left
-        margin-top: 3rem
+        text-align: center
+        margin-top: 1rem
 
 
 

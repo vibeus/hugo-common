@@ -1,9 +1,12 @@
 .navbar
-  .navbar-item
-    img
-      width: 7.5rem
+  .navbar-burger span
+    height: 2px
+
+  .navbar-item img
+    width: 7.5rem
+
   .navbar-start
-    +tablet
+    +from($navbar-breakpoint)
       padding-left: 2.3rem
 
       .navbar-item
@@ -17,19 +20,36 @@
         &.has-dropdown
           padding: 0
 
+    +until($navbar-breakpoint)
+      padding-left: 48px - 12px
+      margin-top: 60px - 8px
+      margin-bottom: 80px - 8px
+
+      +mobile
+        padding-left: 0
+        margin-top: 40px - 8px
+        margin-bottom: 60px - 8px
+      .navbar-item
+        font-size: px-to-rem(20)
+        margin: 32px 0
+
   .container.is-fluid
     @media screen and (min-width: 1920px)
       padding: 0 160px
-    +touch
+    +until($navbar-breakpoint)
       padding: 0
 
   .navbar-end .buttons
-    +tablet-only
-      padding: 0 2.25rem
-    +touch
-      display: block
+    @media screen and (min-width: $tablet) and (max-width: $navbar-breakpoint)
+      padding: 0 48px - 12px
+
+    +until($navbar-breakpoint)
+      flex-direction: column
+      align-items: stretch
       .button
-        display: block
+        display: inline-flex
         margin-right: 0
         &.is-white
           border: 1px solid rgba(255, 118, 128, 0.3)
+          color: #FF7680
+          fill: #FF7680
