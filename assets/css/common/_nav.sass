@@ -1,4 +1,7 @@
 .navbar
+  background-color: #ffffff
+  box-shadow: 0 1px 1px rgba(0,0,0,0.05)
+
   .navbar-burger span
     height: 2px
 
@@ -21,15 +24,17 @@
           padding: 0
 
     +until($navbar-breakpoint)
-      padding-left: 48px - 12px
       margin-top: 60px - 8px
       margin-bottom: 80px - 8px
 
       +mobile
-        padding-left: 0
         margin-top: 40px - 8px
         margin-bottom: 60px - 8px
       .navbar-item
+        padding-left: 48px
+        +mobile
+          padding-left: 12px
+
         font-size: px-to-rem(20)
         margin: 32px 0
 
@@ -53,3 +58,9 @@
           border: 1px solid rgba(255, 118, 128, 0.3)
           color: #FF7680
           fill: #FF7680
+        &:hover
+          opacity: 0.7
+        &.is-danger:hover
+          background-color: $danger
+        &.is-white:hover
+          background-color: transparent
