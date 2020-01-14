@@ -1,9 +1,20 @@
 .navbar
   background-color: #ffffff
-  box-shadow: 0 1px 1px rgba(0,0,0,0.05)
 
-  .navbar-burger span
-    height: 2px
+  +from($navbar-breakpoint)
+    box-shadow: 0 1px 1px rgba(0,0,0,0.05)
+
+  +until($navbar-breakpoint)
+    .navbar-brand
+      background: #fff
+      position: relative
+      box-shadow: 0 1px 1px rgba(0,0,0,.05)
+
+  .navbar-burger
+    &:hover
+      background: #ffffff
+    span
+      height: 2px
 
   .navbar-item img
     width: 7.5rem
@@ -31,6 +42,8 @@
         margin-top: 40px - 8px
         margin-bottom: 60px - 8px
       .navbar-item
+        &:hover
+          color: $link
         padding-left: 48px
         +mobile
           padding-left: 12px
@@ -48,19 +61,23 @@
     @media screen and (min-width: $tablet) and (max-width: $navbar-breakpoint)
       padding: 0 48px - 12px
 
+    .button
+      &.is-white
+        border: 1px solid rgba(255, 118, 128, 0.3)
+        color: #FF7680
+        fill: #FF7680
+      &.is-white:hover
+        border: 1px solid rgba(255, 118, 128, 0.6)
+        background-color: transparent
+
     +until($navbar-breakpoint)
       flex-direction: column
       align-items: stretch
       .button
         display: inline-flex
         margin-right: 0
-        &.is-white
-          border: 1px solid rgba(255, 118, 128, 0.3)
-          color: #FF7680
-          fill: #FF7680
-        &:hover
-          opacity: 0.7
-        &.is-danger:hover
-          background-color: $danger
-        &.is-white:hover
-          background-color: transparent
+        height: 64px
+        margin-bottom: 16px
+        +mobile
+          height: 48px
+          margin-bottom: 12px
