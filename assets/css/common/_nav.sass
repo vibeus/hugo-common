@@ -62,6 +62,8 @@
       padding: 0 48px - 12px
 
     .button
+      font-weight: 500
+
       &.is-white
         border: 1px solid rgba(255, 118, 128, 0.3)
         color: #FF7680
@@ -69,6 +71,8 @@
       &.is-white:hover
         border: 1px solid rgba(255, 118, 128, 0.6)
         background-color: transparent
+      &:not(:last-child)
+        margin-right: 2rem
 
     +until($navbar-breakpoint)
       flex-direction: column
@@ -78,6 +82,8 @@
         margin-right: 0
         height: 64px
         margin-bottom: 16px
+        font-size: px-to-rem(20)
         +mobile
           height: 48px
           margin-bottom: 12px
+          font-size: 1rem

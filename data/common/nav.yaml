@@ -17,7 +17,7 @@ menu:
 extra:
   - title: Request Demo
     url: https://landing.vibe.us/request-demo
-    class: is-white has-text-weight-normal request-demo-trigger
+    class: is-white request-demo-trigger
     target: _blank
     icon:
       mdi: account
