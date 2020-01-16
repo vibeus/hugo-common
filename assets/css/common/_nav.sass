@@ -4,6 +4,11 @@
   +from($navbar-breakpoint)
     box-shadow: 0 1px 1px rgba(0,0,0,0.05)
 
+    .navbar-brand .navbar-item
+      // make vibe brand logo visually align with menu items.
+      padding-top: 4px
+      padding-bottom: 12px
+
   +until($navbar-breakpoint)
     .navbar-brand
       background: #fff
@@ -73,7 +78,7 @@
         background-color: transparent
       +from($navbar-breakpoint)
         &:not(:last-child)
-          margin-right: 24px
+          margin-right: 16px
 
     +until($navbar-breakpoint)
       flex-direction: column

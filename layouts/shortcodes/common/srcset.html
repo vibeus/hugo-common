@@ -1,3 +1,6 @@
 <p>
 {{ partial "common/srcset" (dict "resource" (.Page.Resources.GetMatch (.Get 0)) "desktop" "1400x" "tablet" "700x" "options" "jpg" "alt" (.Get 1)) }}
+{{ with (.Get 1) }}
+<span class="caption">{{ . }}</span>
+{{ end }}
 </p>
