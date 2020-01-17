@@ -6,7 +6,7 @@ sections:
       - title: Jobs
         url: https://angel.co/inlight-interactive/jobs
         target: _blank
-      - title: Blogs
+      - title: Blog
         url: /blog/
       - title: Contact
         url: /contact/
