@@ -10,7 +10,7 @@
     {{ $src := resources.Get "img/common/favicon.png" | resources.Fingerprint }}
     <link rel="shortcut icon" href="{{ $src.Permalink }}" />
     {{ if .Site.Params.stylesPath }}
-      {{ $sass := resources.Get .Site.Params.stylesPath }}
+      {{ $sass := resources.Get (default .Site.Params.stylesPath .Page.Params.stylesPath) }}
       {{ $style := $sass | resources.ToCSS (dict "outputStyle" "compressed" "includePaths" (slice "node_modules" "assets/css/common")) }}
       <style>
         {{ $style.Content | safeCSS }}
