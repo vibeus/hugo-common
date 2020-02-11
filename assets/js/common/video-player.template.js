@@ -3,7 +3,7 @@ import { toggleActive } from '{{ $src.RelPermalink }}';
 
 let loadingPlayer = false;
 let videoPlayer = null;
-let modalVisible = false;
+let playerActive = false;
 
 function setupYoutubePlayer(playerId, videoId) {
   loadingPlayer = true;
@@ -21,7 +21,7 @@ function setupYoutubePlayer(playerId, videoId) {
       events: {
         'onReady': () => {
           videoPlayer = player;
-          if (modalVisible) {
+          if (playerActive) {
             player.playVideo();
           }
         },
@@ -30,8 +30,14 @@ function setupYoutubePlayer(playerId, videoId) {
   }
 }
 
-toggleActive('{{ .triggerClass }}, #{{ .playerId }} .modal-close, #{{ .playerId }} .modal-background', false, isActive => {
-  modalVisible = isActive;
+{{ if not .isInplace }}
+const toggleClass = '{{ .triggerClass }}, #{{ .playerId }} .modal-close, #{{ .playerId }} .modal-background';
+{{ else }}
+const toggleClass = '{{ .triggerClass }}';
+{{ end }}
+
+toggleActive(toggleClass, false, isActive => {
+  playerActive = isActive;
 
   if (isActive) {
     if (videoPlayer) {
