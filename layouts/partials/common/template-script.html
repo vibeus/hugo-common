@@ -1,3 +1,6 @@
-{{ $path := replace .asset ".template." "." }}
+{{ $path := .targetPath }}
+{{ if not $path }}
+{{ errorf "targetPath is not provided for asset %s" .asset }}
+{{ end }}
 {{ $js := resources.Get .asset | resources.ExecuteAsTemplate $path . | resources.Minify | resources.Fingerprint }}
 <script src="{{ $js.RelPermalink }}" type="module" integrity="{{ $js.Data.Integrity }}"></script>
