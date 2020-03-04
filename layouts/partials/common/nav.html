@@ -3,7 +3,7 @@
   role="navigation"
   aria-label="main navigation"
 >
-  {{ partial "common/template-script" (dict "asset" "js/common/nav.template.js") }}
+  {{ partial "common/template-script" (dict "targetPath" "js/common/nav.js" "asset" "js/common/nav.template.js") }}
   <div class="container is-fluid">
     <div class="navbar-brand">
       <a class="navbar-item" href="{{ "/" | absURL }}">
@@ -63,4 +63,4 @@
   </div>
 </nav>
 
-{{ partial "common/iframe-modal" (dict "iframeModalId" "request-demo-modal" "triggerClass" ".request-demo-trigger") }}
+{{ partial "common/iframe-modal" (dict "targetPath" "js/common/nav-modal.js" "iframeModalId" "request-demo-modal" "triggerClass" ".request-demo-trigger") }}
