@@ -10,6 +10,11 @@
         {{ $src := resources.Get "img/common/vibe-brand.svg" }}
         {{ $src.Content | safeHTML }}
       </a>
+      {{ range .Site.Data.common.nav.extra }}
+      {{ if .in_brand_mobile }}
+        {{ partial "common/nav-extra-button" . }}
+      {{ end }}
+      {{ end }}
       <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="nav-menu">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
@@ -39,22 +44,7 @@
         <div class="navbar-item">
           <div class="buttons">
             {{ range .Site.Data.common.nav.extra }}
-            <a class="button {{ .class }}"
-               href="{{ .url | absURL }}"
-               {{ with .target }}target="{{ . }}"{{ end }}
-               {{ range .data }}
-               data-{{ .key }}="{{ .value }}"
-               {{ end }}
-              >
-              {{ with .icon }}
-              <span class="icon{{ with .class }} {{ . }} {{ end }}">
-                {{ with .mdi }}
-                {{ partial "common/mdi" . }}
-                {{ end }}
-              </span>
-              {{ end }}
-              <span>{{ .title }}</span>
-            </a>
+            {{ partial "common/nav-extra-button" . }}
             {{ end }}
           </div>
         </div>

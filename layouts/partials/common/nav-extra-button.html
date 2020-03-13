@@ -1,0 +1,16 @@
+<a class="button {{ .class }}"
+   href="{{ .url | absURL }}"
+   {{ with .target }}target="{{ . }}"{{ end }}
+   {{ range .data }}
+   data-{{ .key }}="{{ .value }}"
+   {{ end }}
+   >
+   {{ with .icon }}
+   <span class="icon{{ with .class }} {{ . }} {{ end }}">
+     {{ with .mdi }}
+     {{ partial "common/mdi" . }}
+     {{ end }}
+   </span>
+  {{ end }}
+  <span>{{ .title }}</span>
+</a>

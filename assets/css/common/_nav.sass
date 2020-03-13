@@ -15,6 +15,18 @@
       position: relative
       box-shadow: 0 1px 1px rgba(0,0,0,.05)
 
+  .navbar-brand
+    .button.is-in-brand-mobile
+      font-size: 14px
+      position: absolute
+      top: 50%
+      right: 64px
+      margin-top: -18px
+      background-color: $nav-cta-color
+      color: white
+      +from($navbar-breakpoint)
+        display: none
+
   .navbar-burger
     &:hover
       background: #ffffff
@@ -69,16 +81,13 @@
     .button
       font-weight: 500
 
-      &.is-white
-        border: 1px solid rgba(255, 118, 128, 0.3)
-        color: #FF7680
-        fill: #FF7680
-      &.is-white:hover
-        border: 1px solid rgba(255, 118, 128, 0.6)
-        background-color: transparent
       +from($navbar-breakpoint)
         &:not(:last-child)
           margin-right: 16px
+
+      +until($navbar-breakpoint)
+        &.is-in-brand-mobile
+          display: none
 
     +until($navbar-breakpoint)
       flex-direction: column
@@ -93,3 +102,16 @@
           height: 48px
           margin-bottom: 12px
           font-size: 1rem
+
+  .button
+    &.is-white
+      border: 1px solid $nav-cta-border
+      color: $nav-cta-color
+      fill: $nav-cta-color
+    &.is-white:hover
+      border: 1px solid $nav-cta-color
+      background-color: transparent
+    &.is-danger
+      background-color: $nav-cta-color
+    &.is-danger:hover
+      background-color: darken($nav-cta-color, 2.5%)

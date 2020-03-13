@@ -1,4 +1,5 @@
 <footer>
+  {{ if not .Params.foot_contact_bar_only }}
   <div class="section is-vibe-foot">
     <div class="container about">
       <div class="columns">
@@ -29,6 +30,7 @@
       </div>
     </div>
   </div>
+  {{ end }}
 
   <div class="section is-vibe-foot-contact">
     <div class="container">

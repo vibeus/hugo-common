@@ -17,10 +17,9 @@ menu:
 extra:
   - title: Request Demo
     url: https://landing.vibe.us/request-demo
-    class: is-white request-demo-trigger
+    class: is-white request-demo-trigger is-in-brand-mobile
     target: _blank
-    icon:
-      mdi: account
+    in_brand_mobile: true
     data:
       - key: target
         value: request-demo-modal
