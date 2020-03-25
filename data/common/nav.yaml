@@ -15,6 +15,11 @@ menu:
   #       url: /doc/VibeSpecs.pdf
   #       target: _blank
 extra:
+  - title: Try the App
+    url: https://app.vibe.us
+    class: is-white is-try-app is-in-brand-mobile
+    target: _blank
+    in_brand_mobile: true
   - title: Request Demo
     url: https://landing.vibe.us/request-demo
     class: is-white request-demo-trigger is-in-brand-mobile
@@ -23,7 +28,6 @@ extra:
     data:
       - key: target
         value: request-demo-modal
-  - title: Order Now
+  - title: Order a Vibe
     url: https://order.vibe.us
     class: is-danger is-nav-cart
-

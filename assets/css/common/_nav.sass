@@ -95,7 +95,6 @@
       flex-direction: column
       align-items: stretch
       .button
-        display: inline-flex
         margin-right: 0
         height: 64px
         margin-bottom: 16px
@@ -117,3 +116,13 @@
       background-color: $nav-cta-color
     &.is-danger:hover
       background-color: darken($nav-cta-color, 2.5%)
+    +mobile
+      &.is-try-app
+        display: none
+      &.request-demo-trigger
+        display: inherit
+    +tablet
+      &.is-try-app
+        display: inherit
+      &.request-demo-trigger
+        display: none
