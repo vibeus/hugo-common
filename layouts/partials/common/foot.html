@@ -16,7 +16,7 @@
               <h2 class="is-vibe-heading">{{ .heading }}</h2>
               {{ range .links }}
               <div class="foot-link">
-                <a href="{{ .url | absURL }}"
+                <a href="{{ .url }}"
                    {{ with .target }}target="{{ . }}"{{ end }}
                    {{ with .class }}class="{{ . }}"{{ end }}>
                   {{ .title}}

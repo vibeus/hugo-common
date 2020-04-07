@@ -10,33 +10,33 @@ sections:
       - title: Contact
         url: /contact/
       - title: Press kit
-        url: /doc/Vibe_Press_Kit_20190318.pdf
+        url: /resources/Vibe_Press_Kit.pdf
+        target: _blank
   - heading: Product
     links:
-      - title: Join a board
-        url: https://app.vibe.us
       - title: Sign in
         url: https://app.vibe.us
       - title: Meet the Vibe
-        url: /product/
+        url: /hardware/
       - title: Specifications
-        url: /doc/VibeSpecs.pdf
+        url: /resources/Vibe_Tech_Specs.pdf
+        target: _blank
       - title: Brochure
-        url: /doc/VibeBrochure.pdf
+        url: /resources/Vibe_Brochure.pdf
+        target: _blank
       - title: Order
         url: /order/
   - heading: Resources
     links:
       - title: Help center
-        url: https://knowledge.vibe.us
+        url: https://help.vibe.us
+        target: _blank
       - title: Security
         url: /security/
       - title: Privacy
-        url: /documents/privacy/
+        url: /privacy/
       - title: Warranty
-        url: /documents/warranty/
-      - title: Site map
-        url: /sitemap.xml
+        url: /warranty/
   - heading: Sales
     links:
       - title: Request a demo
