@@ -3,7 +3,7 @@
   role="navigation"
   aria-label="main navigation"
 >
-  {{ partial "common/template-script" (dict "targetPath" "js/common/nav.js" "asset" "js/common/nav.template.js") }}
+  {{ partial "common/template-script" (dict "asset" "js/common/nav.template.js") }}
   <div class="container is-fluid">
     <div class="navbar-brand">
       <a class="navbar-item" href="{{ "/" | absURL }}">
@@ -27,13 +27,15 @@
           {{ if .submenu }}
             <div class="navbar-item has-dropdown is-hoverable">
               <span class="navbar-link">{{ .title }}</span>
-            {{ range .submenu }}
-            <a class="navbar-item"
-               href="{{ .url | absURL }}"
-               {{ with .target }}target="{{ . }}"{{ end }}>
-              {{ .title }}
-            </a>
-            {{ end }}
+              <div class="navbar-dropdown is-boxed">
+                {{ range .submenu }}
+                <a class="navbar-item"
+                   href="{{ .url | absURL }}"
+                   {{ with .target }}target="{{ . }}"{{ end }}>
+                  {{ .title }}
+                </a>
+                {{ end }}
+              </div>
             </div>
           {{ else }}
           <a class="navbar-item" href="{{ .url | absURL }}">{{ .title }}</a>
@@ -52,5 +54,3 @@
     </div>
   </div>
 </nav>
-
-{{ partial "common/iframe-modal" (dict "targetPath" "js/common/nav-modal.js" "iframeModalId" "request-demo-modal" "triggerClass" ".request-demo-trigger") }}

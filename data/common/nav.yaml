@@ -1,29 +1,39 @@
 menu:
-  - title: Meet the Vibe
-    url: /product/
-  # - title: Use Cases
-  #   url: /use-cases/
-  - title: Blog
-    url: /blog/
-  - title: Support
-    url: https://knowledge.vibe.us
-  - title: Contact Sales
-    url: /contact/
-  # - title: More
-  #   submenu:
-  #     - title: Tech Specs
-  #       url: /doc/VibeSpecs.pdf
-  #       target: _blank
+  - title: Product
+    submenu:
+      - title: Vibe Hardware
+        url: /hardware/
+      - title: Vibe Software
+        url: /software/
+      - title: Security
+        url: /security/
+      - title: Product Comparison
+        url: /comparison/
+      - title: Customer Testimonials
+        url: /customer/
+  - title: Resources
+    submenu:
+      - title: Blogs
+        url: /blog/
+      - title: Help Center
+        url: https://help.vibe.us
+      - title: Contact Sales
+        url: /contact/
+      - title: Buyer's FAQ
+        url: https://knowledge.vibe.us/buyers-faq
+  - title: About Us
+    url: /about/
+
 extra:
-  - title: Request Demo
-    url: https://landing.vibe.us/request-demo
-    class: is-white request-demo-trigger is-in-brand-mobile
+  - title: Try the App
+    url: https://app.vibe.us
+    class: is-primary is-outlined is-rounded is-try-app is-in-brand-mobile
     target: _blank
     in_brand_mobile: true
-    data:
-      - key: target
-        value: request-demo-modal
-  - title: Order Now
-    url: https://order.vibe.us
-    class: is-danger is-nav-cart
-
+  - title: Request Demo
+    url: /demo/
+    class: is-primary is-outlined is-rounded request-demo-trigger is-in-brand-mobile
+    in_brand_mobile: true
+  - title: Order a Vibe
+    url: /order/
+    class: is-primary is-rounded is-nav-cart

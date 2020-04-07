@@ -17,10 +17,12 @@
       </style>
     {{ end }}
     {{ $firaSansRegular := dict "fontFamily" "Fira Sans" "localNames" (slice "Fira Sans Regular") "ttf" "fonts/common/FiraSans-Regular.ttf" }}
-    {{ $firaSansMedium := dict "fontFamily" "Fira Sans" "localNames" (slice "Fira Sans Medium") "ttf" "fonts/common/FiraSans-Medium.ttf" "fontStyle" "medium" "fontWeight" "500" }}
+    {{ $firaSansMedium := dict "fontFamily" "Fira Sans" "localNames" (slice "Fira Sans Medium") "ttf" "fonts/common/FiraSans-Medium.ttf" "fontWeight" "500" }}
     {{ $firaSansItalic := dict "fontFamily" "Fira Sans" "fontStyle" "italic" "localNames" (slice "Fira Sans Italic") "ttf" "fonts/common/FiraSans-Italic.ttf" }}
-    {{ $balooRegular := dict "fontFamily" "Baloo" "localNames" (slice "Baloo") "ttf" "fonts/common/Baloo-Regular.ttf" }}
-    {{ partial "common/font" (slice $firaSansRegular $firaSansMedium $firaSansItalic $balooRegular) }}
+    {{ $stratosRegular := dict "fontFamily" "Stratos" "localNames" (slice "Stratos Regular") "ttf" "fonts/common/stratosweb-regular.woff" }}
+    {{ $stratosSemibold := dict "fontFamily" "Stratos" "localNames" (slice "Stratos Semibold") "ttf" "fonts/common/stratosweb-semibold.woff" "fontWeight" "500" }}
+    {{ $stratosBold := dict "fontFamily" "Stratos" "localNames" (slice "Stratos Bold") "ttf" "fonts/common/stratosweb-semibold.woff" "fontWeight" "600" }}
+    {{ partial "common/font" (slice $firaSansRegular $firaSansMedium $firaSansItalic $stratosRegular $stratosSemibold) }}
     {{ block "stylesheets" . }}{{ end }}
     {{ block "scripts" . }}{{ end }}
     {{ with .Site.Params.gtmId }}

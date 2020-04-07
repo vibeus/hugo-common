@@ -1,8 +1,13 @@
-.content.has-vibe-heading
-  h1, h2, h3
-    font-family: $vibe-title-font-family
-    font-weight: $vibe-title-font-weight
+.content
+  h1, h2, h3, h4, h5, h6
+    font-family: $vibe-family-heading
 
-.is-vibe-heading
-  font-family: $vibe-title-font-family
-  font-weight: $vibe-title-font-weight
+.title.is-section-title
+  font-size: 50px
+  +mobile
+    font-size: 32px
+
+.subtitle.is-section-title
+  font-size: 24px
+  +mobile
+    font-size: 18px

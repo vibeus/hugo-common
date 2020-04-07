@@ -1,0 +1,71 @@
+<h1 class="title">{{ .title }}</h1>
+{{ $method := default "POST" .method }}
+<form class="form is-vibe-form" method="{{ $method }}" action="{{ .action }}">
+  {{ range .controls }}
+  <div class="columns">
+    {{ range . }}
+    <div class="column">
+      <div class="control">
+        {{ if .dropdown }}
+        <div class="select is-fullwidth">
+          <select class="placeholder" name="{{ .name }}">
+            <option value="" disabled selected hidden>{{ .placeholder }}</option>
+            {{ range .dropdown }}
+            <option>{{ . }}</option>
+            {{ end }}
+          </select>
+        </div>
+        {{ else if eq .type "textarea" }}
+        <textarea name="{{ .name }}"
+                  class="textarea{{ with .class }} {{ . }}{{ end }}"
+                  placeholder="{{ .placeholder }}"
+                  {{ if .required }}required{{ end }}
+                  ></textarea>
+        {{ else }}
+        {{ $type := default "input" .type }}
+        {{ $class := default "input" .class }}
+        <input name="{{ .name }}"
+               class="{{ $class }}"
+               type="{{ $type }}"
+               placeholder="{{ .placeholder }}"
+               value="{{ .value }}"
+               {{ if .required }}required{{ end }}
+               />
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
+  </div>
+  {{ end }}
+  <div class="privacy">
+    Read our <a href="#">Privacy Policy</a>
+  </div>
+
+  <div class="columns is-buttons">
+    {{ range .buttons }}
+    <div class="column">
+      {{ $type := default "input" .type }}
+      {{ $class := default "input" .class }}
+      <div class="control">
+        <button class="{{ $class }}"
+                type="{{ $type }}"
+                placeholder="{{ .placeholder }}"
+                data-name="{{ .name }}">
+          {{ .title }}
+        </button>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+
+  {{ with .submitted }}
+  <div class="submitted">
+    {{ with .title }}
+    <h2 class="title">{{ . }}</h2>
+    {{ end }}
+    <div class="content">
+      {{ .body | markdownify }}
+    </div>
+  </div>
+  {{ end }}
+</form>

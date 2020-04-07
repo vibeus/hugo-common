@@ -1,41 +1,61 @@
 @charset "utf-8"
 
-$body-family: "Fira Sans", sans-serif !default
-$navbar-height: 4rem !default
-$navbar-item-img-max-height: 2.25rem
-$navbar-background-color: rgba(255, 255, 255, 0.95)
+// vibe colors
+$vibe-black: #111111
+$vibe-purple: #6666CC
+$vibe-teal: #66CCCC
+$vibe-pink: #FF6666
+$vibe-yellow: #FFCC00
+$vibe-white: #F4F4F4
+
+// vibe fonts
+$vibe-family-body: "Fira Sans", BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif
+$vibe-family-heading: Stratos, BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif
+
+$vibe-bold: 500
+
+// override bulma literal colors
+$grey: $vibe-black
+$grey-dark: $vibe-black
+$grey-darker: $vibe-black
+
+// override bulma derived colors
+$primary: $vibe-pink
+$info: $vibe-teal
+$success: $vibe-teal
+$warning: $vibe-yellow
+$danger: $vibe-pink
+$light: $vibe-white
+$dark: $vibe-black
+$link: $vibe-black
+$link-hover: $vibe-pink
+
+// other customization
+$family-primary: $vibe-family-body !default
+$family-secondary: $vibe-family-heading !default
+$button-family: $vibe-family-heading !default
+$navbar-height: 5rem !default
+$navbar-item-img-max-height: 36px
+$navbar-item-hover-color: $primary
+$navbar-dropdown-item-hover-color: $primary
+$navbar-dropdown-arrow: $vibe-black
 $dimensions: 16 24 32 48 64 96 128 256
-$info: #143ff1
-$danger: #ff7680
-$text: #24374e
-$text-strong: #24374e
-$title-color: #24374e
-$subtitle-color: #24374e
-$subtitle-strong-color: #24374e
-$navbar-item-color: #24374e
-$navbar-item-hover-color: #0052f1
-$navbar-item-active-color: #24374e
-$navbar-dropdown-item-hover-color: #0052f1
-$link: #24374e
-$link-hover: #0052f1
-
-$tablet: 680px !default
-$navbar-breakpoint: 1025px // fold navbar for 1024px (iPad landscape)
-
-$vibe-title-font-family: Baloo !default
-$vibe-title-font-weight: normal !default
-
-$nav-cta-color: #FF7680 !default
-$nav-cta-border: rgba(255, 118, 128, 0.3) !default
+$tablet: 700px !default
+$title-family: $vibe-family-heading !default
+$title-weight: $vibe-bold !default
+$subtitle-family: $vibe-family-heading !default
+$subtitle-weight: $vibe-bold !default
+$navbar-breakpoint: 1080px
 
 @import 'bulma/bulma.sass'
 
 @function px-to-rem($px)
   @return ($px/16) * 1rem
 
+@import './_mixins.sass'
 @import './_font.sass'
 @import './_foot.sass'
-@import './_mixins.sass'
+@import './_form.sass'
 @import './_nav.sass'
 
 ul.icon-list
@@ -43,6 +63,8 @@ ul.icon-list
   span
     position: absolute
     left: 0
+  li
+    margin-left: 24px
 
 .modal.is-video-player
   .modal-content

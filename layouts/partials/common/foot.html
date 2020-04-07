@@ -34,44 +34,30 @@
 
   <div class="section is-vibe-foot-contact">
     <div class="container">
-      <div class="foot-contact">
-        <div class="is-left">
-          <div>
+      <div class="level">
+        <div class="level-left">
+          <div class="level-item">
+            <span class="icon">
+              {{ partial "common/mdi" "phone" }}
+            </span>
             <a href="tel:+1-864-335-2007" target="_blank">
-              <span class="icon">
-                {{ partial "common/mdi" "phone" }}
-              </span>
               <span>+1 (864) 335-2007</span>
             </a>
           </div>
-          <div>&copy; Copyright 2020 Vibe Inc.</div>
         </div>
-        <div class="is-right">
-          <a href="https://twitter.com/thevibeboard" target="_blank">
-            <span class="icon is-medium">
-              {{ partial "common/mdi" "twitter:24" }}
-            </span>
-          </a>
-          <a href="https://fb.me/thevibeus" target="_blank">
-            <span class="icon is-medium">
-              {{ partial "common/mdi" "facebook:24" }}
-            </span>
-          </a>
-          <a href="https://medium.com/vibe-team" target="_blank">
-            <span class="icon is-medium">
-              {{ partial "common/mdi" "medium:24" }}
-            </span>
-          </a>
-          <a href="https://www.linkedin.com/company/vibe-inc" target="_blank">
-            <span class="icon is-medium">
-              {{ partial "common/mdi" "linkedin:24" }}
-            </span>
-          </a>
-          <a href="https://www.instagram.com/the.vibe.board/" target="_blank">
-            <span class="icon is-medium">
-              {{ partial "common/mdi" "instagram:24" }}
-            </span>
-          </a>
+        <div class="level-item">
+          © Copyright 2020 Vibe, Inc. All rights reserved.
+        </div>
+        <div class="level-right">
+          <div class="level-item is-social">
+          {{ range .Site.Data.common.foot.socials }}
+            <a href="{{ .url }}" target="_blank">
+              <span class="icon">
+                {{ partial "common/mdi" .icon }}
+              </span>
+            </a>
+          {{ end }}
+          </div>
         </div>
       </div>
     </div>

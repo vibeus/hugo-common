@@ -17,3 +17,7 @@ toggleActive('{{ .triggerClass }}, #{{ .iframeModalId }} .modal-close, #{{ .ifra
     el.appendChild(f);
   }
 });
+
+
+toggleActive('.faq-title', false);
+toggleActive('.toggle-specs', true);

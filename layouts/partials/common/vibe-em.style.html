@@ -1,3 +1,5 @@
 {{ $sass := resources.Get "css/common/vibe-em.template.sass" | resources.ExecuteAsTemplate "css/common/vibe-em.sass" .}}
-{{ $style := $sass | resources.ToCSS (dict "outputStyle" "compressed" "includePaths" (slice "node_modules" "assets/css/common")) | resources.Fingerprint }}
-<link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}" />
+{{ $style := $sass | resources.ToCSS (dict "outputStyle" "compressed" "includePaths" (slice "node_modules" "assets/css/common")) }}
+<style>
+{{ $style.Content | safeCSS }}
+</style>

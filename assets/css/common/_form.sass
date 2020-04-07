@@ -1,0 +1,41 @@
+.form.is-vibe-form
+  position: relative
+  +tablet
+    .input, .select select, .button, .textarea
+      font-size: 18px
+  .input, .select select, .textarea
+    background-color: transparent
+    border: none
+    border-bottom: 1px solid $vibe-black
+    border-radius: 0
+    padding-left: 0
+    padding-right: 0
+    box-shadow: none
+    &:hover
+      border-bottom: 1px solid $info
+    &:focus
+      border-bottom: 1px solid $primary
+  .select
+    &::after
+      right: 0
+    select.placeholder
+      color: #AFAFAF
+  .textarea
+    min-height: 6em
+  .button
+    font-weight: $vibe-bold
+    height: 60px
+  .privacy
+    font-size: 14px
+    margin-top: -12px
+    text-align: right
+    a
+      text-decoration: underline
+      font-weight: $vibe-bold
+  .columns.is-buttons
+    margin-top: 32px
+  .submitted
+    display: none
+    flex-direction: column
+    justify-content: center
+    +absolute-fill

@@ -1,119 +1,78 @@
 .navbar
-  background-color: #ffffff
+  font-family: $vibe-family-heading
+  font-weight: $vibe-bold
+  font-size: 18px
+  box-shadow: 0px -1px 10px rgba(55, 55, 55, 0.1)
 
-  +from($navbar-breakpoint)
-    box-shadow: 0 1px 1px rgba(0,0,0,0.05)
-
-    .navbar-brand .navbar-item
-      // make vibe brand logo visually align with menu items.
-      padding-top: 4px
-      padding-bottom: 12px
-
-  +until($navbar-breakpoint)
-    .navbar-brand
-      background: #fff
-      position: relative
-      box-shadow: 0 1px 1px rgba(0,0,0,.05)
-
-  .navbar-brand
-    .button.is-in-brand-mobile
-      font-size: 14px
-      position: absolute
-      top: 50%
-      right: 64px
-      margin-top: -18px
-      background-color: $nav-cta-color
-      color: white
-      +from($navbar-breakpoint)
+  .button
+    font-size: 18px
+    +tablet
+      width: 157px
+      &.is-try-app
+        display: inherit
+      &.request-demo-trigger
         display: none
-      &:hover
-        background-color: darken($nav-cta-color, 2.5%)
-
-  .navbar-burger
-    &:hover
-      background: #ffffff
-    span
-      height: 2px
-
-  .navbar-item img
-    width: 7.5rem
-
-  .navbar-start
-    +from($navbar-breakpoint)
-      padding-left: 2.3rem
-
-      .navbar-item
-        padding-left: 0.7rem
-        padding-right: 0.7rem
-
-        +widescreen
-          padding-left: 1.5rem
-          padding-right: 1.5rem
-
-        &.has-dropdown
-          padding: 0
-
-    +until($navbar-breakpoint)
-      margin-top: 60px - 8px
-      margin-bottom: 80px - 8px
-
-      +mobile
-        margin-top: 40px - 8px
-        margin-bottom: 60px - 8px
-      .navbar-item
-        &:hover
-          color: $link
-        padding-left: 48px
-        +mobile
-          padding-left: 12px
-
-        font-size: px-to-rem(20)
-        margin: 32px 0
+    +mobile
+      font-size: 14px
+      &.is-try-app
+        display: none
+      &.request-demo-trigger
+        display: inherit
 
   .container.is-fluid
-    @media screen and (min-width: 1920px)
-      padding: 0 160px
+    padding: 0 40px
+    +from(1600px)
+      max-width: 1600px - 40px * 2
+      padding: 0
     +until($navbar-breakpoint)
       padding: 0
 
-  .navbar-end .buttons
-    @media screen and (min-width: $tablet) and (max-width: $navbar-breakpoint)
-      padding: 0 48px - 12px
-
-    .button
-      font-weight: 500
-
+  // show button on navbar-brand so that it is visible on mobile.
+  .navbar-brand
+    position: relative
+    .button.is-in-brand-mobile
+      position: absolute
+      top: 50%
+      right: 64px
+      margin-top: -(45px / 2)
+      z-index: 1
+      +mobile
+        margin-top: -(35px / 2)
       +from($navbar-breakpoint)
-        &:not(:last-child)
-          margin-right: 16px
+        display: none
 
+  // hide button on menu when it is shown on navbar-brand
+  .navbar-menu
+    .button.is-in-brand-mobile
       +until($navbar-breakpoint)
-        &.is-in-brand-mobile
-          display: none
+        display: none
 
+  // move navbar-end button to the right side when navbar is collapsed
+  .navbar-end .buttons
     +until($navbar-breakpoint)
-      flex-direction: column
-      align-items: stretch
-      .button
-        display: inline-flex
-        margin-right: 0
-        height: 64px
-        margin-bottom: 16px
-        font-size: px-to-rem(20)
-        +mobile
-          height: 48px
-          margin-bottom: 12px
-          font-size: 1rem
+      justify-content: flex-end
 
-  .button
-    &.is-white
-      border: 1px solid $nav-cta-border
-      color: $nav-cta-color
-      fill: $nav-cta-color
-    &.is-white:hover
-      border: 1px solid $nav-cta-color
-      background-color: transparent
-    &.is-danger
-      background-color: $nav-cta-color
-    &.is-danger:hover
-      background-color: darken($nav-cta-color, 2.5%)
+  +from($navbar-breakpoint)
+    // keep brand logo and navbar start (menus) 80px when not collapsed.
+    // there are 12px padding on both side so we need to deduct them.
+    .navbar-brand
+      margin-right: 40px - 12px
+    .navbar-menu
+      margin-left: 40px - 12px
+
+    // space betwen menus: 54px.
+    // there are 12px padding on both side so we need to deduct them.
+    .navbar-start > .navbar-item:not(:first-child)
+      margin-left: 54px - 12px * 2
+
+    .navbar-dropdown.is-boxed
+      box-shadow: 0px -1px 10px rgba(55, 55, 55, 0.1)
+      border-radius: 2px
+      margin-top: -12px
+      .navbar-item
+        padding: 0.75rem 76px 0.75rem 38px
+
+  .navbar-burger
+    background: none
+    span
+      height: 2px

@@ -4,8 +4,7 @@ sections:
       - title: About us
         url: /about/
       - title: Jobs
-        url: https://angel.co/inlight-interactive/jobs
-        target: _blank
+        url: /career/
       - title: Blog
         url: /blog/
       - title: Contact
@@ -25,13 +24,13 @@ sections:
       - title: Brochure
         url: /doc/VibeBrochure.pdf
       - title: Order
-        url: https://order.vibe.us
+        url: /order/
   - heading: Resources
     links:
       - title: Help center
         url: https://knowledge.vibe.us
       - title: Security
-        url: /documents/security/
+        url: /security/
       - title: Privacy
         url: /documents/privacy/
       - title: Warranty
@@ -41,7 +40,18 @@ sections:
   - heading: Sales
     links:
       - title: Request a demo
-        url: https://landing.vibe.us/request-demo
-        class: request-demo-trigger
+        url: /demo/
       - title: Contact us
         url: /contact/
+
+socials:
+  - icon: twitter
+    url: https://twitter.com/thevibeboard
+  - icon: facebook
+    url: https://fb.me/thevibeus
+  - icon: medium
+    url: https://medium.com/vibe-team
+  - icon: linkedin
+    url: https://www.linkedin.com/company/vibe-inc
+  - icon: instagram
+    url: https://www.instagram.com/the.vibe.board/
