@@ -53,6 +53,13 @@
     +until($navbar-breakpoint)
       justify-content: flex-end
 
+  .navbar-item.has-dropdown
+    outline: none
+
+  // align dropdown text.
+  .navbar-dropdown.is-boxed
+    left: -24px
+
   +from($navbar-breakpoint)
     // keep brand logo and navbar start (menus) 80px when not collapsed.
     // there are 12px padding on both side so we need to deduct them.

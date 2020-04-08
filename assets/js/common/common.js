@@ -1,7 +1,7 @@
 function bindEventWithTarget(triggerClass, eventName, onEvent) {
   const triggers = document.querySelectorAll(triggerClass);
-  triggers.forEach(el => {
-    el.addEventListener('click', e => {
+  triggers.forEach((el) => {
+    el.addEventListener('click', (e) => {
       e.preventDefault();
 
       const target = document.getElementById(el.dataset.target);
@@ -54,9 +54,9 @@ export function bindScrollTo(triggerClass, extraOffset) {
 
 export function debounce(func, wait, immediate) {
   var timeout;
-  return function(...args) {
+  return function (...args) {
     var context = this;
-    var later = function() {
+    var later = function () {
       timeout = null;
       if (!immediate) func.apply(context, args);
     };
@@ -70,7 +70,10 @@ export function debounce(func, wait, immediate) {
 }
 
 export function getHubspotUtk() {
-  return document.cookie.replace(/(?:(?:^|.*;\s*)hubspotutk\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+  return document.cookie.replace(
+    /(?:(?:^|.*;\s*)hubspotutk\s*\=\s*([^;]*).*$)|^.*$/,
+    '$1'
+  );
 }
 
 function submitForm(form) {
@@ -80,7 +83,7 @@ function submitForm(form) {
       name: pair[0],
       value: pair[1],
     });
-  };
+  }
 
   const hutk = getHubspotUtk();
   const body = { fields };
@@ -95,18 +98,20 @@ function submitForm(form) {
     headers: {
       'Content-Type': 'application/json',
     },
-  }).then(r => {
-    if (r.ok) {
-      form.parentElement.classList.add('is-submitted');
-    } else {
-      form.parentElement.classList.add('is-failed');
-    }
+  })
+    .then((r) => {
+      if (r.ok) {
+        form.parentElement.classList.add('is-submitted');
+      } else {
+        form.parentElement.classList.add('is-failed');
+      }
 
-    return r;
-  }).catch(ex => {
-    form.parentElement.classList.add('is-failed');
-    throw ex;
-  });
+      return r;
+    })
+    .catch((ex) => {
+      form.parentElement.classList.add('is-failed');
+      throw ex;
+    });
 }
 
 export function setupForm(form, callbacks) {
@@ -119,10 +124,10 @@ export function setupForm(form, callbacks) {
   const after = callbacks['click.after'];
   const submitted = callbacks['submit.after'];
 
-  form.querySelectorAll('button').forEach(el => {
+  form.querySelectorAll('button').forEach((el) => {
     const type = el.type;
     const name = el.dataset.name;
-    el.addEventListener('click', ev => {
+    el.addEventListener('click', (ev) => {
       ev.preventDefault();
 
       if (!form.reportValidity()) {
@@ -137,14 +142,16 @@ export function setupForm(form, callbacks) {
         el.classList.add('is-loading');
         el.setAttribute('disabled', true);
 
-        submitForm(form).then(r => {
-          if (r.ok) {
-            submitted && submitted(name, type, form);
-          }
-        }).finally(() => {
-          el.classList.remove('is-loading');
-          el.removeAttribute('disabled');
-        });
+        submitForm(form)
+          .then((r) => {
+            if (r.ok) {
+              submitted && submitted(name, type, form);
+            }
+          })
+          .finally(() => {
+            el.classList.remove('is-loading');
+            el.removeAttribute('disabled');
+          });
       }
 
       after && after(name, type, form);

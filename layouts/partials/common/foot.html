@@ -12,7 +12,7 @@
         <div class="column">
           <div class="columns is-links is-mobile is-multiline">
             {{ range .Site.Data.common.foot.sections }}
-            <div class="column is-half-mobile is-foot-section">
+            <div class="column is-half-touch is-foot-section">
               <h2 class="is-vibe-heading">{{ .heading }}</h2>
               {{ range .links }}
               <div class="foot-link">
@@ -45,8 +45,8 @@
             </a>
           </div>
         </div>
-        <div class="level-item">
-          © Copyright 2020 Vibe, Inc. All rights reserved.
+        <div class="level-item is-copyright">
+          <div><span>© Copyright 2020 Vibe, Inc.</span> <span>All rights reserved.</span></div>
         </div>
         <div class="level-right">
           <div class="level-item is-social">

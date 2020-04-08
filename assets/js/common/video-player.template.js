@@ -1,4 +1,6 @@
+/*
 {{ $src := resources.Get "js/common/common.js" | resources.Minify | resources.Fingerprint }}
+*/
 import { toggleActive } from '{{ $src.RelPermalink }}';
 
 function setupYTApi() {
@@ -17,7 +19,7 @@ function setupYTApi() {
     if (loadApi) {
       const tag = document.createElement('script');
 
-      tag.src = "https://www.youtube.com/iframe_api";
+      tag.src = 'https://www.youtube.com/iframe_api';
       const firstScriptTag = document.getElementsByTagName('script')[0];
       firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
@@ -29,17 +31,18 @@ function setupYTApi() {
   });
 }
 
-{{ if .isInplace }}
+// {{ if .isInplace }}
 const toggleClass = '{{ .triggerClass }}';
-{{ else }}
-const toggleClass = '{{ .triggerClass }}, #{{ .playerId }} .modal-close, #{{ .playerId }} .modal-background';
-{{ end }}
+// {{ else }}
+const toggleClass =
+  '{{ .triggerClass }}, #{{ .playerId }} .modal-close, #{{ .playerId }} .modal-background';
+// {{ end }}
 
 let playerActive = false;
 let videoPlayer = null;
 let loadingPlayer = false;
 
-toggleActive(toggleClass, false, isActive => {
+toggleActive(toggleClass, false, (isActive) => {
   playerActive = isActive;
 
   if (isActive) {
@@ -55,13 +58,13 @@ toggleActive(toggleClass, false, isActive => {
           width: '100%',
           videoId: videoId,
           events: {
-            'onReady': () => {
+            onReady: () => {
               videoPlayer = player;
               if (playerActive) {
                 player.playVideo();
               }
             },
-          }
+          },
         });
       });
     }

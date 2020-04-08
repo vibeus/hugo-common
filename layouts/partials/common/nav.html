@@ -25,7 +25,8 @@
       <div class="navbar-start">
         {{ range .Site.Data.common.nav.menu }}
           {{ if .submenu }}
-            <div class="navbar-item has-dropdown is-hoverable">
+            <!-- tabIndex="0" makes the element focusable otherwise dropdown does not show up in iPad. -->
+            <div tabIndex="0" class="navbar-item has-dropdown is-hoverable">
               <span class="navbar-link">{{ .title }}</span>
               <div class="navbar-dropdown is-boxed">
                 {{ range .submenu }}

@@ -13,4 +13,4 @@ heart: name of the mdi svg file.
 {{ $name := default "heart" (index $params 0) }}
 {{ $size := default "16" (index $params 1) }}
 {{ $svg := resources.Get (print "mdi/svg/" $name ".svg") | resources.Minify }}
-{{ $svg.Content | replaceRE "width=\"24\" height=\"24\"" (printf "width=\"%s\" height=\"%s\"" $size $size) | safeHTML}}
+{{ $svg.Content | replaceRE "width=\"24\" height=\"24\"" (printf "width=\"%s\" height=\"%s\"" $size $size) | safeHTML }}
