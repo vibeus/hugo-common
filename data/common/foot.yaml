@@ -1,18 +1,18 @@
 sections:
   - heading: Product
     links:
-      - title: Vibe Hardware
+      - title: Vibe hardware
         url: /hardware/
-      - title: Vibe Software
+      - title: Vibe software
         url: /software/
       - title: Join a board
         url: https://app.vibe.us
         target: _blank
       - title: Security
         url: /security/
-      - title: Customer Testimonials
+      - title: Customer testimonials
         url: /customer/
-      - title: Vibe Demo
+      - title: Vibe demo
         url: /demo/
   - heading: Resources
     links:
@@ -28,7 +28,7 @@ sections:
         url: /privacy/
       - title: Warranty
         url: /warranty/
-      - title: Vibe Tutorial
+      - title: Vibe tutorial
         url: https://help.vibe.us/using-vibe
         target: _blank
   - heading: Compare

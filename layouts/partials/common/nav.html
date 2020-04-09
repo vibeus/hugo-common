@@ -10,16 +10,18 @@
         {{ $src := resources.Get "img/common/vibe-brand.svg" }}
         {{ $src.Content | safeHTML }}
       </a>
-      {{ range .Site.Data.common.nav.extra }}
-      {{ if .in_brand_mobile }}
+      <div class="navbar-brand-buttons">
+        {{ range .Site.Data.common.nav.extra }}
+        {{ if .in_brand_mobile }}
         {{ partial "common/nav-extra-button" . }}
-      {{ end }}
-      {{ end }}
-      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="nav-menu">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
+        {{ end }}
+        {{ end }}
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="nav-menu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
     </div>
     <div id="nav-menu" class="navbar-menu">
       <div class="navbar-start">

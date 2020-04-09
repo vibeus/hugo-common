@@ -3,23 +3,6 @@
   font-size: 18px
   box-shadow: 0px -1px 10px rgba(55, 55, 55, 0.1)
 
-  .button
-    font-size: 18px
-    &.is-outlined
-      border-width: 2px
-    +tablet
-      width: 157px
-      &.is-try-app
-        display: inherit
-      &.request-demo-trigger
-        display: none
-    +mobile
-      font-size: 14px
-      &.is-try-app
-        display: none
-      &.request-demo-trigger
-        display: inherit
-
   .container.is-fluid
     padding: 0 40px
     +from(1600px)
@@ -30,21 +13,27 @@
 
   // show button on navbar-brand so that it is visible on mobile.
   .navbar-brand
-    position: relative
-    .button.is-in-brand-mobile
-      position: absolute
-      top: 50%
-      right: 64px
-      margin-top: -(45px / 2)
-      z-index: 1
-      +mobile
-        margin-top: -(35px / 2)
+    justify-content: space-between
+
+  .navbar-brand-buttons
+    display: flex
+    align-items: center
+    .button
+      &:not(:first-child)
+        margin-left: 12px
       +from($navbar-breakpoint)
         display: none
+      +mobile
+        &.is-try-app
+          display: none
+    .navbar-burger
+      width: 48px
+      height: 48px
+      padding: 0.5rem 0.75rem
 
   // hide button on menu when it is shown on navbar-brand
   .navbar-menu
-    .button.is-in-brand-mobile
+    .button.is-in-brand
       +until($navbar-breakpoint)
         display: none
 
@@ -85,3 +74,12 @@
     background: none
     span
       height: 2px
+
+  .button
+    font-size: 18px
+    &.is-outlined
+      border-width: 2px
+    +tablet
+      width: 157px
+    +mobile
+      font-size: 14px
