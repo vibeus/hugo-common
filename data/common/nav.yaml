@@ -13,14 +13,19 @@ menu:
         url: /customer/
   - title: Resources
     submenu:
-      - title: Blogs
-        url: /blog/
-      - title: Help Center
-        url: https://help.vibe.us
-      - title: Contact Sales
-        url: /contact/
       - title: Buyer's FAQ
         url: https://knowledge.vibe.us/buyers-faq
+        target: _blank
+      - title: Blogs
+        url: /blog/
+      - title: Vibe tutorial
+        url: https://help.vibe.us/using-vibe
+        target: _blank
+      - title: Help Center
+        url: https://help.vibe.us
+        target: _blank
+      - title: Contact Sales
+        url: /contact/
   - title: About Us
     url: /about/
 
