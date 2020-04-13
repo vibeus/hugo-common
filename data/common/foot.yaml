@@ -1,18 +1,18 @@
 sections:
   - heading: Product
     links:
-      - title: Vibe hardware
+      - title: Vibe Hardware
         url: /hardware/
-      - title: Vibe software
+      - title: Vibe Software
         url: /software/
-      - title: Join a board
+      - title: Join a Board
         url: https://app.vibe.us
         target: _blank
       - title: Security
         url: /security/
-      - title: Customer testimonials
+      - title: Customer Testimonials
         url: /customer/
-      - title: Vibe demo
+      - title: Vibe Demo
         url: /demo/
   - heading: Resources
     links:
@@ -21,14 +21,14 @@ sections:
         target: _blank
       - title: Blog
         url: /blog/
-      - title: Help center
+      - title: Help Center
         url: https://help.vibe.us
         target: _blank
       - title: Privacy
         url: /privacy/
       - title: Warranty
         url: /warranty/
-      - title: Vibe tutorial
+      - title: Vibe Tutorial
         url: https://help.vibe.us/using-vibe
         target: _blank
   - heading: Compare
@@ -45,9 +45,9 @@ sections:
         url: /comparison/vibe-vs-smart-board/
   - heading: Company
     links:
-      - title: About us
+      - title: About Us
         url: /about/
-      - title: Contact us
+      - title: Contact Us
         url: /contact/
       - title: Careers
         url: /career/
@@ -57,8 +57,8 @@ socials:
     url: https://twitter.com/thevibeboard
   - icon: facebook-2
     url: https://fb.me/thevibeus
-  - icon: medium
-    url: https://medium.com/vibe-team
+  - icon: youtube
+    url: https://www.youtube.com/channel/UCSdzw8og6lIwHl2b0YmXj2A
   - icon: linkedin
     url: https://www.linkedin.com/company/vibe-inc
   - icon: instagram
