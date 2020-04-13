@@ -29,7 +29,7 @@ sections:
       - title: Warranty
         url: /warranty/
       - title: Vibe Tutorial
-        url: https://help.vibe.us/using-vibe
+        url: https://help.vibe.us/using-the-vibe-board
         target: _blank
   - heading: Compare
     links:
