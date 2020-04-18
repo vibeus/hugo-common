@@ -145,6 +145,17 @@ export function setupForm(form, callbacks) {
         submitForm(form)
           .then((r) => {
             if (r.ok) {
+              if (window.dataLayer && form.action) {
+                // GTM tracking
+                const formUrl = new URL(form.action);
+                const parts = formUrl.pathname.split('/');
+                const formId = parts[parts.length - 1];
+                window.dataLayer.push({
+                  event: 'hubspot-form-submitted',
+                  hubspot_form_id: formId,
+                });
+              }
+
               submitted && submitted(name, type, form);
             }
           })
