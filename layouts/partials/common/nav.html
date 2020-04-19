@@ -1,5 +1,7 @@
+{{ $nav := merge .Site.Data.common.nav (default (dict) .Params.navbar) }}
+
 <nav
-  class="navbar is-fixed-top is-transparent"
+  class="navbar is-transparent{{ if not .Params.noFixedNavbar }} is-fixed-top{{ end }}"
   role="navigation"
   aria-label="main navigation"
 >
@@ -11,7 +13,7 @@
         {{ $src.Content | safeHTML }}
       </a>
       <div class="navbar-brand-buttons">
-        {{ range .Site.Data.common.nav.extra }}
+        {{ range $nav.extra }}
         {{ if .in_brand_mobile }}
         {{ partial "common/nav-extra-button" . }}
         {{ end }}
@@ -25,7 +27,7 @@
     </div>
     <div id="nav-menu" class="navbar-menu">
       <div class="navbar-start">
-        {{ range .Site.Data.common.nav.menu }}
+        {{ range $nav.menu }}
           {{ if .submenu }}
             <!-- tabIndex="0" makes the element focusable otherwise dropdown does not show up in iPad. -->
             <div tabIndex="0" class="navbar-item has-dropdown is-hoverable">
@@ -48,7 +50,7 @@
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
-            {{ range .Site.Data.common.nav.extra }}
+            {{ range $nav.extra }}
             {{ partial "common/nav-extra-button" . }}
             {{ end }}
           </div>
