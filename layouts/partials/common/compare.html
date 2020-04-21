@@ -29,7 +29,7 @@
             </td>
             {{ range $brands }}
             <td class="{{ if .hideMobile }}is-hidden-mobile{{ end }}">
-              {{ if index $features $idx }}
+              {{ if index .features $idx }}
               <span class="icon is-large is-feature-check">
                 <figure class="image">
                   <svg width="100%" height="100%" viewBox="0 0 28 22" stroke="#66CCCC" fill="none" xmlns="http://www.w3.org/2000/svg">
