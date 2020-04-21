@@ -204,3 +204,13 @@ export function openDemoScheduler(form, modalId, meetingUrl) {
     iframe.src = url.toString();
   }
 }
+
+export function isInBlacklist(form, blacklist) {
+  if (!window.sha1) {
+    return false;
+  }
+
+  const email = new FormData(form).get('email').toLowerCase().trim();
+  const hash = window.sha1('vibe_blacklist:' + email);
+  return blacklist.indexOf(hash) >= 0
+}
