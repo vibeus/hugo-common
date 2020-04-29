@@ -35,7 +35,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
     {{ end }}
   </head>
-  <body>
+  <body class="{{ with .Site.Language.Lang }}lang-{{ . }}{{ end }}">
     {{ with .Site.Params.gtmId }}
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{.}}"

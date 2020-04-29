@@ -1,41 +1,69 @@
-menu:
-  - title: Product
-    submenu:
-      - title: Vibe Hardware
-        url: /hardware/
-      - title: Vibe Software
-        url: /software/
-      - title: Security
-        url: /security/
-      - title: Product Comparison
-        url: /comparison/
-      - title: Customer Testimonials
-        url: /customer/
-  - title: Resources
-    submenu:
-      - title: Buyer's FAQ
-        url: https://knowledge.vibe.us/buyers-faq
-        target: _blank
-      - title: Blogs
-        url: /blog/
-      - title: Vibe Tutorial
-        url: https://help.vibe.us/using-the-vibe-board
-        target: _blank
-      - title: Help Center
-        url: https://help.vibe.us
-        target: _blank
-      - title: Contact Sales
-        url: /contact/
-  - title: About Us
-    url: /about/
+en:
+  menu:
+    - title: Product
+      submenu:
+        - title: Vibe Hardware
+          url: /hardware/
+        - title: Vibe Software
+          url: /software/
+        - title: Security
+          url: /security/
+        - title: Product Comparison
+          url: /comparison/
+        - title: Customer Testimonials
+          url: /customer/
+    - title: Resources
+      submenu:
+        - title: Buyer's FAQ
+          url: https://knowledge.vibe.us/buyers-faq
+          target: _blank
+        - title: Blogs
+          url: /blog/
+        - title: Vibe Tutorial
+          url: https://help.vibe.us/using-the-vibe-board
+          target: _blank
+        - title: Help Center
+          url: https://help.vibe.us
+          target: _blank
+        - title: Contact Sales
+          url: /contact/
+    - title: About Us
+      url: /about/
 
-extra:
-  - title: Try the App
-    url: https://app.vibe.us/login?auth_type=guest
-    class: is-primary is-outlined is-rounded is-try-app is-in-brand
-    target: _blank
-    in_brand_mobile: true
-  - title: Order a Vibe
-    url: /order/
-    class: is-primary is-rounded is-nav-cart is-in-brand
-    in_brand_mobile: true
+  extra:
+    - title: Try the App
+      url: https://app.vibe.us/login?auth_type=guest
+      class: is-primary is-outlined is-rounded is-try-app is-in-brand
+      target: _blank
+      in_brand_mobile: true
+    - title: Order a Vibe
+      url: /order/
+      class: is-primary is-rounded is-nav-cart is-in-brand
+      in_brand_mobile: true
+zh:
+  menu:
+    - title: 产品
+      submenu:
+        - title: 产品硬件
+          url: /hardware/
+        - title: 产品软件
+          url: /software/
+        - title: 安全信息
+          url: /security/
+        - title: 客户反馈
+          url: /customer/
+    - title: 服务支持
+      url: /about/
+    - title: 关于我们
+      url: /about/
+
+  extra:
+    - title: 线上白板试用
+      url: https://app.vibe.us/login?auth_type=guest
+      class: is-primary is-outlined is-rounded is-try-app is-in-brand
+      target: _blank
+      in_brand_mobile: true
+    - title: 购买
+      url: /order/
+      class: is-primary is-rounded is-nav-cart is-in-brand
+      in_brand_mobile: true

@@ -1,4 +1,4 @@
-{{ $nav := merge .Site.Data.common.nav (default (dict) .Params.navbar) }}
+{{ $nav := merge (index .Site.Data.common.nav .Site.Language.Lang) (default (dict) .Params.navbar) }}
 
 <nav
   class="navbar is-transparent{{ if not .Params.noFixedNavbar }} is-fixed-top{{ end }}"
@@ -8,8 +8,8 @@
   {{ partial "common/template-script" (dict "asset" "js/common/nav.template.js") }}
   <div class="container is-fluid">
     <div class="navbar-brand">
-      <a class="navbar-item" href="{{ "/" | absURL }}">
-        {{ $src := resources.Get "img/common/vibe-brand.svg" }}
+      <a class="navbar-item" href="{{ "/" | relLangURL }}">
+        {{ $src := resources.Get (cond (eq .Site.Language.Lang "zh") "img/common/vize-brand.svg" "img/common/vibe-brand.svg" ) }}
         {{ $src.Content | safeHTML }}
       </a>
       <div class="navbar-brand-buttons">
@@ -38,7 +38,7 @@
               <div class="navbar-dropdown is-boxed">
                 {{ range .submenu }}
                 <a class="navbar-item"
-                   href="{{ .url | absURL }}"
+                   href="{{ .url | relLangURL }}"
                    {{ with .target }}target="{{ . }}"{{ end }}>
                   {{ .title }}
                 </a>
@@ -46,7 +46,7 @@
               </div>
             </div>
           {{ else }}
-          <a class="navbar-item" href="{{ .url | absURL }}">{{ .title }}</a>
+          <a class="navbar-item" href="{{ .url | relLangURL }}">{{ .title }}</a>
           {{ end }}
         {{ end }}
       </div>

@@ -1,65 +1,110 @@
-sections:
-  - heading: Product
-    links:
-      - title: Vibe Hardware
-        url: /hardware/
-      - title: Vibe Software
-        url: /software/
-      - title: Join a Board
-        url: https://app.vibe.us
-        target: _blank
-      - title: Security
-        url: /security/
-      - title: Customer Testimonials
-        url: /customer/
-      - title: Vibe Demo
-        url: /demo/
-  - heading: Resources
-    links:
-      - title: Buyer's FAQ
-        url: https://help.vibe.us/buyers-faq
-        target: _blank
-      - title: Blog
-        url: /blog/
-      - title: Help Center
-        url: https://help.vibe.us
-        target: _blank
-      - title: Privacy
-        url: /privacy/
-      - title: Warranty
-        url: /warranty/
-      - title: Vibe Tutorial
-        url: https://help.vibe.us/using-the-vibe-board
-        target: _blank
-  - heading: Compare
-    links:
-      - title: Vibe vs. Surface Hub
-        url: /comparison/vibe-vs-microsoft-surface-hub/
-      - title: Vibe vs. Jamboard
-        url: /comparison/vibe-vs-google-jamboard/
-      - title: Vibe vs. Flipboard
-        url: /comparison/vibe-vs-samsung-flip/
-      - title: Vibe vs. Cisco webex
-        url: /comparison/vibe-vs-cisco-webex-board/
-      - title: Vibe vs. SMART board
-        url: /comparison/vibe-vs-smart-board/
-  - heading: Company
-    links:
-      - title: About Us
-        url: /about/
-      - title: Contact Us
-        url: /contact/
-      - title: Careers
-        url: /career/
+en:
+  sections:
+    - heading: Product
+      links:
+        - title: Vibe Hardware
+          url: /hardware/
+        - title: Vibe Software
+          url: /software/
+        - title: Join a Board
+          url: https://app.vibe.us
+          target: _blank
+        - title: Security
+          url: /security/
+        - title: Customer Testimonials
+          url: /customer/
+        - title: Vibe Demo
+          url: /demo/
+    - heading: Resources
+      links:
+        - title: Buyer's FAQ
+          url: https://help.vibe.us/buyers-faq
+          target: _blank
+        - title: Blog
+          url: /blog/
+        - title: Help Center
+          url: https://help.vibe.us
+          target: _blank
+        - title: Privacy
+          url: /privacy/
+        - title: Warranty
+          url: /warranty/
+        - title: Vibe Tutorial
+          url: https://help.vibe.us/using-the-vibe-board
+          target: _blank
+    - heading: Compare
+      links:
+        - title: Vibe vs. Surface Hub
+          url: /comparison/vibe-vs-microsoft-surface-hub/
+        - title: Vibe vs. Jamboard
+          url: /comparison/vibe-vs-google-jamboard/
+        - title: Vibe vs. Flipboard
+          url: /comparison/vibe-vs-samsung-flip/
+        - title: Vibe vs. Cisco webex
+          url: /comparison/vibe-vs-cisco-webex-board/
+        - title: Vibe vs. SMART board
+          url: /comparison/vibe-vs-smart-board/
+    - heading: Company
+      links:
+        - title: About Us
+          url: /about/
+        - title: Contact Us
+          url: /contact/
+        - title: Careers
+          url: /career/
 
-socials:
-  - icon: twitter
-    url: https://twitter.com/thevibeboard
-  - icon: facebook-2
-    url: https://fb.me/thevibeus
-  - icon: youtube
-    url: https://www.youtube.com/channel/UCSdzw8og6lIwHl2b0YmXj2A
-  - icon: linkedin
-    url: https://www.linkedin.com/company/vibe-inc
-  - icon: instagram
-    url: https://www.instagram.com/the.vibe.board/
+  phone: "+1 (864) 335-2007"
+  copyright:
+    - "© Copyright 2020 Vibe, Inc."
+    - All rights reserved.
+
+  socials:
+    - icon: twitter
+      url: https://twitter.com/thevibeboard
+    - icon: facebook-2
+      url: https://fb.me/thevibeus
+    - icon: youtube
+      url: https://www.youtube.com/channel/UCSdzw8og6lIwHl2b0YmXj2A
+    - icon: linkedin
+      url: https://www.linkedin.com/company/vibe-inc
+    - icon: instagram
+      url: https://www.instagram.com/the.vibe.board/
+zh:
+  sections:
+    - heading: 公司
+      links:
+        - title: 品牌介绍
+          url: /about/
+        - title: 联系我们
+          url: /about/#contact-us
+    - heading: 产品
+      links:
+        - title: 线上白板体验
+          url: https://app.vibe.cn/login?auth_type=guest
+        - title: 硬件介绍
+          url: /hardware/
+        - title: 软件介绍
+          url: /software/
+        - title: 用户反馈
+          url: /customer/
+        - title: 安全信息
+          url: /security/
+        - title: 规格参数
+          url: /resources/Vibe_Tech_Specs.zh.pdf
+    - heading: 服务支持
+      links:
+        - title: 优享服务
+          url: /services/
+        - title: 安装服务
+          url: /services/install/
+        - title: 保修政策
+          url: /services/warranty/
+        - title: 服务网点
+          url: /services/stores/
+    - heading: 扫码关注我们
+      figures:
+        - img/common/qr_wechat.png
+
+  copyright:
+    - "© Copyright 2020 杭州昼光科技有限公司"
+    - "保留所有权力"

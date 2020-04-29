@@ -1,3 +1,4 @@
+{{ $foot := index .Site.Data.common.foot .Site.Language.Lang }}
 <footer>
   {{ if not .Params.foot_contact_bar_only }}
   <div class="section is-vibe-foot">
@@ -11,17 +12,23 @@
         </div>
         <div class="column">
           <div class="columns is-links is-mobile is-multiline">
-            {{ range .Site.Data.common.foot.sections }}
+            {{ range $foot.sections }}
             <div class="column is-half-touch is-foot-section">
               <h2 class="is-vibe-heading">{{ .heading }}</h2>
               {{ range .links }}
               <div class="foot-link">
-                <a href="{{ .url }}"
+                <a href="{{ .url | relLangURL }}"
                    {{ with .target }}target="{{ . }}"{{ end }}
                    {{ with .class }}class="{{ . }}"{{ end }}>
                   {{ .title}}
                 </a>
               </div>
+              {{ end }}
+              {{ range .figures }}
+              <figure class="image is-foot-figure">
+                {{ $src := resources.Get . }}
+                <img src="{{ $src.RelPermalink }}" alt="{{ . }}" />
+              </figure>
               {{ end }}
             </div>
             {{ end }}
@@ -35,22 +42,30 @@
   <div class="section is-vibe-foot-contact">
     <div class="container">
       <div class="level">
+        {{ with $foot.phone }}
         <div class="level-left">
           <div class="level-item">
             <span class="icon">
               {{ partial "common/mdi" "phone" }}
             </span>
-            <a href="tel:+1-864-335-2007" target="_blank">
-              <span>+1 (864) 335-2007</span>
+            <a href="tel:{{ . }}" target="_blank">
+              <span>{{ . }}</span>
             </a>
           </div>
         </div>
+        {{ end }}
+        {{ with $foot.copyright }}
         <div class="level-item is-copyright">
-          <div><span>© Copyright 2020 Vibe, Inc.</span> <span>All rights reserved.</span></div>
+          <div>
+            {{ range . }}
+            <span>{{ . }}</span>
+            {{ end }}
+          </div>
         </div>
+        {{ end }}
         <div class="level-right">
           <div class="level-item is-social">
-          {{ range .Site.Data.common.foot.socials }}
+          {{ range $foot.socials }}
             <a href="{{ .url }}" target="_blank">
               <span class="icon">
                 {{ partial "common/mdi" .icon }}
