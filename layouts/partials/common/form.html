@@ -4,7 +4,7 @@
   {{ range .controls }}
   <div class="columns">
     {{ range . }}
-    <div class="column">
+    <div class="column{{ with .column_class }} {{ . }}{{ end }}">
       <div class="control">
         {{ if .dropdown }}
         <div class="select is-fullwidth">
