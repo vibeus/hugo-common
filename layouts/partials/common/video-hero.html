@@ -10,7 +10,7 @@
     <h2 class="subtitle is-section-title">{{ default . (T .) }}</h2>
     {{ end }}
     {{ with .body }}
-    <div class="content">
+    <div class="content is-body">
       {{ default . (T .) | markdownify }}
     </div>
     {{ end }}
@@ -38,9 +38,13 @@
     </div>
     {{ partial "common/video-player" (dict "playerId" "hero-video" "videoId" .id "triggerClass" ".video-launcher" "isInplace" true) }}
     {{ end }}
-
     {{ with .share_buttons }}
     {{ partial "common/share-buttons" . }}
+    {{ end }}
+    {{ with .footnote }}
+    <div class="content is-footnote">
+      {{ default .text (T .text) | markdownify }}
+    </div>
     {{ end }}
   </div>
 </section>
