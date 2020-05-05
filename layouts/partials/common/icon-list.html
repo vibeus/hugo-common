@@ -4,7 +4,7 @@
     <span class="icon">
       {{ partial "common/mdi" .icon }}
     </span>
-    {{ .title | markdownify }}
+    {{ default .title (T .title) | markdownify }}
   </li>
   {{ end }}
 </ul>

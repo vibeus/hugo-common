@@ -4,14 +4,14 @@
       {{ (resources.Get "img/common/outline-logo.svg").Content | safeHTML }}
     </div>
     {{ with .title }}
-    <h1 class="title is-section-title">{{ . }}</h1>
+    <h1 class="title is-section-title">{{ default . (T .) }}</h1>
     {{ end }}
     {{ with .subtitle }}
-    <h2 class="subtitle is-section-title">{{ . }}</h2>
+    <h2 class="subtitle is-section-title">{{ default . (T .) }}</h2>
     {{ end }}
     {{ with .body }}
     <div class="content">
-      {{ . | markdownify }}
+      {{ default . (T .) | markdownify }}
     </div>
     {{ end }}
     {{ with .video }}

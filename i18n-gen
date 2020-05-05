@@ -1,0 +1,179 @@
+#!/usr/bin/env python3
+import argparse
+import os
+import re
+import toml
+import yaml
+from colorama import Fore, Style
+from i18n_utils import toml_dump
+
+LABEL_PREFIX = "i18n-"
+OUTPUT_PATH = "i18n/en.toml"
+ARRAY_KEY_PREFIX = "i_"
+
+IGNORED_PATHS = []
+IGNORE_FILE = ".i18nignore"
+
+
+def load_ignore_file():
+    if not os.path.exists(IGNORE_FILE):
+        return
+
+    with open(IGNORE_FILE, mode="r", encoding="utf-8") as f:
+        for line in f.readlines():
+            line = line.strip()
+            if line:
+                IGNORED_PATHS.append(line)
+
+
+def is_i18n_source(path):
+    base_name = os.path.basename(path)
+    return (
+        base_name.endswith(".yml")
+        or base_name.endswith(".yaml")
+        or base_name == "_index.md"
+        or re.match(r"^_index\.\w{2}\.md$", base_name)
+    )
+
+
+def get_file_list():
+    file_list = []
+    for dirname in ["content", "data"]:
+        for cur_dir, _, file_names in os.walk(dirname):
+            for fn in file_names:
+                path = os.path.join(cur_dir, fn)
+                if is_i18n_source(path):
+                    file_list.append(path)
+
+    return file_list
+
+
+def should_collect_key(precedents):
+    last_key = precedents[-1]
+    if last_key in ["title", "subtitle", "text", "heading", "body", "caption"]:
+        return True
+
+    if last_key == "name" and "form" not in precedents:
+        return True
+
+    if last_key == "placeholder" and "form" in precedents:
+        return True
+
+    if last_key == "value" and "spec" in precedents and "columns" in precedents:
+        return True
+
+    if last_key == "cta" and precedents[-2] == "gallery":
+        return True
+
+    if last_key in ["industry", "region"] and "stories" in precedents:
+        return True
+
+    if last_key.startswith(ARRAY_KEY_PREFIX):
+        if precedents[-2] in ["copyright", "key_factors"]:
+            return True
+        if precedents[-2] == "items" and precedents[-3] == "specs":
+            return True
+
+    return False
+
+
+def collect_result(value, precedents, results, translated):
+    if value.startswith(LABEL_PREFIX):
+        results[value] = translated[value]
+        return
+
+    if len(precedents) == 0:
+        return
+
+    if should_collect_key(precedents):
+        key = LABEL_PREFIX + "-".join(precedents)
+        if key not in results:
+            results[key] = {"other": value}
+            return key
+        else:
+            print(
+                Fore.RED
+                + "Key {} ignored because it already exists in results."
+                + Style.RESET_ALL
+            )
+
+    return None
+
+
+def traverse_node(node, precedents, results, translated):
+    if isinstance(node, str):
+        return collect_result(node, precedents, results, translated)
+    elif isinstance(node, list):
+        for idx, value in enumerate(node):
+            key = "{}{}".format(ARRAY_KEY_PREFIX, idx)
+            precedents.append(key)
+            r = traverse_node(value, precedents, results, translated)
+            if r:
+                node[idx] = r
+            precedents.pop()
+    elif isinstance(node, dict):
+        for key, value in node.items():
+            precedents.append(key)
+            r = traverse_node(value, precedents, results, translated)
+            if r:
+                node[key] = r
+            precedents.pop()
+    return None
+
+
+def load_output():
+    if os.path.exists(OUTPUT_PATH):
+        with open(OUTPUT_PATH, mode="r", encoding="utf-8") as f:
+            return toml.load(f)
+
+    return {}
+
+
+def save_output(output):
+    with open(OUTPUT_PATH, mode="w", encoding="utf-8") as f:
+        toml_dump(output, f)
+
+
+def main(args):
+    load_ignore_file()
+
+    file_list = get_file_list()
+    translated = load_output()
+    output_results = {}
+
+    for path in file_list:
+        if path in IGNORED_PATHS:
+            continue
+
+        print(Style.DIM + "Processing {}...".format(path) + Style.RESET_ALL)
+        with open(path, mode="r", encoding="utf-8") as f:
+            _, ext = os.path.splitext(path)
+            is_md_file = ext == ".md"
+
+            docs = [x for x in yaml.safe_load_all(f)]
+            root = docs[0]
+
+        noext, _ = os.path.splitext(path)
+        prefix = noext.replace(".", "-").split("/")
+        traverse_node(root, prefix, output_results, translated)
+
+        with open(path, mode="w", encoding="utf-8") as f:
+            if is_md_file:
+                f.write("---\n")
+            yaml.dump(root, f, sort_keys=False)
+            if is_md_file:
+                f.write("\n---\n")
+
+    for k, v in translated.items():
+        if k.startswith("i18n-manual-"):
+            output_results[k] = v
+
+    save_output(output_results)
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(
+        description="Extra strings and generate English i18n files."
+    )
+    args = parser.parse_args()
+    main(args)

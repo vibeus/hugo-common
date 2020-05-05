@@ -1,4 +1,4 @@
-<h1 class="title">{{ .title }}</h1>
+<h1 class="title">{{ default .title (T .title) }}</h1>
 {{ $method := default "POST" .method }}
 <form class="form is-vibe-form" method="{{ $method }}" action="{{ .action }}">
   {{ range .controls }}
@@ -9,7 +9,7 @@
         {{ if .dropdown }}
         <div class="select is-fullwidth">
           <select class="placeholder" name="{{ .name }}">
-            <option value="" disabled selected hidden>{{ .placeholder }}</option>
+            <option value="" disabled selected hidden>{{ default .placeholder (T .placeholder) }}</option>
             {{ range .dropdown }}
             <option>{{ . }}</option>
             {{ end }}
@@ -18,7 +18,7 @@
         {{ else if eq .type "textarea" }}
         <textarea name="{{ .name }}"
                   class="textarea{{ with .class }} {{ . }}{{ end }}"
-                  placeholder="{{ .placeholder }}"
+                  placeholder="{{ default .placeholder (T .placeholder) }}"
                   {{ if .required }}required{{ end }}
                   ></textarea>
         {{ else }}
@@ -27,7 +27,7 @@
         <input name="{{ .name }}"
                class="{{ $class }}"
                type="{{ $type }}"
-               placeholder="{{ .placeholder }}"
+               placeholder="{{ default .placeholder (T .placeholder) }}"
                value="{{ .value }}"
                {{ if .required }}required{{ end }}
                />
@@ -49,9 +49,9 @@
       <div class="control">
         <button class="{{ $class }}"
                 type="{{ $type }}"
-                placeholder="{{ .placeholder }}"
+                placeholder="{{ default .placeholder (T .placeholder) }}"
                 data-name="{{ .name }}">
-          {{ .title }}
+          {{ default .title (T .title) }}
         </button>
       </div>
     </div>
@@ -61,10 +61,10 @@
   {{ with .submitted }}
   <div class="submitted">
     {{ with .title }}
-    <h2 class="title">{{ . }}</h2>
+    <h2 class="title">{{ default . (T .) }}</h2>
     {{ end }}
     <div class="content">
-      {{ .body | markdownify }}
+      {{ default .body (T .body) | markdownify }}
     </div>
   </div>
   {{ end }}

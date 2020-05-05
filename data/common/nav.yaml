@@ -1,69 +1,67 @@
-en:
+base:
   menu:
-    - title: Product
+    - title: i18n-data-common-nav-base-menu-i_0-title
       submenu:
-        - title: Vibe Hardware
+        - title: i18n-data-common-nav-base-menu-i_0-submenu-i_0-title
           url: /hardware/
-        - title: Vibe Software
+        - title: i18n-data-common-nav-base-menu-i_0-submenu-i_1-title
           url: /software/
-        - title: Security
+        - title: i18n-data-common-nav-base-menu-i_0-submenu-i_2-title
           url: /security/
-        - title: Product Comparison
+        - title: i18n-data-common-nav-base-menu-i_0-submenu-i_3-title
           url: /comparison/
-        - title: Customer Testimonials
+        - title: i18n-data-common-nav-base-menu-i_0-submenu-i_4-title
           url: /customer/
-    - title: Resources
+    - title: i18n-data-common-nav-base-menu-i_1-title
       submenu:
-        - title: Buyer's FAQ
+        - title: i18n-data-common-nav-base-menu-i_1-submenu-i_0-title
           url: https://knowledge.vibe.us/buyers-faq
           target: _blank
-        - title: Blogs
+        - title: i18n-data-common-nav-base-menu-i_1-submenu-i_1-title
           url: /blog/
-        - title: Vibe Tutorial
+        - title: i18n-data-common-nav-base-menu-i_1-submenu-i_2-title
           url: https://help.vibe.us/using-the-vibe-board
           target: _blank
-        - title: Help Center
+        - title: i18n-data-common-nav-base-menu-i_1-submenu-i_3-title
           url: https://help.vibe.us
           target: _blank
-        - title: Contact Sales
+        - title: i18n-data-common-nav-base-menu-i_1-submenu-i_4-title
           url: /contact/
-    - title: About Us
+    - title: i18n-data-common-nav-base-menu-i_2-title
       url: /about/
-
   extra:
-    - title: Try the App
-      url: https://app.vibe.us/login?auth_type=guest
+    - title: i18n-data-common-nav-base-extra-i_0-title
       class: is-primary is-outlined is-rounded is-try-app is-in-brand
+      url: https://app.vibe.us/login?auth_type=guest
       target: _blank
       in_brand_mobile: true
-    - title: Order a Vibe
-      url: /order/
+    - title: i18n-data-common-nav-base-extra-i_1-title
       class: is-primary is-rounded is-nav-cart is-in-brand
+      url: /order/
       in_brand_mobile: true
 zh:
   menu:
-    - title: 产品
+    - title: i18n-data-common-nav-base-menu-i_0-title
       submenu:
-        - title: 产品硬件
+        - title: i18n-data-common-nav-base-menu-i_0-submenu-i_0-title
           url: /hardware/
-        - title: 产品软件
+        - title: i18n-data-common-nav-base-menu-i_0-submenu-i_1-title
           url: /software/
-        - title: 安全信息
+        - title: i18n-data-common-nav-base-menu-i_0-submenu-i_2-title
           url: /security/
-        - title: 客户反馈
+        - title: i18n-data-common-nav-base-menu-i_0-submenu-i_4-title
           url: /customer/
-    - title: 服务支持
+    - title: i18n-data-common-nav-zh-menu-i_1-title
+      url: /services/
+    - title: i18n-data-common-nav-base-menu-i_2-title
       url: /about/
-    - title: 关于我们
-      url: /about/
-
   extra:
-    - title: 线上白板试用
-      url: https://app.vibe.us/login?auth_type=guest
+    - title: i18n-data-common-nav-base-extra-i_0-title
       class: is-primary is-outlined is-rounded is-try-app is-in-brand
+      url: https://app.vibe.cn/login?auth_type=guest
       target: _blank
       in_brand_mobile: true
-    - title: 购买
-      url: /order/
+    - title: i18n-data-common-nav-base-extra-i_1-title
       class: is-primary is-rounded is-nav-cart is-in-brand
+      url: /order/
       in_brand_mobile: true

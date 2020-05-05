@@ -1,4 +1,4 @@
-{{ $foot := index .Site.Data.common.foot .Site.Language.Lang }}
+{{ $foot := merge .Site.Data.common.foot.base (default (dict) (index .Site.Data.common.foot .Site.Language.Lang)) }}
 <footer>
   {{ if not .Params.foot_contact_bar_only }}
   <div class="section is-vibe-foot">
@@ -14,13 +14,13 @@
           <div class="columns is-links is-mobile is-multiline">
             {{ range $foot.sections }}
             <div class="column is-half-touch is-foot-section">
-              <h2 class="is-vibe-heading">{{ .heading }}</h2>
+              <h2 class="is-vibe-heading">{{ T .heading }}</h2>
               {{ range .links }}
               <div class="foot-link">
                 <a href="{{ .url | relLangURL }}"
                    {{ with .target }}target="{{ . }}"{{ end }}
                    {{ with .class }}class="{{ . }}"{{ end }}>
-                  {{ .title}}
+                  {{ T .title }}
                 </a>
               </div>
               {{ end }}
@@ -58,7 +58,7 @@
         <div class="level-item is-copyright">
           <div>
             {{ range . }}
-            <span>{{ . }}</span>
+            <span>{{ T . }}</span>
             {{ end }}
           </div>
         </div>

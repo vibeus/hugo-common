@@ -1,6 +1,6 @@
 <div class="testimonial">
   <div class="content">
-    {{ .body | markdownify }}
+    {{ default .body (T .body) | markdownify }}
     <div class="quote-mark is-left">
       {{ (resources.Get "img/common/testimonials/quote.svg").Content | safeHTML }}
     </div>
@@ -14,7 +14,7 @@
     <div class="logo-name{{ if .name }} has-name{{ end }}{{ if .logo }} has-logo{{ end }}">
       {{ if .name }}
       <div class="name">
-        {{ .name | markdownify }}
+        {{ default .name (T .name) | markdownify }}
       </div>
       {{ end }}
       {{ if .logo }}

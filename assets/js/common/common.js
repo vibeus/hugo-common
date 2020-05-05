@@ -212,5 +212,5 @@ export function isInBlacklist(form, blacklist) {
 
   const email = new FormData(form).get('email').toLowerCase().trim();
   const hash = window.sha1('vibe_blacklist:' + email);
-  return blacklist.indexOf(hash) >= 0
+  return blacklist.indexOf(hash) >= 0;
 }

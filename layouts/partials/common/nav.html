@@ -1,4 +1,5 @@
-{{ $nav := merge (index .Site.Data.common.nav .Site.Language.Lang) (default (dict) .Params.navbar) }}
+{{ $navData := merge .Site.Data.common.nav.base (default (dict) (index .Site.Data.common.nav .Site.Language.Lang)) }}
+{{ $nav := merge $navData (default (dict) .Params.navbar) }}
 
 <nav
   class="navbar is-transparent{{ if not .Params.noFixedNavbar }} is-fixed-top{{ end }}"
@@ -34,19 +35,19 @@
           {{ if .submenu }}
             <!-- tabIndex="0" makes the element focusable otherwise dropdown does not show up in iPad. -->
             <div tabIndex="0" class="navbar-item has-dropdown is-hoverable">
-              <span class="navbar-link">{{ .title }}</span>
+              <span class="navbar-link">{{ T .title }}</span>
               <div class="navbar-dropdown is-boxed">
                 {{ range .submenu }}
                 <a class="navbar-item"
                    href="{{ .url | relLangURL }}"
                    {{ with .target }}target="{{ . }}"{{ end }}>
-                  {{ .title }}
+                  {{ T .title }}
                 </a>
                 {{ end }}
               </div>
             </div>
           {{ else }}
-          <a class="navbar-item" href="{{ .url | relLangURL }}">{{ .title }}</a>
+          <a class="navbar-item" href="{{ .url | relLangURL }}">{{ T .title }}</a>
           {{ end }}
         {{ end }}
       </div>

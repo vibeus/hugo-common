@@ -1,5 +1,5 @@
 <a class="button {{ .class }}"
-   href="{{ .url | absURL }}"
+   href="{{ .url | relLangURL }}"
    {{ with .target }}target="{{ . }}"{{ end }}
    {{ range .data }}
    data-{{ .key }}="{{ .value }}"
@@ -12,5 +12,5 @@
      {{ end }}
    </span>
   {{ end }}
-  <span>{{ .title }}</span>
+  <span>{{ T .title }}</span>
 </a>

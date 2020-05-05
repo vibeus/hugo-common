@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     {{ $description := default .Site.Params.defaultDescription .Page.Description }}
     <meta name="description" content="{{ $description }}">
-    <title>{{ default "Vibe" .Page.Title }} | Vibe</title>
+    {{ $pageTitle := cond (hasPrefix .Page.Title "i18n-") (T .Page.Title) .Page.Title }}
+    <title>{{ default "Vibe" $pageTitle }} | Vibe</title>
     {{ if not .Site.Params.allowIndex }}<meta name="robots" content="noindex">{{ end }}
     {{ $src := resources.Get "img/common/favicon.png" | resources.Fingerprint }}
     <link rel="shortcut icon" href="{{ $src.Permalink }}" />
