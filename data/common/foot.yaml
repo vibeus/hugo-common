@@ -93,13 +93,13 @@ zh:
     - heading: i18n-data-common-foot-zh-sections-i_2-heading
       links:
         - title: i18n-data-common-foot-zh-sections-i_2-links-i_0-title
-          url: /services/
+          url: /service/
         - title: i18n-data-common-foot-zh-sections-i_2-links-i_1-title
-          url: /services/install/
+          url: /service/install/
         - title: i18n-data-common-foot-zh-sections-i_2-links-i_2-title
-          url: /services/warranty/
+          url: /service/warranty/
         - title: i18n-data-common-foot-zh-sections-i_2-links-i_3-title
-          url: /services/stores/
+          url: /service/stores/
     - heading: i18n-data-common-foot-zh-sections-i_3-heading
       figures:
         - img/common/qr_wechat.png
