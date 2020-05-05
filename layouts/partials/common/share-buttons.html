@@ -1,5 +1,6 @@
+{{ $title := default .title (T .title) }}
 <div class="share-buttons">
-  <a class="share-twitter" href="https://twitter.com/intent/tweet?text={{ print .title " " .url }}">
+  <a class="share-twitter" href="https://twitter.com/intent/tweet?text={{ print $title " " .url }}">
     <span class="icon is-medium">{{ partial "common/mdi" "twitter:16" }}</span>
   </a>
 
@@ -9,7 +10,7 @@
   </a>
 
   <a class="share-linkedin"
-     href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ .url }}&amp;title={{ .title }}{{ with .summary }}&amp;summary={{ . }}{{ end }}&amp;source=http%3A%2F%2Fvibe.us"
+     href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ .url }}&amp;title={{ $title }}{{ with .summary }}&amp;summary={{ . }}{{ end }}&amp;source=http%3A%2F%2Fvibe.us"
      target="_blank" rel="noopener" aria-label="">
     <span class="icon is-medium">{{ partial "common/mdi" "linkedin:16" }}</span>
   </a>

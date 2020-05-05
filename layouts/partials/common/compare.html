@@ -2,7 +2,7 @@
 {{ $brands := default .Site.Data.common.compare.brands .brands }}
 <section class="section is-compare">
   <div class="container">
-    <h1 class="title is-section-title">{{ .title }}</h1>
+    <h1 class="title is-section-title">{{ default .title (T .title) }}</h1>
 
     <div class="compare-table">
       <table class="table is-fullwidth">
@@ -63,7 +63,7 @@
         {{ range .data }}
         data-{{ .key }}="{{ .value }}"
         {{ end }}
-        >{{ .title }}</a>
+        >{{ default .title (T .title) }}</a>
     </div>
     {{ end }}
   </div>
