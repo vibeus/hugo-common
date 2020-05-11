@@ -1,4 +1,5 @@
 assets/js/**/*.min.js
+assets/css/**/*.min.css
 assets/mdi/
 assets/img/
 layouts/

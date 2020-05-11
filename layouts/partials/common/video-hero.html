@@ -32,11 +32,25 @@
         {{ else if .placeholder }}
         {{ partial "common/srcset" (dict "resource" (resources.Get .placeholder) "desktop" "2380x" "tablet" "1440x" "mobile" "750x" "options" "jpg") }}
         {{ end }}
-        <div id="hero-video-iframe">
-        </div>
+        {{ if .isVideoJS }}
+        <video id="hero-video-player" class="video-js vjs-fluid" controls preload="auto" playsinline>
+          <source src="{{ .url }}" type="video/mp4" />
+          <p class="vjs-no-js">
+          To view this video please enable JavaScript, and consider upgrading to a web browser that
+          <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+          </p>
+        </video>
+        {{ else }}
+        <div id="hero-video-iframe"></div>
+        {{ end }}
       </figure>
     </div>
-    {{ partial "common/video-player" (dict "playerId" "hero-video" "videoId" .id "triggerClass" ".video-launcher" "isInplace" true) }}
+    {{ if .isVideoJS }}
+    {{ partial "common/video-player" (dict "playerId" "hero-video" "triggerClass" ".video-launcher" "isInplace" true "isVideoJS" true) }}
+    {{ else }}
+    {{ partial "common/video-player" (dict "playerId" "hero-video" "videoId" .id "triggerClass" ".video-launcher" "isInplace" true "isVideoJS" false) }}
+    {{ end }}
+
     {{ end }}
     {{ with .share_buttons }}
     {{ partial "common/share-buttons" . }}

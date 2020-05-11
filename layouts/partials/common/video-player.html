@@ -2,10 +2,24 @@
 <div class="modal is-video-player" id="{{ .playerId }}">
   <div class="modal-background" data-target="{{ .playerId }}"></div>
   <div class="modal-content">
+    {{ if .isVideoJS }}
+    <video id="{{ .playerId }}-player" class="video-js vjs-fill" controls preload="auto" playsinline>
+      <source src="{{ .videoUrl }}" type="video/mp4" />
+      <p class="vjs-no-js">
+      To view this video please enable JavaScript, and consider upgrading to a
+      web browser that
+      <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+      </p>
+    </video>
+    {{ else }}
     <div id="{{ .playerId }}-iframe"></div>
+    {{ end }}
   </div>
   <button class="modal-close is-large" aria-label="close" data-target="{{ .playerId }}"></button>
 </div>
 {{ end }}
 
 {{ partial "common/template-script" (merge (dict "asset" "js/common/video-player.template.js") .) }}
+{{ if .isVideoJS }}
+{{ partial "common/template-script" (dict "asset" "js/common/video.min.js") }}
+{{ end }}

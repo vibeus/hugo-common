@@ -3,6 +3,7 @@
 */
 import { toggleActive } from '{{ $src.RelPermalink }}';
 
+// {{ if not .isVideoJS }}
 function setupYTApi() {
   if (window.YTApiReady) {
     return Promise.resolve();
@@ -30,6 +31,7 @@ function setupYTApi() {
     }
   });
 }
+// {{ end }}
 
 // {{ if .isInplace }}
 const toggleClass = '{{ .triggerClass }}';
@@ -38,6 +40,26 @@ const toggleClass =
   '{{ .triggerClass }}, #{{ .playerId }} .modal-close, #{{ .playerId }} .modal-background';
 // {{ end }}
 
+// {{ if .isVideoJS }}
+let playerLoaded = false;
+toggleActive(toggleClass, false, (isActive) => {
+  const player = videojs('{{ .playerId }}-player');
+  // {{ if .isInplace }}
+  if (isActive && !playerLoaded) {
+    player.play();
+    playerLoaded = true;
+  }
+  // {{ else }}
+  if (isActive) {
+    player.play();
+  } else {
+    player.pause();
+    player.currentTime(0);
+  }
+  // {{ end }}
+});
+
+// {{ else }}
 let playerActive = false;
 let videoPlayer = null;
 let loadingPlayer = false;
@@ -57,6 +79,9 @@ toggleActive(toggleClass, false, (isActive) => {
           height: '100%',
           width: '100%',
           videoId: videoId,
+          playerVars: {
+            rel: 0,
+          },
           events: {
             onReady: () => {
               videoPlayer = player;
@@ -74,3 +99,4 @@ toggleActive(toggleClass, false, (isActive) => {
     }
   }
 });
+// {{ end }}
