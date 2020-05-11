@@ -46,12 +46,12 @@ toggleActive(toggleClass, false, (isActive) => {
   const player = videojs('{{ .playerId }}-player');
   // {{ if .isInplace }}
   if (isActive && !playerLoaded) {
-    player.play();
+    player.ready(() => player.play());
     playerLoaded = true;
   }
   // {{ else }}
   if (isActive) {
-    player.play();
+    player.ready(() => player.play());
   } else {
     player.pause();
     player.currentTime(0);

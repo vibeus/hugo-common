@@ -52,7 +52,15 @@ zh:
         - title: i18n-data-common-nav-base-menu-i_0-submenu-i_4-title
           url: /customer/
     - title: i18n-data-common-nav-zh-menu-i_1-title
-      url: /service/
+      submenu:
+        - title: i18n-data-common-nav-zh-menu-i_1-submenu-i_0-title
+          url: /service/
+        - title: i18n-data-common-nav-zh-menu-i_1-submenu-i_1-title
+          url: /service/install/
+        - title: i18n-data-common-nav-zh-menu-i_1-submenu-i_2-title
+          url: /service/warranty/
+        - title: i18n-data-common-nav-zh-menu-i_1-submenu-i_3-title
+          url: /service/stores/
     - title: i18n-data-common-nav-base-menu-i_2-title
       url: /about/
   extra:

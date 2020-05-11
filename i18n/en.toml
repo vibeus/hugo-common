@@ -46,6 +46,18 @@ other = "Order a Vibe"
 [i18n-data-common-nav-zh-menu-i_1-title]
 other = "Services"
 
+[i18n-data-common-nav-zh-menu-i_1-submenu-i_0-title]
+other = "优享服务"
+
+[i18n-data-common-nav-zh-menu-i_1-submenu-i_1-title]
+other = "安装服务"
+
+[i18n-data-common-nav-zh-menu-i_1-submenu-i_2-title]
+other = "保修政策"
+
+[i18n-data-common-nav-zh-menu-i_1-submenu-i_3-title]
+other = "服务网点"
+
 [i18n-data-common-foot-base-sections-i_0-heading]
 other = "Product"
 
