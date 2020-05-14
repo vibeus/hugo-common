@@ -20,7 +20,7 @@ base:
         - title: i18n-data-common-nav-base-menu-i_1-submenu-i_1-title
           url: /blog/
         - title: i18n-data-common-nav-base-menu-i_1-submenu-i_2-title
-          url: https://help.vibe.us/using-the-vibe-board
+          url: /video-tutorial/
           target: _blank
         - title: i18n-data-common-nav-base-menu-i_1-submenu-i_3-title
           url: https://help.vibe.us
