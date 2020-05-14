@@ -64,16 +64,25 @@ let playerActive = false;
 let videoPlayer = null;
 let loadingPlayer = false;
 
-toggleActive(toggleClass, false, (isActive) => {
+toggleActive(toggleClass, false, (isActive, el) => {
   playerActive = isActive;
 
   if (isActive) {
+    let videoId = '{{ default "" .videoId }}';
+    if (el.dataset.videoId) {
+      videoId = el.dataset.videoId;
+    }
+
+    if (!videoId) {
+      console.error('Unknown video Id.');
+      return;
+    }
+
     if (videoPlayer) {
+      videoPlayer.loadVideoById(videoId);
       videoPlayer.playVideo();
     } else if (!loadingPlayer) {
       const playerId = '{{ .playerId }}-iframe';
-      const videoId = '{{ .videoId }}';
-
       setupYTApi().then(() => {
         const player = new window.YT.Player(playerId, {
           height: '100%',
