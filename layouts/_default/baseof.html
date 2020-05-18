@@ -23,7 +23,10 @@
     {{ $stratosRegular := dict "fontFamily" "Stratos" "localNames" (slice "Stratos Regular") "ttf" "fonts/common/stratosweb-regular.woff" }}
     {{ $stratosSemibold := dict "fontFamily" "Stratos" "localNames" (slice "Stratos Semibold") "ttf" "fonts/common/stratosweb-semibold.woff" "fontWeight" "500" }}
     {{ $stratosBold := dict "fontFamily" "Stratos" "localNames" (slice "Stratos Bold") "ttf" "fonts/common/stratosweb-semibold.woff" "fontWeight" "600" }}
-    {{ partial "common/font" (slice $firaSansRegular $firaSansMedium $firaSansItalic $stratosRegular $stratosSemibold) }}
+    {{ $notoSanaScRegular := dict "fontFamily" "Fira Noto" "localNames" (slice "Fira Sans Regular") "ttf" "fonts/common/NotoSansCJKsc-Regular.otf" }}
+    {{ $notoSanaScMedium := dict "fontFamily" "Fira Noto" "localNames" (slice "Fira Sans Medium") "ttf" "fonts/common/NotoSansCJKsc-Medium.otf" }}
+    {{ $notoSanaScBold := dict "fontFamily" "Fira Noto" "localNames" (slice "Fira Sans Bold") "ttf" "fonts/common/NotoSansCJKsc-Bold.otf" }}
+    {{ partial "common/font" (slice $firaSansRegular $firaSansMedium $firaSansItalic $stratosRegular $stratosSemibold $notoSanaScRegular $notoSanaScMedium $notoSanaScBold) }}
     {{ block "stylesheets" . }}{{ end }}
     {{ block "scripts" . }}{{ end }}
     {{ with .Site.Params.gtmId }}
