@@ -30,7 +30,7 @@
 
   {{ with .url }}
   <div class="more">
-    <a href="{{ . }}">Read more →</a>
+    <a href="{{ . | relLangURL }}">Read more →</a>
   </div>
   {{ end }}
 </div>
