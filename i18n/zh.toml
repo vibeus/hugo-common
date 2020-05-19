@@ -74,7 +74,7 @@ other = "产品软件"
 other = "线上白板体验"
 
 [i18n-data-common-foot-base-sections-i_0-links-i_3-title]
-other = "安全信息"
+other = "信息安全"
 
 [i18n-data-common-foot-base-sections-i_0-links-i_4-title]
 other = "客户反馈"
@@ -152,7 +152,7 @@ other = "优享服务"
 other = "安装服务"
 
 [i18n-data-common-foot-zh-sections-i_2-links-i_2-title]
-other = "保修政策"
+other = "保修服务"
 
 [i18n-data-common-foot-zh-sections-i_2-links-i_3-title]
 other = "法律声明"
