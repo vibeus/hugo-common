@@ -56,6 +56,9 @@ other = "安装服务"
 other = "保修政策"
 
 [i18n-data-common-nav-zh-menu-i_1-submenu-i_3-title]
+other = "法律声明"
+
+[i18n-data-common-nav-zh-menu-i_1-submenu-i_4-title]
 other = "服务网点"
 
 [i18n-data-common-foot-base-sections-i_0-heading]
