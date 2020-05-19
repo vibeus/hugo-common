@@ -12,5 +12,5 @@
      {{ end }}
    </span>
   {{ end }}
-  <span>{{ T .title }}</span>
+  <span>{{ default .title (T .title) }}</span>
 </a>

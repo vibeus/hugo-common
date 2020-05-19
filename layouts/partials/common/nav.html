@@ -9,7 +9,7 @@
   {{ partial "common/template-script" (dict "asset" "js/common/nav.template.js") }}
   <div class="container is-fluid">
     <div class="navbar-brand">
-      <a class="navbar-item" href="{{ "/" | relLangURL }}">
+      <a class="navbar-item" href="{{ default ("/" | relLangURL) $nav.brandURL }}">
         {{ $src := resources.Get (cond (eq .Site.Language.Lang "zh") "img/common/vize-brand.svg" "img/common/vibe-brand.svg" ) }}
         {{ $src.Content | safeHTML }}
       </a>
