@@ -6,7 +6,7 @@
   font-style: {{ default "normal" .fontStyle }};
   font-weight: {{ default "400" .fontWeight }};
   font-display: swap;
-  src: {{ range .localNames }}local('{{ . }}'),{{ end }} url({{ $url.Permalink }});
+  src: {{ range .localNames }}local('{{ . }}'),{{ end }} url({{ $url.RelPermalink }});
 }
 {{ end }}
 </style>

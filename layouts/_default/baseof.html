@@ -9,7 +9,7 @@
     <title>{{ default "Vibe" $pageTitle }} | Vibe</title>
     {{ if not .Site.Params.allowIndex }}<meta name="robots" content="noindex">{{ end }}
     {{ $src := resources.Get "img/common/favicon.png" | resources.Fingerprint }}
-    <link rel="shortcut icon" href="{{ $src.Permalink }}" />
+    <link rel="shortcut icon" href="{{ $src.RelPermalink }}" />
     {{ with $.Param "stylesPath" }}
       {{ $sass := resources.Get . }}
       {{ $style := $sass | resources.ToCSS (dict "outputStyle" "compressed" "includePaths" (slice "node_modules" "assets/css/common")) }}
@@ -22,11 +22,7 @@
     {{ $firaSansItalic := dict "fontFamily" "Fira Sans" "fontStyle" "italic" "localNames" (slice "Fira Sans Italic") "ttf" "fonts/common/FiraSans-Italic.ttf" }}
     {{ $stratosRegular := dict "fontFamily" "Stratos" "localNames" (slice "Stratos Regular") "ttf" "fonts/common/stratosweb-regular.woff" }}
     {{ $stratosSemibold := dict "fontFamily" "Stratos" "localNames" (slice "Stratos Semibold") "ttf" "fonts/common/stratosweb-semibold.woff" "fontWeight" "500" }}
-    {{ $stratosBold := dict "fontFamily" "Stratos" "localNames" (slice "Stratos Bold") "ttf" "fonts/common/stratosweb-semibold.woff" "fontWeight" "600" }}
-    {{ $notoSanaScRegular := dict "fontFamily" "Fira Noto" "localNames" (slice "Fira Noto Regular") "ttf" "fonts/common/NotoSansCJKsc-Regular.otf" }}
-    {{ $notoSanaScMedium := dict "fontFamily" "Fira Noto" "localNames" (slice "Fira Noto Medium") "ttf" "fonts/common/NotoSansCJKsc-Medium.otf" "fontWeight" "500"}}
-    {{ $notoSanaScBold := dict "fontFamily" "Fira Noto" "localNames" (slice "Fira Noto Bold") "ttf" "fonts/common/NotoSansCJKsc-Bold.otf" "fontWeight" "600"}}
-    {{ partial "common/font" (slice $firaSansRegular $firaSansMedium $firaSansItalic $stratosRegular $stratosSemibold $notoSanaScRegular $notoSanaScMedium $notoSanaScBold) }}
+    {{ partial "common/font" (slice $firaSansRegular $firaSansMedium $firaSansItalic $stratosRegular $stratosSemibold) }}
     {{ block "stylesheets" . }}{{ end }}
     {{ block "scripts" . }}{{ end }}
     {{ with .Site.Params.gtmId }}
