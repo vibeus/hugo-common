@@ -6,14 +6,16 @@ base:
           url: /hardware/
         - title: i18n-data-common-foot-base-sections-i_0-links-i_1-title
           url: /software/
+        - title: i18n-data-common-foot-base-sections-i_0-links-i_2-title
+          url: /android-app-store/
         - target: _blank
-          title: i18n-data-common-foot-base-sections-i_0-links-i_2-title
+          title: i18n-data-common-foot-base-sections-i_0-links-i_3-title
           url: https://app.vibe.us
-        - title: i18n-data-common-foot-base-sections-i_0-links-i_3-title
-          url: /security/
         - title: i18n-data-common-foot-base-sections-i_0-links-i_4-title
-          url: /customer/
+          url: /security/
         - title: i18n-data-common-foot-base-sections-i_0-links-i_5-title
+          url: /customer/
+        - title: i18n-data-common-foot-base-sections-i_0-links-i_6-title
           url: /demo/
     - heading: i18n-data-common-foot-base-sections-i_1-heading
       links:
@@ -32,6 +34,8 @@ base:
         - title: i18n-data-common-foot-base-sections-i_1-links-i_5-title
           url: https://help.vibe.us/using-the-vibe-board
           target: _blank
+        - title: i18n-data-common-foot-base-sections-i_1-links-i_4-title
+          url: /demo/video-demo/
     - heading: i18n-data-common-foot-base-sections-i_2-heading
       links:
         - title: i18n-data-common-foot-base-sections-i_2-links-i_0-title
@@ -52,6 +56,8 @@ base:
           url: /contact/
         - title: i18n-data-common-foot-base-sections-i_3-links-i_2-title
           url: /career/
+        - title: i18n-data-common-foot-base-sections-i_3-links-i_3-title
+          url: https://partners.vibe.us/
   phone: +1 (864) 335-2007
   copyright:
     - i18n-data-common-foot-base-copyright-i_0

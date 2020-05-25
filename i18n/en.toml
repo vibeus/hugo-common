@@ -71,15 +71,18 @@ other = "Vibe Hardware"
 other = "Vibe Software"
 
 [i18n-data-common-foot-base-sections-i_0-links-i_2-title]
-other = "Join a Board"
+other = "App Integrations"
 
 [i18n-data-common-foot-base-sections-i_0-links-i_3-title]
-other = "Security"
+other = "Join a Board"
 
 [i18n-data-common-foot-base-sections-i_0-links-i_4-title]
-other = "Customer Testimonials"
+other = "Security"
 
 [i18n-data-common-foot-base-sections-i_0-links-i_5-title]
+other = "Customer Testimonials"
+
+[i18n-data-common-foot-base-sections-i_0-links-i_6-title]
 other = "Vibe Demo"
 
 [i18n-data-common-foot-base-sections-i_1-heading]
@@ -102,6 +105,9 @@ other = "Warranty"
 
 [i18n-data-common-foot-base-sections-i_1-links-i_5-title]
 other = "Vibe Tutorial"
+
+[i18n-data-common-foot-base-sections-i_1-links-i_6-title]
+other = "Vibe Brochure"
 
 [i18n-data-common-foot-base-sections-i_2-heading]
 other = "Compare"
@@ -132,6 +138,9 @@ other = "Contact Us"
 
 [i18n-data-common-foot-base-sections-i_3-links-i_2-title]
 other = "Careers"
+
+[i18n-data-common-foot-base-sections-i_3-links-i_3-title]
+other = "Partners"
 
 [i18n-data-common-foot-base-copyright-i_0]
 other = "© Copyright 2020 Vibe, Inc."
