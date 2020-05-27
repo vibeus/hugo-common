@@ -45,6 +45,15 @@
   > .container
     max-width: 1200px
   .level-item.is-copyright
+    +lang-override(".lang-zh")
+      span
+        font-size: 13px
+      +desktop
+        span
+          padding-left: 8px
+          padding-right: 5px
+        span:not(:first-child)
+          border-left: 1px solid black
     +mobile
       text-align: center
       span

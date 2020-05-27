@@ -134,10 +134,16 @@ other = "联系我们"
 other = "Careers"
 
 [i18n-data-common-foot-base-copyright-i_0]
-other = "© Copyright 2020 杭州昼光科技有限公司"
+other = "info@vize.com.cn"
 
 [i18n-data-common-foot-base-copyright-i_1]
-other = "保留所有权力"
+other = "© Copyright 2020 杭州昼光科技有限公司 保留所有权力"
+
+[i18n-data-common-foot-base-copyright-i_2]
+other = "公安备35020302033896号"
+
+[i18n-data-common-foot-base-copyright-i_3]
+other = "闽ICP备19013692号"
 
 [i18n-data-common-foot-zh-sections-i_1-links-i_5-title]
 other = "规格参数"
