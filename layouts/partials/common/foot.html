@@ -58,7 +58,13 @@
         <div class="level-item is-copyright">
           <div>
             {{ range . }}
+            {{ if .url }}
+            <span>
+              <a href="{{ .url | relLangURL }}">{{ T .body }}</a>
+            </span>
+            {{ else }}
             <span>{{ T . }}</span>
+            {{ end }}
             {{ end }}
           </div>
         </div>

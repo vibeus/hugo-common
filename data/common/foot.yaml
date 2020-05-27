@@ -112,6 +112,7 @@ zh:
   copyright:
     - i18n-data-common-foot-base-copyright-i_0
     - i18n-data-common-foot-base-copyright-i_1
-    - i18n-data-common-foot-base-copyright-i_2
+    - body: i18n-data-common-foot-base-copyright-i_2
+      url: http://www.beian.gov.cn/portal/registerSystemInfo
     - i18n-data-common-foot-base-copyright-i_3
   socials: []
