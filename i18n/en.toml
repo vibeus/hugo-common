@@ -143,10 +143,7 @@ other = "Careers"
 other = "Partners"
 
 [i18n-data-common-foot-base-copyright-i_0]
-other = "© Copyright 2020 Vibe, Inc."
-
-[i18n-data-common-foot-base-copyright-i_1]
-other = "All rights reserved."
+other = "© Copyright 2020 Vibe, Inc. All rights reserved."
 
 [i18n-data-common-foot-zh-sections-i_1-links-i_5-title]
 other = "规格参数"

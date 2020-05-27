@@ -59,7 +59,6 @@ base:
   phone: +1 (864) 335-2007
   copyright:
     - i18n-data-common-foot-base-copyright-i_0
-    - i18n-data-common-foot-base-copyright-i_1
   socials:
     - icon: twitter
       url: https://twitter.com/thevibeboard
