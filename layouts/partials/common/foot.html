@@ -13,7 +13,7 @@
         <div class="column">
           <div class="columns is-links is-mobile is-multiline">
             {{ range $foot.sections }}
-            <div class="column is-half-touch is-foot-section">
+            <div class="column is-half-touch is-foot-section{{ with .class }} {{ . }}{{ end }}">
               <h2 class="is-vibe-heading">{{ T .heading }}</h2>
               {{ range .links }}
               <div class="foot-link">
@@ -58,7 +58,7 @@
         <div class="level-item is-copyright">
           <div>
             {{ range . }}
-            {{ if .url }}
+            {{ if (reflect.IsMap .) }}
             <span>
               <a href="{{ .url | relLangURL }}">{{ T .body }}</a>
             </span>

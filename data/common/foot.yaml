@@ -78,6 +78,10 @@ zh:
           url: /about/
         - title: i18n-data-common-foot-base-sections-i_3-links-i_1-title
           url: /about/#contact
+    - heading: i18n-data-common-foot-zh-sections-i_3-heading
+      figures:
+        - img/common/qr_wechat.png
+      class: is-hidden-desktop
     - heading: i18n-data-common-foot-base-sections-i_0-heading
       links:
         - title: i18n-data-common-foot-base-sections-i_0-links-i_2-title
@@ -108,6 +112,7 @@ zh:
     - heading: i18n-data-common-foot-zh-sections-i_3-heading
       figures:
         - img/common/qr_wechat.png
+      class: is-hidden-touch
   phone: null
   copyright:
     - i18n-data-common-foot-base-copyright-i_0
