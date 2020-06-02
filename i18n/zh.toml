@@ -26,7 +26,7 @@ other = "Buyer's FAQ"
 other = "Blogs"
 
 [i18n-data-common-nav-base-menu-i_1-submenu-i_2-title]
-other = "Vibe Tutorial"
+other = "Product Videos"
 
 [i18n-data-common-nav-base-menu-i_1-submenu-i_3-title]
 other = "Help Center"
@@ -101,7 +101,7 @@ other = "Privacy"
 other = "Warranty"
 
 [i18n-data-common-foot-base-sections-i_1-links-i_5-title]
-other = "Vibe Tutorial"
+other = "Product Videos"
 
 [i18n-data-common-foot-base-sections-i_2-heading]
 other = "Compare"
