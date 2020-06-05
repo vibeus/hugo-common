@@ -32,7 +32,7 @@ base:
         - title: i18n-data-common-foot-base-sections-i_1-links-i_4-title
           url: /warranty/
         - title: i18n-data-common-foot-base-sections-i_1-links-i_5-title
-          url: https://help.vibe.us/using-the-vibe-board
+          url: /video-tutorial/
           target: _blank
         - title: i18n-data-common-foot-base-sections-i_1-links-i_6-title
           url: /resources/Vibe_Brochure.pdf
