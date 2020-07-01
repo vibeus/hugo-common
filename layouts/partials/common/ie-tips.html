@@ -3,7 +3,7 @@
     <div class="container">
         <div class="content">
             <span class="is-left">
-                {{ $tips.body }}
+                {{ with $tips.body }}
                 {{ default . (T .)}}
                 {{ end }}
             </span>
