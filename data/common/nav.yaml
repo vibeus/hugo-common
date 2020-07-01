@@ -31,8 +31,7 @@ base:
   extra:
     - title: i18n-data-common-nav-base-extra-i_0-title
       class: is-primary is-outlined is-rounded is-try-app is-in-brand
-      url: https://app.vibe.us/login?auth_type=guest
-      target: _blank
+      url: /demo/
       in_brand_mobile: true
     - title: i18n-data-common-nav-base-extra-i_1-title
       class: is-primary is-rounded is-nav-cart is-in-brand

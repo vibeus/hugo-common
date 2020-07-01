@@ -82,6 +82,9 @@ other = "客户反馈"
 [i18n-data-common-foot-base-sections-i_0-links-i_5-title]
 other = "Vibe Demo"
 
+[i18n-data-common-foot-base-sections-i_0-links-i_6-title]
+other = "Vibe Demo"
+
 [i18n-data-common-foot-base-sections-i_1-heading]
 other = "Resources"
 
@@ -102,6 +105,9 @@ other = "Warranty"
 
 [i18n-data-common-foot-base-sections-i_1-links-i_5-title]
 other = "Product Videos"
+
+[i18n-data-common-foot-base-sections-i_1-links-i_6-title]
+other = "Vibe Brochure"
 
 [i18n-data-common-foot-base-sections-i_2-heading]
 other = "Compare"
@@ -133,17 +139,11 @@ other = "联系我们"
 [i18n-data-common-foot-base-sections-i_3-links-i_2-title]
 other = "Careers"
 
+[i18n-data-common-foot-base-sections-i_3-links-i_3-title]
+other = "Partners"
+
 [i18n-data-common-foot-base-copyright-i_0]
 other = "info@vize.com.cn"
-
-[i18n-data-common-foot-base-copyright-i_1]
-other = "© Copyright 2020 杭州昼光科技有限公司 保留所有权力"
-
-[i18n-data-common-foot-base-copyright-i_2]
-other = "公安备35020302033896号"
-
-[i18n-data-common-foot-base-copyright-i_3]
-other = "闽ICP备19013692号"
 
 [i18n-data-common-foot-zh-sections-i_1-links-i_5-title]
 other = "规格参数"
@@ -163,8 +163,20 @@ other = "保修服务"
 [i18n-data-common-foot-zh-sections-i_2-links-i_3-title]
 other = "法律声明"
 
-[i18n-data-common-foot-zh-sections-i_2-links-i_4-title]
-other = "服务网点"
-
 [i18n-data-common-foot-zh-sections-i_3-heading]
 other = "扫码关注我们"
+
+[i18n-manual-ie-tips]
+other = "Internet Explorer 在本站功能受到限制。我们推荐使用 Chrome, Firefox 或 Edge 浏览本站。"
+
+[i18n-data-common-foot-base-copyright-i_1]
+other = "© Copyright 2020 杭州昼光科技有限公司 保留所有权力"
+
+[i18n-data-common-foot-base-copyright-i_2]
+other = "公安备35020302033896号"
+
+[i18n-data-common-foot-base-copyright-i_3]
+other = "闽ICP备19013692号"
+
+[i18n-data-common-foot-zh-sections-i_2-links-i_4-title]
+other = "服务网点"

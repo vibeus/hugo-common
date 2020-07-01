@@ -166,5 +166,5 @@ other = "服务网点"
 [i18n-data-common-foot-zh-sections-i_3-heading]
 other = "扫码关注我们"
 
-[i18n-data-common-tips-base-body]
-other = "Internet Explorer does not function in many features in this site. We highly recommend you to use Chrome, Firefox, Edge."
+[i18n-manual-ie-tips]
+other = "Internet Explorer does not function in many features in this site. We highly recommend you to use Chrome, Firefox or Edge."
