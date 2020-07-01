@@ -38,7 +38,7 @@ other = "Contact Sales"
 other = "About Us"
 
 [i18n-data-common-nav-base-extra-i_0-title]
-other = "Try the App"
+other = "See a Demo"
 
 [i18n-data-common-nav-base-extra-i_1-title]
 other = "Order a Vibe"
@@ -165,3 +165,6 @@ other = "服务网点"
 
 [i18n-data-common-foot-zh-sections-i_3-heading]
 other = "扫码关注我们"
+
+[i18n-data-common-tips-base-body]
+other = "Internet Explorer does not function in many features in this site. We highly recommend you to use Chrome, Firefox, Edge."

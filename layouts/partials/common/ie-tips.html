@@ -1,0 +1,16 @@
+{{ $tips := merge .Site.Data.common.tips.base (default (dict) (index .Site.Data.common.tips .Site.Language.Lang)) }}
+<tips class="is-ie-tips" id="ie-tips">
+    <div class="container">
+        <div class="content">
+            <span class="is-left">
+                {{ $tips.body }}
+                {{ default . (T .)}}
+                {{ end }}
+            </span>
+            <span class="icon is-right" data-target="ie-tips">
+                {{ (resources.Get "img/common/close.svg").Content | safeHTML }}
+            </span>
+        </div>
+    </div>
+</tips>
+{{ partial "common/template-script" (dict "asset" "js/common/ie-tips.js") }}
