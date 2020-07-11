@@ -1,4 +1,5 @@
 {{ $foot := merge .Site.Data.common.foot.base (default (dict) (index .Site.Data.common.foot .Site.Language.Lang)) }}
+{{ $foot_in_lp := .Params.is_lp }}
 <footer>
   {{ if not .Params.foot_contact_bar_only }}
   <div class="section is-vibe-foot">
@@ -17,7 +18,11 @@
               <h2 class="is-vibe-heading">{{ T .heading }}</h2>
               {{ range .links }}
               <div class="foot-link">
-                <a href="{{ .url | relLangURL }}"
+                <a {{ if $foot_in_lp }}
+                   href="{{ .url }}"
+                   {{ else }}
+                   href="{{ .url | relLangURL }}"
+                   {{ end }}
                    {{ with .target }}target="{{ . }}"{{ end }}
                    {{ with .class }}class="{{ . }}"{{ end }}>
                   {{ T .title }}
@@ -60,7 +65,12 @@
             {{ range . }}
             {{ if (reflect.IsMap .) }}
             <span>
-              <a href="{{ .url | relLangURL }}">{{ T .body }}</a>
+              <a {{ if $foot_in_lp }}
+                 href="{{ .url }}"
+                 {{ else }}
+                 href="{{ .url | relLangURL }}"
+                 {{ end }}
+                >{{ T .body }}</a>
             </span>
             {{ else }}
             <span>{{ T . }}</span>

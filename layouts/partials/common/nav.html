@@ -1,5 +1,6 @@
 {{ $navData := merge .Site.Data.common.nav.base (default (dict) (index .Site.Data.common.nav .Site.Language.Lang)) }}
 {{ $nav := merge $navData (default (dict) .Params.navbar) }}
+{{ $nav_in_lp := .Params.is_lp }}
 
 <nav
   class="navbar is-transparent{{ if not .Params.noFixedNavbar }} is-fixed-top{{ end }}"
@@ -9,7 +10,13 @@
   {{ partial "common/template-script" (dict "asset" "js/common/nav.template.js") }}
   <div class="container is-fluid">
     <div class="navbar-brand">
-      <a class="navbar-item" href="{{ default ("/" | relLangURL) $nav.brandURL }}">
+      <a class="navbar-item"
+         {{ if $nav_in_lp }}
+         href="/"
+         {{ else }}
+         href="{{ "/" | relLangURL }}"
+         {{ end }}
+        >
         {{ $src := resources.Get (cond (eq .Site.Language.Lang "zh") "img/common/vize-brand.svg" "img/common/vibe-brand.svg" ) }}
         {{ $src.Content | safeHTML }}
       </a>
@@ -39,7 +46,11 @@
               <div class="navbar-dropdown is-boxed">
                 {{ range .submenu }}
                 <a class="navbar-item"
+                   {{ if $nav_in_lp }}
+                   href="{{ .url }}"
+                   {{ else }}
                    href="{{ .url | relLangURL }}"
+                   {{ end }}
                    {{ with .target }}target="{{ . }}"{{ end }}>
                   {{ T .title }}
                 </a>
@@ -47,7 +58,13 @@
               </div>
             </div>
           {{ else }}
-          <a class="navbar-item" href="{{ .url | relLangURL }}">{{ T .title }}</a>
+          <a class="navbar-item"
+             {{ if $nav_in_lp }}
+             href="{{ .url }}"
+             {{ else }}
+             href="{{ .url | relLangURL }}"
+             {{ end }}
+            >{{ T .title }}</a>
           {{ end }}
         {{ end }}
       </div>
@@ -55,7 +72,7 @@
         <div class="navbar-item">
           <div class="buttons">
             {{ range $nav.extra }}
-            {{ partial "common/nav-extra-button" . }}
+            {{ partial "common/nav-extra-button" (merge . (dict "in_lp" $nav_in_lp)) }}
             {{ end }}
           </div>
         </div>

@@ -1,0 +1,39 @@
+<section class="section is-bottom-cta">
+  <div class="container">
+    <div class="bottom-bg">
+      {{ (resources.Get "img/common/outline-logo.svg").Content | safeHTML }}
+    </div>
+    <div>
+      <h1 class="title is-section-title">{{ default .title (T .title) }}</h1>
+      {{ with .body }}
+      <div class="content">{{ default . (T .) | markdownify }}</div>
+      {{ end }}
+    </div>
+    {{ with .cta }}
+    <div class="cta">
+      {{ if .title }}
+      <a class="button is-rounded is-black is-outlined"
+         {{ if $.is_lp }}
+         href="{{ (default "/demo/" .url) }}"
+         {{ else }}
+         href="{{ (default "/demo/" .url) | relLangURL }}"
+         {{ end }}
+         >
+        {{ default .title (T .title) }}
+      </a>
+      {{ end }}
+      {{ range .buttons }}
+      <a class="button is-rounded {{ default "is-black is-outlined" .class }}"
+         {{ if $.is_lp }}
+         href="{{ .url }}"
+         {{ else }}
+         href="{{ .url | relLangURL }}"
+         {{ end }}
+         target="_blank">
+        {{ default .title (T .title) }}
+      </a>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+</section>

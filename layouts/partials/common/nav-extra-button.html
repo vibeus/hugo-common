@@ -1,5 +1,9 @@
 <a class="button {{ .class }}"
+   {{ if .in_lp }}
+   href="{{ .url }}"
+   {{ else }}
    href="{{ .url | relLangURL }}"
+   {{ end }}
    {{ with .target }}target="{{ . }}"{{ end }}
    {{ range .data }}
    data-{{ .key }}="{{ .value }}"
