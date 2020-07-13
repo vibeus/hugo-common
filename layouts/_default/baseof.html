@@ -20,9 +20,10 @@
     {{ $firaSansRegular := dict "fontFamily" "Fira Sans" "localNames" (slice "Fira Sans Regular") "ttf" "fonts/common/FiraSans-Regular.ttf" }}
     {{ $firaSansMedium := dict "fontFamily" "Fira Sans" "localNames" (slice "Fira Sans Medium") "ttf" "fonts/common/FiraSans-Medium.ttf" "fontWeight" "500" }}
     {{ $firaSansItalic := dict "fontFamily" "Fira Sans" "fontStyle" "italic" "localNames" (slice "Fira Sans Italic") "ttf" "fonts/common/FiraSans-Italic.ttf" }}
+    {{ $firaSansMediumItalic := dict "fontFamily" "Fira Sans" "fontStyle" "italic" "localNames" (slice "Fira Sans Medium Italic") "ttf" "fonts/common/FiraSans-MediumItalic.ttf" "fontWeight" "500" }}
     {{ $stratosRegular := dict "fontFamily" "Stratos" "localNames" (slice "Stratos Regular") "ttf" "fonts/common/stratosweb-regular.woff" }}
     {{ $stratosSemibold := dict "fontFamily" "Stratos" "localNames" (slice "Stratos Semibold") "ttf" "fonts/common/stratosweb-semibold.woff" "fontWeight" "500" }}
-    {{ partial "common/font" (slice $firaSansRegular $firaSansMedium $firaSansItalic $stratosRegular $stratosSemibold) }}
+    {{ partial "common/font" (slice $firaSansRegular $firaSansMedium $firaSansItalic $firaSansMediumItalic $stratosRegular $stratosSemibold) }}
     {{ block "stylesheets" . }}{{ end }}
     {{ block "scripts" . }}{{ end }}
     {{ with .Site.Params.gtmId }}
