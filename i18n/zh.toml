@@ -34,6 +34,21 @@ other = "Help Center"
 [i18n-data-common-nav-base-menu-i_1-submenu-i_4-title]
 other = "Contact Sales"
 
+[i18n-data-common-nav-base-menu-i_3-title]
+other = "Solutions"
+
+[i18n-data-common-nav-base-menu-i_3-submenu-i_0-title]
+other = "Training"
+
+[i18n-data-common-nav-base-menu-i_3-submenu-i_1-title]
+other = "Education"
+
+[i18n-data-common-nav-base-menu-i_3-submenu-i_2-title]
+other = "Presenting"
+
+[i18n-data-common-nav-base-menu-i_3-submenu-i_3-title]
+other = "Technology"
+
 [i18n-data-common-nav-base-menu-i_2-title]
 other = "关于我们"
 
@@ -177,6 +192,18 @@ other = "闽ICP备19013692号"
 
 [i18n-manual-ie-tips]
 other = "Internet Explorer 在本站功能受到限制。我们推荐使用 Chrome, Firefox 或 Edge 浏览本站。"
+
+[i18n-data-common-nav-base-menu-i_2-submenu-i_0-title]
+other = "Training"
+
+[i18n-data-common-nav-base-menu-i_2-submenu-i_1-title]
+other = "Education"
+
+[i18n-data-common-nav-base-menu-i_2-submenu-i_2-title]
+other = "Presenting"
+
+[i18n-data-common-nav-base-menu-i_2-submenu-i_3-title]
+other = "Technology"
 
 [i18n-data-common-foot-base-sections-i_3-links-i_3-title]
 other = "Partners"
