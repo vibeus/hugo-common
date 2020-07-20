@@ -38,16 +38,16 @@ other = "Contact Sales"
 other = "Solutions"
 
 [i18n-data-common-nav-base-menu-i_3-submenu-i_0-title]
-other = "Training"
-
-[i18n-data-common-nav-base-menu-i_3-submenu-i_1-title]
 other = "Education"
 
-[i18n-data-common-nav-base-menu-i_3-submenu-i_2-title]
+[i18n-data-common-nav-base-menu-i_3-submenu-i_1-title]
 other = "Presenting"
 
-[i18n-data-common-nav-base-menu-i_3-submenu-i_3-title]
+[i18n-data-common-nav-base-menu-i_3-submenu-i_2-title]
 other = "Technology"
+
+[i18n-data-common-nav-base-menu-i_3-submenu-i_3-title]
+other = "Training"
 
 [i18n-data-common-nav-base-menu-i_2-title]
 other = "About Us"
