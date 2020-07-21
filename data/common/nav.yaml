@@ -40,7 +40,7 @@ base:
       url: /about/
     - title: i18n-data-common-nav-base-menu-i_4-title
       url: /order/
-      class: is-hidden-tablet
+      class: is-hidden-tablet is-order-in-menu
   extra:
     - title: i18n-data-common-nav-base-extra-i_0-title
       class: is-primary is-outlined is-rounded is-in-brand
