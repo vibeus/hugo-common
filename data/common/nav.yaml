@@ -12,6 +12,16 @@ base:
           url: /comparison/
         - title: i18n-data-common-nav-base-menu-i_0-submenu-i_4-title
           url: /customer/
+    - title: i18n-data-common-nav-base-menu-i_3-title
+      submenu:
+        - title: i18n-data-common-nav-base-menu-i_3-submenu-i_0-title
+          url: /lp/scenario-education/
+        - title: i18n-data-common-nav-base-menu-i_3-submenu-i_1-title
+          url: /lp/scenario-presenting/
+        - title: i18n-data-common-nav-base-menu-i_3-submenu-i_2-title
+          url: /lp/scenario-technology/
+        # - title: i18n-data-common-nav-base-menu-i_3-submenu-i_3-title
+        #   url: /lp/scenario-training/
     - title: i18n-data-common-nav-base-menu-i_1-title
       submenu:
         - title: i18n-data-common-nav-base-menu-i_1-submenu-i_0-title
@@ -26,16 +36,6 @@ base:
           target: _blank
         - title: i18n-data-common-nav-base-menu-i_1-submenu-i_4-title
           url: /contact/
-    - title: i18n-data-common-nav-base-menu-i_3-title
-      submenu:
-        - title: i18n-data-common-nav-base-menu-i_3-submenu-i_0-title
-          url: /lp/scenario-education/
-        - title: i18n-data-common-nav-base-menu-i_3-submenu-i_1-title
-          url: /lp/scenario-presenting/
-        - title: i18n-data-common-nav-base-menu-i_3-submenu-i_2-title
-          url: /lp/scenario-technology/
-        - title: i18n-data-common-nav-base-menu-i_3-submenu-i_3-title
-          url: /lp/scenario-training/
     - title: i18n-data-common-nav-base-menu-i_2-title
       url: /about/
   extra:

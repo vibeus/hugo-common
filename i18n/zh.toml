@@ -16,6 +16,21 @@ other = "Product Comparison"
 [i18n-data-common-nav-base-menu-i_0-submenu-i_4-title]
 other = "客户反馈"
 
+[i18n-data-common-nav-base-menu-i_3-title]
+other = "Solutions"
+
+[i18n-data-common-nav-base-menu-i_3-submenu-i_0-title]
+other = "Training"
+
+[i18n-data-common-nav-base-menu-i_3-submenu-i_1-title]
+other = "Education"
+
+[i18n-data-common-nav-base-menu-i_3-submenu-i_2-title]
+other = "Presenting"
+
+[i18n-data-common-nav-base-menu-i_3-submenu-i_3-title]
+other = "Technology"
+
 [i18n-data-common-nav-base-menu-i_1-title]
 other = "Resources"
 
@@ -33,21 +48,6 @@ other = "Help Center"
 
 [i18n-data-common-nav-base-menu-i_1-submenu-i_4-title]
 other = "Contact Sales"
-
-[i18n-data-common-nav-base-menu-i_3-title]
-other = "Solutions"
-
-[i18n-data-common-nav-base-menu-i_3-submenu-i_0-title]
-other = "Training"
-
-[i18n-data-common-nav-base-menu-i_3-submenu-i_1-title]
-other = "Education"
-
-[i18n-data-common-nav-base-menu-i_3-submenu-i_2-title]
-other = "Presenting"
-
-[i18n-data-common-nav-base-menu-i_3-submenu-i_3-title]
-other = "Technology"
 
 [i18n-data-common-nav-base-menu-i_2-title]
 other = "关于我们"
