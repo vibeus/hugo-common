@@ -84,6 +84,9 @@
       font-size: 14px
 
 // Special case for position: sticky navbar menu to be scrollable
-html.is-clipped .navbar-menu
-  overflow: auto
-  -webkit-overflow-scrolling: touch
+html.is-clipped
+  touch-action: none
+  .navbar-menu
+    touch-action: auto
+    overflow: auto
+    -webkit-overflow-scrolling: touch

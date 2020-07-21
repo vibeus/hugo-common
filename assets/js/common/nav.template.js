@@ -3,18 +3,28 @@
 */
 import { toggleActive } from '{{ $src.RelPermalink }}';
 
-toggleActive('.navbar-burger', true, (isActive) => {
-  const navbar = document.querySelector('.navbar');
-  if (navbar.classList.contains('is-fixed-top')) {
-    return;
-  }
+const navbar = document.querySelector('.navbar');
+const menu = document.getElementById('nav-menu');
 
-  // For navbar that use position: sticky, we need to calculate menu size manually.
-  const menu = document.getElementById('nav-menu');
+function setNavMenuHeight() {
   const navbarTop = navbar.getBoundingClientRect().top;
+  menu.style.maxHeight = `calc(${window.innerHeight - navbarTop}px - 4.125rem)`;
+}
+
+function clearNavMenuHeight() {
+  menu.style.maxHeight = '';
+}
+
+toggleActive('.navbar-burger', true, (isActive) => {
   if (isActive) {
-    menu.style.maxHeight = `calc(100vh - ${navbarTop}px - 4.125rem)`;
+    setNavMenuHeight();
   } else {
-    menu.style.maxHeight = '';
+    clearNavMenuHeight();
+  }
+});
+
+window.addEventListener('resize', () => {
+  if (menu.classList.contains('is-active')) {
+    setNavMenuHeight();
   }
 });
