@@ -38,13 +38,16 @@ base:
           url: /contact/
     - title: i18n-data-common-nav-base-menu-i_2-title
       url: /about/
+    - title: i18n-data-common-nav-base-menu-i_4-title
+      url: /order/
+      class: is-hidden-tablet
   extra:
     - title: i18n-data-common-nav-base-extra-i_0-title
-      class: is-primary is-outlined is-rounded is-try-app is-in-brand
+      class: is-primary is-outlined is-rounded is-in-brand
       url: /demo/
       in_brand_mobile: true
     - title: i18n-data-common-nav-base-extra-i_1-title
-      class: is-primary is-rounded is-nav-cart is-in-brand
+      class: is-primary is-rounded is-nav-cart is-in-brand is-hidden-mobile
       url: /order/
       in_brand_mobile: true
 zh:
@@ -75,7 +78,7 @@ zh:
       url: /about/
   extra:
     - title: i18n-data-common-nav-base-extra-i_0-title
-      class: is-primary is-outlined is-rounded is-try-app is-in-brand
+      class: is-primary is-outlined is-rounded is-try-app is-in-brand is-hidden-mobile
       url: https://app.vibe.cn/login?auth_type=guest
       target: _blank
       in_brand_mobile: true

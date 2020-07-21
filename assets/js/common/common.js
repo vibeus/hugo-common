@@ -21,8 +21,11 @@ export function toggleActive(triggerClass, toggleSelf, onChanged) {
     if (target) {
       target.classList.toggle('is-active');
       const isActive = target.classList.contains('is-active');
-      // if modal is active, clip html
-      if (target.classList.contains('modal')) {
+      // if modal or navbar menu is active, prevent scrolling on backdrop elements.
+      if (
+        target.classList.contains('modal') ||
+        target.classList.contains('navbar-menu')
+      ) {
         if (isActive) {
           document.documentElement.classList.add('is-clipped');
         } else {

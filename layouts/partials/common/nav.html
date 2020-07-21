@@ -23,7 +23,7 @@
       <div class="navbar-brand-buttons">
         {{ range $nav.extra }}
         {{ if .in_brand_mobile }}
-        {{ partial "common/nav-extra-button" . }}
+        {{ partial "common/nav-extra-button" (merge . (dict "in_lp" $nav_in_lp)) }}
         {{ end }}
         {{ end }}
 
@@ -58,7 +58,7 @@
               </div>
             </div>
           {{ else }}
-          <a class="navbar-item"
+          <a class="navbar-item{{ with .class }} {{ . }}{{ end }}"
              {{ if $nav_in_lp }}
              href="{{ .url }}"
              {{ else }}

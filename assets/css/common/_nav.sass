@@ -23,9 +23,6 @@
         margin-left: 12px
       +from($navbar-breakpoint)
         display: none
-      +mobile
-        &.is-try-app
-          display: none
     .navbar-burger
       width: 48px
       height: 48px
@@ -52,15 +49,17 @@
   +from($navbar-breakpoint)
     // keep brand logo and navbar start (menus) 80px when not collapsed.
     // there are 12px padding on both side so we need to deduct them.
-    .navbar-brand
-      margin-right: 40px - 12px
-    .navbar-menu
-      margin-left: 40px - 12px
+    // Update: we add another top level menu so reduce spacing when there is not enough space.
+    +from(1230px)
+      .navbar-brand
+        margin-right: 40px - 12px
+      .navbar-menu
+        margin-left: 40px - 12px
 
-    // space betwen menus: 54px.
-    // there are 12px padding on both side so we need to deduct them.
-    .navbar-start > .navbar-item:not(:first-child)
-      margin-left: 54px - 12px * 2
+      // space betwen menus: 54px.
+      // there are 12px padding on both side so we need to deduct them.
+      .navbar-start > .navbar-item:not(:first-child)
+        margin-left: 54px - 12px * 2
 
     .navbar-dropdown.is-boxed
       box-shadow: 0px -1px 10px rgba(55, 55, 55, 0.1)
