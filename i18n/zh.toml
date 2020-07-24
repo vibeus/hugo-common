@@ -19,6 +19,9 @@ other = "客户反馈"
 [i18n-data-common-nav-base-menu-i_3-title]
 other = "Solutions"
 
+[i18n-data-common-nav-base-menu-i_1-submenu-i_6-title]
+other = "Distance Learning"
+
 [i18n-data-common-nav-base-menu-i_3-submenu-i_0-title]
 other = "Training"
 

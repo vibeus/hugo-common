@@ -14,6 +14,8 @@ base:
           url: /customer/
     - title: i18n-data-common-nav-base-menu-i_3-title
       submenu:
+        - title: i18n-data-common-nav-base-menu-i_1-submenu-i_6-title
+          url: /lp/scenario-distance-learning/
         - title: i18n-data-common-nav-base-menu-i_3-submenu-i_0-title
           url: /lp/scenario-education/
         - title: i18n-data-common-nav-base-menu-i_3-submenu-i_1-title
