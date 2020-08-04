@@ -1,0 +1,12 @@
+{{ $faq := .Page.Params.Get .Params.param }}
+{{ $heading := default "h3" .Params.heading }}
+{{ range where $faq.items "id" .Params.id }}
+{{ print "<" $heading ">" | safeHTML }}
+{{ .question }}
+{{ print "</" $heading ">" | safeHTML }}
+
+{{ .answer | markdownify }}
+
+{{ with .additional }}{{ . | markdownify }}{{ end }}
+
+{{ end }}

@@ -1,0 +1,19 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+  {{ range $idx, $item := .items }}
+  {{ if not (eq $idx 0) }},{{ end }}
+  {
+    "@type": "Question",
+    "name": "{{ .question }}",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "{{ .answer | markdownify | safeHTML }}"
+    }
+  }
+  {{ end }}
+  ]
+}
+</script>
