@@ -14,6 +14,8 @@ base:
           url: /customer/
     - title: i18n-data-common-nav-base-menu-i_3-title
       submenu:
+        - title: i18n-data-common-nav-base-menu-i_1-submenu-i_10-title
+          url: /lp/scenario-brainstorming/
         - title: i18n-data-common-nav-base-menu-i_1-submenu-i_6-title
           url: /lp/scenario-distance-learning/
         - title: i18n-data-common-nav-base-menu-i_3-submenu-i_0-title
@@ -22,6 +24,8 @@ base:
           url: /lp/scenario-engineering/
         - title: i18n-data-common-nav-base-menu-i_1-submenu-i_8-title
           url: /lp/scenario-marketing/
+        - title: i18n-data-common-nav-base-menu-i_1-submenu-i_9-title
+          url: /lp/scenario-meeting/
         - title: i18n-data-common-nav-base-menu-i_3-submenu-i_1-title
           url: /lp/scenario-presenting/
         - title: i18n-data-common-nav-base-menu-i_3-submenu-i_2-title
