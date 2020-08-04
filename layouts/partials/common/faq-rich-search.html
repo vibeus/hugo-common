@@ -10,7 +10,7 @@
     "name": "{{ .question }}",
     "acceptedAnswer": {
       "@type": "Answer",
-      "text": "{{ .answer | markdownify | safeHTML }}"
+      "text": "{{ .answer | markdownify | safeHTML }}{{ with .json_only }}{{ . | markdownify | safeHTML }}{{ end }}"
     }
   }
   {{ end }}
