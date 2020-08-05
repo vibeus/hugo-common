@@ -7,6 +7,9 @@ other = "Vibe Hardware"
 [i18n-data-common-nav-base-menu-i_0-submenu-i_1-title]
 other = "Vibe Software"
 
+[i18n-data-common-nav-base-menu-i_0-submenu-i_5-title]
+other = "App Integrations"
+
 [i18n-data-common-nav-base-menu-i_0-submenu-i_2-title]
 other = "Security"
 

@@ -6,6 +6,8 @@ base:
           url: /hardware/
         - title: i18n-data-common-nav-base-menu-i_0-submenu-i_1-title
           url: /software/
+        - title: i18n-data-common-nav-base-menu-i_0-submenu-i_5-title
+          url: /android-app-store/
         - title: i18n-data-common-nav-base-menu-i_0-submenu-i_2-title
           url: /security/
         - title: i18n-data-common-nav-base-menu-i_0-submenu-i_3-title
