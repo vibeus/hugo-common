@@ -2,10 +2,10 @@
 {{ $heading := default "h3" .Params.heading }}
 {{ range where $faq.items "id" .Params.id }}
 {{ print "<" $heading ">" | safeHTML }}
-{{ .question }}
+Q: {{ .question }}
 {{ print "</" $heading ">" | safeHTML }}
 
-{{ .answer | markdownify }}
+{{ print "**A:** " .answer | markdownify }}
 
 {{ with .additional }}{{ . | markdownify }}{{ end }}
 
