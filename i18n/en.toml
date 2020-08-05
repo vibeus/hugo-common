@@ -22,8 +22,26 @@ other = "Customer Testimonials"
 [i18n-data-common-nav-base-menu-i_3-title]
 other = "Solutions"
 
+[i18n-data-common-nav-base-menu-i_1-column_submenu-i_0-title]
+other = "Scenario"
+
 [i18n-data-common-nav-base-menu-i_1-submenu-i_10-title]
 other = "Brainstorming"
+
+[i18n-data-common-nav-base-menu-i_1-submenu-i_9-title]
+other = "Meeting"
+
+[i18n-data-common-nav-base-menu-i_3-submenu-i_1-title]
+other = "Presenting"
+
+[i18n-data-common-nav-base-menu-i_3-submenu-i_3-title]
+other = "Remote Collaboration"
+
+[i18n-data-common-nav-base-menu-i_3-submenu-i_5-title]
+other = "Training"
+
+[i18n-data-common-nav-base-menu-i_1-column_submenu-i_1-title]
+other = "Industry"
 
 [i18n-data-common-nav-base-menu-i_1-submenu-i_6-title]
 other = "Distance Learning"
@@ -37,23 +55,11 @@ other = "Engineering"
 [i18n-data-common-nav-base-menu-i_1-submenu-i_8-title]
 other = "Marketing"
 
-[i18n-data-common-nav-base-menu-i_1-submenu-i_9-title]
-other = "Meeting"
-
-[i18n-data-common-nav-base-menu-i_3-submenu-i_1-title]
-other = "Presenting"
-
 [i18n-data-common-nav-base-menu-i_3-submenu-i_2-title]
 other = "Professional Services"
 
-[i18n-data-common-nav-base-menu-i_3-submenu-i_3-title]
-other = "Remote Collaboration"
-
 [i18n-data-common-nav-base-menu-i_3-submenu-i_4-title]
 other = "Technology"
-
-[i18n-data-common-nav-base-menu-i_3-submenu-i_5-title]
-other = "Training"
 
 [i18n-data-common-nav-base-menu-i_1-title]
 other = "Resources"

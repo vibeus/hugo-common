@@ -15,29 +15,33 @@ base:
         - title: i18n-data-common-nav-base-menu-i_0-submenu-i_4-title
           url: /customer/
     - title: i18n-data-common-nav-base-menu-i_3-title
-      submenu:
-        - title: i18n-data-common-nav-base-menu-i_1-submenu-i_10-title
-          url: /lp/scenario-brainstorming/
-        - title: i18n-data-common-nav-base-menu-i_1-submenu-i_6-title
-          url: /lp/scenario-distance-learning/
-        - title: i18n-data-common-nav-base-menu-i_3-submenu-i_0-title
-          url: /lp/scenario-education/
-        - title: i18n-data-common-nav-base-menu-i_1-submenu-i_7-title
-          url: /lp/scenario-engineering/
-        - title: i18n-data-common-nav-base-menu-i_1-submenu-i_8-title
-          url: /lp/scenario-marketing/
-        - title: i18n-data-common-nav-base-menu-i_1-submenu-i_9-title
-          url: /lp/scenario-meeting/
-        - title: i18n-data-common-nav-base-menu-i_3-submenu-i_1-title
-          url: /lp/scenario-presenting/
-        - title: i18n-data-common-nav-base-menu-i_3-submenu-i_2-title
-          url: /lp/scenario-professional-services/
-        - title: i18n-data-common-nav-base-menu-i_3-submenu-i_3-title
-          url: /lp/scenario-remote/
-        - title: i18n-data-common-nav-base-menu-i_3-submenu-i_4-title
-          url: /lp/scenario-technology/
-        - title: i18n-data-common-nav-base-menu-i_3-submenu-i_5-title
-          url: /lp/scenario-training/
+      column_submenu:
+        - title: i18n-data-common-nav-base-menu-i_1-column_submenu-i_0-title
+          items:
+            - title: i18n-data-common-nav-base-menu-i_1-submenu-i_10-title
+              url: /lp/scenario-brainstorming/
+            - title: i18n-data-common-nav-base-menu-i_1-submenu-i_9-title
+              url: /lp/scenario-meeting/
+            - title: i18n-data-common-nav-base-menu-i_3-submenu-i_1-title
+              url: /lp/scenario-presenting/
+            - title: i18n-data-common-nav-base-menu-i_3-submenu-i_3-title
+              url: /lp/scenario-remote/
+            - title: i18n-data-common-nav-base-menu-i_3-submenu-i_5-title
+              url: /lp/scenario-training/
+        - title: i18n-data-common-nav-base-menu-i_1-column_submenu-i_1-title
+          items:
+            - title: i18n-data-common-nav-base-menu-i_1-submenu-i_6-title
+              url: /lp/scenario-distance-learning/
+            - title: i18n-data-common-nav-base-menu-i_3-submenu-i_0-title
+              url: /lp/scenario-education/
+            - title: i18n-data-common-nav-base-menu-i_1-submenu-i_7-title
+              url: /lp/scenario-engineering/
+            - title: i18n-data-common-nav-base-menu-i_1-submenu-i_8-title
+              url: /lp/scenario-marketing/
+            - title: i18n-data-common-nav-base-menu-i_3-submenu-i_2-title
+              url: /lp/scenario-professional-services/
+            - title: i18n-data-common-nav-base-menu-i_3-submenu-i_4-title
+              url: /lp/scenario-technology/
     - title: i18n-data-common-nav-base-menu-i_1-title
       submenu:
         - title: i18n-data-common-nav-base-menu-i_1-submenu-i_0-title
