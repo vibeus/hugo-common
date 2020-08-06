@@ -49,7 +49,7 @@
                   {{ range .column_submenu }}
                   <div class="column">
                     <span class="navbar-item is-column-title">{{ T .title }}</span>
-                    {{ range .items }}
+                    {{ range .items }}{{ if not .hidden }}
                     <a class="navbar-item"
                        {{ if $nav_in_lp }}
                        href="{{ .url }}"
@@ -59,12 +59,12 @@
                        {{ with .target }}target="{{ . }}"{{ end }}>
                       {{ T .title }}
                     </a>
-                    {{ end }}
+                    {{ end }}{{ end }}
                   </div>
                   {{ end }}
                 </div>
                 {{ end }}
-                {{ range .submenu }}
+                {{ range .submenu }}{{ if not .hidden }}
                 <a class="navbar-item"
                    {{ if $nav_in_lp }}
                    href="{{ .url }}"
@@ -74,7 +74,7 @@
                    {{ with .target }}target="{{ . }}"{{ end }}>
                   {{ T .title }}
                 </a>
-                {{ end }}
+                {{ end }}{{ end }}
               </div>
             </div>
           {{ else }}
