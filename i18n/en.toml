@@ -28,6 +28,9 @@ other = "Scenario"
 [i18n-data-common-nav-base-menu-i_1-submenu-i_10-title]
 other = "Brainstorming"
 
+[i18n-data-common-nav-base-menu-i_1-column_submenu-i_0-items-i_5-title]
+other = "Entertainment"
+
 [i18n-data-common-nav-base-menu-i_1-submenu-i_9-title]
 other = "Meeting"
 
