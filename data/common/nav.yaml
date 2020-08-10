@@ -22,7 +22,6 @@ base:
               url: /lp/scenario-brainstorming/
             - title: i18n-data-common-nav-base-menu-i_1-column_submenu-i_0-items-i_5-title
               url: /lp/scenario-entertainment/
-              hidden: true
             - title: i18n-data-common-nav-base-menu-i_1-submenu-i_9-title
               url: /lp/scenario-meeting/
             - title: i18n-data-common-nav-base-menu-i_3-submenu-i_1-title
