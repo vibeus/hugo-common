@@ -9,8 +9,7 @@
         <thead>
           <tr>
             <th>
-              <p>Brands</p>
-              <p>55″</p>
+              {{ default "Brands\n\n55″" .top_left_cell | markdownify }}
             </th>
             {{ range $brands }}
             <td class="{{ if .hideMobile }}is-hidden-mobile{{ end }}">
@@ -18,6 +17,9 @@
                 {{ $resource := resources.Get .icon }}
                 {{ partial "common/srcset" (dict "resource" $resource "desktop" "228x") }}
               </figure>
+              {{ if $.show_name }}
+              <p class="brand-name">{{ .name }}</p>
+              {{ end }}
             </td>
             {{ end }}
           </tr>
@@ -30,6 +32,7 @@
             </td>
             {{ range $brands }}
             <td class="{{ if .hideMobile }}is-hidden-mobile{{ end }}">
+              <div class="feature-checkmark">
               {{ if index .features $idx }}
               <span class="icon is-large is-feature-check">
                 <figure class="image">
@@ -39,6 +42,19 @@
                 </figure>
               </span>
               {{ end }}
+              {{ with .feature_icons }}
+              <div class="feature-icons">
+                {{ range index . (string $idx) }}
+                <span class="icon">
+                  <figure class="image">
+                    {{ $resource := resources.Get .icon }}
+                    {{ partial "common/srcset" (dict "resource" $resource "desktop" "48x") }}
+                  </figure>
+                </span>
+                {{ end }}
+              </div>
+              {{ end }}
+              </div>
             </td>
             {{ end }}
           </tr>
