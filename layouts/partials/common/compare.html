@@ -1,6 +1,6 @@
 {{ $features := default .Site.Data.common.compare.features .features }}
 {{ $brands := default .Site.Data.common.compare.brands .brands }}
-<section class="section is-compare">
+<section class="section is-compare{{ with .compare_class }} {{ . }}{{ end }}">
   <div class="container">
     <h1 class="title is-section-title">{{ default .title (T .title) }}</h1>
 
