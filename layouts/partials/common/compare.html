@@ -3,6 +3,7 @@
 {{ $features := default $data.features .features }}
 {{ $brands := default $data.brands .brands }}
 {{ $compare_class := default $data.compare_class .compare_class }}
+{{ $show_name := default $data.show_name .show_name }}
 <section class="section is-compare{{ with $compare_class }} {{ . }}{{ end }}">
   <div class="container">
     <h1 class="title is-section-title">{{ default .title (T .title) }}</h1>
@@ -20,7 +21,7 @@
                 {{ $resource := resources.Get .icon }}
                 {{ partial "common/srcset" (dict "resource" $resource "desktop" "228x") }}
               </figure>
-              {{ if $.show_name }}
+              {{ if $show_name }}
               <p class="brand-name">{{ .name }}</p>
               {{ end }}
             </td>
