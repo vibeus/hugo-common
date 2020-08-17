@@ -68,4 +68,8 @@
     </div>
   </div>
   {{ end }}
+
+  {{ range $key, $value := .hidden_values }}
+  <input type="hidden" name="{{ $key }}" value="{{ $value }}"></input>
+  {{ end }}
 </form>
