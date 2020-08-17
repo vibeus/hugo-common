@@ -1,6 +1,9 @@
-{{ $features := default .Site.Data.common.compare.features .features }}
-{{ $brands := default .Site.Data.common.compare.brands .brands }}
-<section class="section is-compare{{ with .compare_class }} {{ . }}{{ end }}">
+{{ $data_name := default "compare" .data_name }}
+{{ $data := index .Site.Data.common $data_name }}
+{{ $features := default $data.features .features }}
+{{ $brands := default $data.brands .brands }}
+{{ $compare_class := default $data.compare_class .compare_class }}
+<section class="section is-compare{{ with $compare_class }} {{ . }}{{ end }}">
   <div class="container">
     <h1 class="title is-section-title">{{ default .title (T .title) }}</h1>
 
