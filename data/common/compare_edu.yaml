@@ -2,11 +2,13 @@ top_left_cell: |
   Compare  
   Brands
 
+price_cell: Price of Board
+
 show_name: true
 compare_class: is-education
 
 features:
-  - 'Realtime Whiteboard'
+  - 'Real-time Whiteboard'
   - 'Cloud Storage'
   - 'Multi-window Support'
   - 'Wireless Screenshare'
