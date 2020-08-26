@@ -1,4 +1,7 @@
-<section class="section is-video-hero">
+<section class="section is-video-hero"
+         {{ with .styles.section }}
+         style="{{ range $k, $v := . }}{{ $k }}: {{ $v }};{{ end }}"
+         {{ end }}>
   <div class="container">
     <div class="video-hero-bg">
       {{ (resources.Get "img/common/outline-logo.svg").Content | safeHTML }}
@@ -58,6 +61,16 @@
     {{ with .footnote }}
     <div class="content is-footnote">
       {{ default .text (T .text) | markdownify }}
+    </div>
+    {{ end }}
+    {{ with .cta }}
+    <div class="cta">
+      <a class="button is-medium{{ with .class }} {{ . }}{{ end }}"
+         href="{{ default "/demo/" .url }}"
+         {{ with .target }}data-target="{{ . }}"{{ end }}
+         >
+        {{ default .title (T .title) }}
+      </a>
     </div>
     {{ end }}
   </div>
