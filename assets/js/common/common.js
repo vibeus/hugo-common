@@ -126,6 +126,7 @@ export function setupForm(form, callbacks) {
   const before = callbacks['click.before'];
   const after = callbacks['click.after'];
   const submitted = callbacks['submit.after'];
+  const final = callbacks['submit.final'];
 
   form.querySelectorAll('button').forEach((el) => {
     const type = el.type;
@@ -165,6 +166,7 @@ export function setupForm(form, callbacks) {
           .finally(() => {
             el.classList.remove('is-loading');
             el.removeAttribute('disabled');
+            final && final(name, type, form);
           });
       }
 
