@@ -5,7 +5,7 @@
   <div class="columns">
     {{ range . }}
     <div class="column{{ with .column_class }} {{ . }}{{ end }}">
-      <div class="control {{ if .annotation }} annotated{{ end }}">
+      <div class="control{{ if .annotation }} annotated{{ end }}">
         {{ if .dropdown }}
         <div class="select is-fullwidth">
           <select class="placeholder" name="{{ .name }}">

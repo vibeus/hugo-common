@@ -39,54 +39,52 @@
     <div id="nav-menu" class="navbar-menu">
       <div class="navbar-start">
         {{ range $nav.menu }}
-          {{ if not (in $.Params.ignore_nav_items (T .title)) }}
-            {{ if or .submenu .column_submenu }}
-              <!-- tabIndex="0" makes the element focusable otherwise dropdown does not show up in iPad. -->
-              <div tabIndex="0" class="navbar-item has-dropdown is-hoverable">
-                <span class="navbar-link">{{ T .title }}</span>
-                <div class="navbar-dropdown is-boxed">
-                  {{ if .column_submenu }}
-                  <div class="columns">
-                    {{ range .column_submenu }}
-                    <div class="column">
-                      <span class="navbar-item is-column-title">{{ T .title }}</span>
-                      {{ range .items }}{{ if not .hidden }}
-                      <a class="navbar-item"
-                        {{ if $nav_in_lp }}
-                        href="{{ .url }}"
-                        {{ else }}
-                        href="{{ .url | relLangURL }}"
-                        {{ end }}
-                        {{ with .target }}target="{{ . }}"{{ end }}>
-                        {{ T .title }}
-                      </a>
-                      {{ end }}{{ end }}
-                    </div>
-                    {{ end }}
+          {{ if and (not (in $.Params.ignore_nav_items (T .title))) (or .submenu .column_submenu) }}
+            <!-- tabIndex="0" makes the element focusable otherwise dropdown does not show up in iPad. -->
+            <div tabIndex="0" class="navbar-item has-dropdown is-hoverable">
+              <span class="navbar-link">{{ T .title }}</span>
+              <div class="navbar-dropdown is-boxed">
+                {{ if .column_submenu }}
+                <div class="columns">
+                  {{ range .column_submenu }}
+                  <div class="column">
+                    <span class="navbar-item is-column-title">{{ T .title }}</span>
+                    {{ range .items }}{{ if not .hidden }}
+                    <a class="navbar-item"
+                       {{ if $nav_in_lp }}
+                       href="{{ .url }}"
+                       {{ else }}
+                       href="{{ .url | relLangURL }}"
+                       {{ end }}
+                       {{ with .target }}target="{{ . }}"{{ end }}>
+                      {{ T .title }}
+                    </a>
+                    {{ end }}{{ end }}
                   </div>
                   {{ end }}
-                  {{ range .submenu }}{{ if not .hidden }}
-                  <a class="navbar-item"
-                    {{ if $nav_in_lp }}
-                    href="{{ .url }}"
-                    {{ else }}
-                    href="{{ .url | relLangURL }}"
-                    {{ end }}
-                    {{ with .target }}target="{{ . }}"{{ end }}>
-                    {{ T .title }}
-                  </a>
-                  {{ end }}{{ end }}
                 </div>
+                {{ end }}
+                {{ range .submenu }}{{ if not .hidden }}
+                <a class="navbar-item"
+                   {{ if $nav_in_lp }}
+                   href="{{ .url }}"
+                   {{ else }}
+                   href="{{ .url | relLangURL }}"
+                   {{ end }}
+                   {{ with .target }}target="{{ . }}"{{ end }}>
+                  {{ T .title }}
+                </a>
+                {{ end }}{{ end }}
               </div>
-            {{ else }}
-            <a class="navbar-item{{ with .class }} {{ . }}{{ end }}"
-              {{ if $nav_in_lp }}
-              href="{{ .url }}"
-              {{ else }}
-              href="{{ .url | relLangURL }}"
-              {{ end }}
-              >{{ T .title }}</a>
-            {{ end }}
+            </div>
+          {{ else }}
+          <a class="navbar-item{{ with .class }} {{ . }}{{ end }}"
+             {{ if $nav_in_lp }}
+             href="{{ .url }}"
+             {{ else }}
+             href="{{ .url | relLangURL }}"
+             {{ end }}
+            >{{ T .title }}</a>
           {{ end }}
         {{ end }}
       </div>
