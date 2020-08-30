@@ -5,7 +5,7 @@
   <div class="columns">
     {{ range . }}
     <div class="column{{ with .column_class }} {{ . }}{{ end }}">
-      <div class="control">
+      <div class="control{{ if .annotation }} annotated{{ end }}">
         {{ if .dropdown }}
         <div class="select is-fullwidth">
           <select class="placeholder" name="{{ .name }}">
@@ -32,6 +32,27 @@
                {{ if .required }}required{{ end }}
                />
         {{ end }}
+
+        {{ with .annotation }}
+          <div class="annotation-icon">
+            {{ (resources.Get .icon).Content | safeHTML }}
+          </div>
+          <div class="annotation-content">
+            {{ range .content }}
+            {{ if .text }}
+            <div class="annotation-text">
+              {{ .text }}
+            </div>
+            {{else if .figure}}
+            <div class="annotation-figure">
+              <figure class="image">
+                {{ partial "common/srcset" (dict "resource" (resources.Get .figure) "desktop" "1280x" "tablet" "960x" "mobile" "750x" "options" "jpg") }}
+              </figure>
+            </div>
+            {{ end }}
+            {{ end }}
+          </div>
+        {{ end }}
       </div>
     </div>
     {{ end }}
@@ -49,6 +70,7 @@
       <div class="control">
         <button class="{{ $class }}"
                 type="{{ $type }}"
+                id="{{ .id }}"
                 placeholder="{{ default .placeholder (T .placeholder) }}"
                 data-name="{{ .name }}">
           {{ default .title (T .title) }}

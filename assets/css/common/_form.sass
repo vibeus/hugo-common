@@ -38,4 +38,42 @@
     display: none
     flex-direction: column
     justify-content: center
+    margin: auto
     +absolute-fill
+
+  // added by Jinghang
+  .annotated
+    position: relative
+    .annotation-icon
+      position: absolute
+      z-index: 100
+      right: -20px
+      top: 0
+      height: 15px
+      width: 15px
+      cursor: pointer
+      &.is-active + .annotation-content
+        display: block
+    .annotation-content
+      display: none
+      font-size: 11px
+      padding: 10px
+      width: 220px
+      box-shadow: -1px 3px 29px rgba(0, 0, 0, 0.11)
+      position: absolute
+      z-index: 100
+      right: -20px - 220px - 8px
+      bottom: 0px
+      background-color: white
+      z-index: 100
+      & > *
+        margin: 5px
+      &::after
+        position: absolute
+        border-top: 5px solid transparent
+        border-bottom: 5px solid transparent
+        border-right: 5px solid white
+        content: ''
+        display: block
+        right: 100%
+        bottom: 32px
