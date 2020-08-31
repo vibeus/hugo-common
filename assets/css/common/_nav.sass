@@ -69,8 +69,22 @@
 
       // space betwen menus: 54px.
       // there are 12px padding on both side so we need to deduct them.
+      // Update: added a new "Pricing" top leve menu so need to adjust margin...
       .navbar-start > .navbar-item:not(:first-child)
-        margin-left: 54px - 12px * 2
+        margin-left: 34px - 12px * 2
+        +from(1320px)
+          margin-left: 54px - 12px * 2
+
+    // Update: added a new "Pricing" top level menu, reduce padding to avoid navbar overflow.
+    +until(1130px)
+      .navbar-item, .navbar-link.is-arrowless
+        padding-left: 0.5rem
+        padding-right: 0.5rem
+
+      .navbar-link:not(.is-arrowless)
+        padding-right: 1.25rem
+        &::after
+          right: 0.125rem
 
     .navbar-dropdown.is-boxed
       box-shadow: 0px -1px 10px rgba(55, 55, 55, 0.1)
