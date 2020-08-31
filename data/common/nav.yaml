@@ -60,18 +60,17 @@ base:
           target: _blank
         - title: i18n-data-common-nav-base-menu-i_1-submenu-i_4-title
           url: /contact/
-    - title: i18n-data-common-nav-base-menu-i_2-title
-      url: /about/
     - title: i18n-data-common-nav-base-menu-i_4-title
       url: /order/
-      class: is-hidden-tablet is-order-in-menu
+    - title: i18n-data-common-nav-base-menu-i_2-title
+      url: /about/
   extra:
     - title: i18n-data-common-nav-base-extra-i_0-title
-      class: is-primary is-outlined is-rounded is-in-brand
+      class: is-primary is-outlined is-rounded is-in-brand is-hidden-mobile
       url: /demo/
       in_brand_mobile: true
     - title: i18n-data-common-nav-base-extra-i_1-title
-      class: is-primary is-rounded is-nav-cart is-in-brand is-hidden-mobile
+      class: is-primary is-rounded is-nav-cart is-in-brand
       url: /order/
       in_brand_mobile: true
 zh:

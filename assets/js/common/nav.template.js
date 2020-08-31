@@ -15,6 +15,8 @@ function clearNavMenuHeight() {
   menu.style.maxHeight = '';
 }
 
+toggleActive('.navbar-link', false);
+
 toggleActive('.navbar-burger', true, (isActive) => {
   if (isActive) {
     setNavMenuHeight();
