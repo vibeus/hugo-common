@@ -41,6 +41,11 @@
 
   .navbar-item.has-dropdown
     outline: none
+    &.is-active
+      .navbar-dropdown.is-boxed
+        display: block
+      .navbar-link::after
+        transform: rotate(135deg)
 
   .navbar-item.is-column-title
     text-transform: uppercase
@@ -50,6 +55,7 @@
   // align dropdown text.
   .navbar-dropdown.is-boxed
     left: -24px
+    display: none
 
   +from($navbar-breakpoint)
     // keep brand logo and navbar start (menus) 80px when not collapsed.
