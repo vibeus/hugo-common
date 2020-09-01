@@ -1,6 +1,6 @@
 .navbar
   font-family: $vibe-family-heading
-  font-size: 18px
+  font-size: 16px
   box-shadow: 0px -1px 10px rgba(55, 55, 55, 0.1)
 
   .container.is-fluid
@@ -59,33 +59,22 @@
     display: none
 
   +from($navbar-breakpoint)
-    // keep brand logo and navbar start (menus) 80px when not collapsed.
+    // keep brand logo and navbar start (menus) 56px when not collapsed.
     // there are 12px padding on both side so we need to deduct them.
     // Update: we add another top level menu so reduce spacing when there is not enough space.
-    +from(1230px)
+    +from(1200px)
       .navbar-brand
-        margin-right: 40px - 12px
+        margin-right: 28px - 12px
       .navbar-menu
-        margin-left: 40px - 12px
+        margin-left: 28px - 12px
 
-      // space betwen menus: 54px.
-      // there are 12px padding on both side so we need to deduct them.
+      // space betwen menus: 48px.
+      // there are 18px(1.125rem) and 12px(0.75rem) padding on left and right sides so we need to deduct them.
       // Update: added a new "Pricing" top leve menu so need to adjust margin...
       .navbar-start > .navbar-item:not(:first-child)
-        margin-left: 34px - 12px * 2
-        +from(1320px)
-          margin-left: 54px - 12px * 2
-
-    // Update: added a new "Pricing" top level menu, reduce padding to avoid navbar overflow.
-    +until(1130px)
-      .navbar-item, .navbar-link.is-arrowless
-        padding-left: 0.5rem
-        padding-right: 0.5rem
-
-      .navbar-link:not(.is-arrowless)
-        padding-right: 1.25rem
-        &::after
-          right: 0.125rem
+        margin-left: 30px - 12px - 18px
+        +from(1200px)
+          margin-left: 48px - 12px - 18px
 
     .navbar-dropdown.is-boxed
       box-shadow: 0px -1px 10px rgba(55, 55, 55, 0.1)
