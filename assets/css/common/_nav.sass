@@ -42,10 +42,11 @@
   .navbar-item.has-dropdown
     outline: none
     &.is-active
-      .navbar-dropdown.is-boxed
-        display: block
-      .navbar-link::after
-        transform: rotate(135deg)
+      +until($navbar-breakpoint)
+        .navbar-dropdown.is-boxed
+          display: block
+        .navbar-link::after
+          transform: rotate(135deg)
 
   .navbar-item.is-column-title
     text-transform: uppercase
