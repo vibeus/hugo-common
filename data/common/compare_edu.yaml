@@ -1,5 +1,5 @@
 top_left_cell: |
-  Compare  
+  Compare
   Brands
 
 price_cell: Price of Board
@@ -16,6 +16,8 @@ features:
   - 'Infinite Canvas'
   - 'App Store'
   - 'Dropbox, OneDrive, Google Drive integration'
+
+num_displays_mobile: 3
 
 brands:
   - name: '55″ Vibe Interactive Whiteboard'
@@ -68,4 +70,3 @@ brands:
           alt: Goto Meeting
         - icon: 'img/common/compare/edu/teams.png'
           alt: Teams
-    hideMobile: true
