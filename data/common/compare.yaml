@@ -7,6 +7,8 @@ features:
   - 'Infinite Canvas'
   - 'Dropbox, OneDrive, Google Drive integration'
 
+num_displays_mobile: 4
+
 brands:
   - name: 'Vibe'
     features: [1, 1, 1, 1, 1, 1, 1]
