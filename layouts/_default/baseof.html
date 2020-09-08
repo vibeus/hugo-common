@@ -7,6 +7,7 @@
     <meta name="description" content="{{ $description }}">
     {{ $pageTitle := cond (hasPrefix .Page.Title "i18n-") (T .Page.Title) .Page.Title }}
     <title>{{ default "Vibe" $pageTitle }} | Vibe</title>
+    <link rel="canonical" href="{{ .Page.Permalink }}"/>
     {{ if not .Site.Params.allowIndex }}<meta name="robots" content="noindex">{{ end }}
     {{ $src := resources.Get "img/common/favicon.png" | resources.Fingerprint }}
     <link rel="shortcut icon" href="{{ $src.RelPermalink }}" />
