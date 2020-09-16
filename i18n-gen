@@ -82,7 +82,12 @@ def should_collect_key(precedents):
 
 def collect_result(value, precedents, results, translated):
     if value.startswith(LABEL_PREFIX):
-        results[value] = translated[value]
+        if (value in translated):
+            results[value] = translated[value]
+        # else:
+            # Do nothing.
+            # This part deals with the anchor and its alias in yaml file.
+            # The content we need has already been stored in results rather than translated.
         return
 
     if len(precedents) == 0:
