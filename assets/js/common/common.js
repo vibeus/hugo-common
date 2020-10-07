@@ -128,6 +128,16 @@ export function setupForm(form, callbacks) {
   const submitted = callbacks['submit.after'];
   const final = callbacks['submit.final'];
 
+  form.querySelectorAll('select').forEach((el) => {
+    el.addEventListener('change', (ev) => {
+      if (ev.target.value) {
+        ev.target.classList.remove('placeholder');
+      } else {
+        ev.target.classList.add('placeholder');
+      }
+    });
+  });
+
   form.querySelectorAll('button').forEach((el) => {
     const type = el.type;
     const name = el.dataset.name;
