@@ -210,8 +210,10 @@ export function openDemoScheduler(form, modalId, meetingUrl) {
     params.append('parentHubspotUtk', hutk);
     params.append('parentPageUrl', window.location);
 
-    for (const pair of new FormData(form).entries()) {
-      params.append(pair[0], pair[1]);
+    if (form) {
+      for (const pair of new FormData(form).entries()) {
+        params.append(pair[0], pair[1]);
+      }
     }
 
     // Hubspot does not decode `+` to space, so we need to hack here.
