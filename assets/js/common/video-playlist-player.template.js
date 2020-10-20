@@ -80,6 +80,7 @@ activateOneOf(playlistClass, true, (el) => {
         videoId: videoId,
         playerVars: {
           rel: 0,
+          playsinline: 1,
         },
         events: {
           onReady: () => {
