@@ -67,29 +67,35 @@ other = "Technology"
 [i18n-data-common-nav-base-menu-i_1-title]
 other = "Resources"
 
-[i18n-data-common-nav-base-menu-i_1-submenu-i_0-title]
+[i18n-data-common-nav-base-menu-i_2-submenu-i_0-title]
 other = "Buyer's FAQ"
 
-[i18n-data-common-nav-base-menu-i_2-submenu-i_5-title]
+[i18n-data-common-nav-base-menu-i_2-submenu-i_1-title]
 other = "Educator & Teacher FAQ"
 
-[i18n-data-common-nav-base-menu-i_1-submenu-i_1-title]
+[i18n-data-common-nav-base-menu-i_2-submenu-i_2-title]
 other = "Blogs"
 
-[i18n-data-common-nav-base-menu-i_1-submenu-i_2-title]
+[i18n-data-common-nav-base-menu-i_2-submenu-i_3-title]
 other = "Product Videos"
 
-[i18n-data-common-nav-base-menu-i_1-submenu-i_3-title]
+[i18n-data-common-nav-base-menu-i_2-submenu-i_4-title]
 other = "Help Center"
 
-[i18n-data-common-nav-base-menu-i_1-submenu-i_4-title]
+[i18n-data-common-nav-base-menu-i_2-submenu-i_5-title]
 other = "Contact Sales"
 
-[i18n-data-common-nav-base-menu-i_2-title]
-other = "About Us"
+[i18n-data-common-nav-base-menu-i_2-submenu-i_6-title]
+other = "Contact Support"
+
+[i18n-data-common-nav-base-menu-i_2-submenu-i_7-title]
+other = "Request a Quote"
 
 [i18n-data-common-nav-base-menu-i_4-title]
 other = "Pricing"
+
+[i18n-data-common-nav-base-menu-i_2-title]
+other = "About Us"
 
 [i18n-data-common-nav-base-extra-i_0-title]
 other = "See a Demo"
@@ -114,6 +120,18 @@ other = "法律声明"
 
 [i18n-data-common-nav-zh-menu-i_1-submenu-i_4-title]
 other = "服务网点"
+
+[i18n-data-common-compare_edu-brands-i_0-name]
+other = "55″ Vibe Interactive Whiteboard"
+
+[i18n-data-common-compare_edu-brands-i_1-name]
+other = "65″ Promethean ActivPanel Nickel"
+
+[i18n-data-common-compare_edu-brands-i_2-name]
+other = "65″ Smart Board 6000 series"
+
+[i18n-data-common-compare_edu-brands-i_3-name]
+other = "65″ Newline TT-6519RSSmart"
 
 [i18n-data-common-foot-base-sections-i_0-heading]
 other = "Product"
@@ -188,10 +206,16 @@ other = "Company"
 other = "About Us"
 
 [i18n-data-common-foot-base-sections-i_3-links-i_1-title]
-other = "Contact Us"
+other = "Contact Sales"
 
 [i18n-data-common-foot-base-sections-i_3-links-i_2-title]
-other = "Careers"
+other = "Contact Support"
+
+[i18n-data-common-foot-base-sections-i_3-links-i_3-title]
+other = "Request a Quote"
+
+[i18n-data-common-foot-base-sections-i_3-links-i_4-title]
+other = "Career"
 
 [i18n-data-common-foot-base-copyright-i_0]
 other = "© Copyright 2020 Vibe, Inc. All rights reserved."
