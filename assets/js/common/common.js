@@ -196,6 +196,16 @@ export function setupForm(form, callbacks) {
   const submitted = callbacks['submit.after'];
   const final = callbacks['submit.final'];
 
+  form.querySelectorAll('select').forEach((el) => {
+    el.addEventListener('change', (ev) => {
+      if (ev.target.value) {
+        ev.target.classList.remove('placeholder');
+      } else {
+        ev.target.classList.add('placeholder');
+      }
+    });
+  });
+
   form.querySelectorAll('button').forEach((el) => {
     const type = el.type;
     const name = el.dataset.name;
@@ -268,8 +278,10 @@ export function openDemoScheduler(form, modalId, meetingUrl) {
     params.append('parentHubspotUtk', hutk);
     params.append('parentPageUrl', window.location);
 
-    for (const pair of new FormData(form).entries()) {
-      params.append(pair[0], pair[1]);
+    if (form) {
+      for (const pair of new FormData(form).entries()) {
+        params.append(pair[0], pair[1]);
+      }
     }
 
     // Hubspot does not decode `+` to space, so we need to hack here.

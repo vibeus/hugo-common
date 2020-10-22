@@ -9,9 +9,13 @@
         {{ if .dropdown }}
         <div class="select is-fullwidth">
           <select class="placeholder" name="{{ .name }}">
-            <option value="" disabled selected hidden>{{ default .placeholder (T .placeholder) }}</option>
+            <option value="" disabled selected>{{ default .placeholder (T .placeholder) }}</option>
             {{ range .dropdown }}
-            <option>{{ . }}</option>
+              {{ if reflect.IsMap . }}
+                <option value="{{ .value }}">{{ .text }}</option>
+              {{ else }}
+                <option>{{ . }}</option>
+              {{ end }}
             {{ end }}
           </select>
         </div>
