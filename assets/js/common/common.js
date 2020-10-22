@@ -44,12 +44,16 @@ export function toggleActive(triggerClass, toggleSelf, onChanged) {
 // do nothing when one of triggerClass is clicked multiple times consecutively.
 export function activateOneOf(triggerClass, activateSelf, onChanged) {
   const triggers = Array.from(document.querySelectorAll(triggerClass));
-  const targetsById = triggers.map(el => document.getElementById(el.dataset.target));
-  const targetsByClass = triggers.map(el => {
+  const targetsById = triggers.map((el) =>
+    document.getElementById(el.dataset.target)
+  );
+  const targetsByClass = triggers.map((el) => {
     if (el.dataset.targetClass) {
       let classes = el.dataset.targetClass.match(/[^ ]+/g) || [];
       return classes.reduce((result, className) => {
-        return result.concat(Array.from(document.querySelectorAll(`.${className}`)));
+        return result.concat(
+          Array.from(document.querySelectorAll(`.${className}`))
+        );
       }, []);
     } else {
       return [];
@@ -61,7 +65,7 @@ export function activateOneOf(triggerClass, activateSelf, onChanged) {
       if (el.classList.contains('is-active')) {
         return;
       }
-      triggers.forEach(el => {
+      triggers.forEach((el) => {
         el.classList.remove('is-active');
       });
       el.classList.add('is-active');
@@ -73,32 +77,36 @@ export function activateOneOf(triggerClass, activateSelf, onChanged) {
     }
     idx = curIdx;
 
-    targetsById.forEach(target => {
+    targetsById.forEach((target) => {
       if (target) {
         target.classList.remove('is-active');
       }
-    })
+    });
     if (target) {
       target.classList.add('is-active');
     }
 
-    targetsByClass.forEach(elArr => {
-      elArr.forEach(el => {
+    targetsByClass.forEach((elArr) => {
+      elArr.forEach((el) => {
         el.classList.remove('is-active');
       });
     });
-    const targetClassSelectors = el.dataset.targetClass ? el.dataset.targetClass.match(/[^ ]+/g).map(className => `.${className}`) : [];
-    targetClassSelectors.forEach(selector => {
-      document.querySelectorAll(selector).forEach(el => {
+    const targetClassSelectors = el.dataset.targetClass
+      ? el.dataset.targetClass
+          .match(/[^ ]+/g)
+          .map((className) => `.${className}`)
+      : [];
+    targetClassSelectors.forEach((selector) => {
+      document.querySelectorAll(selector).forEach((el) => {
         el.classList.add('is-active');
       });
     });
-    
+
     if (onChanged) {
       onChanged(el);
     }
   });
-};
+}
 
 // scroll to data-target element (by id) when triggerClass is clicked, with optional extra offset.
 export function bindScrollTo(triggerClass, extraOffset) {

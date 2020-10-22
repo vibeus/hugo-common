@@ -45,7 +45,7 @@ let playerActive = false;
 let videoPlayer = null;
 let loadingPlayer = false;
 const playerId = '{{ .playerId }}-iframe';
-const playerContainerId = '{{ .playerId }}-container'
+const playerContainerId = '{{ .playerId }}-container';
 const playerContainerDOM = document.getElementById(playerContainerId);
 const playlist = Array.from(document.querySelectorAll(playlistClass));
 let idx = -1;
@@ -88,14 +88,14 @@ activateOneOf(playlistClass, true, (el) => {
             player.loadVideoById(lastRequired);
             player.stopVideo();
           },
-          onStateChange: event => {
+          onStateChange: (event) => {
             if (event.data == YT.PlayerState.ENDED) {
               if (idx === playlist.length - 1) {
                 return;
               }
               playlist[idx + 1].click();
             }
-          }
+          },
         },
       });
     });
@@ -104,7 +104,10 @@ activateOneOf(playlistClass, true, (el) => {
 
 bindEventWithTarget(triggerClass, 'click', (el) => {
   if (videoPlayer) {
-    if (videoPlayer.getPlayerState() === YT.PlayerState.UNSTARTED || videoPlayer.getPlayerState() === YT.PlayerState.PAUSED) {
+    if (
+      videoPlayer.getPlayerState() === YT.PlayerState.UNSTARTED ||
+      videoPlayer.getPlayerState() === YT.PlayerState.PAUSED
+    ) {
       videoPlayer.playVideo();
     } else if (videoPlayer.getPlayerState() === YT.PlayerState.PLAYING) {
       videoPlayer.stopVideo();

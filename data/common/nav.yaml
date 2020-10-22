@@ -46,20 +46,24 @@ base:
               url: /lp/scenario-technology/
     - title: i18n-data-common-nav-base-menu-i_1-title
       submenu:
-        - title: i18n-data-common-nav-base-menu-i_1-submenu-i_0-title
+        - title: i18n-data-common-nav-base-menu-i_2-submenu-i_0-title
           url: https://knowledge.vibe.us/buyers-faq
           target: _blank
-        - title: i18n-data-common-nav-base-menu-i_2-submenu-i_5-title
+        - title: i18n-data-common-nav-base-menu-i_2-submenu-i_1-title
           url: /faqs-for-teachers-and-educators/
-        - title: i18n-data-common-nav-base-menu-i_1-submenu-i_1-title
+        - title: i18n-data-common-nav-base-menu-i_2-submenu-i_2-title
           url: /blog/
-        - title: i18n-data-common-nav-base-menu-i_1-submenu-i_2-title
+        - title: i18n-data-common-nav-base-menu-i_2-submenu-i_3-title
           url: /video-tutorial/
-        - title: i18n-data-common-nav-base-menu-i_1-submenu-i_3-title
+        - title: i18n-data-common-nav-base-menu-i_2-submenu-i_4-title
           url: https://help.vibe.us
           target: _blank
-        - title: i18n-data-common-nav-base-menu-i_1-submenu-i_4-title
+        - title: i18n-data-common-nav-base-menu-i_2-submenu-i_5-title
           url: /contact/
+        - title: i18n-data-common-nav-base-menu-i_2-submenu-i_6-title
+          url: https://knowledge.vibe.us/kb-tickets/new
+        - title: i18n-data-common-nav-base-menu-i_2-submenu-i_7-title
+          url: /contact/request-a-quote
     - title: i18n-data-common-nav-base-menu-i_4-title
       url: /order/
     - title: i18n-data-common-nav-base-menu-i_2-title
