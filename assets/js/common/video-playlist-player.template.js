@@ -34,8 +34,8 @@ function setupYTApi() {
 // {{ end }}
 
 // {{ if .isInplace }}
-const playlistClass = '{{ .playlistClass }}';
-const triggerClass = '{{ .triggerClass }}';
+const playlistSelector = '{{ .playlistSelector }}';
+const triggerSelector = '{{ .triggerSelector }}';
 // {{ else }}
 // {{ end }}
 
@@ -44,14 +44,46 @@ const triggerClass = '{{ .triggerClass }}';
 let playerActive = false;
 let videoPlayer = null;
 let loadingPlayer = false;
-const playerId = '{{ .playerId }}-iframe';
+const playerId = '{{ .playerId }}';
+const playerIframWrapper = document.getElementById(playerId);
+const playerIframeId = '{{ .playerId }}-iframe';
 const playerContainerId = '{{ .playerId }}-container';
 const playerContainerDOM = document.getElementById(playerContainerId);
-const playlist = Array.from(document.querySelectorAll(playlistClass));
+const playlist = Array.from(document.querySelectorAll(playlistSelector));
 let idx = -1;
 let lastRequired = null;
+const thumbnailPlaceholderSelector = '{{ .thumbnailPlaceholderSelector }}';
+const thumbnailPlaceholderId = '{{ .thumbnailPlaceholderId }}';
+const thumbnailPlaceholder = document.getElementById(thumbnailPlaceholderId);
+const showThumbnail = !!thumbnailPlaceholder;
+const thumbnailImageSelector = '{{ .thumbnailImageSelector }}'
+const thumbnailImage = showThumbnail ? thumbnailPlaceholder.querySelector(thumbnailImageSelector) : null;
 
-activateOneOf(playlistClass, true, (el) => {
+showThumbnail && thumbnailImage.addEventListener('load', () => {
+  thumbnailPlaceholder.classList.add('is-active');
+  playerIframWrapper.classList.add('is-active');
+});
+
+function changeThumbnail(videoId) {
+  playerIframWrapper.classList.remove('is-active');
+  thumbnailImage.src = `https://i1.ytimg.com/vi/${videoId}/maxresdefault.jpg`;
+}
+
+bindEventWithTarget(thumbnailPlaceholderSelector, 'click', (el) => {
+  if (videoPlayer) {
+    showThumbnail && thumbnailPlaceholder.classList.remove('is-active');
+    if (
+      videoPlayer.getPlayerState() === YT.PlayerState.CUED ||
+      videoPlayer.getPlayerState() === YT.PlayerState.PAUSED
+    ) {
+      videoPlayer.playVideo();
+    } else if (videoPlayer.getPlayerState() === YT.PlayerState.PLAYING) {
+      videoPlayer.stopVideo();
+    }
+  }
+});
+
+activateOneOf(playlistSelector, true, (el) => {
   const videoId = el.dataset.videoId;
   idx = playlist.indexOf(el);
 
@@ -71,10 +103,11 @@ activateOneOf(playlistClass, true, (el) => {
   if (videoPlayer) {
     videoPlayer.loadVideoById(videoId);
     videoPlayer.stopVideo();
+    showThumbnail && changeThumbnail(videoId);
   } else if (!loadingPlayer) {
     lastRequired = videoId;
     setupYTApi().then(() => {
-      const player = new window.YT.Player(playerId, {
+      const player = new window.YT.Player(playerIframeId, {
         height: '100%',
         width: '100%',
         videoId: videoId,
@@ -84,6 +117,7 @@ activateOneOf(playlistClass, true, (el) => {
         },
         events: {
           onReady: () => {
+            showThumbnail && changeThumbnail(lastRequired);
             videoPlayer = player;
             player.loadVideoById(lastRequired);
             player.stopVideo();
@@ -102,16 +136,4 @@ activateOneOf(playlistClass, true, (el) => {
   }
 });
 
-bindEventWithTarget(triggerClass, 'click', (el) => {
-  if (videoPlayer) {
-    if (
-      videoPlayer.getPlayerState() === YT.PlayerState.UNSTARTED ||
-      videoPlayer.getPlayerState() === YT.PlayerState.PAUSED
-    ) {
-      videoPlayer.playVideo();
-    } else if (videoPlayer.getPlayerState() === YT.PlayerState.PLAYING) {
-      videoPlayer.stopVideo();
-    }
-  }
-});
 // {{ end }}
