@@ -86,12 +86,25 @@
 
   {{ with .submitted }}
   <div class="submitted">
+    {{ if .choices }}
+      {{ range .choices }}
+      <div class="submitted-choice{{ with .class }} {{ . }}{{ end }}">
+        {{ with .title }}
+        <h2 class="title">{{ default . (T .) }}</h2>
+        {{ end }}
+        <div class="content">
+          {{ default .body (T .body) | markdownify }}
+        </div>
+      </div>
+      {{ end }}
+    {{ else }}
     {{ with .title }}
     <h2 class="title">{{ default . (T .) }}</h2>
     {{ end }}
     <div class="content">
       {{ default .body (T .body) | markdownify }}
     </div>
+    {{ end }}
   </div>
   {{ end }}
 
