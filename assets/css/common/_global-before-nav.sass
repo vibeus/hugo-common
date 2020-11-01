@@ -1,0 +1,31 @@
+.global-before-nav
+  // background-color: $vibe-purple
+  background-color: $vibe-pink
+  font-size: 14px
+  padding: 14px 24px
+  color: white
+  +tablet
+    text-align: center
+    font-size: 18px
+  a
+    color: white
+    // text-decoration: underline
+    // &:hover
+    //   color: $vibe-yellow
+  p
+    margin: auto
+    &.cta
+      font-weight: $vibe-bold
+    &.body
+      +mobile
+        font-size: 14px
+
+  @at-root #{selector-nest(".lang-zh", &)}
+    display: none
+
+  @at-root #{selector-nest("html.has-navbar-fixed-top")}
+    padding-top: 0
+  
+  & + .navbar
+    position: sticky
+    top: 0
