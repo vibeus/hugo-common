@@ -1,0 +1,18 @@
+<section class="section is-as-seen-in">
+  <div class="container">
+      <h1 class="title is-section-title">{{ default .title (T .title) }}</h1>
+
+      <div class="references-wrapper">
+        {{ range .references }}
+        <a class="reference-link{{ with .class }} {{ . }}{{ end }}{{ if not .link }} not-clickable{{ end }}" {{ with .link }}href="{{ . }}" target="_blank"{{ end }}>
+          <figure class="image hidden-on-hover">
+            {{ partial "common/srcset" (dict "resource" (resources.Get .figure) "desktop" "640x" "tablet" "480x" "mobile" "375x" "options" "jpg") }}
+          </figure>
+          <figure class="image shown-on-hover">
+            {{ partial "common/srcset" (dict "resource" (resources.Get .figure_on_hover) "desktop" "640x" "tablet" "480x" "mobile" "375x" "options" "jpg") }}
+          </figure>
+        </a>
+        {{ end }}
+      </div>
+  </div>
+</section>
