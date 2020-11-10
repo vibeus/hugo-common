@@ -30,7 +30,7 @@
                   {{ partial "common/srcset" (dict "resource" $resource "desktop" "228x") }}
                 </figure>
                 {{ if $show_name }}
-                <p class="brand-name">{{ .name }}</p>
+                <p class="brand-name">{{ default .name (T .name) }}</p>
                 {{ end }}
               </td>
               {{ end }}
