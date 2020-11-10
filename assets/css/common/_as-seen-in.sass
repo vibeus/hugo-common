@@ -4,6 +4,8 @@
     align-items: center
     +touch
       flex-direction: column
+      padding: 0 90px
+    +mobile
       padding: 0 16px
     +desktop
       flex-direction: row
@@ -20,11 +22,12 @@
     position: relative
     white-space: nowrap
     +touch
-      margin-bottom: 36px
-    +mobile
-      font-size: 18px
-      line-height: 23px
-      margin-bottom: 24px
+      display: none
+    //   margin-bottom: 36px
+    // +mobile
+    //   font-size: 16px
+    //   line-height: 23px
+    //   margin-bottom: 24px
     &::after
       content: ''
       display: block
