@@ -1,0 +1,29 @@
+.section.is-figure-content-section
+  +vertical-padding(100px)
+  background-color: $vibe-white
+  .container
+    max-width: 1340px
+  .image .overlay
+    +absolute-fill
+  .title.is-section-title
+    +tablet
+      margin-bottom: 84px
+  .title.is-content-title, .content
+    margin: auto
+    +tablet
+      max-width: 500px
+  .title.is-content-title
+    font-size: 40px
+    line-height: 50px
+    margin-bottom: 24px
+    +mobile
+      font-size: 22px
+      line-height: 27px
+      margin-bottom: 16px
+  .content
+    font-size: 18px
+    line-height: 1.5
+    +mobile
+      font-size: 16px
+  .columns.is-reversed
+    flex-direction: row-reverse
