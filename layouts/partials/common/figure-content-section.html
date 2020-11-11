@@ -1,0 +1,28 @@
+<section class="section is-figure-content-section">
+  <div class="container">
+    {{ with .title }}
+    <h1 class="title is-section-title">{{ default .title (T .title) }}</h1>
+    {{ end }}
+    {{ range .items }}
+    <div class="columns is-vcentered{{ if .reversed }} is-reversed{{ end }}{{ with .class }} {{ . }}{{ end }}">
+      <div class="column is-image">
+        {{ with .figure }}
+        <figure class="image">
+          {{ partial "common/srcset" (dict "resource" (resources.Get .base) "desktop" (default "1300x" .desktop) "mobile" (default "750x" .mobile) "options" "png") }}
+          {{ if .overlay }}
+          {{ $gif := resources.Get .overlay | resources.Fingerprint }}
+          <img class="overlay" src="{{ $gif.RelPermalink }}" alt="animation" />
+          {{ end }}
+        </figure>
+        {{ end }}
+      </div>
+      <div class="column is-content">
+        <h2 class="title is-content-title">{{ default .title (T .title) | markdownify}}</h2>
+        <div class="content">
+          {{ default .body (T .body) | markdownify }}
+        </div>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</section>
