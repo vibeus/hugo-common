@@ -47,8 +47,7 @@ base:
     - title: i18n-data-common-nav-base-menu-i_1-title
       submenu:
         - title: i18n-data-common-nav-base-menu-i_2-submenu-i_0-title
-          url: https://knowledge.vibe.us/buyers-faq
-          target: _blank
+          url: /buyer-faq/
         - title: i18n-data-common-nav-base-menu-i_2-submenu-i_1-title
           url: /faqs-for-teachers-and-educators/
         - title: i18n-data-common-nav-base-menu-i_2-submenu-i_2-title
