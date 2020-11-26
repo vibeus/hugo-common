@@ -45,16 +45,31 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <!-- End Google Tag Manager (noscript) -->
     {{ end }}
     {{ block "nav" . }}
-      <div class="global-before-nav">
-        <p class="cta">
+      <!-- <div class="global-before-nav">
+        <div class="cta">
           <a href="/order">
             Treat yourself (or your team) for making it through 2020 with $200 off Vibe boards. 
             <br/>
             Ends 11/30, limited quantities. Promo code: <strong>NOVEMBER200</strong> →
           </a>
-        </p>
+        </div>
+      </div> -->
+      <div class="global-before-nav">
+        <div class="cta">
+          <div class="cta-container">
+            <figure class="image gift-box">
+              {{ partial "common/srcset" (dict "resource" (resources.Get "img/common/black-friday/gift-box.png") "desktop" "1440x" "options" "png") }}
+            </figure>
+            <a href="/order">
+              <strong>Black Friday Doorbuster:</strong> 20% off of Vibe boards for the first 50 customers.
+              <br />
+              Limit one use per customer, no rain checks. Promo code: <strong>BLACKFRIYAY</strong> →
+            </a>
+          </div>
+        </div>
       </div>
       {{ partial "common/nav.html" . }}
+      {{ partial "common/black-friday/black-friday.style.html" }}
     {{ end }}
     {{ block "main" . }}{{ end }}
     {{ block "foot" . }}{{ partial "common/foot.html" . }}{{ end }}
