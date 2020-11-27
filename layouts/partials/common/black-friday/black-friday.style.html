@@ -1,5 +1,0 @@
-{{ $sass := resources.Get "css/common/black-friday/black-friday.template.sass" | resources.ExecuteAsTemplate "css/common/black-friday/black-friday.sass" .}}
-{{ $style := $sass | resources.ToCSS (dict "outputStyle" "compressed" "includePaths" (slice "node_modules" "assets/css/common/black-friday")) }}
-<style>
-{{ $style.Content | safeCSS }}
-</style>
