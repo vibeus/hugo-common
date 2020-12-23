@@ -32,9 +32,11 @@ base:
         - title: i18n-data-common-foot-base-sections-i_1-links-i_4-title
           url: /warranty/
         - title: i18n-data-common-foot-base-sections-i_1-links-i_5-title
+          url: /refund/
+        - title: i18n-data-common-foot-base-sections-i_1-links-i_6-title
           url: /video-tutorial/
           target: _blank
-        - title: i18n-data-common-foot-base-sections-i_1-links-i_6-title
+        - title: i18n-data-common-foot-base-sections-i_1-links-i_7-title
           url: /resources/Vibe_Brochure.pdf
     - heading: i18n-data-common-foot-base-sections-i_2-heading
       links:

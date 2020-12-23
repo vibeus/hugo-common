@@ -176,9 +176,12 @@ other = "Privacy"
 other = "Warranty"
 
 [i18n-data-common-foot-base-sections-i_1-links-i_5-title]
-other = "Product Videos"
+other = "Return Policy"
 
 [i18n-data-common-foot-base-sections-i_1-links-i_6-title]
+other = "Product Videos"
+
+[i18n-data-common-foot-base-sections-i_1-links-i_7-title]
 other = "Vibe Brochure"
 
 [i18n-data-common-foot-base-sections-i_2-heading]
