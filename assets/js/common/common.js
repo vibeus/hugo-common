@@ -141,6 +141,7 @@ export function debounce(func, wait, immediate) {
 }
 
 export function getHubspotUtk() {
+  return '';
   return document.cookie.replace(
     /(?:(?:^|.*;\s*)hubspotutk\s*\=\s*([^;]*).*$)|^.*$/,
     '$1'
