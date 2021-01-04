@@ -20,14 +20,14 @@ function setupYTApi() {
     if (loadApi) {
       const tag = document.createElement('script');
 
+      window.onYouTubeIframeAPIReady = () => {
+        window.YTApiReady = true;
+        window.YTCallback.forEach(resolveFn => { resolveFn() });
+      };
+
       tag.src = 'https://www.youtube.com/iframe_api';
       const firstScriptTag = document.getElementsByTagName('script')[0];
       firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-      window.onYouTubeIframeAPIReady = () => {
-        window.YTApiReady = true;
-        window.YTCallback.forEach(resolve);
-      };
     }
   });
 }
