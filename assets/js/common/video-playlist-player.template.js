@@ -26,7 +26,7 @@ function setupYTApi() {
 
       window.onYouTubeIframeAPIReady = () => {
         window.YTApiReady = true;
-        window.YTCallback.forEach(resolve);
+        window.YTCallback.forEach(resolveFn => { resolveFn() });
       };
     }
   });
