@@ -147,7 +147,8 @@ export function getHubspotUtk() {
   );
 }
 
-function submitForm(form, targetAction) {
+function submitForm(form, action) {
+  form.action = action; // gtm use form action to track which hubspot form is submitted
   const fields = [];
   for (const pair of new FormData(form).entries()) {
     fields.push({
@@ -163,7 +164,7 @@ function submitForm(form, targetAction) {
     body.context = { hutk };
   }
 
-  return fetch(targetAction ? targetAction : form.action, {
+  return fetch(form.action, {
     method: form.method,
     body: JSON.stringify(body),
     headers: {
@@ -209,6 +210,8 @@ export function setupForm(form, callbacks) {
   form.querySelectorAll('button').forEach((el) => {
     const type = el.type;
     const name = el.dataset.name;
+    const defaultAction = form.action;
+
     el.addEventListener('click', (ev) => {
       ev.preventDefault();
 
@@ -225,7 +228,7 @@ export function setupForm(form, callbacks) {
         el.setAttribute('disabled', true);
         const targetAction = el.dataset.targetAction;
 
-        submitForm(form, targetAction)
+        submitForm(form, targetAction ? targetAction : defaultAction)
           .then((r) => {
             if (r.ok) {
               if (window.dataLayer && form.action) {
