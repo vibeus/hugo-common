@@ -147,7 +147,7 @@ export function getHubspotUtk() {
   );
 }
 
-function submitForm(form) {
+function submitForm(form, targetAction) {
   const fields = [];
   for (const pair of new FormData(form).entries()) {
     fields.push({
@@ -163,7 +163,7 @@ function submitForm(form) {
     body.context = { hutk };
   }
 
-  return fetch(form.action, {
+  return fetch(targetAction ? targetAction : form.action, {
     method: form.method,
     body: JSON.stringify(body),
     headers: {
@@ -223,8 +223,9 @@ export function setupForm(form, callbacks) {
       if (type === 'submit') {
         el.classList.add('is-loading');
         el.setAttribute('disabled', true);
+        const targetAction = el.dataset.targetAction;
 
-        submitForm(form)
+        submitForm(form, targetAction)
           .then((r) => {
             if (r.ok) {
               if (window.dataLayer && form.action) {
