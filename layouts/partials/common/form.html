@@ -76,7 +76,9 @@
                 type="{{ $type }}"
                 id="{{ .id }}"
                 placeholder="{{ default .placeholder (T .placeholder) }}"
-                data-name="{{ .name }}">
+                data-name="{{ .name }}"
+                {{ with .target_action }}data-target-action="{{ . }}"{{ end }}
+                >
           {{ default .title (T .title) }}
         </button>
       </div>
@@ -95,6 +97,28 @@
         <div class="content">
           {{ default .body (T .body) | markdownify }}
         </div>
+        {{ with .cta }}
+        <div class="cta">
+          {{ if .title }}
+          <a class="button is-rounded {{ default "is-primary is-outlined" .class }}" href="{{ .url | relLangURL }}"
+            {{ with .target }}target="{{ . }}" {{ end }}>
+            {{ default .title (T .title) }}
+          </a>
+          {{ end }}
+          {{ range .buttons }}
+          <a class="button is-rounded {{ default "is-primary is-outlined" .class }}" href="{{ .url | relLangURL }}"
+            target="_blank">
+            {{ default .title (T .title) }}
+          </a>
+          {{ end }}
+          {{ with .subcta }}
+          <div class="subcta">
+            {{ default .body (T .body) | markdownify }}
+            {{ with .link }}<a class="is-subcta-link{{ with .class }} {{ . }}{{ end }}" href="{{ .url }}">{{ default .body (T .body) }}</a>{{ end }}
+          </div>
+          {{ end }}
+        </div>
+        {{ end }}
       </div>
       {{ end }}
     {{ else }}
@@ -104,6 +128,28 @@
     <div class="content">
       {{ default .body (T .body) | markdownify }}
     </div>
+    {{ with .cta }}
+    <div class="cta">
+      {{ if .title }}
+      <a class="button is-rounded {{ default "is-primary is-outlined" .class }}" href="{{ .url | relLangURL }}"
+        {{ with .target }}target="{{ . }}" {{ end }}>
+        {{ default .title (T .title) }}
+      </a>
+      {{ end }}
+      {{ range .buttons }}
+      <a class="button is-rounded {{ default "is-primary is-outlined" .class }}" href="{{ .url | relLangURL }}"
+        target="_blank">
+        {{ default .title (T .title) }}
+      </a>
+      {{ end }}
+      {{ with .subcta }}
+      <div class="subcta">
+        {{ with .body }}{{ default . (T .) }}{{ end }}
+        {{ with .link }}<a class="is-subcta-link{{ with .class }} {{ . }}{{ end }}" href="{{ .url }}">{{ default .body (T .body) }}</a>{{ end }}
+      </div>
+      {{ end }}
+    </div>
+    {{ end }}
     {{ end }}
   </div>
   {{ end }}
