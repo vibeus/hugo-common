@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     {{ $description := default .Site.Params.defaultDescription .Page.Description }}
     <meta name="description" content="{{ $description }}">
+    {{ block "extraMetas" . }}{{ end }}
     {{ $pageTitle := cond (hasPrefix .Page.Title "i18n-") (T .Page.Title) .Page.Title }}
     <title>{{ default "Vibe" $pageTitle }} | Vibe</title>
     <link rel="canonical" href="{{ .Page.Permalink }}"/>
