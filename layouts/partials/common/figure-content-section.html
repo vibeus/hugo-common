@@ -1,7 +1,7 @@
-<section class="section is-figure-content-section">
+<section class="section is-figure-content-section{{ with .class }} {{ . }}{{ end }}">
   <div class="container">
     {{ with .title }}
-    <h1 class="title is-section-title">{{ default .title (T .title) }}</h1>
+    <h1 class="title is-section-title">{{ default . (T .) }}</h1>
     {{ end }}
     {{ range .items }}
     <div class="columns is-vcentered{{ if .reversed }} is-reversed{{ end }}{{ with .class }} {{ . }}{{ end }}">
@@ -17,7 +17,9 @@
         {{ end }}
       </div>
       <div class="column is-content">
-        <h2 class="title is-content-title">{{ default .title (T .title) | markdownify}}</h2>
+        {{ with .title }}
+        <h2 class="title is-content-title">{{ default . (T .) | markdownify}}</h2>
+        {{ end }}
         <div class="content">
           {{ default .body (T .body) | markdownify }}
         </div>
