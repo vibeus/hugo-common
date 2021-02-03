@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     {{ $description := default .Site.Params.defaultDescription .Page.Description }}
     <meta name="description" content="{{ $description }}">
+    <meta name="facebook-domain-verification" content="u9idis4nm6gr7fnu4owhext701gk7p" />
     {{ block "extraMetas" . }}{{ end }}
     {{ $pageTitle := cond (hasPrefix .Page.Title "i18n-") (T .Page.Title) .Page.Title }}
     <title>{{ default "Vibe" $pageTitle }} | Vibe</title>
