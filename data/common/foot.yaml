@@ -62,7 +62,9 @@ base:
           url: /contact/request-a-quote
         - title: i18n-data-common-foot-base-sections-i_3-links-i_4-title
           url: /career/
-  phone: +1 (864) 335-2007
+  contact:
+    content: Contact Us
+    url: /contact/
   copyright:
     - i18n-data-common-foot-base-copyright-i_0
   socials:
