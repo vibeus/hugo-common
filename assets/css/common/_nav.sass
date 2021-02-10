@@ -57,6 +57,10 @@
   .navbar-dropdown.is-boxed
     left: -24px
     display: none
+  
+  +mobile
+    .navbar-dropdown .column.has-no-submenu-title:not(:first-child)
+      margin-top: -1.5rem
 
   +from($navbar-breakpoint)
     // keep brand logo and navbar start (menus) 56px when not collapsed.
