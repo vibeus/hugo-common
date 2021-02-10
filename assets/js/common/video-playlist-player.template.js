@@ -22,7 +22,9 @@ function setupYTApi() {
 
       window.onYouTubeIframeAPIReady = () => {
         window.YTApiReady = true;
-        window.YTCallback.forEach(resolveFn => { resolveFn() });
+        window.YTCallback.forEach((resolveFn) => {
+          resolveFn();
+        });
       };
 
       tag.src = 'https://www.youtube.com/iframe_api';
@@ -56,13 +58,16 @@ const thumbnailPlaceholderSelector = '{{ .thumbnailPlaceholderSelector }}';
 const thumbnailPlaceholderId = '{{ .thumbnailPlaceholderId }}';
 const thumbnailPlaceholder = document.getElementById(thumbnailPlaceholderId);
 const showThumbnail = !!thumbnailPlaceholder;
-const thumbnailImageSelector = '{{ .thumbnailImageSelector }}'
-const thumbnailImage = showThumbnail ? thumbnailPlaceholder.querySelector(thumbnailImageSelector) : null;
+const thumbnailImageSelector = '{{ .thumbnailImageSelector }}';
+const thumbnailImage = showThumbnail
+  ? thumbnailPlaceholder.querySelector(thumbnailImageSelector)
+  : null;
 
-showThumbnail && thumbnailImage.addEventListener('load', () => {
-  thumbnailPlaceholder.classList.add('is-active');
-  playerIframWrapper.classList.add('is-active');
-});
+showThumbnail &&
+  thumbnailImage.addEventListener('load', () => {
+    thumbnailPlaceholder.classList.add('is-active');
+    playerIframWrapper.classList.add('is-active');
+  });
 
 function changeThumbnail(videoId) {
   playerIframWrapper.classList.remove('is-active');
