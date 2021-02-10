@@ -47,7 +47,7 @@
                 {{ if .column_submenu }}
                 <div class="columns">
                   {{ range .column_submenu }}
-                  <div class="column">
+                  <div class="column{{ if not .title }} has-no-submenu-title{{ end }}">
                     {{ with .title }}
                     <span class="navbar-item is-column-title">{{ T . }}</span>
                     {{ end }}
