@@ -48,7 +48,9 @@
                 <div class="columns">
                   {{ range .column_submenu }}
                   <div class="column">
-                    <span class="navbar-item is-column-title">{{ T .title }}</span>
+                    {{ with .title }}
+                    <span class="navbar-item is-column-title">{{ T . }}</span>
+                    {{ end }}
                     {{ range .items }}{{ if not .hidden }}
                     <a class="navbar-item"
                        {{ if $nav_in_lp }}

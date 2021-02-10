@@ -92,7 +92,37 @@ other = "Contact Support"
 other = "Request a Quote"
 
 [i18n-data-common-nav-base-menu-i_4-title]
-other = "Pricing"
+other = "Global Sales"
+
+[i18n-data-common-nav-base-menu-i_3-column_submenu-i_0-items-i_0-title]
+other = "Amazon Australia"
+
+[i18n-data-common-nav-base-menu-i_3-column_submenu-i_0-items-i_1-title]
+other = "Amazon Canada"
+
+[i18n-data-common-nav-base-menu-i_3-column_submenu-i_0-items-i_2-title]
+other = "Amazon France"
+
+[i18n-data-common-nav-base-menu-i_3-column_submenu-i_0-items-i_3-title]
+other = "Amazon Germany"
+
+[i18n-data-common-nav-base-menu-i_3-column_submenu-i_0-items-i_4-title]
+other = "Amazon Italy"
+
+[i18n-data-common-nav-base-menu-i_3-column_submenu-i_1-items-i_0-title]
+other = "Amazon Japan"
+
+[i18n-data-common-nav-base-menu-i_3-column_submenu-i_1-items-i_1-title]
+other = "Amazon Singapore"
+
+[i18n-data-common-nav-base-menu-i_3-column_submenu-i_1-items-i_2-title]
+other = "Amazon Spain"
+
+[i18n-data-common-nav-base-menu-i_3-column_submenu-i_1-items-i_3-title]
+other = "Amazon UK"
+
+[i18n-data-common-nav-base-menu-i_3-column_submenu-i_1-items-i_4-title]
+other = "Request a Quote"
 
 [i18n-data-common-nav-base-menu-i_2-title]
 other = "About Us"
