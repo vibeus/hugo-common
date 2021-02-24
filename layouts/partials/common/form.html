@@ -62,9 +62,15 @@
     {{ end }}
   </div>
   {{ end }}
+  {{ with .privacy }}
+  <div class="privacy left-align">
+    {{ . | markdownify }}
+  </div>
+  {{ else }}
   <div class="privacy">
     Read our <a href="/privacy/" target="_blank">Privacy Policy</a>
   </div>
+  {{ end }}
 
   <div class="columns is-buttons">
     {{ range .buttons }}
