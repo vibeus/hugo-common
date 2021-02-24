@@ -1,4 +1,4 @@
-<h1 class="title">{{ default .title (T .title) }}</h1>
+<h1 class="title">{{ default .title (T .title) | markdownify }}</h1>
 {{ $method := default "POST" .method }}
 <form class="form is-vibe-form" method="{{ $method }}" action="{{ .action }}">
   {{ range .controls }}
