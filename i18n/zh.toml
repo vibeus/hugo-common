@@ -91,39 +91,6 @@ other = "Contact Support"
 [i18n-data-common-nav-base-menu-i_2-submenu-i_7-title]
 other = "Request a Quote"
 
-[i18n-data-common-nav-base-menu-i_4-title]
-other = "Order a Vibe"
-
-[i18n-data-common-nav-base-menu-i_3-column_submenu-i_0-items-i_0-title]
-other = "Amazon Australia"
-
-[i18n-data-common-nav-base-menu-i_3-column_submenu-i_0-items-i_1-title]
-other = "Amazon Canada"
-
-[i18n-data-common-nav-base-menu-i_3-column_submenu-i_0-items-i_2-title]
-other = "Amazon France"
-
-[i18n-data-common-nav-base-menu-i_3-column_submenu-i_0-items-i_3-title]
-other = "Amazon Germany"
-
-[i18n-data-common-nav-base-menu-i_3-column_submenu-i_0-items-i_4-title]
-other = "Amazon Italy"
-
-[i18n-data-common-nav-base-menu-i_3-column_submenu-i_1-items-i_0-title]
-other = "Amazon Japan"
-
-[i18n-data-common-nav-base-menu-i_3-column_submenu-i_1-items-i_1-title]
-other = "Amazon Singapore"
-
-[i18n-data-common-nav-base-menu-i_3-column_submenu-i_1-items-i_2-title]
-other = "Amazon Spain"
-
-[i18n-data-common-nav-base-menu-i_3-column_submenu-i_1-items-i_3-title]
-other = "Amazon UK"
-
-[i18n-data-common-nav-base-menu-i_3-column_submenu-i_1-items-i_4-title]
-other = "Request a Quote"
-
 [i18n-data-common-nav-base-menu-i_2-title]
 other = "关于我们"
 
@@ -288,6 +255,39 @@ other = "闽ICP备19013692号"
 
 [i18n-manual-ie-tips]
 other = "Internet Explorer 在本站功能受到限制。我们推荐使用 Chrome, Firefox 或 Edge 浏览本站。"
+
+[i18n-data-common-nav-base-menu-i_4-title]
+other = "Order a Vibe"
+
+[i18n-data-common-nav-base-menu-i_3-column_submenu-i_0-items-i_0-title]
+other = "Amazon Australia"
+
+[i18n-data-common-nav-base-menu-i_3-column_submenu-i_0-items-i_1-title]
+other = "Amazon Canada"
+
+[i18n-data-common-nav-base-menu-i_3-column_submenu-i_0-items-i_2-title]
+other = "Amazon France"
+
+[i18n-data-common-nav-base-menu-i_3-column_submenu-i_0-items-i_3-title]
+other = "Amazon Germany"
+
+[i18n-data-common-nav-base-menu-i_3-column_submenu-i_0-items-i_4-title]
+other = "Amazon Italy"
+
+[i18n-data-common-nav-base-menu-i_3-column_submenu-i_1-items-i_0-title]
+other = "Amazon Japan"
+
+[i18n-data-common-nav-base-menu-i_3-column_submenu-i_1-items-i_1-title]
+other = "Amazon Singapore"
+
+[i18n-data-common-nav-base-menu-i_3-column_submenu-i_1-items-i_2-title]
+other = "Amazon Spain"
+
+[i18n-data-common-nav-base-menu-i_3-column_submenu-i_1-items-i_3-title]
+other = "Amazon UK"
+
+[i18n-data-common-nav-base-menu-i_3-column_submenu-i_1-items-i_4-title]
+other = "Request a Quote"
 
 [i18n-data-common-nav-base-menu-i_3-column_submenu-items-i_0-title]
 other = "Amazon Japan"
