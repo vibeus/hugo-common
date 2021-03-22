@@ -8,7 +8,10 @@
       <div class="control{{ if .annotation }} annotated{{ end }}">
         {{ if .dropdown }}
         <div class="select is-fullwidth">
-          <select class="placeholder" name="{{ .name }}">
+          <select name="{{ .name }}"
+                  class="placeholder"
+                  {{ if .required }}required{{ end }}
+                  >
             <option value="" disabled selected>{{ default .placeholder (T .placeholder) }}</option>
             {{ range .dropdown }}
               {{ if reflect.IsMap . }}
