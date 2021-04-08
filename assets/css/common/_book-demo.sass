@@ -4,9 +4,10 @@
 .section.is-book-demo
   position: relative
   background: $vibe-teal
-  +vertical-padding(48px)
+  padding-top: 60px + 8px
+  padding-bottom: 60px
   +mobile
-    padding-top: 16px + 8px
+    padding-top: 32px + 8px
     padding-bottom: 0
   .columns
     +tablet
@@ -24,10 +25,17 @@
     left: 50%
     background: white
     padding: 50px
+    .title.is-section-title
+      font-size: 40px
+    +touch
+      .title.is-section-title
+        font-size: 32px
     +mobile
       padding: 30px
-    .is-section-title
-      text-align: center
+      .is-title-wrapper
+        text-align: center
+      .title.is-section-title
+        font-size: 28px
     .button
       border-width: 3px
     &.is-submitted
@@ -78,6 +86,6 @@
     +tablet
       position: absolute
       width: 993px
-      bottom: -48px
+      bottom: -60px
       left: -300px
 
