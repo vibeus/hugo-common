@@ -47,6 +47,7 @@
       .is-playlist-item
         padding: 24px
         background-color: white
+        opacity: 0.5
         border-radius: 12px
         box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.05)
         cursor: pointer
@@ -59,10 +60,12 @@
           font-size: 16px
           margin-top: 0
           height: 0
-          transition: height 0.2s
+          transition: all 0.2s
           overflow: hidden
-        &.is-active .body
-          margin-top: 16px
+        &.is-active
+          opacity: 1
+          .body
+            margin-top: 16px
           // let js determine the height for the purpose of animation
       +touch
         width: 100%
@@ -79,8 +82,8 @@
           flex-direction: row
           justify-content: space-between
           padding-right: 50%
-          border: 1px solid #E0E0E0
-          border-top: none
+          border: none
+          border-bottom: 1px solid #E0E0E0
         .is-playlist-item
           padding: 0 20px
           border-radius: 0
@@ -91,7 +94,7 @@
           .title
             white-space: nowrap
             font-size: 18px
-            padding: 12px 0
+            padding: 18px 0 12px
           .body
             display: none
           &.is-active
@@ -99,8 +102,6 @@
               border-bottom: 2px solid black
       +mobile
         .is-playlist
-          border: none
-          border-bottom: 1px solid #E0E0E0
           padding-right: 0
 
     .is-right-container
