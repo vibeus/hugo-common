@@ -1,0 +1,47 @@
+.section.is-feature-columns
+  +vertical-padding(120px)
+  .title.is-section-title
+    max-width: 850px
+    font-size: 50px
+    line-height: 1.25
+    text-align: center
+    margin: auto
+    margin-bottom: 60px
+    +touch
+      font-size: 40px
+    +mobile
+      margin-bottom: 40px
+      font-size: 30px
+  .column a
+    display: block
+    cursor: auto
+    &:hover
+      color: black
+  .is-feature
+    margin: auto
+    display: flex
+    flex-direction: column
+    align-items: center
+    .image
+      margin-bottom: 32px
+      +touch
+        margin-bottom: 24px
+      +mobile
+        margin-bottom: 16px
+    .title
+      text-align: center
+      font-size: 24px
+      line-height: 1.5
+      margin-bottom: 16px
+      max-width: 300px
+      +touch
+        font-size: 22px
+      +mobile
+        font-size: 20px
+    .body
+      max-width: 340px
+      text-align: center
+      font-size: 18px
+      line-height: 1.5
+      +mobile
+        font-size: 16px

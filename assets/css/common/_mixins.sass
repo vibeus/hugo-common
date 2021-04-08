@@ -20,3 +20,29 @@
         padding-top: $mtop
       @if $bottom != $mbottom
         padding-bottom: $mbottom
+
+=glide-dots-style
+  margin-top: 8px
+  margin-bottom: -60px
+  +mobile
+    margin-bottom: -30px
+  text-align: center
+  .icon
+    cursor: pointer
+    opacity: 0.2
+    &.is-active
+      opacity: 0.6
+
+=glide-nav-style
+  position: absolute
+  // display: none
+  top: 50%
+  cursor: pointer
+  &.is-left
+    left: -60px
+    transform: translateY(-50%) rotate(180deg)
+  &.is-right
+    right: -60px
+    transform: translateY(-50%)
+  svg
+    cursor: pointer

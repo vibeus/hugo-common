@@ -83,7 +83,7 @@
       <div class="control">
         <button class="{{ $class }}"
                 type="{{ $type }}"
-                id="{{ .id }}"
+                {{ with .id }}id="{{ . }}"{{ end }}
                 placeholder="{{ default .placeholder (T .placeholder) }}"
                 data-name="{{ .name }}"
                 {{ with .target_action }}data-target-action="{{ . }}"{{ end }}

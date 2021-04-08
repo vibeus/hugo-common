@@ -2,7 +2,7 @@
   <div class="container">
     {{ $glide := gt (len .testimonials) 1 }}
     {{ if $glide }}
-      {{ partial "common/testimonial-glide" .testimonials }}
+      {{ partial "common/glide" (dict "class" "testimonials" "partial" "common/testimonial" "context" .testimonials) }}
     {{ else }}
       {{ range .testimonials }}
       {{ partial "common/testimonial" . }}

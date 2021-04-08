@@ -1,0 +1,83 @@
+@import "_form.sass"
+@import "_mixins.sass"
+
+.section.is-book-demo
+  position: relative
+  background: $vibe-teal
+  +vertical-padding(48px)
+  +mobile
+    padding-top: 16px + 8px
+    padding-bottom: 0
+  .columns
+    +tablet
+      flex-direction: row-reverse
+  .column.is-image
+    .column.is-image
+      position: relative
+      +tablet
+        .image
+          position: absolute
+    position: static
+  .column.is-form
+    z-index: 1
+    border-top: black solid 8px
+    left: 50%
+    background: white
+    padding: 50px
+    +mobile
+      padding: 30px
+    .is-section-title
+      text-align: center
+    .button
+      border-width: 3px
+    &.is-submitted
+      > .is-title-wrapper
+        visibility: hidden
+      .form
+        .columns, .privacy
+          visibility: hidden
+      .submitted
+        display: flex
+    .submitted
+      bottom: 80px
+      align-items: center
+      justify-content: center
+      .submitted-choice
+        display: none
+        text-align: center
+        font-size: 24px
+      .content
+        max-width: 550px
+        h1
+          font-size: 24px
+        a
+          text-decoration: underline
+          font-weight: $vibe-bold
+    &.is-submitted.is-video-demo
+      .form.is-vibe-form
+        .columns, .privacy, .button[data-name='request-video']
+          visibility: hidden
+        .columns.is-buttons
+          visibility: hidden
+        .submitted
+          display: flex
+          .submitted-choice.is-video-demo
+            display: block
+    &.is-submitted.is-live-demo
+      .form.is-vibe-form
+        .columns, .privacy
+          visibility: hidden
+        .columns.is-buttons
+          visibility: hidden
+        .submitted
+          display: flex
+          .submitted-choice.is-live-demo
+            display: block
+  .image
+    +mobile-full-width
+    +tablet
+      position: absolute
+      width: 993px
+      bottom: -48px
+      left: -300px
+

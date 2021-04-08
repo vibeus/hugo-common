@@ -1,0 +1,44 @@
+.section.is-hardware-features
+  +vertical-padding(120px)
+  .container
+    .title.is-section-title
+      font-size: 50px
+      line-height: 1.25
+      max-width: 735px
+      text-align: center
+      margin: auto
+      margin-bottom: 0
+      +touch
+        font-size: 40px
+      +mobile
+        font-size: 30px
+    .image
+      max-width: 1062px
+      width: 100%
+      text-align: center
+      margin: auto
+    .is-feature-list
+      padding-left: 34px
+      .is-feature:not(:first-child)
+        margin-top: 32px
+      .title
+        font-size: 20px
+        line-height: 30px
+        margin-bottom: 8px
+        position: relative
+      .body
+        font-size: 16px
+        line-height: 23px
+      [data-idx]::before
+        content: attr(data-idx)
+        text-align: center
+        width: 18px
+        height: 18px
+        border-radius: 999px
+        font-size: 10px
+        line-height: 20px
+        color: white
+        background-color: #FFCC00
+        position: absolute
+        top: 30px / 2 - 18px / 2
+        left: -34px

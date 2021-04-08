@@ -1,9 +1,5 @@
 .section.is-compare
-  padding: 120px 24px
-  +widescreen
-    padding: 140px 24px
-  +mobile
-    padding: 100px 20px
+  +vertical-padding(120px)
   .container
     max-width: 928px
   .title
@@ -14,13 +10,14 @@
       margin-bottom: 80px
     +mobile
       font-size: 32px
-      margin-bottom: 60px
+      margin-bottom: 40px
   .compare-table
     margin-bottom: 100px
     +touch
       margin-bottom: 80px
     +mobile
       font-size: 0.75rem
+      margin-bottom: 60px
     th, td
       +touch
         padding: 4px

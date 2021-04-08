@@ -1,0 +1,23 @@
+<section class="section is-book-demo" id="section-book-demo">
+  <div class="container">
+    <div class="columns is-vcentered">
+      <div class="column is-form">
+        <div class="is-title-wrapper">
+          <h1 class="title is-section-title">{{ default .title (T .title) }}</h1>
+          {{ with .body }}
+          <div class="body">{{ default . (T .) | markdownify }}</div>
+          {{ end }}
+        </div>
+        {{ with .form }}
+        {{ partial "common/form" . }}
+        {{ end }}
+      </div>
+      <div class="column is-image">
+        <figure class="image">
+          {{ partial "common/srcset" (dict "resource" (resources.Get .figure) "desktop" "1920x" "tablet" "1280x" "mobile" "750x" "options" "png") }}
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+

@@ -1,0 +1,34 @@
+<div class="cta is-section-cta">
+  {{ if .title }}
+  <a
+    class="button{{ with .class }} {{ . }}{{ end }}"
+    {{ if $.is_lp }}
+    href="{{ (default "/demo/" .url) }}"
+    {{ else }}
+    href="{{ (default "/demo/" .url) | relLangURL }}"
+    {{ end }}
+    target="{{ default "_self" .target }}"
+    {{ range .data }}
+    data-{{ .key }}="{{ .value }}"
+    {{ end }}
+  >
+    {{ default .title (T .title) }}
+  </a>
+  {{ end }}
+  {{ range .buttons }}
+  <a
+    class="button{{ with .class }} {{ . }}{{ end }}"
+    {{ if $.is_lp }}
+    href="{{ .url }}"
+    {{ else }}
+    href="{{ .url | relLangURL }}"
+    {{ end }}
+    target="{{ default "_self" .target }}"
+    {{ range .data }}
+    data-{{ .key }}="{{ .value }}"
+    {{ end }}
+  >
+    {{ default .title (T .title) }}
+  </a>
+  {{ end }}
+</div>
