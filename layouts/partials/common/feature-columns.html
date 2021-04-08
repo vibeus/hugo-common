@@ -1,0 +1,28 @@
+<section class="section is-feature-columns">
+  {{ with .title }}
+  <h1 class="title is-section-title">{{ default . (T .) }}</h1>
+  {{ end }}
+  <div class="container">
+    <div class="columns">
+      {{ range $idx, $val := .features }}
+      <div class="column{{ with .column_class }} {{ . }}{{ end }}">
+        <a {{ with .url }}href="{{ . }}"{{ end }}{{ with .target }} target="{{ . }}"{{ end}}>
+          <div class="is-feature is-feature-{{ $idx }}">
+            <figure class="image">
+              {{ partial "common/srcset" (dict "resource" (resources.Get .figure) "desktop" "540x" "mobile" "420x") }}
+            </figure>
+            <h2 class="title">{{ .title | markdownify }}</h2>
+            <div class="body">
+              {{ .body | markdownify }}
+            </div>
+          </div>
+        </a>
+      </div>
+      {{ end }}
+    </div>
+
+    {{ with .cta }}
+    {{ partial "common/section-cta" . }}
+    {{ end }}
+  </div>
+</section>

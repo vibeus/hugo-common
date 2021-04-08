@@ -1,0 +1,22 @@
+<section class="section is-hardware-features">
+  <div class="container">
+    <h1 class="title is-section-title">{{ .title }}</h1>
+    <figure class="image is-hidden-mobile">
+      {{ partial "common/srcset" (dict "resource" (resources.Get .figure) "options" "jpg") }}
+    </figure>
+    <figure class="image is-hidden-tablet">
+      {{ partial "common/srcset" (dict "resource" (resources.Get .figure_mobile) "options" "jpg") }}
+    </figure>
+    <div class="is-feature-list is-hidden-tablet">
+      {{ range $idx, $val := .features }}
+      <div class="is-feature is-feature-{{ $idx }}">
+        <div class="title" data-idx="{{ add $idx 1 }}">{{ .title }}</div>
+        <div class="body">{{ .body }}</div>
+      </div>
+      {{ end }}
+    </div>
+    {{ with .cta }}
+    {{ partial "common/section-cta" . }}
+    {{ end }}
+  </div>
+</section>

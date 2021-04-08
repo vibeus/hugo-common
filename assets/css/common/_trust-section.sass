@@ -1,0 +1,45 @@
+.section.is-trust.is-glide
+  +vertical-padding(40px)
+  .container
+    max-width: 1200px
+    display: flex
+    flex-direction: row
+  .title.is-section-title
+    font-size: 24px
+    min-width: 174px
+    padding-left: 24px
+    padding-right: 32px
+    margin-bottom: 0
+    line-height: 100%
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    position: relative
+    &::after
+      content: ''
+      position: absolute
+      right: 0
+      top: 0
+      bottom: 0
+      margin: auto
+      display: block
+      width: 1px
+      height: 36px
+      background-color: black
+    +touch
+      font-size: 18px
+      min-width: 150px
+      &::after
+        height: 27px
+    +mobile
+      display: none
+  .customers
+    max-width: 1200px - 174px
+    width: calc(100% - 174px)
+    +touch
+      width: calc(100% - 150px)
+    +mobile
+      width: 100%
+
+

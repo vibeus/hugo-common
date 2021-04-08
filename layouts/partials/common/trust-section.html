@@ -1,0 +1,12 @@
+<section class="section is-trust{{ if .glide }} is-glide{{ end }}">
+  <div class="container">
+    {{ with .title }}
+    <div class="title is-section-title">{{ . }}</div>
+    {{ end }}
+    {{ if .glide }}
+      {{ partial "common/glide" (dict "class" "customers" "partial" "common/customer-logo" "context" site.Data.common.customers.customers) }}
+    {{ else }}
+      {{ partial "common/customers" . }}
+    {{ end }}
+  </div>
+</section>
