@@ -12,11 +12,15 @@
     +mobile
       margin-bottom: 40px
       font-size: 30px
-  .column a
-    display: block
-    cursor: auto
-    &:hover
-      color: black
+  .column
+    +mobile
+      &:not(:first-child)
+        margin-top: 24px
+    a
+      display: block
+      cursor: auto
+      &:hover
+        color: black
   .is-feature
     margin: auto
     display: flex
