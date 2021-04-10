@@ -1,4 +1,6 @@
-<section class="section is-book-demo" id="section-book-demo">
+<section class="section is-book-demo"
+         id="{{ default "section-book-demo" .id }}"
+         {{ with .background_color }}style="background-color: {{ . }}"{{ end }}>
   <div class="container">
     <div class="columns is-vcentered">
       <div class="column is-form">
@@ -8,9 +10,7 @@
           <div class="body">{{ default . (T .) | markdownify }}</div>
           {{ end }}
         </div>
-        {{ with .form }}
-        {{ partial "common/form" . }}
-        {{ end }}
+        {{ partial "common/form" (merge .Site.Data.common.demo_form.form (default (dict) .form)) }}
       </div>
       <div class="column is-image">
         <figure class="image">

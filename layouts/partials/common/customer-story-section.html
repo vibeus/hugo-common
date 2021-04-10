@@ -1,0 +1,25 @@
+<section class="section is-customer-story-section">
+  <div class="container">
+    <div class="title is-section-title">{{ .title_part1 }} <span class="underline"> {{ .title_part2 }} </span>
+      {{ .title_part3 }}</div>
+    {{ if .content }}
+    <div class="is-section-content">
+      {{ if .url }}
+      <a href="{{ .url | relLangURL }}">{{ .content }}</a>
+      {{ else }}
+      <div class="content">{{ .content }}</div>
+      {{ end }}
+    </div>
+    {{ end }}
+    <div class="glide_desktop">{{ partial "common/customer-story-glide" .testimonials_for_desktop }}</div>
+    <div class="glide_tablet">{{ partial "common/customer-story-glide" .testimonials_for_tablet }}</div>
+    <div class="glide_mobile">{{ partial "common/customer-story-glide" .testimonials_for_mobile }}</div>
+    {{ partial "common/video-player" (dict "playerId" "video-popup-player" "triggerClass" ".video-popup" "isInplace" false) }}
+  </div>
+  {{ with .cta }}
+  {{ partial "common/section-cta" . }}
+  {{ end }}
+</section>
+
+
+{{ partial "common/template-script" (dict "asset" "js/common/customer-story-section.js") }}

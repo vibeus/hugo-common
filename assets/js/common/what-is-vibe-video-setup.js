@@ -12,7 +12,7 @@ bindEventWithTarget('.is-what-is-vibe .is-playlist-item', 'click', (el) => {
 });
 
 window.addEventListener('DOMContentLoaded', (event) => {
-  document.querySelector('.is-playlist-item').click();
+  document.querySelector('.is-what-is-vibe .is-playlist-item').click();
 });
 
 const navbar = document.querySelector('.navbar');

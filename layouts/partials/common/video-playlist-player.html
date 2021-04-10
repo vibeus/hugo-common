@@ -1,0 +1,25 @@
+{{ $playerId := default "video-playlist-player" .player.playerId }}
+{{ $playlistSelector := printf ".%s" .player.playlistClass }}
+{{ $thumbnailPlaceholderId := .player.thumbnailPlaceholderId }}
+{{ $thumbnailPlaceholderSelector := printf ".%s" .player.thumbnailPlaceholderClass }}
+{{ $thumbnailImageSelector := printf ".%s" .player.thumbnailImageClass }}
+{{ $triggerSelector := ".video-playlist-launcher" }}
+{{ if .player.triggerClass }}
+{{ $triggerSelector = printf "%s.%s" ".video-playlist-launcher" .player.triggerClass }}
+{{ end }}
+
+<div class="video-playlist-launcher{{ with .player.triggerClass }} {{ . }}{{ end }}" id="{{ $playerId }}-container" data-target="{{ $playerId }}">
+  {{ if .player.thumbnail }}
+  <figure {{ with .player.thumbnailPlaceholderClass }}class="{{ . }}"{{ end }} {{ with .player.thumbnailPlaceholderId }}id="{{ . }}"{{ end }}>
+    <img {{ with .player.thumbnailImageClass }}class="{{ . }}"{{ end }}>
+    <span class="player-button-icon">
+      {{ (resources.Get "img/common/video-player-button.svg" ).Content | safeHTML }}
+    </span>
+  </figure>
+  {{ end }}
+  <figure class="image{{ if .player.thumbnail }} with-thumbnail{{ end }}" id="{{ $playerId }}">
+    <div id="{{ $playerId }}-iframe"></div>
+  </figure>
+</div>
+
+{{ partial "common/template-script" (dict "asset" "js/common/video-playlist-player.template.js" "playerId" $playerId "playlistSelector" $playlistSelector  "triggerSelector" $triggerSelector "thumbnailPlaceholderId" $thumbnailPlaceholderId "thumbnailPlaceholderSelector" $thumbnailPlaceholderSelector "thumbnailImageSelector" $thumbnailImageSelector "isInplace" true) }}
