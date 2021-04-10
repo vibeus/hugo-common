@@ -35,7 +35,7 @@
       </div>
       <div class="is-right-container">
         <div class="is-video-wrapper">
-          {{ partial "video-playlist-player" . }}
+          {{ partial "common/video-playlist-player" . }}
         </div>
       </div>
     </div>
@@ -44,4 +44,6 @@
     {{ partial "common/section-cta" . }}
     {{ end }}
   </div>
+
+  {{ partial "common/template-script" (dict "asset" "js/common/what-is-vibe-video-setup.js") }}
 </section>

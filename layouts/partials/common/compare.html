@@ -90,14 +90,7 @@
       </table>
     </div>
     {{ with .cta }}
-    <div class="cta">
-      <a href="{{ .url }}"
-        class="button{{ with .class }} {{ . }}{{ end }}"
-        {{ range .data }}
-        data-{{ .key }}="{{ .value }}"
-        {{ end }}
-        >{{ default .title (T .title) }}</a>
-    </div>
+    {{ partial "common/section-cta" . }}
     {{ end }}
   </div>
 </section>

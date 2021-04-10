@@ -1,3 +1,5 @@
+@import "_section-cta.sass"
+
 .section.is-compare
   +vertical-padding(120px)
   .container
@@ -12,12 +14,8 @@
       font-size: 32px
       margin-bottom: 40px
   .compare-table
-    margin-bottom: 100px
-    +touch
-      margin-bottom: 80px
     +mobile
       font-size: 0.75rem
-      margin-bottom: 60px
     th, td
       +touch
         padding: 4px
@@ -54,14 +52,6 @@
           width: 24px
         +mobile
           width: 14px
-  .cta
-    text-align: center
-    .button
-      width: 280px
-      height: 59px
-      font-family: $vibe-family-heading
-      font-weight: $vibe-bold
-      font-size: 18px
 
   &.is-education
     .compare-table
