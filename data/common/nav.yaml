@@ -14,7 +14,7 @@ base:
           url: /comparison/
         - title: i18n-data-common-nav-base-menu-i_0-submenu-i_4-title
           url: /customer/
-    - title: i18n-data-common-nav-base-menu-i_3-title
+    - title: i18n-data-common-nav-base-menu-i_1-title
       column_submenu:
         - title: i18n-data-common-nav-base-menu-i_1-column_submenu-i_0-title
           items:
@@ -44,7 +44,7 @@ base:
               url: /lp/scenario-professional-services/
             - title: i18n-data-common-nav-base-menu-i_3-submenu-i_4-title
               url: /lp/scenario-technology/
-    - title: i18n-data-common-nav-base-menu-i_1-title
+    - title: i18n-data-common-nav-base-menu-i_2-title
       submenu:
         - title: i18n-data-common-nav-base-menu-i_2-submenu-i_0-title
           url: /buyer-faq/
@@ -63,8 +63,11 @@ base:
           url: https://knowledge.vibe.us/kb-tickets/new
         - title: i18n-data-common-nav-base-menu-i_2-submenu-i_7-title
           url: /contact/request-a-quote
-    - title: i18n-data-common-nav-base-menu-i_2-title
+    - title: i18n-data-common-nav-base-menu-i_3-title
       url: /about/
+    - title: i18n-data-common-nav-base-menu-i_4-title
+      url: /order/
+      class: is-hidden-desktop
   extra:
     - title: i18n-data-common-nav-base-extra-i_0-title
       class: is-primary is-outlined is-rounded is-in-brand is-hidden-mobile
