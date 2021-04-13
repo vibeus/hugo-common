@@ -20,7 +20,10 @@ other = "Product Comparison"
 other = "Customer Testimonials"
 
 [i18n-data-common-nav-base-menu-i_3-title]
-other = "Solutions"
+other = "About us"
+
+[i18n-data-common-nav-base-menu-i_4-title]
+other = "Order a Vibe"
 
 [i18n-data-common-nav-base-menu-i_1-column_submenu-i_0-title]
 other = "Scenario"
@@ -65,7 +68,7 @@ other = "Professional Services"
 other = "Technology"
 
 [i18n-data-common-nav-base-menu-i_1-title]
-other = "Resources"
+other = "Solutions"
 
 [i18n-data-common-nav-base-menu-i_2-submenu-i_0-title]
 other = "Buyer's FAQ"
@@ -92,7 +95,7 @@ other = "Contact Support"
 other = "Request a Quote"
 
 [i18n-data-common-nav-base-menu-i_2-title]
-other = "About Us"
+other = "Resources"
 
 [i18n-data-common-nav-base-extra-i_0-title]
 other = "See a Demo"
