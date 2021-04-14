@@ -12,7 +12,7 @@ export function bindEventWithTarget(triggerClass, eventName, onEvent) {
 
 // toggle is-active css class when triggerClass element is clicked.
 // onChanged(isActive): callback when is-active is changed.
-export function toggleActive(triggerClass, toggleSelf, onChanged) {
+export function toggleActive(triggerClass, toggleSelf, onChanged) {z
   bindEventWithTarget(triggerClass, 'click', (el, target) => {
     if (toggleSelf) {
       el.classList.toggle('is-active');

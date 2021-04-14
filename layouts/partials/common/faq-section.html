@@ -1,3 +1,4 @@
+{{ if not .is_tab }}
 <section class="section is-faq">
   <div class="container">
     <div class="faq-section-title">
@@ -31,3 +32,45 @@
     {{ end }}
   </div>
 </section>
+{{ else }}
+<section class="section is-faq-tabs">
+  <div class="container">
+    <h1 class="faq-tabs-section-header">{{ T .title }}</h1>
+    <div class="faq-tabs-section-title">
+      <div class="faq-tabs-section-title-tabs">
+        {{ range $idx, $it := .items }}
+        <h1 class="title is-section-title{{ if eq $idx 0 }} is-active{{ end }}" data-target-class="faq-tabs-subitems-{{ $idx }}">{{ default .title (T .title) }}</h1>
+        {{ end }}
+      </div>
+      {{ with .see_all }}
+      <a class="is-see-all is-hidden-mobile" href="{{ .url }}" target="_blank">{{ T .title }}</a>
+      {{ end }}
+    </div>
+    <div class="faq-tabs-items">
+      {{ range $idx1, $it1 := .items }}
+      <div class="faq-tabs-subitems faq-tabs-subitems-{{ $idx1 }}{{ if eq $idx1 0 }} is-active{{ end }}">
+        {{ range $idx2, $it2 := .subitems }}
+        <div class="faq-tabs-item{{ if eq $idx2 0 }} is-active {{ end }}" id="faq-tabs-{{ $idx1 }}-{{ $idx2 }}">
+          <h2 class="faq-tabs-title" data-target="faq-tabs-{{ $idx1 }}-{{ $idx2}}">
+            <span>
+              {{ .title }}
+            </span>
+            <span class="icon is-chevron">
+              <svg width="23" height="19" viewBox="0 0 23 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.3714 8.37137L11.6289 14.1138L5.88644 8.37137" stroke="#111111" stroke-width="3" strokedivnecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </h2>
+          <div class="content">{{ .body | markdownify }}</div>
+        </div>
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+    {{ with .see_all }}
+    <a class="is-see-all is-hidden-tablet" href="{{ .url }}" target="_blank">{{ default .title (T .title) }}</a>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
+  
