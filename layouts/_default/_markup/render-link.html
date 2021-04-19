@@ -2,4 +2,4 @@
 {{ if (strings.HasPrefix .Destination "https://www.amazon") }}
 {{ $newTab = true }}
 {{ end }}
-<a href="{{ .Destination | safeURL }}"{{ with .Title}} title="{{ . }}"{{ end }}{{ if $newTab }} target="_blank"{{ end }}">{{ .Text | safeHTML }}</a>
+<a href="{{ .Destination | safeURL }}"{{ with .Title}} title="{{ . }}"{{ end }}{{ if $newTab }} target="_blank"{{ end }}>{{ .Text | safeHTML }}</a>
