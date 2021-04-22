@@ -219,6 +219,10 @@ export function setupForm(form, callbacks) {
   form.querySelectorAll('.eu-privacy').forEach((el) => {
     isFromEU() ? el.classList.remove('is-hidden') : el.classList.add('is-hidden');
   })
+  if (!isFromEU()) {
+    var checkbox = document.getElementById('email-communications-checkbox');
+    checkbox.checked = true;
+  }
 
   form.querySelectorAll('select').forEach((el) => {
     el.addEventListener('change', (ev) => {
@@ -363,6 +367,6 @@ const EUCountryCode = [
 ]
 
 export function isFromEU() {
-  return true;
+  return false;
   return EUCountryCode.indexOf(getCookieValue('country')) != -1;
 };
