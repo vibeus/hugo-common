@@ -367,6 +367,5 @@ const EUCountryCode = [
 ]
 
 export function isFromEU() {
-  return false;
   return EUCountryCode.indexOf(getCookieValue('country')) != -1;
 };
