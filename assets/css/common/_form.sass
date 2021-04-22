@@ -27,15 +27,27 @@
     height: 60px
   .privacy
     font-size: 14px
+    line-height: 1.5
     margin-top: -12px
     text-align: right
-    &.left-align
+    &.left-align, &.left-align *
       text-align: left
     a
       text-decoration: underline
       font-weight: $vibe-bold
+    &.eu-privacy
+      font-size: 12px
+      text-align: left
+      margin-top: 0
+      #email-communications-checkbox
+        margin-right: 4px
+        vertical-align: middle
+      label[for="email-communications-checkbox"]
+        vertical-align: middle
+      .consent-to-process
+        margin-top: 10px
   .columns.is-buttons
-    margin-top: 32px
+    margin-top: 20px
   .submitted
     display: none
     flex-direction: column
@@ -78,7 +90,7 @@
         display: block
         right: 100%
         bottom: 32px
-  
+
   .cta
     margin-top: 60px
     .title

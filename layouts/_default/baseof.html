@@ -29,29 +29,14 @@
     {{ partial "common/font" (slice $firaSansRegular $firaSansMedium $firaSansItalic $firaSansMediumItalic $stratosRegular $stratosSemibold) }}
     {{ block "stylesheets" . }}{{ end }}
     {{ block "scripts" . }}{{ end }}
-    {{ with .Site.Params.gtmId }}
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','{{.}}');</script>
-<!-- End Google Tag Manager -->
-    {{ end }}
   </head>
   <body class="{{ with .Site.Language.Lang }}lang-{{ . }}{{ end }}">
-    {{ with .Site.Params.gtmId }}
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{.}}"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    {{ end }}
     {{ block "nav" . }}
       <!-- Add global banner here -->
       <!-- <div class="global-before-nav">
         <p class="cta">
           <a href="/order">
-            Treat yourself (or your team) for making it through 2020 with $200 off Vibe boards. 
+            Treat yourself (or your team) for making it through 2020 with $200 off Vibe boards.
             <br/>
             Ends 11/30, limited quantities. Promo code: <strong>NOVEMBER200</strong> →
           </a>
@@ -63,5 +48,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {{ block "main" . }}{{ end }}
     {{ block "foot" . }}{{ partial "common/foot.html" . }}{{ end }}
     {{ block "tips" . }}{{ partial "common/ie-tips.html" . }}{{ end }}
+    {{ with .Site.Params.hsId }}
+    {{ partial "common/template-script" (merge (dict "asset" "js/common/GDPR-compliance.js") $.Site.Params) }}
+    {{ end }}
   </body>
 </html>
