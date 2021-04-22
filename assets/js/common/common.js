@@ -151,6 +151,7 @@ function submitForm(form, action) {
   form.action = action; // gtm use form action to track which hubspot form is submitted
   const fields = [];
   for (const pair of new FormData(form).entries()) {
+    if (pair[0] == 'consent-to-communicate-checkbox') continue;
     fields.push({
       name: pair[0],
       value: pair[1],
@@ -163,6 +164,21 @@ function submitForm(form, action) {
   if (hutk) {
     body.context = { hutk };
   }
+
+  // add legalConsentOptions for gdpr
+  const consentToProcessElt = document.getElementById('consent-to-process');
+  const consentToCommunicateElt = document.getElementById('consent-to-communicate');
+  body.legalConsentOptions = {
+    consent: {
+      consentToProcess: true,
+      text: consentToProcessElt.dataset.text,
+      communications: [{
+        value: true,
+        subscriptionTypeId: parseInt(consentToCommunicateElt.dataset.subscriptionTypeId),
+        text: consentToCommunicateElt.dataset.text,
+      }]
+    }
+  };
 
   return fetch(form.action, {
     method: form.method,
@@ -196,6 +212,13 @@ export function setupForm(form, callbacks) {
   const after = callbacks['click.after'];
   const submitted = callbacks['submit.after'];
   const final = callbacks['submit.final'];
+
+  form.querySelectorAll('.non-eu-privacy').forEach((el) => {
+    isFromEU() ? el.classList.add('is-hidden') : el.classList.remove('is-hidden');
+  });
+  form.querySelectorAll('.eu-privacy').forEach((el) => {
+    isFromEU() ? el.classList.remove('is-hidden') : el.classList.add('is-hidden');
+  })
 
   form.querySelectorAll('select').forEach((el) => {
     el.addEventListener('change', (ev) => {
@@ -303,3 +326,43 @@ export function isInBlacklist(form, blacklist) {
   const hash = window.sha1('vibe_blacklist:' + email);
   return blacklist.indexOf(hash) >= 0;
 }
+
+export function getCookieValue(name) {
+  return document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)')?.pop() || '';
+}
+
+const EUCountryCode = [
+  'AT', // Austria
+  'BE', // Belgium
+  'BG', // Bulgaria
+  'HR', // Croatia
+  'CY', // Republic of Cyprus
+  'CZ', // Czech Republic
+  'DK', // Denmark
+  'EE', // Estonia
+  'FI', // Finland
+  'FR', // France
+  'DE', // Germany
+  'GR', // Greece
+  'HU', // Hungary
+  'IE', // Ireland
+  'IT', // Italy
+  'LV', // Latvia
+  'LT', // Lithuania
+  'LU', // Luxembourg
+  'MT', // Malta
+  'NL', // Netherlands
+  'PL', // Poland
+  'PT', // Portugal
+  'RO', // Romania
+  'SK', // Slovakia
+  'SI', // Slovenia
+  'ES', // Spain
+  'SE', // Sweden
+  'GB', // United Kingdom
+]
+
+export function isFromEU() {
+  return true;
+  return EUCountryCode.indexOf(getCookieValue('country')) != -1;
+};

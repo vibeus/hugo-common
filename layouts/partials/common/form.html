@@ -1,3 +1,8 @@
+{{ $consentToCommunicate := site.Data.common.GDPR.legal_consent_options.consent_to_communicate }}
+{{ $consentToProcess := site.Data.common.GDPR.legal_consent_options.consent_to_process }}
+{{ $subscriptionTypeId := site.Data.common.GDPR.legal_consent_options.subscription_type_id }}
+{{ $privacyPolicyNotice := "For more details, review our privacy policy." }}
+
 <h1 class="title">{{ default .title (T .title) | markdownify }}</h1>
 {{ $method := default "POST" .method }}
 <form class="form is-vibe-form" method="{{ $method }}" action="{{ .action }}">
@@ -66,14 +71,26 @@
   </div>
   {{ end }}
   {{ with .privacy }}
-  <div class="privacy left-align">
+  <div class="privacy non-eu-privacy left-align">
     {{ . | markdownify }}
   </div>
   {{ else }}
-  <div class="privacy">
+  <div class="privacy non-eu-privacy is-hidden">
     Read our <a href="/privacy/" target="_blank">Privacy Policy</a>
   </div>
   {{ end }}
+  <div class="privacy eu-privacy left-align">
+    <div class="consent-to-communicate" id="consent-to-communicate" data-text="{{ $consentToCommunicate }}" data-subscription-type-id="{{ $subscriptionTypeId }}">
+      <input name="consent-to-communicate-checkbox" type="checkbox" id="email-communications-checkbox" required>
+      <label for="email-communications-checkbox">
+        {{ $consentToCommunicate }}
+      </label>
+    </div>
+    <div class="consent-to-process" id="consent-to-process" data-text="{{ $consentToProcess }} {{ $privacyPolicyNotice }}">
+      {{ $consentToProcess }}
+      For more details, review our <a href="/privacy/" target="_blank">privacy policy</a>.
+    </div>
+  </div>
 
   <div class="columns is-buttons">
     {{ range .buttons }}
