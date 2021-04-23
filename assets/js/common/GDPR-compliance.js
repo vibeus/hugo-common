@@ -10,7 +10,7 @@ const hsScriptLoaderId = '{{ .hsScriptLoaderId }}';
 const cookieConfirmationButtonId = '{{ .cookieConfirmationButtonId }}';
 
 function gtmHelper(w, d, s, l, i) {
-  var e = d.createElement('div');
+  var e = d.createElement('noscript');
   e.innerHTML = `<iframe src="https://www.googletagmanager.com/ns.html?id=${gtmId}" height="0" width="0" style="display:none;visibility:hidden"></iframe>`;
   d.body.insertBefore(e, d.body.firstChild);
 
