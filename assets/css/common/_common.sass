@@ -62,6 +62,18 @@ $navbar-breakpoint: 1080px
 @import './_global-before-nav.sass'
 @import './_ie-tips.sass'
 
+div#hs-eu-cookie-confirmation
+  div#hs-eu-cookie-confirmation-inner#hs-eu-cookie-confirmation-inner
+    +mobile
+      padding: 20px!important
+    a[href="https://vibe.us/privacy/"]
+      &, &:hover
+        text-decoration: underline!important
+        color: #33475b!important
+    #hs-en-cookie-confirmation-buttons-area > [role="button"]
+      border-radius: 9999px!important
+      width: 100px!important
+      text-align: center!important
 ul.icon-list
   list-style: none
   span
