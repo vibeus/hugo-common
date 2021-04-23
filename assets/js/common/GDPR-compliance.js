@@ -65,10 +65,17 @@ const onCookieBannerMounted = () => {
   }
 };
 
+const updateEU = () => {
+  document.documentElement.classList.add('gdpr-enabled');
+  document.querySelectorAll('a[href="https://vibe.us/order/"], a[href="/order/"]')
+    .forEach((el) => {
+      el.href = 'https://vibe.toyond.de';
+    });
+}
+
 const init = () => {
-  console.log(isFromEU())
   if (isFromEU()) {
-    document.documentElement.classList.add('gdpr-enabled');
+    updateEU();
   }
 // {{ if .GDPRdebug }}
   console.log('[D]: Observer initialized.')
