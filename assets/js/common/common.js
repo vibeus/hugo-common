@@ -166,8 +166,9 @@ function submitForm(form, action) {
   }
 
   // add legalConsentOptions for gdpr
-  const consentToProcessElt = document.getElementById('consent-to-process');
-  const consentToCommunicateElt = document.getElementById('consent-to-communicate');
+  const consentToProcessElt = form.querySelector('.consent-to-process');
+  const consentToCommunicateElt = form.querySelector('.consent-to-communicate');
+
   body.legalConsentOptions = {
     consent: {
       consentToProcess: true,
@@ -202,6 +203,13 @@ function submitForm(form, action) {
     });
 }
 
+function formIndexFuncWrapper() {
+  var index = 0;
+  return () => (++index);
+}
+
+const formIndexFunc = formIndexFuncWrapper();
+
 export function setupForm(form, callbacks) {
   if (!form) {
     return;
@@ -219,9 +227,14 @@ export function setupForm(form, callbacks) {
   form.querySelectorAll('.eu-privacy').forEach((el) => {
     isFromEU() ? el.classList.remove('is-hidden') : el.classList.add('is-hidden');
   })
-  if (!isFromEU()) {
-    var checkbox = document.getElementById('email-communications-checkbox');
-    checkbox.checked = true;
+
+  const formIndex = formIndexFunc();
+  const checkbox = form.querySelector('.consent-to-communicate-checkbox');
+  const label = form.querySelector('.consent-to-communicate-checkbox-label');
+  if (checkbox) {
+    checkbox.id = `consent-to-communicate-checkbox-${formIndex}`;
+    label.htmlFor = `consent-to-communicate-checkbox-${formIndex}`;
+    if (!isFromEU()) checkbox.checked = true;
   }
 
   form.querySelectorAll('select').forEach((el) => {
@@ -367,5 +380,6 @@ const EUCountryCode = [
 ]
 
 export function isFromEU() {
+  if (window.location.host == 'vibe.toyond.de' || window.location.href.endsWith('toyond/')) return true;
   return EUCountryCode.indexOf(getCookieValue('country')) != -1;
 };
