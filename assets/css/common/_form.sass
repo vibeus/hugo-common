@@ -22,6 +22,9 @@
       color: #AFAFAF
   .textarea
     min-height: 6em
+    &.small-size-gdpr
+      @at-root #{selector-nest(".gdpr-enabled", &)}
+        min-height: 3em
   .button
     font-weight: $vibe-bold
     height: 60px
@@ -39,10 +42,10 @@
       font-size: 12px
       text-align: left
       margin-top: 0
-      #email-communications-checkbox
+      .consent-to-communicate-checkbox
         margin-right: 4px
         vertical-align: middle
-      label[for="email-communications-checkbox"]
+      label[for^="consent-to-communicate-checkbox"]
         vertical-align: middle
       .consent-to-process
         margin-top: 10px

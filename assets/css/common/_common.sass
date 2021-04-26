@@ -82,6 +82,15 @@ ul.icon-list
   li
     margin-left: 24px
 
+html
+  &.gdpr-enabled
+    .is-hidden-eu
+      display: none!important
+  &:not(.gdpr-enabled)
+    .is-hidden-non-eu
+      display: none!important
+
+
 .modal.is-video-player
   .modal-content
     *:focus

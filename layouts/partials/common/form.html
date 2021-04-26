@@ -80,13 +80,13 @@
   </div>
   {{ end }}
   <div class="privacy eu-privacy left-align">
-    <div class="consent-to-communicate" id="consent-to-communicate" data-text="{{ $consentToCommunicate }}" data-subscription-type-id="{{ $subscriptionTypeId }}">
-      <input name="consent-to-communicate-checkbox" type="checkbox" id="email-communications-checkbox" required>
-      <label for="email-communications-checkbox">
+    <div class="consent-to-communicate" data-text="{{ $consentToCommunicate }}" data-subscription-type-id="{{ $subscriptionTypeId }}">
+      <input name="consent-to-communicate-checkbox" type="checkbox" class="consent-to-communicate-checkbox" required>
+      <label class="consent-to-communicate-checkbox-label">
         {{ $consentToCommunicate }}
       </label>
     </div>
-    <div class="consent-to-process" id="consent-to-process" data-text="{{ $consentToProcess }} {{ $privacyPolicyNotice }}">
+    <div class="consent-to-process" data-text="{{ $consentToProcess }} {{ $privacyPolicyNotice }}">
       {{ $consentToProcess }}
       For more details, review our <a href="/privacy/" target="_blank">privacy policy</a>.
     </div>
@@ -94,7 +94,7 @@
 
   <div class="columns is-buttons">
     {{ range .buttons }}
-    <div class="column">
+    <div class="column{{ with .column_class }} {{ . }}{{ end }}">
       {{ $type := default "input" .type }}
       {{ $class := default "input" .class }}
       <div class="control">
@@ -138,7 +138,7 @@
           </a>
           {{ end }}
           {{ with .subcta }}
-          <div class="subcta">
+          <div class="subcta{{ with .class }} {{ . }}{{ end }}">
             {{ default .body (T .body) | markdownify }}
             {{ with .link }}<a class="is-subcta-link{{ with .class }} {{ . }}{{ end }}" href="{{ .url }}">{{ default .body (T .body) }}</a>{{ end }}
           </div>
