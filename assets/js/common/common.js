@@ -349,6 +349,7 @@ export function getCookieValue(name) {
 }
 
 const EUCountryCode = [
+// European uninon
   'AT', // Austria
   'BE', // Belgium
   'BG', // Bulgaria
@@ -377,6 +378,8 @@ const EUCountryCode = [
   'ES', // Spain
   'SE', // Sweden
   'GB', // United Kingdom
+// other country in Europe
+  'SY', // Switzerland
 ]
 
 export function isFromEU() {
