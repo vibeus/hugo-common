@@ -1,3 +1,8 @@
+/*
+{{ $src := resources.Get "js/common/common.js" | resources.Minify | resources.Fingerprint }}
+*/
+
+import { toggleActive } from '{{ $src.RelPermalink }}';
 
 const glides = document.querySelectorAll('.is-customer-story-section .glide');
 glides.forEach((el) => {

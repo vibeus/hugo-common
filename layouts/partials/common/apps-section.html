@@ -1,0 +1,26 @@
+<section
+  class="section is-apps"
+  {{ with .background_color }}
+  {{ if not (eq . "default") }}
+  style="background-color: {{ . }}"
+  {{ end }}
+  {{ end }}
+>
+  <div class="container">
+    <div class="is-title-container">
+      <h1 class="title is-section-title">{{ default .title (T .title) }}</h1>
+      <div class="body">{{ default .body (T .body) }}</div>
+    </div>
+    {{ with site.Data.apps.apps }}
+    <div class="columns is-multiline is-apps-gallery is-mobile">
+      {{ range first 16 . }}
+      <div class="column">
+        <figure class="image is-logo">
+          {{ partial "common/srcset" (dict "resource" (resources.Get .icon) ) }}
+        </figure>
+      </div>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+</section>

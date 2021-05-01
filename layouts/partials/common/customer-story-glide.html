@@ -4,21 +4,22 @@
       {{ range $idx1, $val := . }}
       <li class="glide__slide glide-slide-{{ $idx1 }}">
         <div class="columns is-vcentered is-centered">
-        {{ range $idx1, $val := . }}
-          <div class="column column-{{ $idx1 }}">
+          {{ $is_single_column := eq (len .) 1 }}
+          {{ range $idx1, $val := . }}
+          <div class="column column-{{ $idx1 }}{{ if $is_single_column }} is-single-column{{ end }}">
             {{ range . }}
             {{ if .item.url }}
             <a class="is-story-card{{ with .class }} {{ . }}{{ end }}" href="{{ .item.url }}">
               {{ partial .item.partial .item }}
             </a>
             {{ else }}
-            <div class="is-story-card{{ with .class }} {{ . }}{{ end }}{{ with .item.video }} video-popup{{ end }}"{{ with .item.video }} data-target="video-popup-player" data-video-id="{{ .Id }}"{{ end }}>
+            <div class="is-story-card{{ with .class }} {{ . }}{{ end }}{{ if .item.video }} video-popup{{ end }}"{{ with .item.video }} data-target="video-popup-player" data-video-id="{{ .Id }}"{{ end }}>
               {{ partial .item.partial .item }}
             </div>
             {{ end }}
             {{ end }}
           </div>
-        {{ end }}
+          {{ end }}
         </div>
       </li>
       {{ end }}

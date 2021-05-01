@@ -1,10 +1,17 @@
-<section class="section is-figure-content-section{{ with .class }} {{ . }}{{ end }}">
+<section
+  class="section is-figure-content-section{{ with .class }} {{ . }}{{ end }}"
+  {{ with .background_color }}
+  {{ if not (eq . "default") }}
+  style="background-color: {{ . }}"
+  {{ end }}
+  {{ end }}
+>
   <div class="container">
     {{ with .title }}
     <h1 class="title is-section-title">{{ default . (T .) }}</h1>
     {{ end }}
-    {{ range .items }}
-    <div class="columns is-vcentered{{ if .reversed }} is-reversed{{ end }}{{ with .class }} {{ . }}{{ end }}">
+    {{ range $idx, $val := .items }}
+    <div class="columns is-figure-content-{{ $idx }} is-vcentered{{ if .reversed }} is-reversed{{ end }}{{ with .class }} {{ . }}{{ end }}">
       <div class="column is-image">
         {{ with .figure }}
         <figure class="image">
@@ -18,11 +25,27 @@
       </div>
       <div class="column is-content">
         {{ with .title }}
-        <h2 class="title is-content-title">{{ default . (T .) | markdownify}}</h2>
+        <h2 class="title is-content-title">{{ default . (T .) | markdownify }}</h2>
         {{ end }}
         <div class="content">
+          {{ if reflect.IsSlice .body }}
+          {{ range $idx, $val := .body }}
+          <div class="is-single-content is-content-{{ $idx }}">
+            {{ with .icon }}
+            <span class="icon">
+              {{ (resources.Get .).Content | safeHTML }}
+            </span>
+            {{ end }}
+            <div class="text">{{ default .text (T .text) }}</div>
+          </div>
+          {{ end }}
+          {{ else }}
           {{ default .body (T .body) | markdownify }}
+          {{ end }}
         </div>
+        {{ with .cta }}
+        {{ partial "common/section-cta" . }}
+        {{ end }}
       </div>
     </div>
     {{ end }}

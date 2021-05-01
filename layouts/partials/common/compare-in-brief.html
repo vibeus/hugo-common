@@ -1,4 +1,4 @@
-{{ $data_name := default "compare" .data_name }}
+{{ $data_name := default "compare_in_brief" .data_name }}
 {{ $data := index .Site.Data.common $data_name }}
 {{ $features := default $data.features .features }}
 
@@ -11,7 +11,7 @@
 {{ $show_name := default $data.show_name .show_name }}
 {{ $top_left_cell := default $data.top_left_cell .top_left_cell }}
 {{ $price_cell := default $data.price_cell .price_cell }}
-<section class="section is-compare{{ with $compare_class }} {{ . }}{{ end }}">
+<section class="section is-compare is-compare-in-brief{{ with $compare_class }} {{ . }}{{ end }}">
   <div class="container">
     <h1 class="title is-section-title">{{ default .title (T .title) }}</h1>
 

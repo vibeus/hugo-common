@@ -3,31 +3,14 @@ import {
   bindScrollTo,
   toggleActive,
   setupForm,
-  openDemoScheduler,
-  isInBlacklist,
 } from '{{ $src.RelPermalink }}';
-
-const BLACKLIST = JSON.parse('{{ .blacklist | jsonify }}') || [];
 
 const navbar = document.querySelector('.navbar.is-fixed-top');
 const navbarHeight = navbar ? navbar.clientHeight : 0;
 bindScrollTo('.is-request-demo', -navbarHeight);
 
-const LIVE_DEMO_SELECTOR = 'input[name="vibe_lp_live_demo_request"]';
-
 document.querySelectorAll('.form.is-vibe-form').forEach((el) => {
   setupForm(el, {
-    'click.before': (name, type, form) => {
-      if (name === 'request-demo') {
-        const input = form.querySelector(LIVE_DEMO_SELECTOR);
-        if (input) {
-          input.value = 'true';
-        }
-      }
-
-      // do not prevent default, continue form submission.
-      return false;
-    },
     'click.after': (name, type, form) => {
       if (name === 'request-demo') {
         form.parentElement.classList.add('is-live-demo');
@@ -52,5 +35,3 @@ document.querySelectorAll('.form.is-vibe-form').forEach((el) => {
     }
   });
 });
-
-toggleActive('.modal-background, .modal-close', false);

@@ -1,3 +1,5 @@
+@import "_section-cta.sass"
+
 .section.is-figure-content-section
   +vertical-padding(100px)
   background-color: $vibe-white
@@ -15,14 +17,14 @@
       margin-bottom: 60px
     +mobile
       margin-bottom: 40px
-  .title.is-content-title, .content
+  .title.is-content-title, .content, .cta
     margin: auto
     +tablet
-      max-width: 500px
+      max-width: 600px
   .title.is-content-title
     font-size: 40px
     line-height: 50px
-    margin-bottom: 24px
+    margin-bottom: 48px
     +mobile
       font-size: 22px
       line-height: 27px
@@ -32,5 +34,11 @@
     line-height: 1.5
     +mobile
       font-size: 16px
+    .is-single-content
+      display: flex
+      .icon
+        margin-right: 16px
+      &:not(:first-child)
+        margin-top: 24px
   .columns.is-reversed
     flex-direction: row-reverse

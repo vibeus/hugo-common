@@ -1,0 +1,4 @@
+{{ range $idx, $val := .sections }}
+{{ $class := printf "%s%s" "is-figure-content-section-" (string $idx) }}
+{{ partial "common/figure-content-section" (merge . (dict "class" $class)) }}
+{{ end }}
