@@ -1,0 +1,28 @@
+{{ $data_name := default "compare_in_detail" .data_name }}
+{{ $data := index site.Data.common $data_name }}
+
+<section class="section is-compare is-compare-in-detail is-single">
+  <div class="container">
+    {{ with .title }}
+    <h1 class="title is-section-title">{{ default . (T .) }}</h1>
+    {{ end }}
+    <div class="table-wrapper"{{ with .id }} id="{{ . }}"{{ end }}>
+      {{ $left := index (where $data.brands "id" .left) 0 }}
+      {{ $right := index (where $data.brands "id" .right) 0 }}
+      {{ partial "common/comparison-table-in-detail" (dict "features" $data.features "brands" (slice $left $right) "show_summary" (default false .show_summary) "images" false) }}
+      {{ with .note }}
+      <div class="compare-note">
+        {{ . | markdownify }}
+      </div>
+      {{ end }}
+    </div>
+      {{ with .show_summary }}
+      <div class="toggle-comparison">
+        <div class="text">{{ .title }}</div>
+        <span class="icon is-medium toggle-icon"{{ with .target }} data-target="{{ . }}"{{ end }}>
+          {{ partial "common/mdi" "chevron-down:40" }}
+        </span>
+      </div>
+      {{ end }}
+  </div>
+</section>

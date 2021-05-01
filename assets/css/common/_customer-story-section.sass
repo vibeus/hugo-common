@@ -45,17 +45,17 @@
       display: block
     .glide_desktop
       display: block
-      .glide-slide-0
-        .column-0
-          width: 40%
-        .column-1
-          width: 26.5%
-        .column-2
-          width: 33.5%
-          .content
-            font-size: 14px
     .figure-for-desktop
       display: block
+    .glide-slide-0
+      .column-0
+        width: 40%
+      .column-1
+        width: 26.5%
+      .column-2
+        width: 33.5%
+        .content
+          font-size: 14px
     .glide-slide-1
       .column-0
         width: 39%
@@ -65,15 +65,37 @@
           font-size: 16px
       .column-2
         width: 26%
-  @media screen and (max-width: 1199px) and (min-width: 900px) // 2 columns
+    .glide__slide
+      .column.is-single-column
+        width: 900px
+        .is-story-card
+          flex-direction: row-reverse
+        .is-blog-logo
+          display: none
+        .is-blog-name
+          display: block
+        .blog-content
+          min-width: 280px
+  @media screen and (max-width: 1199px) and (min-width: 900px)
+    // 2 columns
     .glide_tablet
       display: block
       .columns
         margin: auto
         max-width: 864px
-        height: 690px
-        .column
-          width: calc(420px + 2 * 0.75rem)
+      .column
+        width: calc(420px + 2 * 0.75rem)
+        &.is-single-column
+          width: 100%
+          max-width: 800px
+          .is-story-card
+            flex-direction: row-reverse
+          .is-blog-logo
+            display: none
+          .is-blog-name
+            display: block
+          .blog-content
+            min-width: 280px
     .figure-for-tablet
       display: block
   @media screen and (max-width: 899px) // 1 column
@@ -83,6 +105,9 @@
       display: block
     .column
       padding: 0
+      &.is-single-column
+        .is-blog-testimonial
+          display: none
 
   .glide
     width: 100%
@@ -112,10 +137,10 @@
     @media screen and (max-width: 1199px) and (min-width: 900px)
       &.for_testimonial
         height: 272px
-    &.video-popup
-      cursor: pointer
     &.is-reversed
       flex-direction: column-reverse
+    &.video-popup
+      cursor: pointer
     &:not(:first-child)
       margin-top: 16px
     @media screen and (max-width: 899px)
@@ -150,6 +175,7 @@
           justify-content: flex-start
           margin-top: 5%
           padding: 0 0 20px 5%
+          text-align: left
           @media screen and ( min-width: 1200px )
             padding-bottom: 0
           .name
@@ -167,8 +193,33 @@
       .is-content
         margin-left: 20px
         font-size: 14px
+        display: flex
+        flex-direction: column
+        justify-content: space-between
         @media screen and (max-width: 1199px) and (min-width: 900px)
           padding-right: 10%
+        .is-blog-testimonial
+          position: relative
+          font-family: $vibe-family-heading
+          padding: 40px 0
+          font-weight: 500
+          +tablet
+            font-size: 22px
+            height: 100%
+          +mobile
+            display: none
+          .quote-mark
+            position: absolute
+            width: 24px
+            +mobile
+              width: 30px
+            &.is-left
+              top: 0
+              left: 0
+            &.is-right
+              right: 0
+            svg
+              fill: $vibe-yellow
         .is-blog-title
           font-family: $vibe-family-heading
           font-size: 12px

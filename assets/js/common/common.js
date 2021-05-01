@@ -109,7 +109,7 @@ export function activateOneOf(triggerClass, activateSelf, onChanged) {
 }
 
 // scroll to data-target element (by id) when triggerClass is clicked, with optional extra offset.
-export function bindScrollTo(triggerClass, extraOffset) {
+export function bindScrollTo(triggerClass, extraOffset, behavior='smooth') {
   bindEventWithTarget(triggerClass, 'click', (el, target) => {
     if (!target) {
       return;
@@ -118,7 +118,7 @@ export function bindScrollTo(triggerClass, extraOffset) {
     const y = target.getBoundingClientRect().top + window.pageYOffset;
     window.scrollTo({
       top: y + (extraOffset || 0),
-      behavior: 'smooth',
+      behavior,
     });
   });
 }

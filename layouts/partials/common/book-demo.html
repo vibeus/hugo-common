@@ -1,6 +1,11 @@
 <section class="section is-book-demo"
          id="{{ default "section-book-demo" .id }}"
-         {{ with .background_color }}style="background-color: {{ . }}"{{ end }}>
+         {{ with .background_color }}
+         {{ if not (eq . "default") }}
+         style="background-color: {{ . }}"
+         {{ end }}
+         {{ end }}
+>
   <div class="container">
     <div class="columns is-vcentered">
       <div class="column is-form">

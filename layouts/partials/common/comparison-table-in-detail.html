@@ -1,0 +1,96 @@
+<table class="table is-comparison is-fullwidth">
+  {{ if .images }}
+  <tr class="thead">
+    <th></th>
+    {{ range .brands }}
+    <th>
+      <figure class="image">
+        {{ partial "common/srcset" (dict "resource" (resources.Get .head_figure) "desktop" "320x") }}
+      </figure>
+    </th>
+    {{ end }}
+  </tr>
+  {{ end }}
+  <tr class="thead">
+    <th class="is-sticky">Compare Brands</th>
+    {{ range .brands }}
+    <th class="is-sticky is-brand-name">{{ .name }}</th>
+    {{ end }}
+  </tr>
+  {{ range .features }}
+  {{ $feature := .id }}
+  <tr class="tbody is-section{{ if $.show_summary }} is-hidden-in-summary{{ end }}">
+    <th colspan="{{ add 1 (len $.brands) }}" class="is-sticky">
+      <div class="color is-{{ .id }}"></div>
+      <p>{{ .title }}</p>
+    </th>
+  </tr>
+  {{ range .items }}
+  {{ $sub := .id }}
+  {{ $type := default "text" .type }}
+  <tr class="tbody{{ if and ($.show_summary) (not .in_summary) }} is-hidden-in-summary{{ end }}">
+    <th>{{ .title }}</th>
+    {{ range $.brands }}
+    <td>
+      {{ $value := index (index . $feature) $sub }}
+
+      {{ if and $value (or (eq "icon" $type) (eq "icon_text" $type)) }}
+      <span class="icon">
+        <svg width="23" height="17" viewBox="0 0 23 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 7.11236L9.17482 15L21 2" stroke="#66CCCC" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      {{ end }}
+
+      {{ if and $value (not (eq "icon" $type)) }}
+      {{ $value | markdownify }}
+      {{ end }}
+    </td>
+    {{ end }} <!-- brands -->
+  </tr>
+  {{ end }} <!-- items -->
+  {{ end }} <!-- features -->
+</table>
+
+<div class="table-mobile is-comparison">
+  {{ range .features }}
+  {{ $feature := .id }}
+  <div>
+    <div class="feature is-section is-{{ .id }}{{ if $.show_summary }} is-hidden-in-summary{{ end }}">
+      {{ .title }}
+    </div>
+    {{ range .items }}
+    <div class="{{ if and ($.show_summary) (not .in_summary) }} is-hidden-in-summary{{ end }}">
+      {{ $sub := .id }}
+      {{ $type := default "text" .type }}
+      <div class="feature is-item">
+        {{ .title }}
+      </div>
+      <div>
+        {{ range $.brands }}
+        <div class="columns is-mobile is-vcentered">
+          <div class="column is-brand-name">
+            {{ .name }}
+          </div>
+          <div class="column">
+            {{ $value := index (index . $feature) $sub }}
+            {{ if and $value (or (eq "icon" $type) (eq "icon_text" $type)) }}
+            <span class="icon">
+              <svg width="23" height="17" viewBox="0 0 23 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 7.11236L9.17482 15L21 2" stroke="#66CCCC" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            {{ end }}
+
+            {{ if and $value (not (eq "icon" $type)) }}
+            {{ $value | markdownify }}
+            {{ end }}
+          </div>
+        </div>
+        {{ end }} <!-- brands -->
+      </div>
+    </div{{ if and ($.show_summary) (not .in_summary) }} is-hidden-in-summary{{ end }}>
+    {{ end }} <!-- items -->
+  </div>
+  {{ end }} <!-- features -->
+</div>

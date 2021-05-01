@@ -1,7 +1,7 @@
-<div class="cta is-section-cta">
+<div class="cta is-section-cta{{ with .align }} {{ . }}{{ end }}">
   {{ if .title }}
   <a
-    class="button{{ with .class }} {{ . }}{{ end }}"
+    class="{{ default "button" .style }}{{ with .class }} {{ . }}{{ end }}"
     {{ if $.is_lp }}
     href="{{ (default "/demo/" .url) }}"
     {{ else }}
