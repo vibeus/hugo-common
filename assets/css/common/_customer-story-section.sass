@@ -7,6 +7,8 @@
     text-align: center
     margin: auto
     max-width: 650px
+    +mobile
+      font-size: 30px
     span.underline
       position: relative
       display: inline-block
@@ -76,6 +78,8 @@
           display: block
         .blog-content
           min-width: 280px
+          .is-content
+            padding-right: 10%
   @media screen and (max-width: 1199px) and (min-width: 900px)
     // 2 columns
     .glide_tablet
