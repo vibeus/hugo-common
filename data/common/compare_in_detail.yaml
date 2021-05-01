@@ -96,7 +96,7 @@ brands:
     whiteboard:
       remote: true
       app: true
-      smart: false
+      smart: true
       platforms: true
     sharing:
       wireless: |
