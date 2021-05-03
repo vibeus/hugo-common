@@ -20,12 +20,12 @@ base:
     - heading: i18n-data-common-foot-base-sections-i_1-heading
       links:
         - title: i18n-data-common-foot-base-sections-i_1-links-i_0-title
-          url: https://help.vibe.us/buyers-faq
+          url: /buyer-faq/
           target: _blank
         - title: i18n-data-common-foot-base-sections-i_1-links-i_1-title
           url: /blog/
         - title: i18n-data-common-foot-base-sections-i_1-links-i_2-title
-          url: https://help.vibe.us
+          url: https://knowledge.vibe.us
           target: _blank
         - title: i18n-data-common-foot-base-sections-i_1-links-i_3-title
           url: /privacy/
@@ -61,7 +61,7 @@ base:
         - title: i18n-data-common-foot-base-sections-i_3-links-i_2-title
           url: https://knowledge.vibe.us/kb-tickets/new
         - title: i18n-data-common-foot-base-sections-i_3-links-i_3-title
-          url: /contact/request-a-quote
+          url: /contact/request-a-quote/
         - title: i18n-data-common-foot-base-sections-i_3-links-i_4-title
           url: /career/
   contact:
