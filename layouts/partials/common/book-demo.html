@@ -19,10 +19,10 @@
       </div>
       <div class="column is-image">
         <figure class="image">
-          {{ partial "common/srcset" (dict "resource" (resources.Get .figure) "desktop" "1920x" "tablet" "1280x" "mobile" "750x" "options" "png") }}
+          {{ $bgColor := default "#ffffff" .figure_background_color }}
+          {{ partial "common/srcset" (dict "resource" (resources.Get .figure) "desktop" "1920x" "tablet" "1280x" "mobile" "750x" "options" (print "jpg " $bgColor)) }}
         </figure>
       </div>
     </div>
   </div>
 </section>
-

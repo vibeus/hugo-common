@@ -34,6 +34,6 @@
 </div>
 {{ range .figure }}
 <div class="blog-figure{{ with .class }} {{ . }}{{ end }}{{ with .video }} video-cover{{ end }}">
-  {{ partial "common/srcset" (dict "resource" (resources.Get .url) "desktop" "1280x" "mobile" "750x" "options" "png") }}
+  {{ partial "common/srcset" (dict "resource" (resources.Get .url) "desktop" "1280x" "mobile" "750x" "options" "jpg #ffffff") }}
 </div>
 {{ end }}
