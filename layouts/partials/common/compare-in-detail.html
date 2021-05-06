@@ -9,7 +9,7 @@
     <div class="table-wrapper"{{ with .id }} id="{{ . }}"{{ end }}>
       {{ $left := index (where $data.brands "id" .left) 0 }}
       {{ $right := index (where $data.brands "id" .right) 0 }}
-      {{ partial "common/comparison-table-in-detail" (dict "features" $data.features "brands" (slice $left $right) "show_summary" (default false .show_summary) "images" false) }}
+      {{ partial "common/comparison-table-in-detail" (dict "features" $data.features "brands" (slice $left $right) "show_summary" (default false .show_summary) "images" false "useTableInMobile" true) }}
       {{ with .note }}
       <div class="compare-note">
         {{ . | markdownify }}

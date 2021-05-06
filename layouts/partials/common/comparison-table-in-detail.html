@@ -1,4 +1,4 @@
-<table class="table is-comparison is-fullwidth">
+<table class="table is-comparison is-fullwidth{{ if .useTableInMobile }} is-mobile{{ end }}">
   {{ if .images }}
   <tr class="thead">
     <th></th>
@@ -52,6 +52,7 @@
   {{ end }} <!-- features -->
 </table>
 
+{{ if not .useTableInMobile }}
 <div class="table-mobile is-comparison">
   {{ range .features }}
   {{ $feature := .id }}
@@ -94,3 +95,4 @@
   </div>
   {{ end }} <!-- features -->
 </div>
+{{ end }} <!-- not .useTableInMobile -->

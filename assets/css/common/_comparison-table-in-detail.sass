@@ -42,7 +42,7 @@
   .table.is-comparison
     border: 1px solid $vibe-white
   +mobile
-    .table
+    .table:not(.is-mobile) // now allow table in mobile, so do not hide if is-mobile is defined.
       display: none
   +tablet
     .table-mobile
@@ -82,6 +82,8 @@
 
 .section.is-compare-in-detail .table.is-comparison
   font-size: 16px
+  +mobile
+    font-size: 12px
   .is-sticky
     position: sticky
   td, th
@@ -90,6 +92,10 @@
       border-right: 1px solid #fafafa
   tr.thead, tr.is-section
     font-size: 18px
+    +mobile
+      font-size: 14px
+      th
+        font-weight: bold
   tr.thead th
     background-color: white
     top: calc(#{$navbar-height} - 2px)
@@ -99,7 +105,11 @@
     background-color: $vibe-white
     top: $navbar-height + 4rem
   tr.tbody td
-    vertical-align: middle
+    +tablet
+      vertical-align: middle
+    +mobile
+      span.icon
+        display: block
   td
     max-width: 330px
   ul
