@@ -109,7 +109,7 @@ export function activateOneOf(triggerClass, activateSelf, onChanged) {
 }
 
 // scroll to data-target element (by id) when triggerClass is clicked, with optional extra offset.
-export function bindScrollTo(triggerClass, extraOffset, behavior='smooth') {
+export function bindScrollTo(triggerClass, extraOffset, behavior = 'smooth') {
   bindEventWithTarget(triggerClass, 'click', (el, target) => {
     if (!target) {
       return;
@@ -173,12 +173,16 @@ function submitForm(form, action) {
     consent: {
       consentToProcess: true,
       text: consentToProcessElt.dataset.text,
-      communications: [{
-        value: true,
-        subscriptionTypeId: parseInt(consentToCommunicateElt.dataset.subscriptionTypeId),
-        text: consentToCommunicateElt.dataset.text,
-      }]
-    }
+      communications: [
+        {
+          value: true,
+          subscriptionTypeId: parseInt(
+            consentToCommunicateElt.dataset.subscriptionTypeId
+          ),
+          text: consentToCommunicateElt.dataset.text,
+        },
+      ],
+    },
   };
 
   return fetch(form.action, {
@@ -205,7 +209,7 @@ function submitForm(form, action) {
 
 function formIndexFuncWrapper() {
   var index = 0;
-  return () => (++index);
+  return () => ++index;
 }
 
 const formIndexFunc = formIndexFuncWrapper();
@@ -222,11 +226,15 @@ export function setupForm(form, callbacks) {
   const final = callbacks['submit.final'];
 
   form.querySelectorAll('.non-eu-privacy').forEach((el) => {
-    isFromEU() ? el.classList.add('is-hidden') : el.classList.remove('is-hidden');
+    isFromEU()
+      ? el.classList.add('is-hidden')
+      : el.classList.remove('is-hidden');
   });
   form.querySelectorAll('.eu-privacy').forEach((el) => {
-    isFromEU() ? el.classList.remove('is-hidden') : el.classList.add('is-hidden');
-  })
+    isFromEU()
+      ? el.classList.remove('is-hidden')
+      : el.classList.add('is-hidden');
+  });
 
   const formIndex = formIndexFunc();
   const checkbox = form.querySelector('.consent-to-communicate-checkbox');
@@ -345,11 +353,13 @@ export function isInBlacklist(form, blacklist) {
 }
 
 export function getCookieValue(name) {
-  return document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)')?.pop() || '';
+  return (
+    document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)')?.pop() || ''
+  );
 }
 
 const EUCountryCode = [
-// European uninon
+  // European uninon
   'AT', // Austria
   'BE', // Belgium
   'BG', // Bulgaria
@@ -378,11 +388,15 @@ const EUCountryCode = [
   'ES', // Spain
   'SE', // Sweden
   'GB', // United Kingdom
-// other country in Europe
+  // other country in Europe
   'SY', // Switzerland
-]
+];
 
 export function isFromEU() {
-  if (window.location.host == 'vibe.toyond.de' || window.location.href.endsWith('toyond/')) return true;
+  if (
+    window.location.host == 'vibe.toyond.de' ||
+    window.location.href.endsWith('toyond/')
+  )
+    return true;
   return EUCountryCode.indexOf(getCookieValue('country')) != -1;
-};
+}

@@ -16,37 +16,43 @@ function gtmHelper(w, d, s, l, i) {
 
   w[l] = w[l] || [];
   w[l].push({
-    'gtm.start':
-    new Date().getTime(), event: 'gtm.js'
+    'gtm.start': new Date().getTime(),
+    event: 'gtm.js',
   });
-  var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
-  j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+  var f = d.getElementsByTagName(s)[0],
+    j = d.createElement(s),
+    dl = l != 'dataLayer' ? '&l=' + l : '';
+  j.async = true;
+  j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
   f.parentNode.insertBefore(j, f);
 }
 
 const initGtm = () => {
-// {{ if .GDPRdebug }}
-  console.log("[D]: Load google tag manager.");
-// {{ end }}
+  // {{ if .GDPRdebug }}
+  console.log('[D]: Load google tag manager.');
+  // {{ end }}
   gtmHelper(window, document, 'script', 'dataLayer', `${gtmId}`);
 };
 
 const consentCallback = (observer, consent) => {
-// {{ if .GDPRdebug }}
+  // {{ if .GDPRdebug }}
   console.log(`[D]: Consent ${consent.allowed ? 'granted' : 'not granted'}.`);
-// {{ end }}
+  // {{ end }}
   if (consent.allowed) {
     initGtm();
   }
   observer.disconnect();
-// {{ if .GDPRdebug }}
+  // {{ if .GDPRdebug }}
   console.log(`[D]: Observer disconnected.`);
-// {{ end }}
+  // {{ end }}
 };
 
 const initHubspotTrackingCode = (observer) => {
-  var _hsp = window._hsp = window._hsp || [];
-  _hsp.push(['addPrivacyConsentListener', consentCallback.bind(this, observer)]);
+  var _hsp = (window._hsp = window._hsp || []);
+  _hsp.push([
+    'addPrivacyConsentListener',
+    consentCallback.bind(this, observer),
+  ]);
 
   var el = document.createElement('script');
   el.type = 'text/javascript';
@@ -58,9 +64,9 @@ const initHubspotTrackingCode = (observer) => {
 };
 
 const onCookieBannerMounted = () => {
-// {{ if .GDPRdebug }}
-  console.log('[D]: Cookie banner inserted.')
-// {{ end }}
+  // {{ if .GDPRdebug }}
+  console.log('[D]: Cookie banner inserted.');
+  // {{ end }}
   if (!isFromEU()) {
     document.getElementById(cookieConfirmationButtonId).click();
     document.body.removeChild(document.getElementById(hsCookieBannerId));
@@ -69,19 +75,20 @@ const onCookieBannerMounted = () => {
 
 const updateEU = () => {
   document.documentElement.classList.add('gdpr-enabled');
-  document.querySelectorAll('a[href="https://vibe.us/order/"], a[href="/order/"]')
+  document
+    .querySelectorAll('a[href="https://vibe.us/order/"], a[href="/order/"]')
     .forEach((el) => {
       el.href = 'https://vibe.toyond.de';
     });
-}
+};
 
 const init = () => {
   if (isFromEU()) {
     updateEU();
   }
-// {{ if .GDPRdebug }}
-  console.log('[D]: Observer initialized.')
-// {{ end }}
+  // {{ if .GDPRdebug }}
+  console.log('[D]: Observer initialized.');
+  // {{ end }}
   var observer = new MutationObserver((mutations, observer) => {
     mutations.forEach((mutation) => {
       mutation.addedNodes.forEach((node) => {
@@ -89,15 +96,15 @@ const init = () => {
           onCookieBannerMounted();
           observer.disconnect();
           observer.disconnect();
-// {{ if .GDPRdebug }}
-          console.log('[D]: Observer disconnected.')
-// {{ end }}
+          // {{ if .GDPRdebug }}
+          console.log('[D]: Observer disconnected.');
+          // {{ end }}
         }
       });
     });
   });
   observer.observe(document.body, {
-    childList: true
+    childList: true,
   });
 
   initHubspotTrackingCode(observer);

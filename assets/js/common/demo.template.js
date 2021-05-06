@@ -1,9 +1,5 @@
 // {{ $src := resources.Get "js/common/common.js" | resources.Minify | resources.Fingerprint }}
-import {
-  bindScrollTo,
-  toggleActive,
-  setupForm,
-} from '{{ $src.RelPermalink }}';
+import { bindScrollTo, toggleActive, setupForm } from '{{ $src.RelPermalink }}';
 
 const navbar = document.querySelector('.navbar.is-fixed-top');
 const navbarHeight = navbar ? navbar.clientHeight : 0;
@@ -19,7 +15,7 @@ document.querySelectorAll('.form.is-vibe-form').forEach((el) => {
       } else if (name == 'request-video') {
         form.parentElement.classList.add('is-video-demo');
         form.parentElement.classList.remove('is-live-demo');
-        form.parentElement.classList.remove('is-contact-sales')
+        form.parentElement.classList.remove('is-contact-sales');
       } else if (name == 'contact-sales') {
         form.parentElement.classList.add('is-contact-sales');
         form.parentElement.classList.remove('is-live-demo');
@@ -29,9 +25,11 @@ document.querySelectorAll('.form.is-vibe-form').forEach((el) => {
       return false;
     },
     'submit.after': (name, type, form) => {
-      document.getElementById('section-book-demo').classList.add('is-submitted');
+      document
+        .getElementById('section-book-demo')
+        .classList.add('is-submitted');
 
       return false;
-    }
+    },
   });
 });

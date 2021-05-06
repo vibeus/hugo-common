@@ -70,8 +70,8 @@ form:
         column_class: is-hidden-non-eu
         class: small-size-gdpr
   hidden_values:
-    vibe_from_education_landing_page: "false"
-    vibe_lp_live_demo_request: "false"
+    vibe_from_education_landing_page: 'false'
+    vibe_lp_live_demo_request: 'false'
   buttons:
     - type: submit
       title: Schedule a Live Demo
