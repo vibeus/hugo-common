@@ -27,8 +27,9 @@
   </tr>
   {{ range .items }}
   {{ $sub := .id }}
+  {{ $in_summary := in $.show_summary.feature_ids (print $feature "/" $sub) }}
   {{ $type := default "text" .type }}
-  <tr class="tbody{{ if and ($.show_summary) (not .in_summary) }} is-hidden-in-summary{{ end }}">
+  <tr class="tbody{{ if and ($.show_summary) (not $in_summary) }} is-hidden-in-summary{{ end }}">
     <th>{{ .title }}</th>
     {{ range $.brands }}
     <td>
@@ -61,9 +62,10 @@
       {{ .title }}
     </div>
     {{ range .items }}
-    <div class="{{ if and ($.show_summary) (not .in_summary) }} is-hidden-in-summary{{ end }}">
-      {{ $sub := .id }}
-      {{ $type := default "text" .type }}
+    {{ $sub := .id }}
+    {{ $type := default "text" .type }}
+    {{ $in_summary := in $.show_summary.feature_ids (print $feature "/" $sub) }}
+    <div class="{{ if and ($.show_summary) (not $in_summary) }} is-hidden-in-summary{{ end }}">
       <div class="feature is-item">
         {{ .title }}
       </div>
@@ -90,7 +92,7 @@
         </div>
         {{ end }} <!-- brands -->
       </div>
-    </div{{ if and ($.show_summary) (not .in_summary) }} is-hidden-in-summary{{ end }}>
+    </div{{ if and ($.show_summary) (not $in_summary) }} is-hidden-in-summary{{ end }}>
     {{ end }} <!-- items -->
   </div>
   {{ end }} <!-- features -->

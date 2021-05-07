@@ -208,7 +208,7 @@ brands:
       control: false
       cloud: false
     app:
-      store: false
+      store: Only from Samsung devices
       browser: false
       drives: false
       vc: "\\-"
@@ -322,16 +322,12 @@ features:
     items:
       - id: board
         title: Cost of Board
-        in_summary: true
       - id: stand
         title: Cost of Stand
-        in_summary: true
       - id: accessories
         title: Accessories
-        in_summary: true
       - id: software
         title: Software
-        in_summary: true
   - id: hardware
     title: Hardware
     items:
@@ -361,14 +357,12 @@ features:
       - id: remote
         title: Multi-user Realtime Whiteboard
         type: icon
-        in_summary: true
       - id: app
         title: Simultaneous App Usage
         type: icon
       - id: smart
         title: Smart Drawing
         type: icon
-        in_summary: true
       - id: platforms
         title: Multi Platform Support
         type: icon
@@ -393,17 +387,14 @@ features:
       - id: store
         title: App Store
         type: icon_text
-        in_summary: true
       - id: browser
         title: Web Browser
         type: icon
       - id: drives
         title: Dropbox, Google Drive, One Drive
         type: icon
-        in_summary: true
       - id: vc
         title: Video Conferencing Software
-        in_summary: true
   - id: service
     title: Service
     items:
