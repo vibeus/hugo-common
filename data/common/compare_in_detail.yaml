@@ -1,6 +1,6 @@
 brands:
   - id: vibe
-    name: Vibe Interactive Whiteboard
+    name: Vibe Interactive Whiteboard 55″
     head_figure: img/comparison/vibe-g.jpg
     price:
       board: $2,999
@@ -54,7 +54,7 @@ brands:
     service:
       warranty: 1-year
   - id: surface-hub
-    name: Microsoft Surface Hub II
+    name: Microsoft Surface Hub II 85″
     head_figure: img/comparison/surface-hub-g.jpg
     price:
       board: $8,999
@@ -165,7 +165,7 @@ brands:
     service:
       warranty: 1-year
   - id: flip
-    name: Samsung Flip
+    name: Samsung Flip 2 55″
     head_figure: img/comparison/flip-g.jpg
     price:
       board: $2,199
@@ -203,12 +203,12 @@ brands:
       platforms: true
     sharing:
       wireless: |
-        Miracast
+        Only from Samsung devices
       annotation: true
       control: false
       cloud: false
     app:
-      store: Only from Samsung devices
+      store: false
       browser: false
       drives: false
       vc: "\\-"
@@ -371,7 +371,7 @@ features:
     items:
       - id: wireless
         title: Wireless Screen Share
-        type: icon
+        type: icon_text
       - id: annotation
         title: Annotation
         type: icon
