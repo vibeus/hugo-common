@@ -19,7 +19,11 @@
       </div>
       <div class="column is-image">
         <figure class="image">
-          {{ $bgColor := default "#ffffff" .figure_background_color }}
+          {{ $bgColor := .background_color }}
+          {{ if or (not .background_color) (eq .background_color "default") }}
+          {{ $bgColor = "#66cccc" }}
+          {{ end }}
+          {{ $bgColor = default $bgColor .figure_background_color }}
           {{ partial "common/srcset" (dict "resource" (resources.Get .figure) "desktop" "1920x" "tablet" "1280x" "mobile" "750x" "options" (print "jpg " $bgColor)) }}
         </figure>
       </div>
