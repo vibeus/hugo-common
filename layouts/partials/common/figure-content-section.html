@@ -15,7 +15,8 @@
       <div class="column is-image">
         {{ with .figure }}
         <figure class="image">
-          {{ partial "common/srcset" (dict "resource" (resources.Get .base) "desktop" (default "1300x" .desktop) "mobile" (default "750x" .mobile) "options" "png") }}
+          {{ $bgColor := default "#f4f4f4" .background_color }}
+          {{ partial "common/srcset" (dict "resource" (resources.Get .base) "desktop" (default "1300x" .desktop) "mobile" (default "750x" .mobile) "options" (print "jpeg " $bgColor)) }}
           {{ if .overlay }}
           {{ $gif := resources.Get .overlay | resources.Fingerprint }}
           <img class="overlay" src="{{ $gif.RelPermalink }}" alt="animation" />
