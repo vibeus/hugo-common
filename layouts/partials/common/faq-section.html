@@ -1,4 +1,8 @@
-<section class="section is-faq">
+<section class="section is-faq"
+         {{ if and .background_color (not (eq .background_color "default")) }}
+         style="background-color:{{ .background_color }};"
+         {{ end }}
+  >
   <div class="container">
     <div class="faq-section-title">
       <h1 class="title is-section-title">{{ default .title (T .title) }}</h1>

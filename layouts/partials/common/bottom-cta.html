@@ -1,4 +1,8 @@
-<section class="section is-bottom-cta">
+<section class="section is-bottom-cta"
+         {{ if and .background_color (not (eq .background_color "default")) }}
+         style="background-color:{{ .background_color }};"
+         {{ end }}
+  >
   <div class="container">
     <div class="bottom-bg">
       {{ (resources.Get "img/common/outline-logo.svg").Content | safeHTML }}

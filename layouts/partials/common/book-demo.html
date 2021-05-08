@@ -17,6 +17,8 @@
         </div>
         {{ partial "common/form" (merge site.Data.common.demo_form.form (default (dict) .form)) }}
       </div>
+
+      {{ if .figure }}
       <div class="column is-image">
         <figure class="image">
           {{ $bgColor := .background_color }}
@@ -27,6 +29,23 @@
           {{ partial "common/srcset" (dict "resource" (resources.Get .figure) "desktop" "1920x" "tablet" "1280x" "mobile" "750x" "options" (print "jpg " $bgColor)) }}
         </figure>
       </div>
+      {{ end }}
+
+      {{ with .paragraphs }}
+      <div class="column is-paragraph">
+        {{ range . }}
+        {{ with .icon_svg }}
+        <div class="icon-svg">{{ (resources.Get .).Content | safeHTML }}</div>
+        {{ end }}
+        {{ with .title }}
+        <div class="title">{{ . }}</div>
+        {{ end }}
+        {{ with .content }}
+        <div class="content">{{ . | markdownify }}</div>
+        {{ end }}
+        {{ end }}
+      </div>
+      {{ end }}
     </div>
   </div>
 </section>
