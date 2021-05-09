@@ -107,9 +107,6 @@
       display: block
     .figure-for-mobile
       display: block
-      // limit logo size, especially for 2x logo images
-      img
-        max-height: 24px
     .column
       padding: 0
       &.is-single-column
@@ -265,5 +262,8 @@
         right: 0px
         margin-left: 5px
         margin-right: 15px
+        // limit logo size, especially for 2x logo images
+        &.figure-for-mobile img
+          max-height: 24px
     .blog-figure
       font-size: 0
