@@ -107,6 +107,9 @@
       display: block
     .figure-for-mobile
       display: block
+      // limit logo size, especially for 2x logo images
+      img
+        max-height: 24px
     .column
       padding: 0
       &.is-single-column
@@ -138,6 +141,10 @@
   .is-story-card
     display: flex
     flex-direction: column
+    // for blog card, change hover effect to underline
+    &:hover .is-blog-testimonial
+      color: $vibe-black
+      text-decoration: underline
     @media screen and (max-width: 1199px) and (min-width: 900px)
       &.for_testimonial
         height: 272px
