@@ -18,7 +18,7 @@
   {{ range .buttons }}
   <a
     class="button{{ with .class }} {{ . }}{{ end }}"
-    {{ if $.is_lp }}
+    {{ if or $.is_lp .is_lp }}
     href="{{ .url }}"
     {{ else }}
     href="{{ .url | relLangURL }}"
