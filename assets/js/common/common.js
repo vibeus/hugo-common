@@ -396,7 +396,8 @@ export function isFromEU() {
   if (
     window.location.host == 'vibe.toyond.de' ||
     window.location.href.endsWith('toyond/')
-  )
+  ) {
     return true;
+  }
   return EUCountryCode.indexOf(getCookieValue('country')) != -1;
 }
