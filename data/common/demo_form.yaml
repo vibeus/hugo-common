@@ -74,6 +74,17 @@ form:
     vibe_lp_live_demo_request: 'false'
   buttons:
     - type: submit
+      title: Watch Demo Video
+      class: button is-rounded is-black is-outlined watch-demo is-fullwidth
+      column_class: is-hidden-eu
+      name: request-video
+    - type: submit
+      title: Watch Demo Video
+      class: button is-rounded is-black is-outlined watch-demo is-fullwidth
+      column_class: is-hidden-non-eu
+      name: request-video
+      target_action: 'https://api.hsforms.com/submissions/v3/integration/submit/5698963/83454bfb-2634-4bb9-b4c2-94b0c244ab5c'
+    - type: submit
       title: Schedule a Live Demo
       class: button is-rounded is-black schedule-demo is-fullwidth
       column_class: is-hidden-eu
@@ -85,10 +96,6 @@ form:
       column_class: is-hidden-non-eu
       name: contact-sales
       target_action: 'https://api.hsforms.com/submissions/v3/integration/submit/5698963/89a0d8cc-cde8-409f-a1e3-c82cd2a5e0f3'
-    - type: submit
-      title: Watch Demo Video
-      class: button is-rounded is-black is-outlined watch-demo is-fullwidth
-      name: request-video
   submitted:
     choices:
       - class: is-live-demo
