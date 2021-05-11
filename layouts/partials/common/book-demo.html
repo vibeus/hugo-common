@@ -7,7 +7,7 @@
          {{ end }}
 >
   <div class="container">
-    <div class="columns is-vcentered">
+    <div class="columns is-vcentered{{ with .paragraphs }} with-paragraphs{{ end }}">
       <div class="column is-form">
         <div class="is-title-wrapper">
           <h1 class="title is-section-title">{{ default .title (T .title) }}</h1>
