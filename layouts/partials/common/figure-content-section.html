@@ -12,8 +12,8 @@
     {{ end }}
     {{ range $idx, $val := .items }}
     <div class="columns is-figure-content-{{ $idx }} is-vcentered{{ if .reversed }} is-reversed{{ end }}{{ with .class }} {{ . }}{{ end }}">
-      <div class="column is-image">
-        {{ with .figure }}
+      {{ with .figure }}
+      <div class="column is-image{{ with .style }} {{ . }}{{ end }}">
         <figure class="image">
           {{ $bgColor := default "#f4f4f4" .background_color }}
           {{ partial "common/srcset" (dict "resource" (resources.Get .base) "desktop" (default "1300x" .desktop) "mobile" (default "750x" .mobile) "options" (print "jpeg " $bgColor)) }}
@@ -22,8 +22,8 @@
           <img class="overlay" src="{{ $gif.RelPermalink }}" alt="animation" />
           {{ end }}
         </figure>
-        {{ end }}
       </div>
+      {{ end }}
       <div class="column is-content">
         {{ with .title }}
         <h2 class="title is-content-title">{{ default . (T .) | markdownify }}</h2>

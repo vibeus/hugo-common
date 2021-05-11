@@ -69,17 +69,24 @@
         width: 26%
     .glide__slide
       .column.is-single-column
-        width: 900px
+        width: 100%
         .is-story-card
           flex-direction: row-reverse
+          justify-content: center
         .is-blog-logo
           display: none
         .is-blog-name
           display: block
         .blog-content
           min-width: 280px
+        .blog-content
+          height: 383px
+          width: 287px
           .is-content
-            padding-right: 10%
+            padding-right: 20px
+        .figure-for-desktop img
+          height: 383px
+          width: 604px
   @media screen and (max-width: 1199px) and (min-width: 900px)
     // 2 columns
     .glide_tablet
@@ -91,7 +98,7 @@
         width: calc(420px + 2 * 0.75rem)
         &.is-single-column
           width: 100%
-          max-width: 800px
+          justify-content: center
           .is-story-card
             flex-direction: row-reverse
           .is-blog-logo
@@ -99,7 +106,11 @@
           .is-blog-name
             display: block
           .blog-content
-            min-width: 280px
+            height: 383px
+            width: 287px
+          .figure-for-tablet img
+            height: 383px
+            width: 604px
     .figure-for-tablet
       display: block
   @media screen and (max-width: 899px) // 1 column
