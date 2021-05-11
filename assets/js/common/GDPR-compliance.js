@@ -78,7 +78,7 @@ const updateEU = () => {
   document
     .querySelectorAll('a[href="https://vibe.us/order/"], a[href="/order/"]')
     .forEach((el) => {
-      el.href = 'https://vibe.toyond.de';
+      el.href = '/order/eu-sales/';
     });
 };
 
