@@ -70,7 +70,6 @@ const setupCloseIcon = () => {
   closeIcon.classList.add('modal-close', 'is-medium');
   closeIcon.setAttribute('aria-label', 'close');
   cookieBanner.appendChild(closeIcon);
-  console.log(cookieBanner, closeIcon);
   closeIcon.addEventListener('click', () => {
     document.getElementById(cookieDeclineButtonId).click();
   })
