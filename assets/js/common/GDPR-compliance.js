@@ -8,6 +8,7 @@ const gtmId = '{{ .gtmId }}';
 const hsCookieBannerId = '{{ .hsCookieBannerId }}';
 const hsScriptLoaderId = '{{ .hsScriptLoaderId }}';
 const cookieConfirmationButtonId = '{{ .cookieConfirmationButtonId }}';
+const cookieDeclineButtonId = '{{ .cookieDeclineButtonId }}';
 
 function gtmHelper(w, d, s, l, i) {
   var e = d.createElement('noscript');
@@ -63,6 +64,18 @@ const initHubspotTrackingCode = (observer) => {
   document.body.appendChild(el);
 };
 
+const setupCloseIcon = () => {
+  const cookieBanner = document.getElementById(hsCookieBannerId);
+  var closeIcon = document.createElement('button');
+  closeIcon.classList.add('modal-close', 'is-medium');
+  closeIcon.setAttribute('aria-label', 'close');
+  cookieBanner.appendChild(closeIcon);
+  console.log(cookieBanner, closeIcon);
+  closeIcon.addEventListener('click', () => {
+    document.getElementById(cookieDeclineButtonId).click();
+  })
+};
+
 const onCookieBannerMounted = () => {
   // {{ if .GDPRdebug }}
   console.log('[D]: Cookie banner inserted.');
@@ -70,6 +83,8 @@ const onCookieBannerMounted = () => {
   if (!isFromEU()) {
     document.getElementById(cookieConfirmationButtonId).click();
     document.body.removeChild(document.getElementById(hsCookieBannerId));
+  } else {
+    setupCloseIcon();
   }
 };
 

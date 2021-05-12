@@ -63,6 +63,15 @@ $navbar-breakpoint: 1080px
 @import './_ie-tips.sass'
 
 div#hs-eu-cookie-confirmation
+  position: relative
+  .modal-close
+    position: absolute
+    &::before
+      background-color: black
+      height: 1px
+    &::after
+      background-color: black
+      width: 1px
   div#hs-eu-cookie-confirmation-inner#hs-eu-cookie-confirmation-inner
     +mobile
       padding: 20px!important
@@ -74,6 +83,10 @@ div#hs-eu-cookie-confirmation
       border-radius: 9999px!important
       width: 100px!important
       text-align: center!important
+      &#hs-eu-decline-button
+        display: none
+    #hs-eu-cookie-disclaimer
+      display: none
 ul.icon-list
   list-style: none
   span
