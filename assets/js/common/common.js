@@ -149,9 +149,13 @@ export function getHubspotUtk() {
 
 function submitForm(form, action) {
   form.action = action; // gtm use form action to track which hubspot form is submitted
+  const isWatchDemo
+    = action == 'https://api.hsforms.com/submissions/v3/integration/submit/5698963/83454bfb-2634-4bb9-b4c2-94b0c244ab5c'
+    || action == 'https://api.hsforms.com/submissions/v3/integration/submit/5698963/1270333f-4cc2-4450-901d-d4f9b29fed58';
   const fields = [];
   for (const pair of new FormData(form).entries()) {
     if (pair[0] == 'consent-to-communicate-checkbox') continue;
+    if (pair[0] == 'demo_page_url' && !isWatchDemo) continue;
     fields.push({
       name: pair[0],
       value: pair[1],
@@ -214,9 +218,39 @@ function formIndexFuncWrapper() {
 
 const formIndexFunc = formIndexFuncWrapper();
 
+function updateDemoPageUrl(form, url) {
+  form
+    .querySelectorAll('a[href="https://vibe.us/demo/video-demo/"], a[href="/demo/video-demo/"]')
+    .forEach((el) => {
+      el.href = url;
+    });
+  form.querySelector('input[name="demo_page_url"]').value = url;
+};
+
+function getRandomDemoPageUrl() {
+  return (
+    Math.random() < 0.5
+    ? 'https://vibe.us/demo/video-demo/'
+    : 'https://vibe.us/demo/demo-video/'
+  );
+}
+
+function adhocDemoABTest(form) {
+  var demoPageUrl = localStorage.getItem('vibe-demo-page');
+  if (!demoPageUrl) {
+    demoPageUrl = getRandomDemoPageUrl();
+    localStorage.setItem('vibe-demo-page', demoPageUrl);
+  }
+  updateDemoPageUrl(form, demoPageUrl);
+}
+
 export function setupForm(form, callbacks) {
   if (!form) {
     return;
+  }
+
+  if (form.classList.contains('is-demo-form')) {
+    adhocDemoABTest(form);
   }
 
   callbacks = callbacks || {};
