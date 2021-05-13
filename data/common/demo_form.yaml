@@ -1,5 +1,6 @@
 form:
   action: 'https://api.hsforms.com/submissions/v3/integration/submit/5698963/1270333f-4cc2-4450-901d-d4f9b29fed58'
+  class: is-demo-form
   controls:
     - - name: firstname
         placeholder: First Name*
@@ -72,6 +73,7 @@ form:
   hidden_values:
     vibe_from_education_landing_page: 'false'
     vibe_lp_live_demo_request: 'false'
+    demo_page_url: 'https://vibe.us/demo/video-demo/'
   buttons:
     - type: submit
       title: Watch Demo Video
@@ -105,7 +107,7 @@ form:
           title: Watch Demo Video First
           target: _blank
           class: is-primary is-video-demo-link
-          url: https://vibe.us/demo/video-demo
+          url: https://vibe.us/demo/video-demo/
       - class: is-video-demo
         body: |
           # We've sent you an email with the video link. Enjoy!
@@ -113,7 +115,7 @@ form:
           title: Watch Now
           target: _blank
           class: is-primary is-video-demo-link
-          url: https://vibe.us/demo/video-demo
+          url: https://vibe.us/demo/video-demo/
           subcta:
             class: is-hidden-eu
             body: Still want to talk to an expert?
@@ -130,4 +132,4 @@ form:
           title: Watch Demo Video Now
           target: _blank
           class: is-primary is-video-demo-link
-          url: https://vibe.us/demo/video-demo
+          url: https://vibe.us/demo/video-demo/
