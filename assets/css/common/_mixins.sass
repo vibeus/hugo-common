@@ -46,3 +46,12 @@
     transform: translateY(-50%)
   svg
     cursor: pointer
+
+// add a hidden pseudo element that "push" element down make in-page anchor work (because we have fixed navbar)
+=offset-anchor-for-navbar($extra: 0rem)
+  &::before
+    content: ''
+    display: block
+    height: $navbar-height + $extra + 1rem
+    margin-top: -$navbar-height - $extra - 1rem
+    visibility: hidden

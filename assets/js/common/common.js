@@ -2,9 +2,11 @@ export function bindEventWithTarget(triggerClass, eventName, onEvent) {
   const triggers = document.querySelectorAll(triggerClass);
   triggers.forEach((el) => {
     el.addEventListener('click', (e) => {
-      e.preventDefault();
-
       const target = document.getElementById(el.dataset.target);
+      if (el.dataset.options !== "no_prevent_default") {
+        e.preventDefault();
+      }
+
       onEvent(el, target, e);
     });
   });
