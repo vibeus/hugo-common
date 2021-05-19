@@ -1,7 +1,7 @@
 /*
 {{ $src := resources.Get "js/common/common.js" | resources.Minify | resources.Fingerprint }}
 */
-import { isFromEU } from '{{ $src.RelPermalink }}';
+import { isFromEU, getCookieValue } from '{{ $src.RelPermalink }}';
 
 const hsId = '{{ .hsId }}';
 const gtmId = '{{ .gtmId }}';
@@ -88,11 +88,21 @@ const onCookieBannerMounted = () => {
 };
 
 const updateEU = () => {
+  const orderPageUrl = '/order/eu-sales/';
+  const countryCode = getCookieValue('country');
+  // TODO: make this more general
+  switch(countryCode) {
+    case 'GB':
+      orderPageUrl = '/order/uk-sales/';
+      break;
+    default:
+      break;
+  };
   document.documentElement.classList.add('gdpr-enabled');
   document
     .querySelectorAll('a[href="https://vibe.us/order/"], a[href="/order/"]')
     .forEach((el) => {
-      el.href = '/order/eu-sales/';
+      el.href = orderPageUrl;
     });
 };
 
