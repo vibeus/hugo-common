@@ -2,7 +2,9 @@
   {{ if .title }}
   <a
     class="{{ default "button" .style }}{{ with .class }} {{ . }}{{ end }}"
-    {{ if $.is_lp }}
+    {{ if eq .url "javascript:void(0)" }}
+    href="javascript:void(0)"
+    {{ else if $.is_lp }}
     href="{{ (default "/demo/" .url) }}"
     {{ else }}
     href="{{ (default "/demo/" .url) | relLangURL }}"
@@ -18,7 +20,9 @@
   {{ range .buttons }}
   <a
     class="button{{ with .class }} {{ . }}{{ end }}"
-    {{ if or $.is_lp .is_lp }}
+    {{ if eq .url "javascript:void(0)" }}
+    href="javascript:void(0)"
+    {{ else if or $.is_lp .is_lp }}
     href="{{ .url }}"
     {{ else }}
     href="{{ .url | relLangURL }}"
