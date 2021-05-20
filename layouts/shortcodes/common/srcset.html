@@ -3,7 +3,8 @@
 {{ if not $resource }}
 {{ $resource = resources.Get (.Get 0) }}
 {{ end }}
-{{ partial "common/srcset" (dict "resource" $resource "desktop" "1400x" "tablet" "700x" "options" "jpg" "alt" (.Get 1)) }}
+{{ $options := default "jpg" (.Get 2) }}
+{{ partial "common/srcset" (dict "resource" $resource "desktop" "1400x" "tablet" "700x" "options" $options "alt" (.Get 1)) }}
 {{ with (.Get 1) }}
 <span class="caption">{{ . }}</span>
 {{ end }}
