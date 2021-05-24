@@ -25,8 +25,8 @@ document.querySelectorAll('.form.is-vibe-form').forEach((el) => {
       return false;
     },
     'submit.after': (name, type, form) => {
-      document
-        .getElementById('section-book-demo')
+      form
+        .closest('.section.is-book-demo')
         .classList.add('is-submitted');
 
       return false;
