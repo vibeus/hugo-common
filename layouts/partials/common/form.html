@@ -16,8 +16,9 @@
           <select name="{{ .name }}"
                   class="placeholder"
                   {{ if .required }}required{{ end }}
+                  {{ if .multiple }}multiple{{ end }}
                   >
-            <option value="" disabled selected>{{ default .placeholder (T .placeholder) }}</option>
+            {{ if not .multiple }}<option value="" style="display: none;" selected></option>{{ end }}
             {{ range .dropdown }}
               {{ if reflect.IsMap . }}
                 <option value="{{ .value }}">{{ .text }}</option>
@@ -26,23 +27,29 @@
               {{ end }}
             {{ end }}
           </select>
+          <label class="form-label select-label">{{ default .placeholder (T .placeholder) }}</label>
         </div>
         {{ else if eq .type "textarea" }}
-        <textarea name="{{ .name }}"
-                  class="textarea{{ with .class }} {{ . }}{{ end }}"
-                  placeholder="{{ default .placeholder (T .placeholder) }}"
-                  {{ if .required }}required{{ end }}
-                  ></textarea>
+        <div class="form-outline">
+          <textarea name="{{ .name }}"
+                    class="textarea form-control{{ with .class }} {{ . }}{{ end }}"
+                    {{ if .required }}required{{ end }}
+                    ></textarea>
+          <label class="form-label">{{ default .placeholder (T .placeholder) }}</label>
+        </div>
         {{ else }}
         {{ $type := default "input" .type }}
         {{ $class := default "input" .class }}
-        <input name="{{ .name }}"
-               class="{{ $class }}"
-               type="{{ $type }}"
-               placeholder="{{ default .placeholder (T .placeholder) }}"
-               value="{{ .value }}"
-               {{ if .required }}required{{ end }}
-               />
+        <div class="form-outline">
+          <input name="{{ .name }}"
+                 class="form-control {{ $class }}"
+                 type="{{ $type }}"
+                 value="{{ .value }}"
+                 {{ if .required }}required{{ end }}
+                 />
+          <label class="form-label">{{ default .placeholder (T .placeholder) }}</label>
+        </div>
+
         {{ end }}
 
         {{ with .annotation }}

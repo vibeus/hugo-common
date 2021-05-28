@@ -1,9 +1,21 @@
+.select-dropdown-container
+  width: auto!important
+  margin-left: 100px
+  .select-option-text
+    font-size: 14px
+    display: flex
+    justify-content: flex-start
+    align-items: center
+  .form-check-input
+    margin-top: 0
+
 .form.is-vibe-form
   position: relative
-  +tablet
-    .input, .select select, .button, .textarea
-      font-size: 18px
-  .input, .select select, .textarea
+  .form-label
+    left: 0
+  .form-notch
+    display: none
+  .form-outline .form-control
     background-color: transparent
     border: none
     border-bottom: 1px solid $vibe-black
@@ -11,15 +23,37 @@
     padding-left: 0
     padding-right: 0
     box-shadow: none
-    &:hover
-      border-bottom: 1px solid $info
-    &:focus
-      border-bottom: 1px solid $primary
+    height: 2.5em
+  +tablet
+    .input, .select select, .button, .textarea
+      line-height: 1.5
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active
+    // input auto fill background-color hack
+    -webkit-transition-delay: 999999s
+    transition-delay: 999999s
   .select
+    select
+      // Hack: make sure the select component is focusable so that browser is able to report error
+      // for empty value if it is required
+      display: block!important
+      visibility: visible!important
+      opacity: 0
+      pointer-events: none
+      position: absolute
+      +absolute-fill
     &::after
       right: 0
     select.placeholder
       color: #AFAFAF
+  .select-wrapper
+    position: relative
+    .select-arrow
+      display: none
+    .select-input
+      +horizontal-padding(0)
   .textarea
     min-height: 6em
     &.small-size-gdpr
