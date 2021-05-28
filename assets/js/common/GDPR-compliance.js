@@ -88,7 +88,7 @@ const onCookieBannerMounted = () => {
 };
 
 const updateEU = () => {
-  const orderPageUrl = '/order/eu-sales/';
+  var orderPageUrl = '/order/eu-sales/';
   const countryCode = getCookieValue('country');
   // TODO: make this more general
   switch(countryCode) {
