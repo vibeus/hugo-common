@@ -13,6 +13,14 @@
     {{ if or (not .Site.Params.allowIndex) .Page.Params.noIndex }}<meta name="robots" content="noindex">{{ end }}
     {{ $src := resources.Get "img/common/favicon.png" | resources.Fingerprint }}
     <link rel="shortcut icon" href="{{ $src.RelPermalink }}" />
+    {{ if not .Page.Params.notIncludeMDB }}
+      <!-- place above stylesPath -->
+      <style>
+        {{ (resources.Get "css/common/mdb.min.css").Content | safeCSS }}
+      </style>
+      {{ $src := resources.Get "js/common/mdb.min.js" | resources.Fingerprint }}
+      <script type="text/javascript" src="{{ $src.RelPermalink }}" integrity="{{ $src.Data.Integrity }}"></script>
+    {{ end }}
     {{ with $.Param "stylesPath" }}
       {{ $sass := resources.Get . }}
       {{ $style := $sass | resources.ToCSS (dict "outputStyle" "compressed" "includePaths" (slice "node_modules" "assets/css/common")) }}
@@ -56,7 +64,7 @@
     {{ block "foot" . }}{{ partial "common/foot.html" . }}{{ end }}
     {{ block "tips" . }}{{ partial "common/ie-tips.html" . }}{{ end }}
     {{ with .Site.Params.hsId }}
-    {{ partial "common/template-script" (merge (dict "asset" "js/common/GDPR-compliance.js") $.Site.Params) }}
+    {{/* partial "common/template-script" (merge (dict "asset" "js/common/GDPR-compliance.js") $.Site.Params) */}}
     {{ end }}
   </body>
 </html>

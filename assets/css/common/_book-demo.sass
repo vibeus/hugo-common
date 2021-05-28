@@ -59,6 +59,9 @@
       .form
         .columns, .privacy
           visibility: hidden
+          // For some reason, there is a bug in chrome
+          // The input component does not hide and I have to use opacity: 0 to fix this bug
+          opacity: 0
       .submitted
         display: flex
     .submitted

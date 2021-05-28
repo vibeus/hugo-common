@@ -246,10 +246,72 @@ function adhocDemoABTest(form) {
   updateDemoPageUrl(form, demoPageUrl);
 }
 
+function mdbFormSetup(form) {
+  function getSelectWrapperId(select) {
+    return select.closest('.select-wrapper').id.split('select-wrapper-')[1];
+  }
+
+  // input and textarea initialization
+  form.querySelectorAll('.form-outline').forEach((formOutline) => {
+    new mdb.Input(formOutline).init();
+  });
+
+  // select initialization
+  // Note: multiple dropdowns can be present at the same time.
+  var selectDropdownMap = {};
+  var selectDropdownSet = new Set();
+  form.querySelectorAll('select').forEach((el) => {
+    const selectEl = new mdb.Select(el);
+    var processing = false;
+
+    el.addEventListener('close.mdb.select', () => {
+      selectDropdownSet.delete(selectDropdownMap[getSelectWrapperId(el)]);
+      delete selectDropdownMap[getSelectWrapperId(el)];
+
+      // Restore label/placeholder's position
+      if (!el.multiple && el.value == '') {
+        el.closest('.select-wrapper').querySelector('.select-label').classList.remove('active');
+      }
+    });
+    el.addEventListener('open.mdb.select', (e) => {
+      // Use 'processing' varialbe to avoid infinite loop
+      if (processing) return;
+      processing = true;
+      e.preventDefault();
+      selectEl.open();
+
+      // The below section finds the corresponding dropdown container and sets its min-width
+      const dropdowns = document.querySelectorAll('.select-dropdown-container');
+      var newDropdown = null;
+      dropdowns.forEach((dropdown) => {
+        if (!selectDropdownSet.has(dropdown)) {
+          newDropdown = dropdown;
+        }
+      });
+      selectDropdownMap[getSelectWrapperId(el)] = newDropdown;
+      selectDropdownSet.add(newDropdown);
+      newDropdown.style.minWidth = el.parentElement.querySelector('.select-input').getBoundingClientRect().width + 'px';
+
+      // Hide single select's default empty option
+      if (!el.multitple) {
+        dropdowns.forEach((dropdown) => {
+          const firstOption = dropdown.querySelector('.select-option:first-child');
+          if (firstOption.querySelector('.select-option-text').textContent == '') {
+            firstOption.style.display = 'none';
+          }
+        });
+      }
+      processing = false;
+    });
+  });
+}
+
 export function setupForm(form, callbacks) {
   if (!form) {
     return;
   }
+
+  mdbFormSetup(form);
 
   if (form.classList.contains('is-demo-form')) {
     adhocDemoABTest(form);
@@ -280,16 +342,6 @@ export function setupForm(form, callbacks) {
     label.htmlFor = `consent-to-communicate-checkbox-${formIndex}`;
     if (!isFromEU()) checkbox.checked = true;
   }
-
-  form.querySelectorAll('select').forEach((el) => {
-    el.addEventListener('change', (ev) => {
-      if (ev.target.value) {
-        ev.target.classList.remove('placeholder');
-      } else {
-        ev.target.classList.add('placeholder');
-      }
-    });
-  });
 
   form.querySelectorAll('button').forEach((el) => {
     const type = el.type;
