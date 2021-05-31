@@ -19,13 +19,27 @@
                   {{ if .multiple }}multiple{{ end }}
                   >
             {{ if not .multiple }}<option value="" style="display: none;" selected></option>{{ end }}
-            {{ range .dropdown }}
+            {{ $dropdown := .dropdown }}
+            {{ if .sortDropdown }}
+              {{ $dropdown = sort .dropdown (cond (reflect.IsMap (index .dropdown 0)) "text" "") }}
+            {{ end }}
+            {{ $hasOthers := false }}
+            {{ range $dropdown }}
               {{ if reflect.IsMap . }}
+                {{ if ne .text "Others" }}
                 <option value="{{ .value }}">{{ .text }}</option>
+                {{ else }}
+                {{ $hasOthers = true }}
+                {{ end }}
               {{ else }}
+                {{ if ne . "Others" }}
                 <option>{{ . }}</option>
+                {{ else }}
+                {{ $hasOthers = true }}
+                {{ end }}
               {{ end }}
             {{ end }}
+            {{ if $hasOthers }}<option>Others</option>{{ end }}
           </select>
           <label class="form-label select-label">{{ default .placeholder (T .placeholder) }}</label>
         </div>
