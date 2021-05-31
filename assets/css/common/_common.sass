@@ -174,3 +174,12 @@ html
 // make hubspot chat box lower so social buttons can be clicked.
 #hubspot-messages-iframe-container
   z-index: 100 !important
+
+// override mdb
+hr
+  opacity: 1
+  &, &:not([size])
+    height: 2px
+
+img, svg
+  vertical-align: baseline
