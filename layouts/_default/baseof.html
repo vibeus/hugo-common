@@ -64,7 +64,7 @@
     {{ block "foot" . }}{{ partial "common/foot.html" . }}{{ end }}
     {{ block "tips" . }}{{ partial "common/ie-tips.html" . }}{{ end }}
     {{ with .Site.Params.hsId }}
-    {{/* partial "common/template-script" (merge (dict "asset" "js/common/GDPR-compliance.js") $.Site.Params) */}}
+    {{ partial "common/template-script" (merge (dict "asset" "js/common/GDPR-compliance.js") $.Site.Params) }}
     {{ end }}
   </body>
 </html>
