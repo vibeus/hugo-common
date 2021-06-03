@@ -39,7 +39,6 @@
 
 =glide-nav-style
   position: absolute
-  // display: none
   top: 50%
   cursor: pointer
   &.is-left
@@ -50,6 +49,8 @@
     transform: translateY(-50%)
   svg
     cursor: pointer
+  +until-widescreen
+    display: none
 
 // add a hidden pseudo element that "push" element down make in-page anchor work (because we have fixed navbar)
 =offset-anchor-for-navbar($extra: 0rem)
