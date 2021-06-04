@@ -1,27 +1,40 @@
 <section class="section is-feature-columns">
   <div class="container">
-    {{ with .title }}
-    <h1 class="title is-section-title">{{ default . (T .) }}</h1>
-    {{ end }}
-    {{ with .body }}
-    <div class="body">{{ default . (T .) }}</div>
+    {{ if .title }}
+    <div class="header">
+      <h1 class="title is-section-title">{{ default .title (T .title) }}</h1>
+      {{ with .body }}
+      <div class="body">{{ default . (T .) }}</div>
+      {{ end }}
+    </div>
     {{ end }}
     <div class="columns">
       {{ range $idx, $val := .features }}
       <div class="column{{ with .column_class }} {{ . }}{{ end }}">
-        <a {{ with .url }}href="{{ . }}"{{ end }}{{ with .target }} target="{{ . }}"{{ end}}>
-          <div class="is-feature is-feature-{{ $idx }}">
-            <figure class="image">
-              {{ $bgColor := .background_color }}
-              {{ if or (not .background_color) (eq .background_color "default") }}
-              {{ $bgColor = "#f4f4f4" }}
-              {{ end }}
-              {{ partial "common/srcset" (dict "resource" (resources.Get .figure) "desktop" "540x" "mobile" "420x" "options" (print "jpg " $bgColor)) }}
-            </figure>
-            <h2 class="title">{{ .title | markdownify }}</h2>
-            <div class="body">
-              {{ .body | markdownify }}
+        <a class="is-feature-card"{{ with .url }} href="{{ . }}"{{ end }}
+           {{ with .target }}target="{{ . }}"{{ end }}>
+          <div class="is-feature is-feature-{{ $idx }}"
+               {{ with $.card_background_color }}style="background-color: {{ . }}"{{ end }}>
+            <div>
+              <figure class="image">
+                {{ $bgColor := "#f4f4f4" }}
+                {{ if .background_color }}
+                {{ $bgColor = .background_color }}
+                {{ else if $.card_background_color }}
+                {{ $bgColor = $.card_background_color }}
+                {{ end }}
+                {{ partial "common/srcset" (dict "resource" (resources.Get .figure) "desktop" "540x" "mobile" "420x" "options" (print "jpg " $bgColor)) }}
+              </figure>
+              <h2 class="title">{{ .title | markdownify }}</h2>
+              <div class="body">{{ .body | markdownify }}</div>
             </div>
+            {{ with .cta }}
+            <div class="cta">
+              <span class="button{{ with .class }} {{ . }}{{ end }}">
+                {{ default .title (T .title) }}
+              </span>
+            </div>
+            {{ end }}
           </div>
         </a>
       </div>
