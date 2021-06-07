@@ -3,7 +3,7 @@
 {{ $subscriptionTypeId := site.Data.common.GDPR.legal_consent_options.subscription_type_id }}
 {{ $privacyPolicyNotice := "For more details, review our Privacy Policy." }}
 
-<h1 class="title">{{ default .title (T .title) | markdownify }}</h1>
+<h1 class="title is-form-title">{{ default .title (T .title) | markdownify }}</h1>
 {{ $method := default "POST" .method }}
 <form class="form is-vibe-form{{ with .class }} {{ . }}{{ end }}" method="{{ $method }}" action="{{ .action }}">
   {{ range .controls }}
