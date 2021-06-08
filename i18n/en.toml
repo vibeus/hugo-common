@@ -20,7 +20,7 @@ other = "Product Comparison"
 other = "Customer Testimonials"
 
 [i18n-data-common-nav-base-menu-i_3-title]
-other = "About"
+other = "Partners"
 
 [i18n-data-common-nav-base-menu-i_4-title]
 other = "Order a Vibe"
@@ -212,15 +212,18 @@ other = "Company"
 other = "About Us"
 
 [i18n-data-common-foot-base-sections-i_3-links-i_1-title]
-other = "Contact Sales"
+other = "Partner Program"
 
 [i18n-data-common-foot-base-sections-i_3-links-i_2-title]
-other = "Contact Support"
+other = "Contact Sales"
 
 [i18n-data-common-foot-base-sections-i_3-links-i_3-title]
-other = "Request a Quote"
+other = "Contact Support"
 
 [i18n-data-common-foot-base-sections-i_3-links-i_4-title]
+other = "Request a Quote"
+
+[i18n-data-common-foot-base-sections-i_3-links-i_5-title]
 other = "Career"
 
 [i18n-data-common-foot-base-copyright-i_0]

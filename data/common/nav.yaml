@@ -64,7 +64,7 @@ base:
         - title: i18n-data-common-nav-base-menu-i_2-submenu-i_7-title
           url: /contact/request-a-quote/
     - title: i18n-data-common-nav-base-menu-i_3-title
-      url: /about/
+      url: /reseller/
     - title: i18n-data-common-nav-base-menu-i_4-title
       url: /order/
       class: is-hidden-desktop
