@@ -25,9 +25,7 @@ document.querySelectorAll('.form.is-vibe-form').forEach((el) => {
       return false;
     },
     'submit.after': (name, type, form) => {
-      form
-        .closest('.section.is-book-demo')
-        .classList.add('is-submitted');
+      form.closest('.section.is-book-demo').classList.add('is-submitted');
 
       return false;
     },

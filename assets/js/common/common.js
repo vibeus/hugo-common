@@ -3,7 +3,7 @@ export function bindEventWithTarget(triggerClass, eventName, onEvent) {
   triggers.forEach((el) => {
     el.addEventListener('click', (e) => {
       const target = document.getElementById(el.dataset.target);
-      if (el.dataset.options !== "no_prevent_default") {
+      if (el.dataset.options !== 'no_prevent_default') {
         e.preventDefault();
       }
 
@@ -151,9 +151,11 @@ export function getHubspotUtk() {
 
 function submitForm(form, action) {
   form.action = action; // gtm use form action to track which hubspot form is submitted
-  const isWatchDemo
-    = action == 'https://api.hsforms.com/submissions/v3/integration/submit/5698963/83454bfb-2634-4bb9-b4c2-94b0c244ab5c'
-    || action == 'https://api.hsforms.com/submissions/v3/integration/submit/5698963/1270333f-4cc2-4450-901d-d4f9b29fed58';
+  const isWatchDemo =
+    action ==
+      'https://api.hsforms.com/submissions/v3/integration/submit/5698963/83454bfb-2634-4bb9-b4c2-94b0c244ab5c' ||
+    action ==
+      'https://api.hsforms.com/submissions/v3/integration/submit/5698963/1270333f-4cc2-4450-901d-d4f9b29fed58';
   const fields = [];
   for (const pair of new FormData(form).entries()) {
     if (pair[0] == 'consent-to-communicate-checkbox') continue;
@@ -174,22 +176,23 @@ function submitForm(form, action) {
   // add legalConsentOptions for gdpr
   const consentToProcessElt = form.querySelector('.consent-to-process');
   const consentToCommunicateElt = form.querySelector('.consent-to-communicate');
-
-  body.legalConsentOptions = {
-    consent: {
-      consentToProcess: true,
-      text: consentToProcessElt.dataset.text,
-      communications: [
-        {
-          value: true,
-          subscriptionTypeId: parseInt(
-            consentToCommunicateElt.dataset.subscriptionTypeId
-          ),
-          text: consentToCommunicateElt.dataset.text,
-        },
-      ],
-    },
-  };
+  if (consentToProcessElt && consentToCommunicateElt) {
+    body.legalConsentOptions = {
+      consent: {
+        consentToProcess: true,
+        text: consentToProcessElt.dataset.text,
+        communications: [
+          {
+            value: true,
+            subscriptionTypeId: parseInt(
+              consentToCommunicateElt.dataset.subscriptionTypeId
+            ),
+            text: consentToCommunicateElt.dataset.text,
+          },
+        ],
+      },
+    };
+  }
 
   return fetch(form.action, {
     method: form.method,
@@ -222,19 +225,19 @@ const formIndexFunc = formIndexFuncWrapper();
 
 function updateDemoPageUrl(form, url) {
   form
-    .querySelectorAll('a[href="https://vibe.us/demo/video-demo/"], a[href="/demo/video-demo/"]')
+    .querySelectorAll(
+      'a[href="https://vibe.us/demo/video-demo/"], a[href="/demo/video-demo/"]'
+    )
     .forEach((el) => {
       el.href = url;
     });
   form.querySelector('input[name="demo_page_url"]').value = url;
-};
+}
 
 function getRandomDemoPageUrl() {
-  return (
-    Math.random() < 0.5
+  return Math.random() < 0.5
     ? 'https://vibe.us/demo/video-demo/'
-    : 'https://vibe.us/demo/demo-video/'
-  );
+    : 'https://vibe.us/demo/demo-video/';
 }
 
 function adhocDemoABTest(form) {
@@ -270,7 +273,9 @@ function mdbFormSetup(form) {
 
       // Restore label/placeholder's position
       if (!el.multiple && el.value == '') {
-        el.closest('.select-wrapper').querySelector('.select-label').classList.remove('active');
+        el.closest('.select-wrapper')
+          .querySelector('.select-label')
+          .classList.remove('active');
       }
     });
     el.addEventListener('open.mdb.select', (e) => {
@@ -290,13 +295,19 @@ function mdbFormSetup(form) {
       });
       selectDropdownMap[getSelectWrapperId(el)] = newDropdown;
       selectDropdownSet.add(newDropdown);
-      newDropdown.style.minWidth = el.parentElement.querySelector('.select-input').getBoundingClientRect().width + 'px';
+      newDropdown.style.minWidth =
+        el.parentElement.querySelector('.select-input').getBoundingClientRect()
+          .width + 'px';
 
       // Hide single select's default empty option
       if (!el.multitple) {
         dropdowns.forEach((dropdown) => {
-          const firstOption = dropdown.querySelector('.select-option:first-child');
-          if (firstOption.querySelector('.select-option-text').textContent == '') {
+          const firstOption = dropdown.querySelector(
+            '.select-option:first-child'
+          );
+          if (
+            firstOption.querySelector('.select-option-text').textContent == ''
+          ) {
             firstOption.style.display = 'none';
           }
         });
