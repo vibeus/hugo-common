@@ -57,12 +57,14 @@ base:
         - title: i18n-data-common-foot-base-sections-i_3-links-i_0-title
           url: /about/
         - title: i18n-data-common-foot-base-sections-i_3-links-i_1-title
-          url: /contact/
+          url: /reseller/
         - title: i18n-data-common-foot-base-sections-i_3-links-i_2-title
-          url: https://knowledge.vibe.us/kb-tickets/new
+          url: /contact/
         - title: i18n-data-common-foot-base-sections-i_3-links-i_3-title
-          url: /contact/request-a-quote/
+          url: https://knowledge.vibe.us/kb-tickets/new
         - title: i18n-data-common-foot-base-sections-i_3-links-i_4-title
+          url: /contact/request-a-quote/
+        - title: i18n-data-common-foot-base-sections-i_3-links-i_5-title
           url: /career/
   contact:
     content: Contact Us
