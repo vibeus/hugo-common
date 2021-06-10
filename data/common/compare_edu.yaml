@@ -55,7 +55,7 @@ brands:
     icon: img/common/compare/edu/promethean.png
   - name: i18n-data-common-compare_edu-brands-i_2-name
     features:
-      - 0
+      - 1
       - 1
       - 0
       - 1

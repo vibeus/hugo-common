@@ -1,5 +1,5 @@
-{{ $newTab := false }}
-{{ if or (strings.HasPrefix .Destination "https://www.amazon") (strings.HasPrefix .Destination "https://knowledge.vibe.us") }}
-{{ $newTab = true }}
+{{ $newTab := true }}
+{{ if or (strings.HasPrefix .Destination "/") (strings.HasPrefix .Destination "https://vibe.us/") }}
+{{ $newTab = false }}
 {{ end }}
 <a href="{{ .Destination | safeURL }}"{{ with .Title}} title="{{ . }}"{{ end }}{{ if $newTab }} target="_blank"{{ end }}>{{ .Text | safeHTML }}</a>
