@@ -1,6 +1,27 @@
 @import "_shared.sass"
 @import "_bottom-cta.sass"
 
+.section.before-foot .compare-note,
+.section.is-compare-in-detail .compare-note
+  font-size: 12px
+  color: #828282
+  font-style: italic
+  margin-top: 20px
+  a
+    color: #828282
+    text-decoration: underline
+  p:not(:first-child)
+    margin-top: 8px
+
+.section.before-foot
+  padding: 2rem 1.5rem
+  background-color: #F2F2F2
+  border-bottom: 1px solid #E0E0E0
+  .compare-note
+    max-width: 1100px
+    margin: auto
+    margin-top: 0
+
 // required for position: sticky to work
 .section.is-compare-in-detail
   overflow: visible
@@ -8,10 +29,6 @@
   padding-right: 0
   .container
     position: static
-  .compare-note
-    color: #828282
-    font-style: italic
-    margin-top: 20px
 
 .section.is-compare-in-detail.is-single,
 .section.is-compare-in-detail.is-all

@@ -89,6 +89,15 @@
         </tfoot>
       </table>
     </div>
+
+    {{ if .note }}
+      {{ if and (not .hide_note) (not .note_in_footer) }}
+      <div class="compare-note">
+        {{ .note | markdownify }}
+      </div>
+      {{ end }}
+    {{ end }}
+
     {{ with .cta }}
     {{ partial "common/section-cta" . }}
     {{ end }}

@@ -1,0 +1,11 @@
+{{ $Params := merge .Params .Params.override }}
+{{ with $Params.compare }}
+  {{ if and (not .hidden) (and .note (and (not .hide_note) .note_in_footer)) }}
+  <div class="section before-foot{{ if not .note_mobile_visible }} is-hidden-mobile{{ end }}">
+    <div class="compare-note">
+      {{ .note | markdownify }}
+    </div>
+  </div>
+  {{ end }}
+{{ end }}
+{{ partial "common/foot" . }}
