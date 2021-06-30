@@ -3,16 +3,18 @@ base:
     - title: i18n-data-common-nav-base-menu-i_0-title
       submenu:
         - title: i18n-data-common-nav-base-menu-i_0-submenu-i_0-title
-          url: /hardware/
+          url: /products/vibe-smartboard-55/
         - title: i18n-data-common-nav-base-menu-i_0-submenu-i_1-title
-          url: /software/
-        - title: i18n-data-common-nav-base-menu-i_0-submenu-i_5-title
-          url: /android-app-store/
+          url: /products/vibe-smartboard-pro-75/
         - title: i18n-data-common-nav-base-menu-i_0-submenu-i_2-title
-          url: /security/
+          url: /software/
         - title: i18n-data-common-nav-base-menu-i_0-submenu-i_3-title
-          url: /comparison/
+          url: /android-app-store/
         - title: i18n-data-common-nav-base-menu-i_0-submenu-i_4-title
+          url: /security/
+        - title: i18n-data-common-nav-base-menu-i_0-submenu-i_5-title
+          url: /comparison/
+        - title: i18n-data-common-nav-base-menu-i_0-submenu-i_6-title
           url: /customer/
     - title: i18n-data-common-nav-base-menu-i_1-title
       column_submenu:
@@ -82,7 +84,7 @@ zh:
     - title: i18n-data-common-nav-base-menu-i_0-title
       submenu:
         - title: i18n-data-common-nav-base-menu-i_0-submenu-i_0-title
-          url: /hardware/
+          url: /products/vibe-smartboard-55/
         - title: i18n-data-common-nav-base-menu-i_0-submenu-i_1-title
           url: /software/
         - title: i18n-data-common-nav-base-menu-i_0-submenu-i_2-title

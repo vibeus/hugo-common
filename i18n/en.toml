@@ -2,22 +2,28 @@
 other = "Product"
 
 [i18n-data-common-nav-base-menu-i_0-submenu-i_0-title]
-other = "Vibe Hardware"
+other = "Vibe Smartboard 55″"
 
 [i18n-data-common-nav-base-menu-i_0-submenu-i_1-title]
-other = "Vibe Software"
-
-[i18n-data-common-nav-base-menu-i_0-submenu-i_5-title]
-other = "App Integrations"
+other = "Vibe Smartboard pro 75″"
 
 [i18n-data-common-nav-base-menu-i_0-submenu-i_2-title]
-other = "Security"
+other = "Vibe Software"
 
 [i18n-data-common-nav-base-menu-i_0-submenu-i_3-title]
-other = "Product Comparison"
+other = "App Integrations"
 
 [i18n-data-common-nav-base-menu-i_0-submenu-i_4-title]
+other = "Security"
+
+[i18n-data-common-nav-base-menu-i_0-submenu-i_5-title]
+other = "Product Comparison"
+
+[i18n-data-common-nav-base-menu-i_0-submenu-i_6-title]
 other = "Customer Testimonials"
+
+
+
 
 [i18n-data-common-nav-base-menu-i_3-title]
 other = "Partners"
@@ -137,24 +143,27 @@ other = "65″ Newline TT-6519RSSmart"
 other = "Product"
 
 [i18n-data-common-foot-base-sections-i_0-links-i_0-title]
-other = "Vibe Hardware"
+other = "Vibe Smartboard 55″"
 
 [i18n-data-common-foot-base-sections-i_0-links-i_1-title]
-other = "Vibe Software"
+other = "Vibe Smartboard pro 75″"
 
 [i18n-data-common-foot-base-sections-i_0-links-i_2-title]
-other = "App Integrations"
+other = "Vibe Software"
 
 [i18n-data-common-foot-base-sections-i_0-links-i_3-title]
-other = "Join a Board"
+other = "App Integrations"
 
 [i18n-data-common-foot-base-sections-i_0-links-i_4-title]
-other = "Security"
+other = "Join a Board"
 
 [i18n-data-common-foot-base-sections-i_0-links-i_5-title]
-other = "Customer Testimonials"
+other = "Security"
 
 [i18n-data-common-foot-base-sections-i_0-links-i_6-title]
+other = "Customer Testimonials"
+
+[i18n-data-common-foot-base-sections-i_0-links-i_7-title]
 other = "Vibe Demo"
 
 [i18n-data-common-foot-base-sections-i_1-heading]

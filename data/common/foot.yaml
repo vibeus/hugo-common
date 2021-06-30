@@ -3,19 +3,21 @@ base:
     - heading: i18n-data-common-foot-base-sections-i_0-heading
       links:
         - title: i18n-data-common-foot-base-sections-i_0-links-i_0-title
-          url: /hardware/
+          url: /products/vibe-smartboard-55/
         - title: i18n-data-common-foot-base-sections-i_0-links-i_1-title
-          url: /software/
+          url: /products/vibe-smartboard-pro-75/
         - title: i18n-data-common-foot-base-sections-i_0-links-i_2-title
+          url: /software/
+        - title: i18n-data-common-foot-base-sections-i_0-links-i_3-title
           url: /android-app-store/
         - target: _blank
-          title: i18n-data-common-foot-base-sections-i_0-links-i_3-title
+          title: i18n-data-common-foot-base-sections-i_0-links-i_4-title
           url: https://app.vibe.us
-        - title: i18n-data-common-foot-base-sections-i_0-links-i_4-title
-          url: /security/
         - title: i18n-data-common-foot-base-sections-i_0-links-i_5-title
-          url: /customer/
+          url: /security/
         - title: i18n-data-common-foot-base-sections-i_0-links-i_6-title
+          url: /customer/
+        - title: i18n-data-common-foot-base-sections-i_0-links-i_7-title
           url: /demo/
     - heading: i18n-data-common-foot-base-sections-i_1-heading
       links:
