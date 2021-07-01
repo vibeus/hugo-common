@@ -1,12 +1,12 @@
 .global-before-nav
-  background-color: $vibe-purple
-  font-size: 14px
-  padding: 14px 24px
-  color: white
+  background-color: $vibe-yellow
+  font-size: 16px
+  padding: 24px
+  color: black
   +tablet
     text-align: center
   a
-    color: white
+    color: black
     // text-decoration: underline
     // &:hover
     //   color: $vibe-yellow
@@ -23,7 +23,7 @@
 
   @at-root #{selector-nest("html.has-navbar-fixed-top", &)}
     margin-top: -4.125rem
-  
+
   & + .navbar
     position: sticky
     position: -webkit-sticky
