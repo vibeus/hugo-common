@@ -25,12 +25,16 @@
             {{ range $brand_idx, $it := $brands_order }}
               {{ with (index $brands (add $it -1)) }}
               <td class="{{ if ge $brand_idx $num_displays_mobile }}is-hidden-mobile{{ end }}">
-                <figure class="image">
-                  {{ $resource := resources.Get .icon }}
-                  {{ partial "common/srcset" (dict "resource" $resource "desktop" "228x") }}
-                </figure>
-                {{ if $show_name }}
-                <p class="brand-name">{{ default .name (T .name) }}</p>
+                {{ if not .hide_icon }}
+                  <figure class="image">
+                    {{ $resource := resources.Get .icon }}
+                    {{ partial "common/srcset" (dict "resource" $resource "desktop" "228x") }}
+                  </figure>
+                  {{ if $show_name }}
+                  <p class="brand-name">{{ default .name (T .name) }}</p>
+                  {{ end }}
+                {{ else }}
+                  <p class="brand-name large-name">{{ default .name (T .name) }}</p>
                 {{ end }}
               </td>
               {{ end }}
