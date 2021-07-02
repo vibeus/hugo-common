@@ -235,8 +235,11 @@ other = "Request a Quote"
 [i18n-data-common-foot-base-sections-i_3-links-i_5-title]
 other = "Career"
 
+[i18n-data-common-foot-base-sections-i_3-links-i_6-title]
+other = "Terms of Service"
+
 [i18n-data-common-foot-base-copyright-i_0]
-other = "© Copyright 2020 Vibe, Inc. All rights reserved."
+other = "© Copyright 2021 Vibe, Inc. All rights reserved."
 
 [i18n-data-common-foot-zh-sections-i_3-heading]
 other = "扫码关注我们"
@@ -263,13 +266,13 @@ other = "服务网点"
 other = "服务网点"
 
 [i18n-data-common-foot-base-copyright-i_1]
-other = "© Copyright 2020 Vibe, Inc. All rights reserved."
+other = "© Copyright 2021 Vibe, Inc. All rights reserved."
 
 [i18n-data-common-foot-base-copyright-i_2]
-other = "© Copyright 2020 Vibe, Inc. All rights reserved."
+other = "© Copyright 2021 Vibe, Inc. All rights reserved."
 
 [i18n-data-common-foot-base-copyright-i_3]
-other = "© Copyright 2020 Vibe, Inc. All rights reserved."
+other = "© Copyright 2021 Vibe, Inc. All rights reserved."
 
 [i18n-manual-ie-tips]
 other = "Internet Explorer does not function in many features in this site. We highly recommend you to use Chrome, Firefox or Edge."

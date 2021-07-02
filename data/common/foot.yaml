@@ -68,6 +68,8 @@ base:
           url: /contact/request-a-quote/
         - title: i18n-data-common-foot-base-sections-i_3-links-i_5-title
           url: /career/
+        - title: i18n-data-common-foot-base-sections-i_3-links-i_6-title
+          url: /terms-of-service/
   contact:
     content: Contact Us
     url: /contact/
