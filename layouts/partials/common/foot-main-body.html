@@ -1,0 +1,35 @@
+<div class="section is-vibe-foot">
+  <div class="container about">
+    <div class="columns">
+      <div class="column is-one-third">
+        <figure class="image is-foot-logo">
+          {{ $src := resources.Get "img/common/foot-icon.svg" }}
+          {{ $src.Content | safeHTML }}
+        </figure>
+      </div>
+      <div class="column">
+        <div class="columns is-links is-mobile is-multiline">
+          {{ range $.foot.sections }}
+          <div class="column is-half-touch is-foot-section{{ with .class }} {{ . }}{{ end }}">
+            <h2 class="is-vibe-heading">{{ T .heading }}</h2>
+            {{ range .links }}
+            <div class="foot-link">
+              <a {{ if $.foot_in_lp }} href="{{ .url }}" {{ else }} href="{{ .url | relLangURL }}" {{ end }}
+                {{ with .target }}target="{{ . }}" {{ end }} {{ with .class }}class="{{ . }}" {{ end }}>
+                {{ T .title }}
+              </a>
+            </div>
+            {{ end }}
+            {{ range .figures }}
+            <figure class="image is-foot-figure">
+              {{ $src := resources.Get . }}
+              <img src="{{ $src.RelPermalink }}" alt="{{ . }}" />
+            </figure>
+            {{ end }}
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

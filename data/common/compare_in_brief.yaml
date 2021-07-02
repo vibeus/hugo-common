@@ -17,21 +17,26 @@ brands:
     features: [1, 1, 1, 1, 1, 0]
     price: '$8,999'
     icon: 'img/common/compare/brand-surfacehub.png'
+    hide_icon: true
   - name: 'Google Jamboard'
     features: [1, 1, 1, 1, 0, 0]
     price: '$4,999'
     icon: 'img/common/compare/brand-jamboard.png'
+    hide_icon: true
   - name: 'Samsung Flip'
     features: [1, 0, 0, 1, 0, 0]
     price: '$2,699'
     icon: 'img/common/compare/brand-flip.png'
+    hide_icon: true
   - name: 'Cisco Webex'
     features: [1, 1, 0, 0, 0, 0]
     price: '$4,990'
     icon: 'img/common/compare/brand-webex.png'
+    hide_icon: true
     hideMobile: true
-  - name: 'Smart'
+  - name: 'Smart 6000 Series'
     features: [1, 1, 1, 1, 0, 0]
     price: '$4,999'
     icon: 'img/common/compare/brand-smart.png'
+    hide_icon: true
     hideMobile: true
