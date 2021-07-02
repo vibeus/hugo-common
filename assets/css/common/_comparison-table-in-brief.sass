@@ -1,4 +1,6 @@
 .section.is-compare.is-compare-in-brief
+  +mobile
+    padding: 0.75rem
   .compare-table
     +mobile
       font-size: 0.75rem
@@ -40,8 +42,10 @@
           width: 14px
     .brand-name
       &.large-name
-          font-size: 18px
-          font-weight: $vibe-bold
+        font-size: 18px
+        font-weight: $vibe-bold
+        +mobile
+          font-size: 12px
 
   &.is-education
     .compare-table
