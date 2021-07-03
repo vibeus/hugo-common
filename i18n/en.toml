@@ -188,12 +188,15 @@ other = "Warranty"
 other = "Return Policy"
 
 [i18n-data-common-foot-base-sections-i_1-links-i_6-title]
-other = "Product Videos"
+other = "Shipping Policy"
 
 [i18n-data-common-foot-base-sections-i_1-links-i_7-title]
-other = "Vibe Brochure"
+other = "Product Videos"
 
 [i18n-data-common-foot-base-sections-i_1-links-i_8-title]
+other = "Vibe Brochure"
+
+[i18n-data-common-foot-base-sections-i_1-links-i_9-title]
 other = "Vibe User Manual"
 
 [i18n-data-common-foot-base-sections-i_2-heading]
