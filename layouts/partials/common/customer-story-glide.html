@@ -13,7 +13,7 @@
               {{ partial .item.partial .item }}
             </a>
             {{ else }}
-            <div class="is-story-card{{ with .class }} {{ . }}{{ end }}{{ if .item.video }} video-popup{{ end }}"{{ with .item.video }} data-target="video-popup-player" data-video-id="{{ .Id }}"{{ end }}>
+            <div class="is-story-card{{ with .class }} {{ . }}{{ end }}{{ if .item.video }} video-popup{{ end }}">
               {{ partial .item.partial .item }}
             </div>
             {{ end }}

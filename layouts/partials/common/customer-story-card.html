@@ -32,8 +32,10 @@
   </div>
   {{ end }}
 </div>
-{{ range .figure }}
-<div class="blog-figure{{ with .class }} {{ . }}{{ end }}{{ with .video }} video-cover{{ end }}">
-  {{ partial "common/srcset" (dict "resource" (resources.Get .url) "desktop" "1280x" "mobile" "750x" "options" "jpg #ffffff") }}
+<div class="{{ with .class }} {{ . }}{{ end }}{{ if .video }} video-popup{{ end }}" {{ with .video }} data-target="video-popup-player" data-video-id="{{ .Id }}"{{ end }}>
+  {{ range .figure }}
+  <div class="blog-figure{{ with .class }} {{ . }}{{ end }}{{ with .video }} video-cover{{ end }}">
+    {{ partial "common/srcset" (dict "resource" (resources.Get .url) "desktop" "1280x" "mobile" "750x" "options" "jpg #ffffff") }}
+  </div>
+  {{ end }}
 </div>
-{{ end }}
