@@ -1,4 +1,4 @@
-<section class="section is-book-demo-new">
+<section class="section is-book-demo-new" id="{{ default "section-book-demo" .id }}">
   <figure class="is-book-demo-new-bg">
     {{ partial "common/srcset" (dict "resource" (resources.Get .bg)) }}
   </figure>
@@ -20,26 +20,26 @@
         </figure>
       </div>
 
-      {{ with .text }}
-        <div class="column is-text">
-          <div class="is-text-container">
-            {{ with .title }}
-              <div class="title">{{ default . (T .) | markdownify }}</div>
-            {{ end }}
-            {{ with .content }}
-              <div class="content">{{ default . (T .) | markdownify }}</div>
-            {{ end }}
-            {{ with .cta }}
-              <div class="cta">
-                <a class="button {{ with .class }} {{ . }}{{ end }}"
-                  href="{{ .url | relLangURL }}">
-                  {{ default .title ( T .title ) }}
-                </a>
-              </div>
-            {{ end }}
-          </div>
-        </div>
-      {{ end }}
+      <div class="column is-text" {{ with .background_color }}  style="border-color: {{ . }}" {{ end }}>
+        {{ with .text }}
+            <div class="is-text-container">
+              {{ with .title }}
+                <div class="title">{{ default . (T .) | markdownify }}</div>
+              {{ end }}
+              {{ with .content }}
+                <div class="content">{{ default . (T .) | markdownify }}</div>
+              {{ end }}
+              {{ with .cta }}
+                <div class="cta">
+                  <a class="button {{ with .class }} {{ . }}{{ end }}"
+                    href="{{ .url | relLangURL }}">
+                    {{ default .title ( T .title ) }}
+                  </a>
+                </div>
+              {{ end }}
+            </div>
+        {{ end }}
+      </div>
     </div>
   </div>
 </section>
