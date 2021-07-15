@@ -1,0 +1,145 @@
+@import "_form.sass"
+@import "_mixins.sass"
+
+.section.is-book-demo-new
+  position: relative
+  padding-bottom: 100px 
+  +mobile
+    padding-bottom: 60px 
+  .container
+    +mobile
+      margin: 0 -5.5px
+    +touch
+      >.columns
+        display: unset
+        >.column:not(:first-child)
+          margin-top: 26px
+    +desktop
+      max-width: 92vw
+    +fullhd
+      max-width: 1228px
+  .is-book-demo-new-bg
+    position: absolute
+    width: 100vw
+    height: 100%
+    margin: .5rem -1.5rem 0
+    img
+      width: 100vw
+      height: 100%
+  .columns
+    >&
+      justify-content: center
+    .column
+      padding: 0
+    .column.is-image
+      display: flex
+      border-top: 8px solid $vibe-black
+      height: 527px
+      +mobile
+        height: 500px
+      +desktop
+        max-width: 58.3vw
+        margin-right: 1.5rem
+      +desktop
+        max-width: 840px
+      .is-form
+        margin: auto
+        +mobile
+          width: 258px
+        .columns
+          +touch
+            display: flex
+        .is-title-wrapper
+          .is-date
+            margin-bottom: 4px
+            +mobile
+              font-size: 16px
+              line-height: 164%
+            +tablet
+              font-size: 18px
+              line-height: 164%
+          .is-section-title
+            color: #000
+            +mobile
+              margin-bottom: 1rem
+              font-size: 28px
+              line-height: 130.5%
+            +tablet
+              max-width: 340px
+              margin-bottom: 1.25rem
+              font-size: 36px
+              line-height: 47px
+          .body
+            color: #000
+            +mobile
+              font-size: 16px
+              line-height: 144%
+              margin-bottom: 2.75rem
+            +tablet
+              max-width: 355px
+              margin-bottom: 3rem
+              font-size: 18px
+              line-height: 144%
+        &.is-submitted
+          width: 100%
+          .is-title-wrapper
+            display: none
+          .form
+            > div:not(.submitted)
+              display: none
+            .submitted
+              display: flex
+              margin-left: 3.9vw
+              color: #000
+              +desktop-only
+                margin-left: 180px
+              +fullhd
+                margin-left: 56px
+              .title
+                width: auto
+                font-size: 26px
+                line-height: 130.5%
+                margin-bottom: .75rem
+              .content
+                max-width: 231px
+                font-size: 16px
+                line-height: 144%
+      .is-form-image
+        @media screen and ( max-width: 1279px )
+          display: none
+        +desktop
+          max-width: 404px
+          img
+            max-height: 519px
+    .column.is-text
+      border: 1px solid #F1F1F1
+      border-top: 8px solid $vibe-yellow
+      box-sizing: border-box
+      background: #fff
+      +touch
+        min-height: 252px
+      +desktop
+        min-height: 527px
+        max-width: 354px
+        padding: 0 56px
+      .is-text-container
+        width: 258px
+        margin: auto
+      .title
+        max-width: 217px
+        font-size: 26px
+        line-height: 130.5%
+        margin-bottom: 12px
+        +touch
+          margin-top: 32px
+        +desktop
+          margin-top: 172px
+      .content
+        max-width: 234px
+        margin-bottom: 32px
+        font-size: 16px
+        line-height: 144%
+      .cta
+        font-size: 16px
+        line-height: 144%
+        

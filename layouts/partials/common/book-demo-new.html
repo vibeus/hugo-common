@@ -1,0 +1,45 @@
+<section class="section is-book-demo-new">
+  <figure class="is-book-demo-new-bg">
+    {{ partial "common/srcset" (dict "resource" (resources.Get .bg)) }}
+  </figure>
+  <div class="container">
+    <div class="columns is-centered{{ with .paragraphs }} with-paragraphs{{ end }}">
+      <div class="column is-image" {{ with .background_color }}  style="background-color: {{ . }}" {{ end }}>
+        <div class="is-form">
+          <div class="is-title-wrapper">
+            <h2 class="title is-date">{{ default .date (T .date) | markdownify }}</h2>
+            <h1 class="title is-section-title">{{ default .title (T .title) }}</h1>
+            {{ with .body }}
+            <div class="body">{{ default . (T .) | markdownify }}</div>
+            {{ end }}
+          </div>
+          {{ partial "common/form-new" (merge site.Data.common.demo_form_new.form (default (dict) .form)) }}
+        </div>
+        <figure class="image is-form-image">
+          {{ partial "common/srcset" (dict "resource" (resources.Get .figure)) }}
+        </figure>
+      </div>
+
+      {{ with .text }}
+        <div class="column is-text">
+          <div class="is-text-container">
+            {{ with .title }}
+              <div class="title">{{ default . (T .) | markdownify }}</div>
+            {{ end }}
+            {{ with .content }}
+              <div class="content">{{ default . (T .) | markdownify }}</div>
+            {{ end }}
+            {{ with .cta }}
+              <div class="cta">
+                <a class="button {{ with .class }} {{ . }}{{ end }}"
+                  href="{{ .url | relLangURL }}">
+                  {{ default .title ( T .title ) }}
+                </a>
+              </div>
+            {{ end }}
+          </div>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</section>

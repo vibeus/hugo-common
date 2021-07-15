@@ -1,0 +1,21 @@
+form:
+  action: 'https://api.hsforms.com/submissions/v3/integration/submit/5698963/3d6ae527-ade1-410d-91e7-c2f576b231f5'
+  class: is-demo-form-new
+  controls:
+    - - name: firstname
+        placeholder: First Name
+        required: true
+      - name: lastname
+        placeholder: Last Name
+        required: true
+    - - name: email
+        placeholder: Email Address
+        type: email
+        required: true
+  buttons:
+    - type: submit
+      title: Save my spot
+      class: button is-rounded is-black
+  submitted:
+    title: Your spot is saved!
+    body: Be sure to check your email for further webinar details.
