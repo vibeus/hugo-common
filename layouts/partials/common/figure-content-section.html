@@ -37,8 +37,11 @@
               {{ (resources.Get .).Content | safeHTML }}
             </span>
             {{ end }}
-            <div class="text">{{ default .text (T .text) }}</div>
-          </div>
+            <div class="text {{ if .text_mobile }} is-hidden-mobile {{ end }}">{{ default .text (T .text) }}</div>
+            {{ if .text_mobile }}
+              <div class="text is-hidden-tablet">{{ default .text_mobile (T .text_mobile) }}</div>
+            {{ end }}
+            </div>
           {{ end }}
           {{ else }}
           {{ default .body (T .body) | markdownify }}

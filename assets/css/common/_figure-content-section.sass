@@ -4,7 +4,10 @@
   +vertical-padding(100px)
   background-color: $vibe-white
   .container
-    max-width: 1340px
+    +until-fullhd
+      max-width: 90vw
+    +fullhd
+      max-width: 1240px
   .image .overlay
     +absolute-fill
   .title.is-section-title

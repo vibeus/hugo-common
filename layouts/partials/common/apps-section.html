@@ -10,6 +10,14 @@
     <div class="is-title-container">
       <h1 class="title is-section-title">{{ default .title (T .title) }}</h1>
       <div class="body">{{ default .body (T .body) }}</div>
+      {{ with .cta }}
+        <div class="cta">
+          <a class="button {{ with .class }} {{ . }}{{ end }}"
+            href="{{ .url | relLangURL }}">
+            {{ default .title ( T .title ) }}
+          </a>
+        </div>
+      {{ end }}
     </div>
     {{ with site.Data.apps.apps }}
     <div class="columns is-multiline is-apps-gallery is-mobile">
