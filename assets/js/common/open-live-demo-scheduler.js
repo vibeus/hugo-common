@@ -3,7 +3,7 @@
 */
 import { openDemoScheduler, toggleActive } from '{{ $src.RelPermalink }}';
 
-toggleActive('.modal-background, .modal-close', false);
+toggleActive('is-iframe-modal-new .modal-background-new, .modal-close-new', false);
 const btn = document.querySelector(
   'section.is-book-demo-new .cta .button.is-open-live-demo-scheduler'
 );

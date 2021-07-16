@@ -43,3 +43,12 @@
     </div>
   </div>
 </section>
+
+{{ $modalId := "schedule-demo-modal" }}
+<div class="modal is-iframe-modal is-iframe-modal-new" id="{{ $modalId }}">
+  <div class="modal-background modal-background-new" data-target="{{ $modalId }}"></div>
+  <div class="modal-content" id="{{ $modalId }}-iframe"></div>
+  <button class="modal-close modal-close-new is-large" aria-label="close" data-target="{{ $modalId }}"></button>
+</div>
+
+{{ partial "common/template-script" (dict "asset" "js/common/open-live-demo-scheduler.js" "modalId" $modalId) }}
