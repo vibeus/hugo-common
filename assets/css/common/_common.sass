@@ -196,9 +196,19 @@ img, svg
 .button
   border-width: 2px
 
-.button.is-vibe-link
+.cta .is-vibe-link
   height: auto
   padding: 0
-  border: none
+  font-family: $vibe-family-body
+  font-weight: $vibe-bold
   color: $vibe-purple
-  text-decoration: underline
+  border: none
+  &:hover
+    text-decoration: underline
+  +tablet
+    font-size: 18px
+    line-height: 22px
+  +mobile
+    font-size: 16px
+    line-height: 19px
+  
