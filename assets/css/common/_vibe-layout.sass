@@ -1,0 +1,36 @@
+/* html font size */
+@media screen and ( max-width: 400px )
+  html
+    font-size: 16px
+@media screen and ( min-width: 401px ) and ( max-width: 700px )
+  html
+    font-size: 17px
+@media screen and ( min-width: 701px )
+  html
+    font-size: 16px
+
+.vb-section
+  +vertical-padding(120px)
+  .vb-container
+    +until-fullhd
+      max-width: 76.3vw
+    +mobile
+      max-width: 87.2vw
+    +fullhd
+      max-width: 1100px
+    margin: auto
+    .vb-columns
+      display: flex
+      .vb-column
+    .title.section-title
+      line-height: 125%
+      +mobile
+        font-size: 2em
+      +tablet
+        font-size: 3em
+    .content, .body
+      line-height: 144%
+      +mobile
+        font-size: 1em
+      +tablet
+        font-size: 1.125em
