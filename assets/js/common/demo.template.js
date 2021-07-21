@@ -5,8 +5,8 @@ const navbar = document.querySelector('.navbar.is-fixed-top');
 const navbarHeight = navbar ? navbar.clientHeight : 0;
 bindScrollTo('.is-request-demo', -navbarHeight);
 
-if (document.querySelectorAll('.form.is-vibe-form.is-book-demo-new')) {
-  setupForm(document.querySelector('.form.is-vibe-form'));
+if (document.querySelectorAll('.form.is-vibe-form.is-book-demo-new')>0) {
+  setupForm(document.querySelector('.form.is-vibe-form.is-book-demo-new'));
 } else {
   document.querySelectorAll('.form.is-vibe-form').forEach((el) => {
     setupForm(el, {
