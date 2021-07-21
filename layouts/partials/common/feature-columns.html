@@ -4,7 +4,7 @@
     <div class="header">
       <h1 class="title is-section-title">{{ default .title (T .title) }}</h1>
       {{ with .body }}
-      <div class="body">{{ default . (T .) }}</div>
+        <div class="body">{{ default . (T .) }}</div>
       {{ end }}
     </div>
     {{ end }}
@@ -26,7 +26,10 @@
                 {{ partial "common/srcset" (dict "resource" (resources.Get .figure) "desktop" "540x" "mobile" "420x" "options" (print "jpg " $bgColor)) }}
               </figure>
               <h2 class="title">{{ .title | markdownify }}</h2>
-              <div class="body">{{ .body | markdownify }}</div>
+              <div class="body {{ if .body_mobile }} is-hidden-mobile {{ end }}">{{ .body | markdownify }}</div>
+              {{ if .body_mobile }}
+                <div class="body is-hidden-tablet">{{ default .body_mobile ( T .body_mobile ) }}</div> 
+              {{ end }}
             </div>
             {{ with .cta }}
             <div class="cta">

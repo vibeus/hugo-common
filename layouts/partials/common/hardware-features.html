@@ -10,8 +10,11 @@
     <div class="is-feature-list is-hidden-tablet">
       {{ range $idx, $val := .features }}
       <div class="is-feature is-feature-{{ $idx }}">
-        <div class="title" data-idx="{{ add $idx 1 }}">{{ .title }}</div>
-        <div class="body">{{ .body }}</div>
+        <div class="title" data-idx="{{ add $idx 1 }}">{{ default .title ( T .title ) }}</div>
+        <div class="body {{ if .body_mobile }} is-hidden-mobile {{ end }}">{{ default .body ( T .body ) }}</div>
+        {{ if .body_mobile }}
+          <div class="body is-hidden-tablet">{{ default .body_mobile ( T .body_mobile ) }}</div> 
+        {{ end }}
       </div>
       {{ end }}
     </div>
